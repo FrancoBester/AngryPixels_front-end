@@ -12,7 +12,7 @@ export const ProtectedRoute = ({component:Component,...rest}) => {
                     return <Component {...props}/>
                 }
                 else{
-                    return (<h1>You arent allowed to see this</h1>)
+                    return (<h1>You aren't allowed to see this</h1>)
                 }
             }
         }/>

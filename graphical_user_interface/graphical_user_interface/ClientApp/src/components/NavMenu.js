@@ -1,49 +1,104 @@
-import React, { Component } from 'react';
-import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
-import { Link } from 'react-router-dom';
-import './NavMenu.css';
+import React, { useState, useEffect } from "react";
+import {
+  Collapse,
+  Container,
+  Navbar,
+  NavbarBrand,
+  NavbarToggler,
+  NavItem,
+  NavLink,
+} from "reactstrap";
+import { Link, useHistory } from "react-router-dom";
+import "./NavMenu.css";
+import auth from "../auth";
 
-export class NavMenu extends Component {
-  static displayName = NavMenu.name;
+function NavMenu(props) {
+  const [collapsed, setCollapsed] = useState(false);
+  const [authenticated, setAuthenticated] = useState(false);
 
-  constructor (props) {
-    super(props);
-
-    this.toggleNavbar = this.toggleNavbar.bind(this);
-    this.state = {
-      collapsed: true
-    };
+  const history = useHistory();
+  function HandeLoginout(value) {
+    if (value) {
+      auth.login(() => {
+        history.push("/Home");
+      });
+    } else {
+      auth.logout(() => {
+        history.push("/");
+      });
+    }
+    setAuthenticated(value);
   }
 
-  toggleNavbar () {
-    this.setState({
-      collapsed: !this.state.collapsed
-    });
-  }
-
-  render () {
-    return (
+  return (
+    <div>
       <header>
-        <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3" light>
+        <Navbar
+          className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3"
+          light
+        >
           <Container>
-            <NavbarBrand tag={Link} to="/">Medi trust</NavbarBrand>
-            <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-            <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
+            <NavbarBrand tag={Link} to="/">
+              Medi trust
+            </NavbarBrand>
+            <NavbarToggler onClick={setCollapsed} className="mr-2" />
+            <Collapse
+              className="d-sm-inline-flex flex-sm-row-reverse"
+              isOpen={!collapsed}
+              navbar
+            >
               <ul className="navbar-nav flex-grow">
                 <NavItem>
-                  <NavLink tag={Link} className="text-dark" to="/">Home</NavLink>
+                  <NavLink tag={Link} className="text-dark" to="/">
+                    Home
+                  </NavLink>
                 </NavItem>
-                <NavItem>
-                  <NavLink tag={Link} className="text-dark" to="/counter">Counter</NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink tag={Link} className="text-dark" to="/fetch-data">Fetch data</NavLink>
-                </NavItem>
+
+                {auth.isAuthenticated()}
+
+                {authenticated && (
+                  <>
+                    <NavItem>
+                      <NavLink tag={Link} className="text-dark" to="/counter">
+                        Counter
+                      </NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink
+                        tag={Link}
+                        className="text-dark"
+                        to="/fetch-data"
+                      >
+                        Fetch data
+                      </NavLink>
+                    </NavItem>
+                  </>
+                )}
+
+                {authenticated ? (
+                  <button
+                    onClick={() => {
+                      HandeLoginout(false);
+                    }}
+                  >
+                    Logout
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => {
+                      HandeLoginout(true);
+                    }}
+                  >
+                    Login
+                  </button>
+                )}
               </ul>
             </Collapse>
           </Container>
         </Navbar>
       </header>
-    );
-  }
+    </div>
+  );
 }
+
+export default NavMenu;

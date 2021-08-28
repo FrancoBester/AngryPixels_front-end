@@ -16,19 +16,19 @@ function NavMenu(props) {
   const [collapsed, setCollapsed] = useState(false);
   const [authenticated, setAuthenticated] = useState(false);
 
+  //subscribe to events
+  React.useEffect(() => {
+    window.addEventListener("onAuthenticationChangedEvent", (e, p) => {
+      setAuthenticated(e.detail.value);
+    });
+
+    // cleanup this component
+    return () => {
+      window.removeEventListener("onAuthenticationChangedEvent", () => {});
+    };
+  }, []);
+
   const history = useHistory();
-  function HandeLoginout(value) {
-    if (value) {
-      auth.login(() => {
-        history.push("/Home");
-      });
-    } else {
-      auth.logout(() => {
-        history.push("/");
-      });
-    }
-    setAuthenticated(value);
-  }
 
   return (
     <div>
@@ -78,7 +78,7 @@ function NavMenu(props) {
                 {authenticated ? (
                   <button
                     onClick={() => {
-                      HandeLoginout(false);
+                      auth.logout(() => {});
                     }}
                   >
                     Logout
@@ -86,7 +86,7 @@ function NavMenu(props) {
                 ) : (
                   <button
                     onClick={() => {
-                      HandeLoginout(true);
+                      auth.login(() => {});
                     }}
                   >
                     Login

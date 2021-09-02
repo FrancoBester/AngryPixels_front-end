@@ -79,6 +79,7 @@ function NavMenu(props) {
                   <button
                     onClick={() => {
                       auth.logout(() => {});
+                      history.push("/");
                     }}
                   >
                     Logout
@@ -86,7 +87,7 @@ function NavMenu(props) {
                 ) : (
                   <button
                     onClick={() => {
-                      auth.login(() => {});
+                      history.push("/login");
                     }}
                   >
                     Login

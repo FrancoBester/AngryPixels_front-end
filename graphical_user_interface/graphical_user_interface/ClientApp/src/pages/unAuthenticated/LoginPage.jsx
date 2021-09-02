@@ -1,37 +1,24 @@
 import React from "react";
-import API from "../../API";
+import { useState } from "react";
+import { useHistory } from "react-router";
+import auth from "../../auth";
 
 function LoginPage() {
+  const [UserName, setUserName] = useState("");
+  const [Password, setPassword] = useState("");
+  const history = useHistory();
+  function Login() {
+    auth.login({ username: UserName, password: Password }, () => {
+      history.push("/home");
+    });
+  }
   return (
     <div>
-      <label>
-        <p>Username</p>
-        <input type="text" />
-      </label>
-      <label>
-        <p>Password</p>
-        <input type="password" />
-      </label>
-      <div>
-        <button
-          onClick={() => {
-            API.APIPostAnon(
-              "https://localhost:44376/api/Authentication",
-              { Username: "Dave", PasswordHash: "123456789" },
-              (response) => {
-                alert(response.data);
-              },
-              (error) => {
-                alert(error);
-              },
-              () => {}
-            );
-          }}
-          type="submit"
-        >
-          Submit
-        </button>
-      </div>
+      <label>Username</label>
+      <input type="email" onChange={(e) => setUserName(e.target.value)} />
+      <label>Password</label>
+      <input type="password" onChange={(e) => setPassword(e.target.value)} />
+      <button onClick={() => Login()}>Login</button>
     </div>
   );
 }

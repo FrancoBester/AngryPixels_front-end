@@ -1,3 +1,5 @@
+import API from "./API";
+
 class Auth {
   constructor() {
     this.authenticated = false;
@@ -12,14 +14,28 @@ class Auth {
     this.onAuthenticationChanged = onAuthenticationChangedEvent;
   }
 
-  login(cb) {
-    this.authenticated = true;
-    this.onAuthenticationChanged.detail.value = this.isAuthenticated();
-    dispatchEvent(this.onAuthenticationChanged);
-    cb();
+  login(details, callback) {
+    //TODO: HASH THE PASSWORD HERE
+    const passwordHash = "";
+    API.APIPostAnon(
+      "https://localhost:44376/api/Authentication",
+      { Username: details.username, PasswordHash: details.password },
+      (response) => {
+        this.authenticated = true;
+        this.onAuthenticationChanged.detail.value = this.isAuthenticated();
+        dispatchEvent(this.onAuthenticationChanged);
+        localStorage.setItem("token", response.data.token);
+        callback();
+      },
+      (error) => {
+        alert(error);
+      },
+      () => {}
+    );
   }
 
   logout(cb) {
+    localStorage.clear();
     this.authenticated = false;
     this.onAuthenticationChanged.detail.value = this.isAuthenticated();
     dispatchEvent(this.onAuthenticationChanged);

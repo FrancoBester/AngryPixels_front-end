@@ -34,5 +34,23 @@ class API {
         onFinally();
       });
   }
+
+  APIGET(url, onSuccess, onFail, onFinally) {
+    axios
+      .get(url, {
+        headers: {
+          Authorization: localStorage.getItem("token"),
+        },
+      })
+      .then(function (response) {
+        onSuccess(response);
+      })
+      .catch(function (error) {
+        onFail(error);
+      })
+      .then(function () {
+        onFinally();
+      });
+  }
 }
 export default new API();

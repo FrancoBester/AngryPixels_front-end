@@ -21,10 +21,12 @@ class Auth {
       "https://localhost:44376/api/Authentication",
       { Username: details.username, PasswordHash: details.password },
       (response) => {
+        debugger;
         this.authenticated = true;
         this.onAuthenticationChanged.detail.value = this.isAuthenticated();
         dispatchEvent(this.onAuthenticationChanged);
         localStorage.setItem("token", response.data.token);
+        localStorage.setItem("roles", response.data.roles);
         callback();
       },
       (error) => {
@@ -44,6 +46,14 @@ class Auth {
 
   isAuthenticated() {
     return this.authenticated;
+  }
+
+  userIsOfType(type) {
+    const roles = localStorage.getItem("roles").split(",");
+    if (roles.includes(type)) {
+      return true;
+    }
+    return false;
   }
 }
 

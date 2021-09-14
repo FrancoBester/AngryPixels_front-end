@@ -1,26 +1,31 @@
-import React from "react";
-import { Route } from "react-router";
-import { Layout } from "./components/Layout";
-import { Home } from "./pages/Home";
-import { FetchData } from "./pages/FetchData";
-import { Counter } from "./pages/Counter";
-import { Switch } from "react-router";
-import { ProtectedRoute } from "./protectedRoute";
-import LandingPage from "./pages/unAuthenticated/LandingPage";
-import LoginPage from "./pages/unAuthenticated/LoginPage";
+import React from 'react';
+import Navbar from './components/Navbar';
+import './App.css';
+import Home from './components/pages/Home';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import About from './components/pages/About';
+import Contact from './components/pages/Contact';
+import SignUp from './components/pages/Signup';
 
-import "./custom.css";
+import reactDOM from "react-dom";
 
-export default function App() {
+
+function App() {
+
+
   return (
-    <Layout>
-      <Switch>
-        <Route exact path="/home" component={Home} />
-        <Route exact path="/" component={LandingPage} />
-        <Route exact path="/login" component={LoginPage} />
-        <ProtectedRoute path="/counter" component={Counter} />
-        <Route path="/fetch-data" component={FetchData} />
-      </Switch>
-    </Layout>
+    <>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route path='/' exact component={Home} />
+          <Route path='/About' exact component={About}/>
+          <Route path='/Contact' exact component={Contact}/>
+          <Route path='/Signup' component={SignUp} />
+        </Switch>
+      </Router>
+    </>
   );
 }
+
+export default App;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from "react";
 import { useHistory } from "react-router";
-import auth from "../../authentification.js";
+import auth from "../../signupAuth";
 import Footer from '../Footer';
 
 function Signup() {
@@ -13,7 +13,13 @@ function Signup() {
   const history = useHistory();
 
   function Register() {
-      auth.signup({ firstname: FirstName, lastname: LastName, email: Email, password: Password, confirmpassword: ConfirmPassword }, () => {
+      auth.signup({ 
+                    firstname: FirstName, 
+                    lastname: LastName, 
+                    email: Email, 
+                    password: Password, 
+                    confirmpassword: ConfirmPassword 
+                  }, () => {
         history.push("/home");
       });
 }
@@ -30,8 +36,6 @@ function Signup() {
       <label>ConfirmPassword</label>
       <input type="password" onChange={(e) => setConfirmPassword(e.target.value)} />
       <button onClick={() => Register()}>SignUp</button>
-
-      <Footer />
     </div>
 
 

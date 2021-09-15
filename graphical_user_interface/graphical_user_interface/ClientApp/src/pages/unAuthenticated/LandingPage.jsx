@@ -1,7 +1,17 @@
 import React from "react";
+import '../../App.css';
+import MainSection from '../../components/MainSection';
+import Footer from '../../components/Footer';
 
 function LandingPage() {
-  return <div>This is the landing page</div>;
+  return (
+    <>
+    <MainSection />
+
+    <Footer />
+  </>
+  );
+
 }
 
 export default LandingPage;

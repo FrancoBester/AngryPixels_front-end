@@ -5,7 +5,7 @@ function Client(){
     return(
     <div>
         <body>
-        <h1>Client Dashboard</h1>
+        <h1 className="dashboardHeading">Client Dashboard</h1>
 
             <div className="grid-container">
                 <button onClick="">New Application</button>

@@ -15,6 +15,7 @@ import About from "./components/pages/About";
 import Contact from "./components/pages/Contact";
 import Client from "./components/pages/Client";
 import Admin from "./components/pages/Admin";
+import Application from "./components/pages/Application";
 
 import "./custom.css";
 
@@ -31,6 +32,7 @@ export default function App() {
           <Route path="/Contact" exact component={Contact}/>
           <Route path="/Client" exact component={Client}/>
           <Route path ="/Admin" exact component={Admin}/>
+          <Route path = "/Application" exact component={Application}/>
           <ProtectedRoute path="/counter" component={Counter} />
           <Route path="/fetch-data" component={FetchData} />
         </Switch>

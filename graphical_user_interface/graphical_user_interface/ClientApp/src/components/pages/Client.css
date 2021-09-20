@@ -1,5 +1,6 @@
-h1{
+.dashboardHeading h1{
     color: black;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .grid-container{
@@ -16,8 +17,7 @@ h1{
     background-color: rgb(238, 238, 238);
     text-align: center;
     padding: 20px 0;
-    font-size: 30px;
-    
+    font-size: 30px;    
   }
 
   button{

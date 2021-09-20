@@ -32,47 +32,47 @@ function Application(){
     <div form-wrapper>
     <div className="form-container">
       <div class="title_container">
-        <h1>Create New Application</h1>
+        <h1>New Application</h1>
         <form action="action_page.php">
           <div className="row">
             <div class="col-25">
-              <label>First Name</label>
+              <label>First Name:</label>
             </div>
             <div className="col-75">
-              <input type="text" placeholder="First Name" required onChange={(e) => setFirstName(e.target.value)} />
+              <input type="text" placeholder="e.g. John" required onChange={(e) => setFirstName(e.target.value)} />
             </div>
           </div>
 
         <div className="row">
           <div class="col-25">
-            <label>Last Name</label>
+            <label>Last Name:</label>
           </div>
           <div className="col-75">
-            <input type="text" placeholder="Surname" required  onChange={(e) => setLastName(e.target.value)} />
+            <input type="text" placeholder="e.g. Snow" required  onChange={(e) => setLastName(e.target.value)} />
           </div>
         </div>
 
         <div className="row">
             <div class="col-25">
-              <label for="fname">Date of Birth</label>
+              <label for="fname">Date of Birth:</label>
             </div>
             <div className="col-75">
-              <input type="text" placeholder="DOB" required onChange={(e) => setDOB(e.target.value)} />
+              <input type="date" placeholder="" required onChange={(e) => setDOB(e.target.value)} />
             </div>
           </div>
 
           <div className="row">
             <div class="col-25">
-              <label >Age</label>
+              <label >Age:</label>
             </div>
             <div className="col-75">
-              <input type="text" placeholder="Age" required onChange={(e) => setAge(e.target.value)} />
+              <input type="text" placeholder="e.g. The Wall" required onChange={(e) => setAge(e.target.value)} />
             </div>
           </div>
 
           <div className="row">
             <div class="col-25">
-              <label >Address</label>
+              <label >Pysical Address:</label>
             </div>
             <div className="col-75">
               <input type="text" placeholder="Address" required onChange={(e) => setAddress(e.target.value)} />
@@ -81,61 +81,64 @@ function Application(){
 
           <div className="row">
             <div class="col-25">
-              <label>Language</label>
+              <label>Language:</label>
             </div>
             <div className="col-75">
-              <input type="text" placeholder="Language" required onChange={(e) => setLanguage(e.target.value)} />
+              <input type="text" placeholder="English, Afrikaans, Sotho, etc." required onChange={(e) => setLanguage(e.target.value)} />
             </div>
           </div>
 
         <div className="row">
           <div class="col-25">    
-            <label>Email</label>
+            <label>Email:</label>
           </div>
           <div className="col-75">
-            <input type="email" placeholder="Email" required  onChange={(e) => setEmail(e.target.value)} />
+            <input type="email" placeholder="e.g. johnsnow@gmail.com" required  onChange={(e) => setEmail(e.target.value)} />
           </div>
         </div>
 
         <div className="row">
             <div class="col-25">
-              <label for="fname">Cellphone</label>
+              <label>Cellphone:</label>
             </div>
             <div className="col-75">
-              <input type="text" placeholder="Cellphone" required onChange={(e) => setCellphone(e.target.value)} />
+              <input type="tel" placeholder="e.g. 083 123 4567" required onChange={(e) => setCellphone(e.target.value)} />
             </div>
           </div>
           
         <div className="row">
           <div class="col-25">   
-            <label>Do you currently have medical aid?</label>
+            <label>Do you currently have medical aid?:</label>
           </div>
           <div className="col-75">
-            <input type="text" placeholder="Please choose" required onChange={(e) => setCurrentMA(e.target.value)} />
+            <input type="radio" name="radAnswer" required onChange={(e) => setCurrentMA(e.target.value)} />
+            <label>Yes</label>
+            <input type="radio" name="radAnswer" required onChange={(e) => setCurrentMA(e.target.value)} />
+            <label>No</label>
           </div>
         </div>
             
         <div className="row">
           <div class="col-25">          
-            <label>Medical Aid Details</label>
+            <label>Medical Aid Details:</label>
           </div>
           <div className="col-75">
-            <input type="text" placeholder="..." required onChange={(e) => setMedAidDetails(e.target.value)} />
+            <input type="text" placeholder="e.g. Discovery Comprehensive Plan" required onChange={(e) => setMedAidDetails(e.target.value)} />
           </div>
         </div>
 
         <div className="row">
             <div class="col-25">
-              <label>Number of members on scheme</label>
+              <label>Number of members on scheme:</label>
             </div>
             <div className="col-75">
-              <input type="text" placeholder="..." required onChange={(e) => setNumMembers(e.target.value)} />
+              <input type="text" placeholder="e.g. 4" required onChange={(e) => setNumMembers(e.target.value)} />
             </div>
           </div>
 
           <div className="row">
             <div class="col-25">
-              <label>Pre-existing medical conditions</label>
+              <label>Pre-existing medical conditions:</label>
             </div>
             <div className="col-75">
               <input type="text" placeholder="Asthma, Heart Disease, Diabetes, etc." required onChange={(e) => setMedConditions(e.target.value)} />
@@ -144,7 +147,7 @@ function Application(){
 
           <div className="row">
             <div class="col-25">
-              <label >Chronic Medication</label>
+              <label >Chronic Medication:</label>
             </div>
             <div className="col-75">
               <input type="text" placeholder="Depramil, Vectoryl, Insulin, etc." required onChange={(e) => setChronicMeds(e.target.value)} />
@@ -153,7 +156,7 @@ function Application(){
 
           <div className="row">
             <div class="col-25">
-              <label >Special Needs</label>
+              <label >Special Needs:</label>
             </div>
             <div className="col-75">
               <input type="text" placeholder="Dentistry, Chiropracter, etc." required onChange={(e) => setSpecialNeeds(e.target.value)} />
@@ -161,7 +164,7 @@ function Application(){
           </div>
 
         <input className="buttonSub" type="submit" value="Apply" />
-        <button>Cancel</button>
+        <button className="btnCancel" onClick="window.location='./Client';return false;">Cancel</button>
         </form>
       </div>
       </div>

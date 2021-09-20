@@ -26,7 +26,7 @@ function About() {
                   </div>
     </div>
     </body>
-    
+
     </>
   );
 }

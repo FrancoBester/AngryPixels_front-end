@@ -13,6 +13,8 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Signup from "./components/pages/Signup";
 import About from "./components/pages/About";
 import Contact from "./components/pages/Contact";
+import Client from "./components/pages/Client";
+import Admin from "./components/pages/Admin";
 
 import "./custom.css";
 
@@ -27,6 +29,8 @@ export default function App() {
           <Route exact path="/Signup" component={Signup} />
           <Route path="/About" exact component={About}/>
           <Route path="/Contact" exact component={Contact}/>
+          <Route path="/Client" exact component={Client}/>
+          <Route path ="/Admin" exact component={Admin}/>
           <ProtectedRoute path="/counter" component={Counter} />
           <Route path="/fetch-data" component={FetchData} />
         </Switch>

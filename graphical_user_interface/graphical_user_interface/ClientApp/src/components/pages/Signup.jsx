@@ -79,7 +79,9 @@ function Signup() {
         </form>
       </div>
       </div>
+      
     </div>  
+    
   );
 }
 

@@ -17,7 +17,6 @@ function MainSection() {
         >
           Create Account
         </Button>
-
       </div>
     </div>
   );

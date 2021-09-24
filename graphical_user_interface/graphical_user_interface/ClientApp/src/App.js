@@ -8,6 +8,7 @@ import { Switch } from "react-router";
 import { ProtectedRoute } from "./protectedRoute";
 import LandingPage from "./pages/unAuthenticated/LandingPage";
 import LoginPage from "./pages/unAuthenticated/LoginPage";
+import clientFileUploadDocument from "./pages/client/clientFileUploadDocument";
 
 import "./custom.css";
 
@@ -20,6 +21,7 @@ export default function App() {
         <Route exact path="/login" component={LoginPage} />
         <ProtectedRoute path="/counter" component={Counter} />
         <Route path="/fetch-data" component={FetchData} />
+        <Route path="/client/uploadFile" component={clientFileUploadDocument} />
       </Switch>
     </Layout>
   );

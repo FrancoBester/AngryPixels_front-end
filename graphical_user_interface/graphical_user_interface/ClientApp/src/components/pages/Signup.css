@@ -110,3 +110,29 @@ input[type=text], select, textarea{
   color: #fff;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
+
+.btnCacnel {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: #EEEEEE;
+  height: 45px;
+  line-height: 35px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+  color: #334257;
+  font-size: 1.2em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  transition: all 0.30s ease-in-out;
+}
+
+.btnCacnel:hover{
+  background: #5b7583;
+  color: #fff;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}

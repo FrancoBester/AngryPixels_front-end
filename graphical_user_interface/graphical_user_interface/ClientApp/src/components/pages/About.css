@@ -1,5 +1,44 @@
+.grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50px 200px 100px;
+  grid-gap: 1em;
+  }
 
-img {
+  .aboutHeading{
+    font-family: 'Dosis', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 90px;    
+    position: relative;
+  }
+
+  header,
+  footer {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  }
+  
+  .grid > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  }
+
+  .aboutMT{
+    margin-top: 8px;
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+    text-align: justify;
+    font-size: 20px;
+    position: relative;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 450px;
+  }
+
+/*img {
     opacity: 100%;
     background-size: 150px;
     width: 100%;
@@ -7,21 +46,21 @@ img {
     border: 2px solid;
     object-fit: cover;
 
-  }
+  }*/
   
-  .container-about{
+  /*.container-about{
     /*height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;*/
-    position: relative;
+  /*  position: relative;
     text-align: center;
     color: #fff;
     
-  } 
-   .container-about h1 {
+  } */
+ /* .container-about h1 {
     font-family: 'Dosis', sans-serif;
    text-transform: uppercase;
    color: #fff;
@@ -29,9 +68,9 @@ img {
    font-size: 90px;
    margin-top: -1000px;
    position: relative;
-  }
+  }*/
  
-   .container-about p{
+ /*  .container-about p{
      margin-top: 8px;
      font-family: 'Montserrat', sans-serif;
       color: #fff;
@@ -40,16 +79,16 @@ img {
       position: relative;
       padding-left: 20px;
       padding-right: 20px;
-  }
+  }*/
   
-  .centerAbout{
+ /* .centerAbout{
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align-last: center; 
     }
-    
+    */
  /* div.responsiveAbout{
     padding: 20px;
   }

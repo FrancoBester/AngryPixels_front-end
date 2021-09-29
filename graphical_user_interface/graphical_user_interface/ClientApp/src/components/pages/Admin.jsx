@@ -8,12 +8,12 @@ function Admin(){
         <h1>Admin Dashboard</h1>
 
             <div className="grid-container">
-                <button onClick="">Create New User</button>
-                <button onClick="">View Client Info</button>
-                <button onClick="">View Applications</button>
-                <button onClick="">View Certificates</button>
-                <button onClick="">Upload Documentation</button>
-                <button onClick="">Logout</button>
+                <button className="btnAdmin">Create New User</button>
+                <button className="btnAdmin">View Client Info</button>
+                <button className="btnAdmin">View Applications</button>
+                <button className="btnAdmin">View Certificates</button>
+                <button className="btnAdmin">Upload Documentation</button>
+                <button className="btnAdmin">Logout</button>
             </div>
         </body>
     </div>

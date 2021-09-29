@@ -1,19 +1,44 @@
+.grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50px 200px 100px;
+  grid-gap: 1em;
+  }
+  
+  .contactUsHeader{
+    color: black;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 80px;
+  }
 
-h2{
+.contactUsHeader {
+grid-column-start: 1;
+grid-column-end: 3;
+}
+
+.grid > * {
+  background: lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+
+/*
+.contactUsHeader{
     text-align: center;
     color: #000;
     font-size: 80px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding-bottom: 20px;
-}
-
+}*/
+/*
 .rowContact{
     display: flex;
 }
 
 .column {
     flex: 50%;
-  }
+  }*/
 
   
 /** ===================================== **/

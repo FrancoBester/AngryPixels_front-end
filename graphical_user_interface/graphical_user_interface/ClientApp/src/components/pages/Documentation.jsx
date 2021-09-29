@@ -5,11 +5,11 @@ function Documentation(){
     return(
     <div form-wrapper>
         <div className="form-container">
-            <div class="title_container">                
+            <div className="title_container">                
                 <h1>Upload Documentation</h1>
-                <form action="action_page.php">
+                <form>
                     <div className="row">
-                        <div class="col-25">
+                        <div className="col-25">
                          <label>Certified Copy of ID:</label>
                         </div>
                     <div className="col-75">
@@ -18,7 +18,7 @@ function Documentation(){
                     </div>
 
                     <div className="row">
-                        <div class="col-25">
+                        <div className="col-25">
                          <label>Birth Certificate:</label>
                         </div>
                     <div className="col-75">
@@ -27,7 +27,7 @@ function Documentation(){
                     </div>
 
                     <div className="row">
-                        <div class="col-25">
+                        <div className="col-25">
                          <label>Passport (For non RSA citizens):</label>
                         </div>
                     <div className="col-75">
@@ -36,7 +36,7 @@ function Documentation(){
                     </div>
 
                     <div className="row">
-                        <div class="col-25">
+                        <div className="col-25">
                          <label>Medical Scripts:</label>
                         </div>
                     <div className="col-75">
@@ -45,7 +45,7 @@ function Documentation(){
                     </div>
 
                     <div className="row">
-                        <div class="col-25">
+                        <div className="col-25">
                          <label>Proof of Registration (Students):</label>
                         </div>
                     <div className="col-75">
@@ -54,7 +54,7 @@ function Documentation(){
                     </div>
                     
                     <div className="row">
-                        <div class="col-25">
+                        <div className="col-25">
                          <label>Relevant Medical Records:</label>
                         </div>
                     <div className="col-75">

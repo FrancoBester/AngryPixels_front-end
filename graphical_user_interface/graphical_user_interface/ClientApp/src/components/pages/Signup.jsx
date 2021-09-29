@@ -28,12 +28,12 @@ function Signup() {
   return (
   <div form-wrapper>
     <div className="form-container">
-      <div class="title_container">
+      <div className="title_container">
         <h1>Register</h1>
-        <form action="action_page.php">
+        <form>
           <div className="row">
-            <div class="col-25">
-              <label for="fname">First Name</label>
+            <div className="col-25">
+              <label for="fname">First Name:</label>
             </div>
             <div className="col-75">
               <input type="text" placeholder="First Name" required onChange={(e) => setFirstName(e.target.value)} />
@@ -41,8 +41,8 @@ function Signup() {
           </div>
 
         <div className="row">
-          <div class="col-25">
-            <label>Last Name</label>
+          <div className="col-25">
+            <label>Last Name:</label>
           </div>
           <div className="col-75">
             <input type="text" placeholder="Surname" required  onChange={(e) => setLastName(e.target.value)} />
@@ -50,8 +50,8 @@ function Signup() {
         </div>
 
         <div className="row">
-          <div class="col-25">    
-            <label>Email</label>
+          <div className="col-25">    
+            <label>Email:</label>
           </div>
           <div className="col-75">
             <input type="email" placeholder="Email" required  onChange={(e) => setEmail(e.target.value)} />
@@ -59,8 +59,8 @@ function Signup() {
         </div>
           
         <div className="row">
-          <div class="col-25">   
-            <label>Password</label>
+          <div className="col-25">   
+            <label>Password:</label>
           </div>
           <div className="col-75">
             <input type="password" placeholder="Password" required onChange={(e) => setPassword(e.target.value)} />
@@ -68,14 +68,15 @@ function Signup() {
         </div>
             
         <div className="row">
-          <div class="col-25">          
-            <label>Confirm Password</label>
+          <div className="col-25">          
+            <label>Confirm Password:</label>
           </div>
           <div className="col-75">
             <input type="password" placeholder="Re-enter Password" required onChange={(e) => setConfirmPassword(e.target.value)} />
           </div>
         </div>
         <input className="buttonSub" type="submit" value="Register" />
+        <button className="btnCancel" onClick="window.location='./Client';return false;">Cancel</button>
         </form>
       </div>
       </div>

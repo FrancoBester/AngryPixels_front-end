@@ -31,11 +31,11 @@ function Application(){
     return(
     <div form-wrapper>
     <div className="form-container">
-      <div class="title_container">
+      <div className="title_container">
         <h1>New Application</h1>
-        <form action="action_page.php">
+        <form>
           <div className="row">
-            <div class="col-25">
+            <div className="col-25">
               <label>First Name:</label>
             </div>
             <div className="col-75">
@@ -44,7 +44,7 @@ function Application(){
           </div>
 
         <div className="row">
-          <div class="col-25">
+          <div className="col-25">
             <label>Last Name:</label>
           </div>
           <div className="col-75">
@@ -53,7 +53,7 @@ function Application(){
         </div>
 
         <div className="row">
-            <div class="col-25">
+            <div className="col-25">
               <label for="fname">Date of Birth:</label>
             </div>
             <div className="col-75">
@@ -62,34 +62,34 @@ function Application(){
           </div>
 
           <div className="row">
-            <div class="col-25">
+            <div className="col-25">
               <label >Age:</label>
             </div>
             <div className="col-75">
-              <input type="text" placeholder="e.g. The Wall" required onChange={(e) => setAge(e.target.value)} />
+              <input type="text" placeholder="e.g. 24" required onChange={(e) => setAge(e.target.value)} />
             </div>
           </div>
 
           <div className="row">
-            <div class="col-25">
+            <div className="col-25">
               <label >Pysical Address:</label>
             </div>
             <div className="col-75">
-              <input type="text" placeholder="Address" required onChange={(e) => setAddress(e.target.value)} />
+              <input type="text" placeholder="e.g. 123 Empire Road, Johannesburg 2076" required onChange={(e) => setAddress(e.target.value)} />
             </div>
           </div>
 
           <div className="row">
-            <div class="col-25">
+            <div className="col-25">
               <label>Language:</label>
             </div>
             <div className="col-75">
-              <input type="text" placeholder="English, Afrikaans, Sotho, etc." required onChange={(e) => setLanguage(e.target.value)} />
+              <input type="text" placeholder="e.g. English, Afrikaans, Sotho, etc." required onChange={(e) => setLanguage(e.target.value)} />
             </div>
           </div>
 
         <div className="row">
-          <div class="col-25">    
+          <div className="col-25">    
             <label>Email:</label>
           </div>
           <div className="col-75">
@@ -98,7 +98,7 @@ function Application(){
         </div>
 
         <div className="row">
-            <div class="col-25">
+            <div className="col-25">
               <label>Cellphone:</label>
             </div>
             <div className="col-75">
@@ -141,25 +141,25 @@ function Application(){
               <label>Pre-existing medical conditions:</label>
             </div>
             <div className="col-75">
-              <input type="text" placeholder="Asthma, Heart Disease, Diabetes, etc." required onChange={(e) => setMedConditions(e.target.value)} />
+              <input type="text" placeholder="e.g. Asthma, Heart Disease, Diabetes, etc." required onChange={(e) => setMedConditions(e.target.value)} />
             </div>
           </div>
 
           <div className="row">
-            <div class="col-25">
+            <div className="col-25">
               <label >Chronic Medication:</label>
             </div>
             <div className="col-75">
-              <input type="text" placeholder="Depramil, Vectoryl, Insulin, etc." required onChange={(e) => setChronicMeds(e.target.value)} />
+              <input type="text" placeholder="e.g. Depramil, Vectoryl, Insulin, etc." required onChange={(e) => setChronicMeds(e.target.value)} />
             </div>
           </div>
 
           <div className="row">
-            <div class="col-25">
+            <div className="col-25">
               <label >Special Needs:</label>
             </div>
             <div className="col-75">
-              <input type="text" placeholder="Dentistry, Chiropracter, etc." required onChange={(e) => setSpecialNeeds(e.target.value)} />
+              <input type="text" placeholder="e.g. Dentistry, Chiropracter, etc." required onChange={(e) => setSpecialNeeds(e.target.value)} />
             </div>
           </div>
 

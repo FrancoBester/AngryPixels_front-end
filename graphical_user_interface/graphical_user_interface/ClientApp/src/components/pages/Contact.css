@@ -1,12 +1,12 @@
-.grid {
+.gridContact {
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 50px 200px 100px;
-  grid-gap: 1em;
+  grid-template-rows: 150px 500px;
+  grid-gap: 0.1em;
   }
   
   .contactUsHeader{
-    color: black;
+    color: #EEEEEE;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 80px;
   }
@@ -16,98 +16,20 @@ grid-column-start: 1;
 grid-column-end: 3;
 }
 
-.grid > * {
-  background: lightgray;
+.gridContact > * {
+  background: #334257;
   display: flex;
   align-items: center;
   justify-content: center;
   }
 
-/*
-.contactUsHeader{
-    text-align: center;
-    color: #000;
-    font-size: 80px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding-bottom: 20px;
-}*/
-/*
-.rowContact{
-    display: flex;
-}
-
-.column {
-    flex: 50%;
-  }*/
-
-  
-/** ===================================== **/
-/*              LEFT COLUMN*/
-/** ===================================== **/
- 
-  /*.input .contactInput{
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    resize: vertical;
-  }*/
-
-.contactInput{
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    resize: vertical;
-}
-
-  input[type=text], select, textarea{
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    resize: vertical;
-  }
-
-  .btnSend{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background: #EEEEEE;
-    height: 45px;
-    line-height: 35px;
-    width: 100%;
-    border: none;
-    border-radius: 8px;
-    outline: none;
-    cursor: pointer;
-    color: #334257;
-    font-size: 1.2em;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    -webkit-transition: all 0.30s ease-in-out;
-    -moz-transition: all 0.30s ease-in-out;
-    -ms-transition: all 0.30s ease-in-out;
-    transition: all 0.30s ease-in-out;
-  }
-
-  .btnSend{
-    background: #5b7583;
-    color: #fff;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-  }
-
-  /** ===================================== **/
-        /*RIGHT COLUMN*/
-    /** ===================================== **/
-
     #faIcon{
         padding: 7px 7px 7px 7px;
+        color: #EEEEEE;
     }
 
     #faIcon:hover{
-        color: #5b7583;
+        color: #548CA8;
     }
 
     .socialMediaBox{
@@ -130,4 +52,15 @@ grid-column-end: 3;
         font-size: 20px;
         text-align: center;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+
+    .leftSideAbout{
+      text-align: right;
+      color: #EEEEEE;
+    }
+
+    .rightSideAbout{
+      text-align: left;
+      color: #EEEEEE;
     }

@@ -17,6 +17,7 @@ import Client from "./components/pages/Client";
 import Admin from "./components/pages/Admin";
 import Application from "./components/pages/Application";
 import Documentation from "./components/pages/Documentation";
+import clientFileUploadDocument from "./pages/client/clientFileUploadDocument";
 
 import "./custom.css";
 
@@ -37,6 +38,7 @@ export default function App() {
           <Route path = "/Documentation" exact component={Documentation}/>
           <ProtectedRoute path="/counter" component={Counter} />
           <Route path="/fetch-data" component={FetchData} />
+	        <Route path="/client/uploadFile" component={clientFileUploadDocument} />
         </Switch>
       </Router>
     </Layout>

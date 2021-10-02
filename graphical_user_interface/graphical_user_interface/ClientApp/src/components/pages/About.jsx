@@ -6,10 +6,11 @@ import styled from "styled-components";
 function About() {
   return (
     
-    <div className="grid">
-      {/* <img src='/images/brandon-holmes-GofYo51GQ_4-unsplash.jpg'/> */}
-        <header className="aboutHeading">About Us</header>
-          <main className="aboutMT">
+    <div class="gridAbout">
+    <header className="AboutUsHeader">
+    About Us
+    </header>
+    <main className="mainAbout">
             MediTrust is an independent medical scheme advisory, specialising in various medical
             scheme options from some of the largest medical in South Africa. MediTrust and its
             consultants are accredited by the Council for Medical Schemes and registered as an
@@ -18,10 +19,11 @@ function About() {
             2011 by René Coetzee and has become a recognised and well respected name in the
             healthcare industry. At MediTrust we believe trust is the most important aspect in
             building a relationship with clients to ensure they enjoy the best service and advice available.
-          </main>
-          <aside className="aboutimage">
-            right hand side - will insert info or picture here
-          </aside>                        
+    </main>
+  
+    <aside>
+      <img src="images/national-cancer-institute-uVnRa6mOLOM-unsplash.jpg" alt="" />
+    </aside>                        
     </div>               
   );
 }

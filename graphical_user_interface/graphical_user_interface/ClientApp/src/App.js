@@ -24,23 +24,21 @@ import "./custom.css";
 export default function App() {
   return (
     <Layout>
-      <Router>
-        <Switch>
-          <Route exact path="/home" component={Home} />
-          <Route exact path="/" component={LandingPage} />
-          <Route exact path="/login" component={LoginPage} />
-          <Route exact path="/Signup" component={Signup} />
-          <Route path="/About" exact component={About}/>
-          <Route path="/Contact" exact component={Contact}/>
-          <Route path="/Client" exact component={Client}/>
-          <Route path ="/Admin" exact component={Admin}/>
-          <Route path = "/Application" exact component={Application}/>
-          <Route path = "/Documentation" exact component={Documentation}/>
-          <ProtectedRoute path="/counter" component={Counter} />
-          <Route path="/fetch-data" component={FetchData} />
-	        <Route path="/client/uploadFile" component={clientFileUploadDocument} />
-        </Switch>
-      </Router>
+      <Switch>
+        <Route exact path="/home" component={Home} />
+        <Route exact path="/" component={LandingPage} />
+        <Route exact path="/login" component={LoginPage} />
+        <Route exact path="/Signup" component={Signup} />
+        <Route path="/About" exact component={About} />
+        <Route path="/Contact" exact component={Contact} />
+        <Route path="/Client" exact component={Client} />
+        <Route path="/Admin" exact component={Admin} />
+        <Route path="/Application" exact component={Application} />
+        <Route path="/Documentation" exact component={Documentation} />
+        <ProtectedRoute path="/counter" component={Counter} />
+        <Route path="/fetch-data" component={FetchData} />
+        <Route path="/client/uploadFile" component={clientFileUploadDocument} />
+      </Switch>
     </Layout>
   );
 }

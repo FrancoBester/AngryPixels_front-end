@@ -18,7 +18,7 @@ class Auth {
     //TODO: HASH THE PASSWORD HERE
     const passwordHash = "";
     API.APIPostAnon(
-      "https://localhost:44376/api/Authentication",
+      "Authentication",
       { Username: details.username, PasswordHash: details.password },
       (response) => {
         debugger;
@@ -54,6 +54,21 @@ class Auth {
       return true;
     }
     return false;
+  }
+
+  signup(details, onSuccess, onFail) {
+    API.APIPostAnon(
+      "Users/Register",
+      { details },
+      (response) => {
+        onSuccess(response);
+      },
+      (error) => {
+        alert(error);
+        onFail();
+      },
+      () => {}
+    );
   }
 }
 

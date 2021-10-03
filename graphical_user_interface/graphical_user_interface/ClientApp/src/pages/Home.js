@@ -17,7 +17,7 @@ export class Home extends Component {
         <button
           onClick={() =>
             API.APIGET(
-              "https://localhost:44376/api/ConnectionTest/Authed",
+              "ConnectionTest/Authed",
               function () {},
               function () {},
               function () {}

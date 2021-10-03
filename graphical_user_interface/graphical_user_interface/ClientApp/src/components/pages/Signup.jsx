@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useHistory } from "react-router";
 import auth from "../../auth";
 import Footer from "../Footer";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import "./Signup.css";
 
 function Signup() {
@@ -10,7 +12,7 @@ function Signup() {
   const [LastName, setLastName] = useState("");
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
-  const [DateOfBirth, setDateOfBirth] = useState({});
+  const [DateOfBirth, setDateOfBirth] = useState(new Date());
   const [PhoneNumber, setPhoneNumber] = useState("");
   const [Gender, setGender] = useState("");
   const [ConfirmPassword, setConfirmPassword] = useState("");
@@ -18,13 +20,13 @@ function Signup() {
 
   function Register() {
     //Add validation here
-
+    debugger;
     auth.signup(
       {
         FirstName: FirstName,
         LastName: LastName,
         Email: Email,
-        Password: Password,
+        PasswordHash: Password,
         DateOfBirth: DateOfBirth,
         Number: PhoneNumber,
         Gender: Gender,
@@ -107,16 +109,10 @@ function Signup() {
                 <label>Date Of Birth</label>
               </div>
               <div className="col-75">
-                <input
-                  required
-                  type="date"
-                  id="dateOfBirth"
-                  name="DOB"
-                  value="1990-01-01"
-                  min="1930-01-01"
-                  max="2018-12-31"
-                  onChange={(e) => setDateOfBirth(e.target.value)}
-                ></input>
+                <DatePicker
+                  selected={DateOfBirth}
+                  onChange={(date) => setDateOfBirth(date.toDateString())}
+                />
               </div>
             </div>
 
@@ -175,7 +171,13 @@ function Signup() {
                 />
               </div>
             </div>
-            <input className="buttonSub" type="submit" value="Register" />
+            <button
+              onClick={() => {
+                Register();
+              }}
+            >
+              Register
+            </button>
             <button className="btnCancel" onClick={() => history.push("/")}>
               Cancel
             </button>

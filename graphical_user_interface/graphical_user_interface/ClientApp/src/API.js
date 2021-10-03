@@ -5,6 +5,12 @@ class API {
     axios.defaults.headers.post["Content-Type"] =
       "application/json;charset=utf-8";
     axios.defaults.headers.post["Access-Control-Allow-Origin"] = "*";
+
+    if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
+      axios.defaults.baseURL = "https://localhost:44376/api/";
+    } else {
+      // production code
+    }
   }
 
   APIGetAnon(url, onSuccess, onFail, onFinally) {

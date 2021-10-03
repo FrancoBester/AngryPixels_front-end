@@ -15,7 +15,7 @@ function FileUpload() {
       formData.append("file", file);
       formData.append("filename", file.name);
       API.APIPostAnon(
-        "https://localhost:44376/Document/UploadDoc",
+        "Document/UploadDoc",
         formData,
         () => {},
         () => {},

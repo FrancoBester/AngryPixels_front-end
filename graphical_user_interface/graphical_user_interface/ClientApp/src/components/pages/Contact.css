@@ -9,6 +9,7 @@
     color: #EEEEEE;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 80px;
+    font-family: 'Noto Sans Display', sans-serif;
   }
 
 .contactUsHeader {
@@ -23,44 +24,46 @@ grid-column-end: 3;
   justify-content: center;
   }
 
-    #faIcon{
-        padding: 7px 7px 7px 7px;
-        color: #EEEEEE;
-    }
-
-    #faIcon:hover{
-        color: #548CA8;
-    }
-
-    .socialMediaBox{
-        display: inline-block;
-        text-align: center;
-    }
-
-    .socialMediaBox a{
-        color: #000;
-        margin: auto;
-        text-align: center;
-        vertical-align: middle;
-    }
-
-    .faCenter div:last-child{
-        margin-right: 0;
-    }
-
-    h4{
-        font-size: 20px;
-        text-align: center;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-    }
-
-
     .leftSideAbout{
       text-align: right;
       color: #EEEEEE;
+      padding-right: 20px;
+    }
+
+    .leftSideAbout ul{
+      list-style: none;
+      text-align: right;
+      font-size: 18px;
+      
     }
 
     .rightSideAbout{
       text-align: left;
       color: #EEEEEE;
+      padding-left: 20px;
+      font-family: 'Noto Sans Display', sans-serif;
     }
+
+    .rightSideAbout ul{
+      text-align: left;
+      list-style: none;
+      font-size: 18px;
+    }
+
+    .fa-facebook-square, .fa-linkedin, .fa-twitter-square, .fa-instagram-square{
+      padding: 20px;
+      size: 1em;
+      font-size: 25px;
+    }
+
+    .fa-facebook-square, .fa-linkedin, .fa-twitter-square, .fa-instagram-square{
+      padding: 10px;
+      font-size: 25px;
+    }
+
+    .leftConatctH4{
+      font-size: 20px;
+      text-align: right;
+      font-family: 'Noto Sans Display', sans-serif;      
+  }
+

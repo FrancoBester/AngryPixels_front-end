@@ -1,38 +1,63 @@
 import React from "react";
 import "./Contact.css";
+import Footer from '../Footer';
 
 function Contact() {
   return (
+    <>
     <div className="gridContact">
       <header className="contactUsHeader">Contact Us</header>
       <main className="leftSideAbout">
-        <i className="fas fa-map-marker-alt fa-lg"></i>
-        <h4>Vanderbijylpark, South Africa</h4>
-        <br />
-        <i className="fas fa-phone-alt fa-lg"></i>
-        <h4>011 435 8893</h4>
-        <br />
-        <i className="fas fa-envelope fa-lg"></i>
-        <h4>meditrust@gmail.com</h4>
-        <br />
+        <ul>
+          <li>
+          <h4 className="leftConatctH4">Please dont hesitate to contact us for more information:</h4>
+          </li>
+          <li>            
+            <label for="locationIcon">Vanderbijylpark, South Africa</label>
+            <i className="fas fa-map-marker-alt fa-lg" id="locationIcon"></i>
+          </li>
+        <li>       
+        <label for="phoneIcon">011 435 8893</label>
+        <i className="fas fa-phone-alt fa-lg" id="phoneIcon"></i>
+        </li>
+        <li>
+            <label for="mobileIcon">083 651 6246</label>
+            <i class="fa fa-mobile" id="mobileIcon"></i>
+          </li>
+        <li> 
+        <label for="emailIcon">meditrust@gmail.com</label>
+        <i className="fas fa-envelope fa-lg" id="emailIcon"></i>
+        </li>
+        </ul>
       </main>
 
-      <aside className="rightSideAbout">
-        <h4>Follow us on Social Media:</h4>
-        <a href="https://www.facebook.com/">
-          <i className="fab fa-facebook-square fa-3x center" id="faIcon"></i>
-        </a>
-        <a href="">
-          <i className="fab fa-linkedin fa-3x center" id="faIcon"></i>
-        </a>
-        <a href="">
-          <i className="fab fa-twitter-square fa-3x center" id="faIcon"></i>
-        </a>
-        <a href="">
-          <i className="fab fa-instagram-square fa-3x center" id="faIcon"></i>
-        </a>
+      <aside className="rightSideAbout">        
+        <ul>
+          <li>
+          <h4>Follow us on Social Media:</h4>
+          </li>
+          <li>
+            <i className="fab fa-facebook-square" id="fbIcon"></i>
+            <label for="fbIcon" >Facebook</label>
+          </li>
+          <li>
+            <i className="fab fa-linkedin" id="linkedinIcon"></i>
+            <label for="linkedinIcon">LinkedIn</label>
+          </li>
+          <li>
+            <i className="fab fa-twitter-square" id="twitterIcon"></i>
+            <label for="twitterIcon">Twitter</label>
+          </li>          
+          <li>
+            <i className="fab fa-instagram-square" id="instaIcon"></i>
+            <label for="instaIcon">Instagram</label>
+          </li>
+        </ul>
       </aside>
+      
     </div>
+    <Footer/>
+    </>
   );
 }
 

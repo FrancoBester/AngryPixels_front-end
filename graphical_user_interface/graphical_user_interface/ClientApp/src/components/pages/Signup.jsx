@@ -130,7 +130,6 @@ function Signup() {
                   value="Male"
                 ></input>
                 <label htmlFor="Male">Male</label>
-                <br />
                 <input
                   required
                   onChange={(e) => setGender(e.target.value)}
@@ -171,7 +170,7 @@ function Signup() {
                 />
               </div>
             </div>
-            <button
+            <button className="btnSub"
               onClick={() => {
                 Register();
               }}

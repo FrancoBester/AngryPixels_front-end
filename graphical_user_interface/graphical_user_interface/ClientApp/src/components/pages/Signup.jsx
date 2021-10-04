@@ -26,27 +26,34 @@ function Signup() {
         FirstName: FirstName,
         LastName: LastName,
         Email: Email,
-        PasswordHash: Password,
+        Password: Password,
         DateOfBirth: DateOfBirth,
-        Number: PhoneNumber,
+        PhoneNumber: PhoneNumber,
         Gender: Gender,
       },
       // On success
       () => {
-        history.push("/home");
+        debugger;
+        history.push("/login");
       },
       // On fail
       (e) => {
+        debugger;
         alert(e);
       }
     );
+    history.push("/login");
   }
   return (
     <div>
       <div className="form-container">
         <div className="title_container">
           <h1>Register</h1>
-          <form>
+          <form
+            onSubmit={() => {
+              Register();
+            }}
+          >
             <div className="row">
               <div className="col-25">
                 <label htmlFor="fname">First Name:</label>
@@ -111,7 +118,7 @@ function Signup() {
               <div className="col-75">
                 <DatePicker
                   selected={DateOfBirth}
-                  onChange={(date) => setDateOfBirth(date.toDateString())}
+                  onChange={(date) => setDateOfBirth(date)}
                 />
               </div>
             </div>
@@ -170,16 +177,8 @@ function Signup() {
                 />
               </div>
             </div>
-            <button className="btnSub"
-              onClick={() => {
-                Register();
-              }}
-            >
-              Register
-            </button>
-            <button className="btnCancel" onClick={() => history.push("/")}>
-              Cancel
-            </button>
+            <input className="btnSub" type="submit" value="Register" />
+            <button className="btnCancel">Cancel</button>
           </form>
         </div>
       </div>

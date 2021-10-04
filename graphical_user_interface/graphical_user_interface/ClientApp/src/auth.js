@@ -59,10 +59,16 @@ class Auth {
   signup(details, onSuccess, onFail) {
     API.APIPostAnon(
       "Users/Register",
-      { details },
-      (response) => {
-        onSuccess(response);
+      {
+        FirstName: details.FirstName,
+        LastName: details.LastName,
+        Email: details.Email,
+        DateOfBirth: details.DateOfBirth,
+        CellPhoneNumber: details.PhoneNumber,
+        Gender: details.Gender,
+        Password: details.Password,
       },
+      onSuccess,
       (error) => {
         alert(error);
         onFail();

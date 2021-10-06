@@ -19,7 +19,7 @@ class Auth {
     const passwordHash = "";
     API.APIPostAnon(
       "Authentication",
-      { Username: details.username, PasswordHash: details.password },
+      { Email: details.Email, PasswordHash: details.password },
       (response) => {
         debugger;
         this.authenticated = true;

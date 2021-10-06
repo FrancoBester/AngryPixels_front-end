@@ -67,12 +67,14 @@ class Auth {
         CellPhoneNumber: details.PhoneNumber,
         Gender: details.Gender,
         Password: details.Password,
+        Address: {
+          City: details.address.city,
+          Street: details.address.street,
+          House: details.address.HouseNumber,
+        },
       },
-      onSuccess,
-      (error) => {
-        alert(error);
-        onFail();
-      },
+      () => {},
+      () => {},
       () => {}
     );
   }

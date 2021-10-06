@@ -16,6 +16,9 @@ function Signup() {
   const [PhoneNumber, setPhoneNumber] = useState("");
   const [Gender, setGender] = useState("");
   const [ConfirmPassword, setConfirmPassword] = useState("");
+  const [City, setCity] = useState("");
+  const [Street, setStreet] = useState("");
+  const [HouseNumber, setHouseNumber] = useState(0);
   const history = useHistory();
 
   function Register() {
@@ -30,6 +33,11 @@ function Signup() {
         DateOfBirth: DateOfBirth,
         PhoneNumber: PhoneNumber,
         Gender: Gender,
+        Address: {
+          City,
+          Street,
+          HouseNumber,
+        },
       },
       // On success
       () => {
@@ -147,6 +155,48 @@ function Signup() {
                 ></input>
                 <label htmlFor="Female">Female</label>
                 <br />
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-25">
+                <label>City:</label>
+              </div>
+              <div className="col-75">
+                <input
+                  type="text"
+                  placeholder="City"
+                  required
+                  onChange={(e) => setCity(e.target.value)}
+                />
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-25">
+                <label>Street Address:</label>
+              </div>
+              <div className="col-75">
+                <input
+                  type="text"
+                  placeholder="Street"
+                  required
+                  onChange={(e) => setStreet(e.target.value)}
+                />
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-25">
+                <label>Address number:</label>
+              </div>
+              <div className="col-75">
+                <input
+                  type="number"
+                  placeholder="Number"
+                  required
+                  onChange={(e) => setHouseNumber(e.target.value)}
+                />
               </div>
             </div>
 

@@ -24,32 +24,20 @@ function Signup() {
   function Register() {
     //Add validation here
     debugger;
-    auth.signup(
-      {
-        FirstName: FirstName,
-        LastName: LastName,
-        Email: Email,
-        Password: Password,
-        DateOfBirth: DateOfBirth,
-        PhoneNumber: PhoneNumber,
-        Gender: Gender,
-        Address: {
-          City,
-          Street,
-          HouseNumber,
-        },
+    auth.signup({
+      FirstName: FirstName,
+      LastName: LastName,
+      Email: Email,
+      Password: Password,
+      DateOfBirth: DateOfBirth,
+      PhoneNumber: PhoneNumber,
+      Gender: Gender,
+      Address: {
+        City,
+        Street,
+        HouseNumber,
       },
-      // On success
-      () => {
-        debugger;
-        history.push("/login");
-      },
-      // On fail
-      (e) => {
-        debugger;
-        alert(e);
-      }
-    );
+    });
     history.push("/login");
   }
   return (
@@ -137,20 +125,14 @@ function Signup() {
               </div>
               <div className="col-75">
                 <input
-                  required
                   onChange={(e) => setGender(e.target.value)}
                   type="radio"
-                  id="Male"
-                  name="Gender"
                   value="Male"
                 ></input>
                 <label htmlFor="Male">Male</label>
                 <input
-                  required
                   onChange={(e) => setGender(e.target.value)}
                   type="radio"
-                  id="Female"
-                  name="Gender"
                   value="Female"
                 ></input>
                 <label htmlFor="Female">Female</label>

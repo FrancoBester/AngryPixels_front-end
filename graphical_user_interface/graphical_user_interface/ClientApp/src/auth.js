@@ -57,6 +57,7 @@ class Auth {
   }
 
   signup(details, onSuccess, onFail) {
+    debugger;
     API.APIPostAnon(
       "Users/Register",
       {
@@ -68,9 +69,9 @@ class Auth {
         Gender: details.Gender,
         Password: details.Password,
         Address: {
-          City: details.address.city,
-          Street: details.address.street,
-          House: details.address.HouseNumber,
+          City: details.Address.City,
+          Street: details.Address.Street,
+          House: details.Address.HouseNumber,
         },
       },
       () => {},

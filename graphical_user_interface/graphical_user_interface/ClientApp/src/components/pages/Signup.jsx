@@ -23,7 +23,6 @@ function Signup() {
 
   function Register() {
     //Add validation here
-    debugger;
     auth.signup({
       FirstName: FirstName,
       LastName: LastName,

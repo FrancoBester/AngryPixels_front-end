@@ -21,7 +21,6 @@ class Auth {
       "Authentication",
       { Email: details.Email, PasswordHash: details.password },
       (response) => {
-        debugger;
         this.authenticated = true;
         this.onAuthenticationChanged.detail.value = this.isAuthenticated();
         dispatchEvent(this.onAuthenticationChanged);
@@ -59,7 +58,6 @@ class Auth {
   }
 
   signup(details, onSuccess, onFail) {
-    debugger;
     API.APIPostAnon(
       "Users/Register",
       {

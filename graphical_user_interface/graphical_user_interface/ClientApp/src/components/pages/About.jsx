@@ -3,6 +3,7 @@ import "./About.css";
 import styled from "styled-components";
 
 function About() {
+  // console.log("Äbout")
   return (
     <div className="gridAbout">
       <header className="AboutUsHeader">About Us</header>

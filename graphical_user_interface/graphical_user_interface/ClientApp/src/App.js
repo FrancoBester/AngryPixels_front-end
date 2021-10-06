@@ -18,6 +18,7 @@ import Admin from "./components/pages/Admin";
 import Application from "./components/pages/Application";
 import Documentation from "./components/pages/Documentation";
 import clientFileUploadDocument from "./pages/client/clientFileUploadDocument";
+import UserDetailsAdmin from "./components/pages/UserDetailsAdmin"
 
 import "./custom.css";
 
@@ -38,6 +39,7 @@ export default function App() {
         <ProtectedRoute path="/counter" component={Counter} />
         <Route path="/fetch-data" component={FetchData} />
         <Route path="/client/uploadFile" component={clientFileUploadDocument} />
+        <Route path="/UserDetailsAdmin" component={UserDetailsAdmin}/>
       </Switch>
     </Layout>
   );

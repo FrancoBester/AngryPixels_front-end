@@ -15,19 +15,18 @@ class Auth {
   }
 
   login(details, callback) {
-    //TODO: HASH THE PASSWORD HERE
-    const passwordHash = "";
     API.APIPostAnon(
       "Authentication",
       { Email: details.Email, PasswordHash: details.password },
       (response) => {
+        debugger;
         this.authenticated = true;
         this.onAuthenticationChanged.detail.value = this.isAuthenticated();
         dispatchEvent(this.onAuthenticationChanged);
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("roles", response.data.roles);
-        localStorage.setItem("id", response.data.email);
-        localStorage.setItem("email", response.data.id);
+        localStorage.setItem("id", response.data.id);
+        localStorage.setItem("email", response.data.email);
         callback();
       },
       (error) => {

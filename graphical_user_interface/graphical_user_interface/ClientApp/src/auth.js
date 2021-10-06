@@ -27,6 +27,8 @@ class Auth {
         dispatchEvent(this.onAuthenticationChanged);
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("roles", response.data.roles);
+        localStorage.setItem("id", response.data.email);
+        localStorage.setItem("email", response.data.id);
         callback();
       },
       (error) => {

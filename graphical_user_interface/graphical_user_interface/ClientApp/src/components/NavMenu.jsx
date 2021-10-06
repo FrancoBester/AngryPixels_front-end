@@ -66,6 +66,11 @@ function NavMenu(props) {
               {authenticated ? (
                 <>
                   <NavItem>
+                    <NavLink tag={Link} className="text-dark" to="/myProfile">
+                      My Profile
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
                     <NavLink
                       onClick={() => {
                         auth.logout(() => {});
@@ -81,14 +86,7 @@ function NavMenu(props) {
               ) : (
                 <>
                   <NavItem>
-                    <NavLink
-                      onClick={() => {
-                        auth.logout(() => {});
-                      }}
-                      tag={Link}
-                      className="text-dark"
-                      to="/login"
-                    >
+                    <NavLink tag={Link} className="text-dark" to="/login">
                       Login
                     </NavLink>
                   </NavItem>

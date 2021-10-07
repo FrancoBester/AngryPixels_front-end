@@ -23,15 +23,18 @@ function ProfilePage() {
       API.APIPostAnon(
         "Document/UploadDocForUser",
         formData,
-        () => {},
+        () => {
+          setHasMedicalCertificate(true);
+        },
         () => {},
         () => {}
       );
     }
   }
 
-  function HandleFiles() {
-    if (profile.files.any((x) => x.FileTypeId === 1)) {
+  function HandleFiles(_profile) {
+    var check = _profile.files.some((x) => x.fileTypeId === 1);
+    if (check) {
       setHasMedicalCertificate(true);
     }
   }
@@ -41,6 +44,7 @@ function ProfilePage() {
     var onSuccess = (e) => {
       debugger;
       setProfile(e.data);
+      HandleFiles(e.data);
       setHasLoaded(true);
     };
     API.APIGET(
@@ -50,11 +54,11 @@ function ProfilePage() {
       () => {}
     );
     return () => {};
-  }, []);
+  }, [hasMedicalCertificate]);
   return (
     <>
       <div>Hi there.</div>
-      {hasLoaded && (
+      {hasLoaded ? (
         <>
           <div>
             <b>Name:</b>
@@ -84,9 +88,19 @@ function ProfilePage() {
               </div>
             </>
           ) : (
-            <>Hello World</>
+            <>
+              <button
+                onClick={() => {
+                  window.open("https://www.w3schools.com", "_blank");
+                }}
+              >
+                View Document
+              </button>
+            </>
           )}
         </>
+      ) : (
+        <>Hello worlds</>
       )}
     </>
   );

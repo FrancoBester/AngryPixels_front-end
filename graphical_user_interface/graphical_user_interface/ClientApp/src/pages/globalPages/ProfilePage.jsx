@@ -4,6 +4,37 @@ import API from "../../API";
 function ProfilePage() {
   const [profile, setProfile] = useState({});
   const [hasLoaded, setHasLoaded] = useState(false);
+  const [hasMedicalCertificate, setHasMedicalCertificate] = useState(false);
+  const [hasPassportDocument, setHasPassportDocument] = useState(false);
+  const [hasBirthCertificate, setHasBirthCertificate] = useState(false);
+
+  const [medicalCertificate, setMedicalCertificate] = useState();
+
+  function UploadMedicalCertificateFileHandeler(e) {
+    setMedicalCertificate(e.target.files[0]);
+  }
+  function UploadMedicalCertificate() {
+    if (medicalCertificate) {
+      var formData = new FormData();
+      formData.append("file", medicalCertificate);
+      formData.append("filename", medicalCertificate.name);
+      formData.append("UserId", localStorage.getItem("id"));
+      formData.append("DocumentType", 1);
+      API.APIPostAnon(
+        "Document/UploadDocForUser",
+        formData,
+        () => {},
+        () => {},
+        () => {}
+      );
+    }
+  }
+
+  function HandleFiles() {
+    if (profile.files.any((x) => x.FileTypeId === 1)) {
+      setHasMedicalCertificate(true);
+    }
+  }
 
   useEffect(() => {
     var id = parseInt(localStorage.getItem("id"));
@@ -22,7 +53,6 @@ function ProfilePage() {
   }, []);
   return (
     <>
-      {localStorage.getItem("email")}
       <div>Hi there.</div>
       {hasLoaded && (
         <>
@@ -38,6 +68,24 @@ function ProfilePage() {
             <b>Email:</b>
             {profile.user.user_Email}
           </div>
+          {profile.files.map((x) => {
+            return x.File_Name;
+          })}
+          {!hasMedicalCertificate ? (
+            <>
+              <div>
+                <input
+                  onChange={UploadMedicalCertificateFileHandeler}
+                  type="file"
+                ></input>
+                <button onClick={UploadMedicalCertificate}>
+                  Submit document
+                </button>
+              </div>
+            </>
+          ) : (
+            <>Hello World</>
+          )}
         </>
       )}
     </>

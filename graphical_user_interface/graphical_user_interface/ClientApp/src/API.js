@@ -61,11 +61,10 @@ class API {
 
   APIPOST(url, object, onSuccess, onFail, onFinally) {
     axios
-      .post(url, {
+      .post(url, object, {
         headers: {
           Authorization: localStorage.getItem("token"),
         },
-        body: object,
       })
       .then(function (response) {
         onSuccess(response);

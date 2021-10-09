@@ -5,6 +5,10 @@ import styled from "styled-components";
 
 function App(){
 
+  function test(){
+    console.log('print')
+  }
+
   function load_Data(url) {
     var body = document.body,
           tbl = document.createElement('table')
@@ -21,7 +25,7 @@ function App(){
         let count = 1
         for(var item in data){
           var details = data[item]
-          
+          // console.log(details)
           if(count == 1){
             var tr = tbl.insertRow();
             for(var heading in table_headings){
@@ -29,26 +33,35 @@ function App(){
               td.appendChild(document.createTextNode(table_headings[heading]));
               td.style.border = '1px solid black';
               count = 2
-              // console.log(details[info])
+              // console.log('test')
             }
           }
-          var id = details['userId']
+          // var id = details['userId']
           // console.log(id)
           var tr = tbl.insertRow();
-          tr.id = id
+          // tr.id = id
+          // 
           var td = tr.insertCell();
           td.appendChild(document.createTextNode(details['userId'])) 
+          // 
           var td = tr.insertCell();
           td.appendChild(document.createTextNode(details['firstName'])) 
+          
           var td = tr.insertCell();  
           td.appendChild(document.createTextNode(details['lastName'])) 
           var td = tr.insertCell();
-          td.appendChild(document.createTextNode(details['policies'])) 
+          td.appendChild(document.createTextNode(details['policyName'])) 
           var td = tr.insertCell();
-          td.appendChild(document.createTextNode(details['roles'])) 
+          td.appendChild(document.createTextNode(details['roleName'])) 
           var td = tr.insertCell();
-          td.appendChild(document.createTextNode('Expand')) 
-  
+          // td.appendChild(document.createTextNode('Expand')) 
+
+          var link = document.createElement('a')
+          var link_text = document.createTextNode('Expand')
+          link.appendChild(link_text)
+          // link.href = "https://localhost:44376/api/Users/GetUserDetails/"+details['userId'];
+          link.href = ""
+          td.appendChild(link)
           // var input = document.createElement('input')
           // // input.type = 'text'
           // input.value = details['userId']
@@ -72,16 +85,16 @@ function App(){
   function searchClick(){
     document.body.removeChild(document.getElementById('user_info_table'))
     var search_value = document.getElementById("userSearch").value;
-    load_Data('https://localhost:44376/Users/SearchLoadPageData?search='+search_value);
+    load_Data('https://localhost:44376/api/Users/SearchLoadPageData?search='+search_value);
   }
 
   function clearCLick(){
     document.body.removeChild(document.getElementById('user_info_table'))
     document.getElementById('userSearch').value = '';
-    load_Data('https://localhost:44376/Users/GetAdminLoadPageData');
+    load_Data('https://localhost:44376/api/Users/GetAdminLoadPageData');
   }
 
-  load_Data('https://localhost:44376/Users/GetAdminLoadPageData');
+  load_Data('https://localhost:44376/api/Users/GetAdminLoadPageData');
 
   return (
     <div >
@@ -93,7 +106,6 @@ function App(){
         <button id="btnSearch" onClick={searchClick}>Search</button>
         <button id="btnClear" onClick={clearCLick}>Clear</button>
       </main>
-      <script src="UserDetailsAdmin.js"></script>
     </div>
   );
 }

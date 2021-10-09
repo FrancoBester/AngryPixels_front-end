@@ -11,17 +11,17 @@ import LoginPage from "./pages/unAuthenticated/LoginPage";
 import { BrowserRouter as Router } from "react-router-dom";
 
 import Signup from "./components/pages/Signup";
-import About from "./components/pages/About";
-import Contact from "./components/pages/Contact";
+import About from "./pages/globalPages/About";
+import Contact from "./pages/globalPages/Contact";
 import Client from "./components/pages/Client";
 import Admin from "./components/pages/Admin";
 import Application from "./components/pages/Application";
 import Documentation from "./components/pages/Documentation";
 import clientFileUploadDocument from "./pages/client/clientFileUploadDocument";
 import UserDetailsAdmin from "./components/pages/UserDetailsAdmin";
-
+import editProfileClient from "./pages/client/editProfileClient";
+import UserPolicy from "./components/pages/UserPolicy";
 import ProfilePage from "./pages/globalPages/ProfilePage";
-
 import "./custom.css";
 
 export default function App() {
@@ -43,6 +43,8 @@ export default function App() {
         <Route path="/fetch-data" component={FetchData} />
         <Route path="/client/uploadFile" component={clientFileUploadDocument} />
         <Route path="/UserDetailsAdmin" component={UserDetailsAdmin} />
+        <Route path="/editProfileClient" component={editProfileClient}/>
+        <Route path="/UserPolicy" component={UserPolicy}/>
       </Switch>
     </Layout>
   );

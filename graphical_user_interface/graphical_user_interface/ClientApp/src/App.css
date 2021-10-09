@@ -43,3 +43,11 @@
     font-size: 100px;
   }
   
+  .EditClientProf label{
+    color: black;
+  }
+  .EditClientProf header{
+    color: black;
+    text-align: center;
+    font-size: 50px;
+  }

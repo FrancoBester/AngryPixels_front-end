@@ -1,7 +1,23 @@
 import React, { useState, useEffect } from "react";
 import API from "../../API";
 
+
+function test(){
+  return (
+    <div >
+      <header >User Information</header>
+      <main>
+     
+        <h2>Search</h2>
+        {/* <input id="userSearch" type="text" onChange={handleChange}></input>
+        <button id="btnSearch" onClick={searchClick}>Search</button>
+        <button id="btnClear" onClick={clearCLick}>Clear</button> */}
+      </main>
+    </div>
+  );
+}
 function ProfilePage() {
+  console.log("test")
   const [profile, setProfile] = useState({});
   const [hasLoaded, setHasLoaded] = useState(false);
   const [files, setFiles] = useState([]);
@@ -139,4 +155,5 @@ function ProfilePage() {
   );
 }
 
-export default ProfilePage;
+// export default ProfilePage;
+export default test();

@@ -4,9 +4,9 @@ import API from "../../API";
 function ProfilePage() {
   const [profile, setProfile] = useState({});
   const [hasLoaded, setHasLoaded] = useState(false);
-  const [hasMedicalCertificate, setHasMedicalCertificate] = useState(false);
-  const [hasPassportDocument, setHasPassportDocument] = useState(false);
-  const [hasBirthCertificate, setHasBirthCertificate] = useState(false);
+  const [files, setFiles] = useState([]);
+
+  const [updated, setUpdated] = useState(1); //To help force rerenders
 
   const [medicalCertificate, setMedicalCertificate] = useState();
 
@@ -24,27 +24,48 @@ function ProfilePage() {
         "Document/UploadDocForUser",
         formData,
         () => {
-          setHasMedicalCertificate(true);
+          alert("FileUploaded");
+          setUpdated(!updated);
         },
-        () => {},
+        () => {
+          alert("FileUploadedError");
+          setUpdated(!updated);
+        },
         () => {}
       );
     }
   }
 
-  function HandleFiles(_profile) {
-    var check = _profile.files.some((x) => x.fileTypeId === 1);
-    if (check) {
-      setHasMedicalCertificate(true);
-    }
+  function HandleProfile(e) {
+    setProfile(e);
+    setFiles(e.files);
+  }
+
+  function DeleteDocForUser(docId) {
+    API.APIGET(
+      "Document/DeleteDocForUser/" + docId,
+      () => {
+        //setUpdated(!updated);
+      },
+      () => {},
+      () => {
+        //setUpdated(!updated);
+      }
+    );
+    setUpdated(!updated);
+  }
+
+  function GetMedicalDoc() {
+    return files.filter((x) => {
+      return x.fileTypeId === 1;
+    })[0];
   }
 
   useEffect(() => {
     var id = parseInt(localStorage.getItem("id"));
     var onSuccess = (e) => {
-      debugger;
-      setProfile(e.data);
-      HandleFiles(e.data);
+      HandleProfile(e.data);
+
       setHasLoaded(true);
     };
     API.APIGET(
@@ -54,7 +75,8 @@ function ProfilePage() {
       () => {}
     );
     return () => {};
-  }, [hasMedicalCertificate]);
+  }, [updated]);
+
   return (
     <>
       <div>Hi there.</div>
@@ -72,10 +94,10 @@ function ProfilePage() {
             <b>Email:</b>
             {profile.user.user_Email}
           </div>
-          {profile.files.map((x) => {
-            return x.File_Name;
+          {files.map((x) => {
+            return x.fileName;
           })}
-          {!hasMedicalCertificate ? (
+          {!files.some((x) => x.fileTypeId === 1) ? (
             <>
               <div>
                 <input
@@ -91,10 +113,21 @@ function ProfilePage() {
             <>
               <button
                 onClick={() => {
-                  window.open("https://www.w3schools.com", "_blank");
+                  debugger;
+                  var medicalFile = GetMedicalDoc();
+                  window.open(medicalFile.fileUrl, "_blank");
                 }}
               >
-                View Document
+                View Medical Document
+              </button>
+              <button
+                onClick={() => {
+                  debugger;
+                  var medicalFile = GetMedicalDoc();
+                  DeleteDocForUser(medicalFile.fileId);
+                }}
+              >
+                Delete Document
               </button>
             </>
           )}

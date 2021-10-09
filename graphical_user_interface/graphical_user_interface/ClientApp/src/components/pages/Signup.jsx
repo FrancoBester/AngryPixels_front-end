@@ -234,7 +234,14 @@ function Signup() {
               </div>
             </div>
             <input className="btnSub" type="submit" value="Register" />
-            <button className="btnCancel">Cancel</button>
+            <button
+              className="btnCancel"
+              onClick={() => {
+                history.push("/");
+              }}
+            >
+              Cancel
+            </button>
           </form>
         </div>
       </div>

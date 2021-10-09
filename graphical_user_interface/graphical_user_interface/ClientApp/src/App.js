@@ -24,6 +24,8 @@ import UserPolicy from "./components/pages/UserPolicy";
 import ProfilePage from "./pages/globalPages/ProfilePage";
 import "./custom.css";
 
+import Test from "./pages/Test";
+
 export default function App() {
   return (
     <Layout>
@@ -45,6 +47,7 @@ export default function App() {
         <Route path="/UserDetailsAdmin" component={UserDetailsAdmin} />
         <Route path="/editProfileClient" component={editProfileClient} />
         <Route path="/UserPolicy" component={UserPolicy} />
+        <Route path="/Test" component={Test} />
       </Switch>
     </Layout>
   );

@@ -20,9 +20,8 @@ import Documentation from "./components/pages/Documentation";
 import clientFileUploadDocument from "./pages/client/clientFileUploadDocument";
 import UserDetailsAdmin from "./components/pages/UserDetailsAdmin";
 import editProfileClient from "./pages/client/editProfileClient";
-
+import UserPolicy from "./components/pages/UserPolicy";
 import ProfilePage from "./pages/globalPages/ProfilePage";
-
 import "./custom.css";
 
 export default function App() {
@@ -45,6 +44,7 @@ export default function App() {
         <Route path="/client/uploadFile" component={clientFileUploadDocument} />
         <Route path="/UserDetailsAdmin" component={UserDetailsAdmin} />
         <Route path="/editProfileClient" component={editProfileClient}/>
+        <Route path="/UserPolicy" component={UserPolicy}/>
       </Switch>
     </Layout>
   );

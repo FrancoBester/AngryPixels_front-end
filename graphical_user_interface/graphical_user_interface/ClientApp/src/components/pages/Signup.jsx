@@ -20,23 +20,67 @@ function Signup() {
   const [Street, setStreet] = useState("");
   const [HouseNumber, setHouseNumber] = useState(0);
   const history = useHistory();
+  const [CountryId, setCountryId] = useState("");
 
   function Register() {
     //Add validation here
-    auth.signup({
+    const userObj ={
       FirstName: FirstName,
       LastName: LastName,
       Email: Email,
       Password: Password,
       DateOfBirth: DateOfBirth,
-      PhoneNumber: PhoneNumber,
+      CellPhoneNumber: PhoneNumber,
       Gender: Gender,
+      IDnumber: CountryId,
       Address: {
         City,
         Street,
         HouseNumber,
       },
+    }
+
+    const requestINfo ={
+      method: 'POST'
+    };
+    fetch('https://localhost:44376/api/Users/Register',{
+      method: "POST",
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        FirstName: FirstName,
+        LastName: LastName,
+        Email: Email,
+        Password: Password,
+        DateOfBirth: DateOfBirth,
+        CellPhoneNumber: PhoneNumber,
+        Gender: Gender,
+        IDnumber: CountryId,
+        Address: {
+          City,
+          Street,
+        },
+      })
     });
+      
+    
+    console.log(userObj);
+    // auth.signup({
+    //   FirstName: FirstName,
+    //   LastName: LastName,
+    //   Email: Email,
+    //   Password: Password,
+    //   DateOfBirth: DateOfBirth,
+    //   PhoneNumber: PhoneNumber,
+    //   Gender: Gender,
+    //   Address: {
+    //     City,
+    //     Street,
+    //     HouseNumber,
+    //   },
+    // });
     history.push("/login");
   }
   return (
@@ -114,6 +158,20 @@ function Signup() {
                 <DatePicker
                   selected={DateOfBirth}
                   onChange={(date) => setDateOfBirth(date)}
+                />
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-25">
+                <label htmlFor="id">Id number:</label>
+              </div>
+              <div className="col-75">
+                <input
+                  type="text"
+                  placeholder="0000000000000"
+                  required
+                  onChange={(e) => setCountryId(e.target.value)}
                 />
               </div>
             </div>

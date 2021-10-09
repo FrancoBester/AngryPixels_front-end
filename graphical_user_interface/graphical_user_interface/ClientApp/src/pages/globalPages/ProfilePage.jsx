@@ -73,7 +73,9 @@ function ProfilePage() {
       `Users/GetProfileInformation/` + id,
       onSuccess,
       () => {},
-      () => {}
+      () => {
+        alert("Onfinally");
+      }
     );
     return () => {};
   }, [updated]);

@@ -6,6 +6,7 @@ import Footer from "../Footer";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./Signup.css";
+import API from "../../API";
 
 function Signup() {
   const [FirstName, setFirstName] = useState("");
@@ -24,7 +25,7 @@ function Signup() {
 
   function Register() {
     //Add validation here
-    const userObj ={
+    const userObj = {
       FirstName: FirstName,
       LastName: LastName,
       Email: Email,
@@ -38,49 +39,15 @@ function Signup() {
         Street,
         HouseNumber,
       },
-    }
-
-    const requestINfo ={
-      method: 'POST'
     };
-    fetch('https://localhost:44376/api/Users/Register',{
-      method: "POST",
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        FirstName: FirstName,
-        LastName: LastName,
-        Email: Email,
-        Password: Password,
-        DateOfBirth: DateOfBirth,
-        CellPhoneNumber: PhoneNumber,
-        Gender: Gender,
-        IDnumber: CountryId,
-        Address: {
-          City,
-          Street,
-        },
-      })
-    });
-      
-    
-    console.log(userObj);
-    // auth.signup({
-    //   FirstName: FirstName,
-    //   LastName: LastName,
-    //   Email: Email,
-    //   Password: Password,
-    //   DateOfBirth: DateOfBirth,
-    //   PhoneNumber: PhoneNumber,
-    //   Gender: Gender,
-    //   Address: {
-    //     City,
-    //     Street,
-    //     HouseNumber,
-    //   },
-    // });
+
+    API.APIPostAnon(
+      "Users/Register",
+      userObj,
+      () => {},
+      () => {},
+      () => {}
+    );
     history.push("/login");
   }
   return (

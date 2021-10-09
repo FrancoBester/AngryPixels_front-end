@@ -14,8 +14,8 @@ import Signup from "./components/pages/Signup";
 import About from "./pages/globalPages/About";
 import Contact from "./pages/globalPages/Contact";
 import Client from "./components/pages/Client";
-import Admin from "./components/pages/Admin";
-import Application from "./components/pages/Application";
+import Admin from "./pages/admin/Admin";
+import Application from "./pages/globalPages/Application";
 import Documentation from "./components/pages/Documentation";
 import clientFileUploadDocument from "./pages/client/clientFileUploadDocument";
 import UserDetailsAdmin from "./components/pages/UserDetailsAdmin";
@@ -43,8 +43,8 @@ export default function App() {
         <Route path="/fetch-data" component={FetchData} />
         <Route path="/client/uploadFile" component={clientFileUploadDocument} />
         <Route path="/UserDetailsAdmin" component={UserDetailsAdmin} />
-        <Route path="/editProfileClient" component={editProfileClient}/>
-        <Route path="/UserPolicy" component={UserPolicy}/>
+        <Route path="/editProfileClient" component={editProfileClient} />
+        <Route path="/UserPolicy" component={UserPolicy} />
       </Switch>
     </Layout>
   );

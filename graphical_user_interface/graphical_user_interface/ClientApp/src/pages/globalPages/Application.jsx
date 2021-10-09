@@ -21,8 +21,10 @@ function Application() {
   const [SpecialNeeds, setSpecialNeeds] = useState("");
   const history = useHistory();
 
-  function Apply() {
-    Application({});
+  function Apply() {}
+
+  function SubmitApplication() {
+    //Doen submit code here
   }
 
   return (
@@ -30,7 +32,7 @@ function Application() {
       <div className="form-container">
         <div className="title_container">
           <h1>New Application</h1>
-          <form>
+          <form onSubmit={SubmitApplication}>
             <div className="row">
               <div className="col-25">
                 <label>First Name:</label>
@@ -238,7 +240,9 @@ function Application() {
             <input className="buttonSub" type="submit" value="Apply" />
             <button
               className="btnCancel"
-              onClick="window.location='./Client';return false;"
+              onClick={() => {
+                history.push("/");
+              }}
             >
               Cancel
             </button>

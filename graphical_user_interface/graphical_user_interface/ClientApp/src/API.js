@@ -58,6 +58,25 @@ class API {
         onFinally();
       });
   }
+
+  APIPOST(url, object, onSuccess, onFail, onFinally) {
+    axios
+      .post(url, {
+        headers: {
+          Authorization: localStorage.getItem("token"),
+        },
+        body: object,
+      })
+      .then(function (response) {
+        onSuccess(response);
+      })
+      .catch(function (error) {
+        onFail(error);
+      })
+      .then(function () {
+        onFinally();
+      });
+  }
 }
 
 export default new API();

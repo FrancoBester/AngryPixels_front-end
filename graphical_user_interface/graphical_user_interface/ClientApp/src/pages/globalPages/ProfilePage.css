@@ -53,6 +53,6 @@ input[type=file], select, textarea{
   }
 
   .medicalDocGrid button:hover{
-    background-color: #334257;
+    background-color: #548CA8;
     color: #fff;
 }

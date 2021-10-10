@@ -140,7 +140,7 @@ function ProfilePage() {
         </div>
         <div className="medicalDocGrid">
           {/* Medical Document */}
-          <h3>Medical Certificate</h3>
+          <h3>Medical Certificate:</h3>
           {!HasMedicalDoc() ? (
             <>
               <div>
@@ -181,7 +181,7 @@ function ProfilePage() {
             </>
           )}
           {/* Passport document */}
-          <h3>Copy of Passport</h3>
+          <h3>Copy of Passport:</h3>
           {!HasPassportDoc() ? (
             <>
               <div>
@@ -222,7 +222,7 @@ function ProfilePage() {
           )}
 
           {/* Birth Certificate */}
-          <h3>Birth Certificate</h3>
+          <h3>Birth Certificate:</h3>
           {!HasBirthCertificateDoc() ? (
             <>
               <div>

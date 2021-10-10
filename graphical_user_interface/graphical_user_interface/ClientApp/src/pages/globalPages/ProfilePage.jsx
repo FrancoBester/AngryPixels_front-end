@@ -149,7 +149,7 @@ function ProfilePage() {
                   onChange={UploadMedicalCertificateFileHandeler}
                   type="file"
                 ></input>
-                <br /><br />
+                <br />
                 <button
                   onClick={() => {
                     UploadFile(medicalCertificate, 1);
@@ -189,7 +189,7 @@ function ProfilePage() {
                   onChange={UploadPassportDocumentFileHandeler}
                   type="file"
                 ></input>
-                <br /><br />
+                <br />
                 <button
                   onClick={() => {
                     UploadFile(PassportDocument, 2);
@@ -230,7 +230,7 @@ function ProfilePage() {
                   onChange={UploadBirthCertificateFileHandeler}
                   type="file"
                 ></input>
-                <br /><br />
+                <br />
                 <button
                   onClick={() => {
                     UploadFile(BirthCertificate, 3);

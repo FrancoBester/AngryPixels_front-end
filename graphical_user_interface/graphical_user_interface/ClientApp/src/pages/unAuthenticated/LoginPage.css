@@ -6,7 +6,11 @@
     border-right: 5px solid #548CA8;}
 
 .loginHeader h1{
+    text-align: center;
+    font-size: 60px;
+    padding-bottom: 15px;
     color: #548CA8;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 input[type=email], select, textarea{

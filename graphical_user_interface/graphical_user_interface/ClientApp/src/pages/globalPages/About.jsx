@@ -26,6 +26,7 @@ function About() {
           alt=""
         />
       </aside>
+      
     </div>
   );
 }

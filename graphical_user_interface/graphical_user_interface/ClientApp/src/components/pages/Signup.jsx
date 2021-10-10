@@ -1,8 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import { useHistory } from "react-router";
-import auth from "../../auth";
-import Footer from "../Footer";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./Signup.css";
@@ -194,7 +192,7 @@ function Signup() {
 
             <div className="row">
               <div className="col-25">
-                <label>Address number:</label>
+                <label>Address Number:</label>
               </div>
               <div className="col-75">
                 <input

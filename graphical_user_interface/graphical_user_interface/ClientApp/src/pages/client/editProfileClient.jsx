@@ -1,13 +1,15 @@
 import React from 'react'
 import { useState } from "react";
-import auth from '../../auth';
-import "../../App.css";
+import { useHistory } from "react-router";
+import "./EditProfileClient.css";
+import API from "../../API";
+
  
 {/** THIS IS THE CLIENT EDIT PROFILE PAGE */}
 
-function editProfileClient() {
+function EditProfileClient() {
 
-   /* const [FirstName, setFirstName] = useState("");
+    const [FirstName, setFirstName] = useState("");
     const [LastName, setLastName] = useState("");
     const [Email, setEmail] = useState("");
     const [Cellphone, setCellphone] = useState("");
@@ -17,8 +19,9 @@ function editProfileClient() {
     const [City, setCity] = useState("");
     const [Street, setStreet] = useState("");
     const [PostalCode, setPostalCode] = useState("");
+    const history = useHistory();
 
-    auth.editProfileClient({
+    const userObj = {
         FirstName: FirstName,
         LastName: LastName,
         Email: Email,
@@ -29,34 +32,182 @@ function editProfileClient() {
         City: City,
         Street: Street,
         PostalCode: PostalCode
-    });
-*/
-    return (
-        <div className="EditClientProf">
-            <header>Edit Profile (Client)</header>
+    };
 
-            <label>Name</label>
-        {/**  <input type="text" onChange={(e) => setFirstName(e.target.value)} />*/} 
-            <label>Surname</label>
-        {/** <input type="text" onChange={(e) => setLastName(e.target.value)} />*/} 
-            <label>Email</label>
-        {/**  <input type="email" onChange={(e) => setEmail(e.target.value)} />*/} 
-            <label>Cellphone</label>
-        {/**  <input type="tel" onChange={(e) => setCellphone(e.target.value)} />*/} 
-            <label>Gender</label>
-        {/**  <input type="radio" onChange={(e) => setGender(e.target.value)} />*/} 
-            <label>Date of Birth</label>
-        {/**   <input type="date" onChange={(e) => setDOB(e.target.value)} />*/} 
-            <label>ID Number</label>
-        {/**    <input type="text" onChange={(e) => setIdNumber(e.target.value)} />*/} 
-            <label>City</label>
-        {/**    <input type="text" onChange={(e) => setCity(e.target.value)} />*/} 
-            <label>Street Name</label>
-        {/**    <input type="text" onChange={(e) => setStreet(e.target.value)} />*/} 
-            <label>Postal Code</label>
-        {/**    <input type="text" onChange={(e) => setPostalCode(e.target.value)} />*/} 
+    API.APIPOST(
+        "Users/UpdateUserInformation/{userId}",
+        userObj,
+        () => {},
+        () => {},
+        () => {}
+    );
+    //history.push("/Client")
+
+
+    return (
+        <>
+        <div className="EditClientProf">
+            <div className="edit-title-container">
+            <header>Edit Profile</header>
+            <form 
+                onSubmit={() => {
+                    EditProfileClient();
+                }}
+            >
+            <div className="editProfRow">
+                <div className="editProfileColLeft">
+                    <label>Name:</label>
+                </div>
+                <div className="editProfileColRight">
+                    <input 
+                        type="text" 
+                        placeholder="First Name"
+                        onChange={(e) => setFirstName(e.target.value)} 
+                    />
+                </div>
+            </div>
+            <div className="editProfRow">
+                <div className="editProfileColLeft">
+                    <label>Surname:</label>
+                </div>
+                <div className="editProfileColRight">
+                    <input 
+                        type="text" 
+                        placeholder="Surname"
+                        onChange={(e) => setLastName(e.target.value)}                 
+                    />
+                </div>
+            </div>
+
+            <div className="editProfRow">
+                <div className="editProfileColLeft">
+                    <label>Email:</label>
+                </div>
+                <div className="editProfileColRight">
+                    <input 
+                        type="email" 
+                        placeholder="Email"
+                        onChange={(e) => setEmail(e.target.value)} 
+                    />
+                </div>
+            </div>
+
+            <div className="editProfRow">
+                <div className="editProfileColLeft">
+                    <label>Cellphone:</label>
+                </div>
+                <div className="editProfileColRight">
+                    <input 
+                        type="tel" 
+                        placeholder="Cellphone"
+                        onChange={(e) => setCellphone(e.target.value)}
+                    />
+                </div>
+            </div>
+
+            <div className="editProfRow">
+                <div className="editProfileColLeft">
+                    <label>Gender:</label>
+                </div>
+                <div className="editProfileColRight">
+                <input 
+                    type="radio"
+                    value="Male" 
+                    name="genderChoice"
+                    onChange={(e) => setGender(e.target.value)} 
+                />
+                <label for="Male">Male</label>
+                <input 
+                    type="radio"
+                    value="Female" 
+                    name="genderChoice"
+                    onChange={(e) => setGender(e.target.value)} 
+                />
+                <label for="Female">Female</label>
+                </div>
+            </div>
+
+                <br />
+
+            <div className="editProfRow">
+                    <div className="editProfileColLeft">
+                        <label>Date of Birth:</label>
+                    </div>
+                    <div className="editProfileColRight">
+                        <input 
+                            type="date" 
+                            onChange={(e) => setDOB(e.target.value)} 
+                        />
+                    </div>
+            </div>
+
+            <div className="editProfRow">
+                    <div className="editProfileColLeft">
+                        <label>ID Number:</label>
+                    </div>
+                    <div className="editProfileColRight">
+                        <input 
+                            type="text" 
+                            placeholder="ID Number"
+                            onChange={(e) => setIdNumber(e.target.value)} 
+                        />
+                    </div>
+            </div>
+
+            <div className="editProfRow">
+                <div className="editProfileColLeft">
+                    <label>City:</label>
+                </div>
+                <div className="editProfileColRight">
+                    <input 
+                        type="text" 
+                        placeholder="City"
+                        onChange={(e) => setCity(e.target.value)} 
+                    />
+                </div>
+            </div>
+
+            <div className="editProfRow">
+                <div className="editProfileColLeft">
+                    <label>Street Name:</label>
+                </div>
+                <div className="editProfileColRight">
+                    <input 
+                        type="text" 
+                        placeholder="Street"
+                        onChange={(e) => setStreet(e.target.value)}
+                    />
+                </div>
+            </div>
+
+            <div className="editProfRow">
+                <div className="editProfileColLeft">
+                    <label>Postal Code:</label>
+                </div>
+                <div className="editProfileColRight">
+                    <input 
+                        type="text" 
+                        placeholder="Postal Code"
+                        onChange={(e) => setPostalCode(e.target.value)}
+                    />
+                </div>
+            </div>
+
+                <input className="btnUpdateClient" type="submit" value="Update" />
+                <button
+                    className="btnCancelUpdate"
+                    onClick={() => {
+                        history.push("/")
+                    }}
+                >
+                    Cancel
+                </button>
+            
+            </form>
+            </div>
         </div>
-    )
+        </>
+    );
 }
 
-export default editProfileClient
+export default EditProfileClient

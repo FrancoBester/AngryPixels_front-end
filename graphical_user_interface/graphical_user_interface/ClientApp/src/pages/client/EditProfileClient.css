@@ -1,4 +1,4 @@
-.title_container h1{
+.edit-title-container header{
     text-align: center;
     font-size: 60px;
     padding-bottom: 15px;
@@ -24,7 +24,7 @@ input[type=text], select, textarea{
     resize: vertical;
   }
 
-  input[type=password], select, textarea{
+  input[type=tel], select, textarea{
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -33,7 +33,7 @@ input[type=text], select, textarea{
     resize: vertical;
   }
 
-  input[type=number], select, textarea{
+  input[type=radio], select, textarea{
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -41,26 +41,24 @@ input[type=text], select, textarea{
     box-sizing: border-box;
     resize: vertical;
   }
-  
-  .row label {
+
+  input[type=date], select, textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+  }
+
+  .editProfRow label{
     padding: 12px 12px 12px 0;
     display: inline-block;
     color: #fff;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-
   }
-/*
-  .btnSignup {
-    background-color: #EEEEEE;
-    color: #334257;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    float: right;
-  }*/
 
-  .form-container-signup {
+  .EditClientProf{
     border-radius: 5px;
     background-color: #1D1D1D;
     padding: 100px;
@@ -68,32 +66,32 @@ input[type=text], select, textarea{
     border-right: 5px solid #548CA8;
   }
 
-  .col-25 {
+  .editProfileColLeft {
     float: left;
     width: 25%;
     margin-top: 6px;
   }
 
-  .col-75 {
+  .editProfileColRight {
     float: left;
     width: 75%;
     margin-top: 6px;
   }
 
-  .row:after {
+  .editProfRow:after {
     content: "";
     display: table;
     clear: both;
   }
 
   @media screen and (max-width: 600px) {
-    .col-25, .col-75, input[type=submit] {
+    .editProfileColLeft, .editProfileColRight, input[type=submit] {
       width: 100%;
       margin-top: 0;
     }
   }
 
-.btnSub{
+  .btnUpdateClient{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background: #EEEEEE;
     height: 45px;
@@ -111,37 +109,36 @@ input[type=text], select, textarea{
     -moz-transition: all 0.30s ease-in-out;
     -ms-transition: all 0.30s ease-in-out;
     transition: all 0.30s ease-in-out;
+  }
 
-    
-}
-.btnSub:hover {
-  background: #548CA8;
-  color: #fff;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
+  .btnUpdateClient:hover{
+    background: #548CA8;
+    color: #fff;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
 
-.btnCancel {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background: #EEEEEE;
-  height: 45px;
-  line-height: 35px;
-  width: 100%;
-  border: none;
-  border-radius: 8px;
-  outline: none;
-  cursor: pointer;
-  color: #334257;
-  font-size: 1.2em;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  -webkit-transition: all 0.30s ease-in-out;
-  -moz-transition: all 0.30s ease-in-out;
-  -ms-transition: all 0.30s ease-in-out;
-  transition: all 0.30s ease-in-out;
-}
- /*NEED TO CHECK WHY STYLING NOT APPLYING TO THIS BUTTON*/
-.btnCancel:hover{
-  background: #548CA8;
-  color: #fff;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
+  .btnCancelUpdate{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: #EEEEEE;
+    height: 45px;
+    line-height: 35px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    color: #334257;
+    font-size: 1.2em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    transition: all 0.30s ease-in-out;
+  }
+
+  .btnCancelUpdate:hover{
+    background: #548CA8;
+    color: #fff;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }

@@ -117,7 +117,7 @@ function Signup() {
 
             <div className="row">
               <div className="col-25">
-                <label>Date Of Birth</label>
+                <label>Date Of Birth:</label>
               </div>
               <div className="col-75">
                 <DatePicker
@@ -143,19 +143,21 @@ function Signup() {
 
             <div className="row">
               <div className="col-25">
-                <label>Gender</label>
+                <label>Gender:</label>
               </div>
               <div className="col-75">
                 <input
                   onChange={(e) => setGender(e.target.value)}
                   type="radio"
                   value="Male"
+                  name="genderChoice"
                 ></input>
                 <label htmlFor="Male">Male</label>
                 <input
                   onChange={(e) => setGender(e.target.value)}
                   type="radio"
                   value="Female"
+                  name="genderChoice"
                 ></input>
                 <label htmlFor="Female">Female</label>
                 <br />

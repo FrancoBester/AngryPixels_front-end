@@ -10,32 +10,43 @@ function ProfilePage() {
   const [updated, setUpdated] = useState(1); //To help force rerenders
 
   const [medicalCertificate, setMedicalCertificate] = useState();
+  const [PassportDocument, setPassportDocument] = useState();
+  const [BirthCertificate, setBirthCertificate] = useState();
 
   function UploadMedicalCertificateFileHandeler(e) {
     setMedicalCertificate(e.target.files[0]);
   }
-  function UploadMedicalCertificate() {
-    if (medicalCertificate) {
+  function UploadPassportDocumentFileHandeler(e) {
+    setPassportDocument(e.target.files[0]);
+  }
+  function UploadBirthCertificateFileHandeler(e) {
+    setBirthCertificate(e.target.files[0]);
+  }
+
+  function UploadFile(file, type) {
+    if (file) {
       var formData = new FormData();
-      formData.append("file", medicalCertificate);
-      formData.append("filename", medicalCertificate.name);
+      formData.append("file", file);
+      formData.append("filename", file.name);
       formData.append("UserId", localStorage.getItem("id"));
-      formData.append("DocumentType", 1);
+      formData.append("DocumentType", type);
       API.APIPostAnon(
         "Document/UploadDocForUser",
         formData,
         () => {
           alert("FileUploaded");
-          setUpdated(!updated);
         },
         () => {
           alert("FileUploadedError");
-          setUpdated(!updated);
         },
-        () => {}
+        () => {
+          setUpdated(!updated);
+        }
       );
     }
   }
+
+  function UploadMedicalCertificate() {}
 
   function HandleProfile(e) {
     setProfile(e);
@@ -45,21 +56,42 @@ function ProfilePage() {
   function DeleteDocForUser(docId) {
     API.APIGET(
       "Document/DeleteDocForUser/" + docId,
-      () => {
-        //setUpdated(!updated);
-      },
+      () => {},
       () => {},
       () => {
-        //setUpdated(!updated);
+        setUpdated(!updated);
       }
     );
-    setUpdated(!updated);
   }
 
   function GetMedicalDoc() {
     return files.filter((x) => {
       return x.fileTypeId === 1;
     })[0];
+  }
+
+  function HasMedicalDoc() {
+    return files.some((x) => x.fileTypeId === 1);
+  }
+
+  function GetPassportDoc() {
+    return files.filter((x) => {
+      return x.fileTypeId === 2;
+    })[0];
+  }
+
+  function HasPassportDoc() {
+    return files.some((x) => x.fileTypeId === 2);
+  }
+
+  function GetBirthCertificateDoc() {
+    return files.filter((x) => {
+      return x.fileTypeId === 3;
+    })[0];
+  }
+
+  function HasBirthCertificateDoc() {
+    return files.some((x) => x.fileTypeId === 3);
   }
 
   useEffect(() => {
@@ -97,17 +129,20 @@ function ProfilePage() {
             <b>Email:</b>
             {profile.user.user_Email}
           </div>
-          {files.map((x) => {
-            return x.fileName;
-          })}
-          {!files.some((x) => x.fileTypeId === 1) ? (
+
+          {/* Medical Document */}
+          {!HasMedicalDoc() ? (
             <>
               <div>
                 <input
                   onChange={UploadMedicalCertificateFileHandeler}
                   type="file"
                 ></input>
-                <button onClick={UploadMedicalCertificate}>
+                <button
+                  onClick={() => {
+                    UploadFile(medicalCertificate, 1);
+                  }}
+                >
                   Submit document
                 </button>
               </div>
@@ -116,7 +151,6 @@ function ProfilePage() {
             <>
               <button
                 onClick={() => {
-                  debugger;
                   var medicalFile = GetMedicalDoc();
                   window.open(medicalFile.fileUrl, "_blank");
                 }}
@@ -125,7 +159,6 @@ function ProfilePage() {
               </button>
               <button
                 onClick={() => {
-                  debugger;
                   var medicalFile = GetMedicalDoc();
                   DeleteDocForUser(medicalFile.fileId);
                 }}
@@ -134,9 +167,85 @@ function ProfilePage() {
               </button>
             </>
           )}
+          {/* Passport document */}
+          {!HasPassportDoc() ? (
+            <>
+              <div>
+                <input
+                  onChange={UploadPassportDocumentFileHandeler}
+                  type="file"
+                ></input>
+                <button
+                  onClick={() => {
+                    UploadFile(PassportDocument, 2);
+                  }}
+                >
+                  Submit document
+                </button>
+              </div>
+            </>
+          ) : (
+            <>
+              <button
+                onClick={() => {
+                  var passport = GetPassportDoc();
+                  window.open(passport.fileUrl, "_blank");
+                }}
+              >
+                View Passport Document
+              </button>
+              <button
+                onClick={() => {
+                  var passport = GetPassportDoc();
+                  DeleteDocForUser(passport.fileId);
+                }}
+              >
+                Delete Document
+              </button>
+            </>
+          )}
+
+          {/* Birth Certificate */}
+
+          {!HasBirthCertificateDoc() ? (
+            <>
+              <div>
+                <input
+                  onChange={UploadPassportDocumentFileHandeler}
+                  type="file"
+                ></input>
+                <button
+                  onClick={() => {
+                    UploadFile(BirthCertificate, 3);
+                  }}
+                >
+                  Submit document
+                </button>
+              </div>
+            </>
+          ) : (
+            <>
+              <button
+                onClick={() => {
+                  var birthCertificate = GetBirthCertificateDoc();
+                  window.open(birthCertificate.fileUrl, "_blank");
+                }}
+              >
+                View Passport Document
+              </button>
+              <button
+                onClick={() => {
+                  var birthCertificate = GetBirthCertificateDoc();
+                  DeleteDocForUser(birthCertificate.fileId);
+                }}
+              >
+                Delete Document
+              </button>
+            </>
+          )}
         </>
       ) : (
-        <>Hello worlds</>
+        <>Loading</>
       )}
     </>
   );

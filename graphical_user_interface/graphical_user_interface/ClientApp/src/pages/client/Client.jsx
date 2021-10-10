@@ -1,25 +1,69 @@
 import React from 'react';
 import './Client.css';
+import { useHistory } from "react-router";
+
 
 function Client(){
+
+    const history = useHistory();
+
     return(
-    <div>
-        <body>
-        <h1 className="dashboardHeading">Client Dashboard</h1>
-
-            <div className="grid-container">
-                <button className="btnClient">New Application</button>
-                <button className="btnClient">View Info</button>
-                <button className="btnClient">Upload Documents</button>
-                <button className="btnClient">My Profile</button>
-                <button className="btnClient">Policy Details</button>
-                <button className="btnClient">Logout</button>
+    <>
+        <div className="grid-container-client-dashboard">
+            
+            <header className="clientDashHeader">Client Dashboard</header>
+            
+            <div className="secondHeader">
+                <h2>Please select an actiion below:</h2>
             </div>
-        </body>
-    </div>
 
+            <main className="topGrid">
+                
+                <button
+                    className="btnViewProfileClient"
+                    onClick={() => {
+                        history.push(); //Add path here once a View Profile Page has been created
+                    }}   
+                >
+                    View Profile
+                </button>
+                
+                <button
+                className="btnEditProfileClient"
+                onClick={() => {
+                    history.push("/EditProfileClient");
+                }}
+                >
+                    Edit Profile
+                </button>
+
+                <button
+                className="btnViewPoliciesClient"
+                onClick={() => {
+                    history.push();
+                }}
+                >
+                    View Policies
+                </button>
+
+                <button
+                className="btnNewQueryClient"
+                onClick={() => {
+                    history.push();
+                }}
+                >
+                    New Query
+                </button>
+            </main> 
+            
+            <div className="userQueries">
+                <label>TODO: Show users own queries here</label>
+            </div>   
+
+             
+        </div>
+    </>
     );
-
 }
 
 export default Client;

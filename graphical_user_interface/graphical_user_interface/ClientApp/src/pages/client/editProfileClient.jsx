@@ -197,7 +197,7 @@ function EditProfileClient() {
                 <button
                     className="btnCancelUpdate"
                     onClick={() => {
-                        history.push("/")
+                        history.push("/Client")
                     }}
                 >
                     Cancel

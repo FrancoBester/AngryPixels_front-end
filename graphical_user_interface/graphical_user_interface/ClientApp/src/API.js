@@ -9,7 +9,8 @@ class API {
     if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
       axios.defaults.baseURL = "https://localhost:44376/api/";
     } else {
-      // production code
+      axios.defaults.baseURL =
+        "https://meditrustbackend.azurewebsites.net/api/";
     }
   }
 

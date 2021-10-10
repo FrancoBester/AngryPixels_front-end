@@ -1,8 +1,8 @@
-h1{
+.title_container h1{
     text-align: center;
     font-size: 60px;
     padding-bottom: 15px;
-    color: #fff;
+    color: #548CA8;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -51,9 +51,9 @@ input[type=text], select, textarea{
     float: right;
   }*/
 
-  .form-container {
+  .form-container-signup {
     border-radius: 5px;
-    background-color: #334257;
+    background-color: #1D1D1D;
     padding: 100px;
     border-top: 10px solid #548CA8;
     border-right: 5px solid #548CA8;
@@ -106,7 +106,7 @@ input[type=text], select, textarea{
     
 }
 .btnSub:hover {
-  background: #5b7583;
+  background: #548CA8;
   color: #fff;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
@@ -130,9 +130,9 @@ input[type=text], select, textarea{
   -ms-transition: all 0.30s ease-in-out;
   transition: all 0.30s ease-in-out;
 }
-
-.btnCacnel:hover{
-  background: #5b7583;
+ /*NEED TO CHECK WHY STYLING NOT APPLYING TO THIS BUTTON*/
+.btnCancel:hover{
+  background: #548CA8;
   color: #fff;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }

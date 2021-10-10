@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useHistory } from "react-router";
 import auth from "../../auth";
+import './LoginPage.css';
 
 function LoginPage() {
   const [Email, setEmail] = useState("");
@@ -14,11 +15,41 @@ function LoginPage() {
   }
   return (
     <div>
-      <label>Username</label>
-      <input type="email" onChange={(e) => setEmail(e.target.value)} />
-      <label>Password</label>
-      <input type="password" onChange={(e) => setPassword(e.target.value)} />
-      <button onClick={() => Login()}>Login</button>
+      <div className="gridLoginForm">
+        <div className="loginHeader">
+          <h1>Login</h1>
+        
+        {/*<form>*/}
+          <div className="loginRow">
+            <div className="colLeft">
+              <label>Username:</label>
+            </div>
+            <div className="colRight">
+              <input 
+                type="email"
+                placeholder="email" 
+                onChange={(e) => setEmail(e.target.value)} 
+              />
+            </div>
+          </div>
+
+          <div className="loginRow">
+            <div className="colLeft">
+              <label>Password:</label>
+            </div>
+            <div className="colRight">
+              <input 
+                type="password" 
+                placeholder="password"               
+                onChange={(e) => setPassword(e.target.value)} 
+              />
+            </div>
+          </div> 
+          
+          <button className="btnLogin" onClick={() => Login()}>Login</button>
+        {/*</form>*/}
+        </div>
+      </div>
     </div>
   );
 }

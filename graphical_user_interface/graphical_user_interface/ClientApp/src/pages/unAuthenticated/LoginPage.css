@@ -1,0 +1,88 @@
+.gridLoginForm{
+    border-radius: 5px;
+    background-color: #1D1D1D;
+    padding: 100px;
+    border-top: 10px solid #548CA8;
+    border-right: 5px solid #548CA8;}
+
+.loginHeader h1{
+    color: #548CA8;
+}
+
+input[type=email], select, textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+  }
+
+  input[type=password], select, textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+  }
+ 
+  .loginRow label{
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .colLeft{
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+
+  .colRight{
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+
+  .loginRow:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  @media screen and (max-width: 600px) {
+    .colLeft, .colRight, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+/* BUTTONS */
+
+.btnLogin{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: #EEEEEE;
+    height: 45px;
+    line-height: 35px;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    color: #334257;
+    font-size: 1.2em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    transition: all 0.30s ease-in-out;
+}
+
+.btnLogin:hover{
+  background: #548CA8;
+  color: #fff;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}

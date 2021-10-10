@@ -52,7 +52,7 @@ function Signup() {
   }
   return (
     <div>
-      <div className="form-container">
+      <div className="form-container-signup">
         <div className="title_container">
           <h1>Register</h1>
           <form

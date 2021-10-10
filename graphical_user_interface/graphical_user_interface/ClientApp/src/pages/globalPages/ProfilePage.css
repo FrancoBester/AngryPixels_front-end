@@ -1,0 +1,58 @@
+.grid-wrapper{
+    display: grid;
+    /*grid-template-columns: 100% 100%;*/
+    grid-template-rows: 100px 200px 800px;
+    grid-gap: 0.2em;
+    background-color: #1D1D1D;
+}
+
+.myProfileHeader h1{
+    color: #548CA8;
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.clientInfoGrid div{
+    color: #EEEEEE;
+    padding: 10px;
+    /*word-spacing: 2em;*/
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.medicalDocGrid h3{
+    color: #EEEEEE;
+    padding: 10px;
+    /*word-spacing: 2em;*/
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+input[type=file], select, textarea{
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+    margin: auto;
+    display: flex;
+  }
+
+  .medicalDocGrid button{
+      background-color: #EEEEEE;
+      font-size: 20px;
+      padding: 25px 14px;
+      border-radius: 8px;
+      margin: auto;
+      display: flex;
+
+  }
+
+  .medicalDocGrid button:hover{
+    background-color: #334257;
+    color: #fff;
+}

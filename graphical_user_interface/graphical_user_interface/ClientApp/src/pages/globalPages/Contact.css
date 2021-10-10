@@ -6,7 +6,7 @@
   }
   
   .contactUsHeader{
-    color: #EEEEEE;
+    color: #548CA8;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 80px;
     font-family: 'Noto Sans Display', sans-serif;
@@ -18,7 +18,7 @@ grid-column-end: 3;
 }
 
 .gridContact > * {
-  background: #334257;
+  background: #1D1D1D;
   display: flex;
   align-items: center;
   justify-content: center;

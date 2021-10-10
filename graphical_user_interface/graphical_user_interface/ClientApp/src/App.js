@@ -13,7 +13,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Signup from "./components/pages/Signup";
 import About from "./pages/globalPages/About";
 import Contact from "./pages/globalPages/Contact";
-import Client from "./components/pages/Client";
+import Client from "./pages/client/Client";
 import Admin from "./pages/admin/Admin";
 import Application from "./pages/globalPages/Application";
 import Documentation from "./components/pages/Documentation";

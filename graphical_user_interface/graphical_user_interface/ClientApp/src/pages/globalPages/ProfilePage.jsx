@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import API from "../../API";
+import './ProfilePage.css';
 
 function ProfilePage() {
   console.log("test");
@@ -112,32 +113,43 @@ function ProfilePage() {
     return () => {};
   }, [updated]);
 
+   {/** ADDED SOME BASIC STYLING, I WILL ADD MORE SPICE LATER */}
   return (
+   
     <>
-      <div>Hi there.</div>
+    <div className="grid-wrapper">
+      <div className="myProfileHeader">
+        <h1>Welcome</h1>
+      </div>
+      
       {hasLoaded ? (
         <>
+        <div className="clientInfoGrid">
           <div>
-            <b>Name:</b>
+            <b>Name: </b>
             {profile.user.user_Name}
           </div>
           <div>
-            <b>Surname:</b>
+            <b>Surname: </b>
             {profile.user.user_Surname}
           </div>
           <div>
-            <b>Email:</b>
+            <b>Email: </b>
             {profile.user.user_Email}
           </div>
-
+        </div>
+        <div className="medicalDocGrid">
           {/* Medical Document */}
+          <h3>Medical Certificate</h3>
           {!HasMedicalDoc() ? (
             <>
               <div>
+
                 <input
                   onChange={UploadMedicalCertificateFileHandeler}
                   type="file"
                 ></input>
+                <br /><br />
                 <button
                   onClick={() => {
                     UploadFile(medicalCertificate, 1);
@@ -145,6 +157,7 @@ function ProfilePage() {
                 >
                   Submit document
                 </button>
+                <br />
               </div>
             </>
           ) : (
@@ -168,6 +181,7 @@ function ProfilePage() {
             </>
           )}
           {/* Passport document */}
+          <h3>Copy of Passport</h3>
           {!HasPassportDoc() ? (
             <>
               <div>
@@ -175,6 +189,7 @@ function ProfilePage() {
                   onChange={UploadPassportDocumentFileHandeler}
                   type="file"
                 ></input>
+                <br /><br />
                 <button
                   onClick={() => {
                     UploadFile(PassportDocument, 2);
@@ -182,6 +197,7 @@ function ProfilePage() {
                 >
                   Submit document
                 </button>
+                <br />
               </div>
             </>
           ) : (
@@ -206,7 +222,7 @@ function ProfilePage() {
           )}
 
           {/* Birth Certificate */}
-
+          <h3>Birth Certificate</h3>
           {!HasBirthCertificateDoc() ? (
             <>
               <div>
@@ -214,6 +230,7 @@ function ProfilePage() {
                   onChange={UploadPassportDocumentFileHandeler}
                   type="file"
                 ></input>
+                <br /><br />
                 <button
                   onClick={() => {
                     UploadFile(BirthCertificate, 3);
@@ -221,6 +238,7 @@ function ProfilePage() {
                 >
                   Submit document
                 </button>
+                <br />
               </div>
             </>
           ) : (
@@ -243,10 +261,12 @@ function ProfilePage() {
               </button>
             </>
           )}
+          </div>
         </>
       ) : (
         <>Loading</>
       )}
+      </div>
     </>
   );
 }

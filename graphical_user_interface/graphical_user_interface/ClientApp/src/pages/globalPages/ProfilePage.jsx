@@ -211,7 +211,7 @@ function ProfilePage() {
             <>
               <div>
                 <input
-                  onChange={UploadPassportDocumentFileHandeler}
+                  onChange={UploadBirthCertificateFileHandeler}
                   type="file"
                 ></input>
                 <button

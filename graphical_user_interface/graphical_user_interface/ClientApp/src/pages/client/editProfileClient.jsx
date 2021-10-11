@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from "react";
 import { useHistory } from "react-router";
 import "./EditProfileClient.css";
@@ -9,6 +9,7 @@ import API from "../../API";
 
 function EditProfileClient() {
 
+    const [updated, setUpdated] = useState(1);
     const [FirstName, setFirstName] = useState("");
     const [LastName, setLastName] = useState("");
     const [Email, setEmail] = useState("");
@@ -20,6 +21,23 @@ function EditProfileClient() {
     const [Street, setStreet] = useState("");
     const [PostalCode, setPostalCode] = useState("");
     const history = useHistory();
+    const [user_info, setUserInfo] = useState({});
+
+    function HandleUserInfo(e){
+        setUserInfo(e)
+        console.log(e)
+    }
+
+    useEffect(() => {
+        var onSuccess = (e) =>{
+            HandleUserInfo(e.data)
+        }
+        API.APIGET("Users/GetUserDetails/1" ,//+ localStorage.getItem("id"),
+        onSuccess,
+        () => {},
+        () => {})
+        return () => {};
+    }, [updated])
 
     const userObj = {
         FirstName: FirstName,
@@ -50,10 +68,9 @@ function EditProfileClient() {
             <div className="edit-title-container">
             <header>Edit Profile</header>
             <form 
-                onSubmit={() => {
-                    EditProfileClient();
-                }}
+                onSubmit={updateInfo()}
             >
+
             <div className="editProfRow">
                 <div className="editProfileColLeft">
                     <label>Name:</label>
@@ -63,6 +80,7 @@ function EditProfileClient() {
                         type="text" 
                         placeholder="First Name"
                         onChange={(e) => setFirstName(e.target.value)} 
+                        defaultValue = {user_info.user_Name}
                     />
                 </div>
             </div>
@@ -74,7 +92,8 @@ function EditProfileClient() {
                     <input 
                         type="text" 
                         placeholder="Surname"
-                        onChange={(e) => setLastName(e.target.value)}                 
+                        onChange={(e) => setLastName(e.target.value)} 
+                        defaultValue = {user_info.user_Surname}                
                     />
                 </div>
             </div>
@@ -88,6 +107,7 @@ function EditProfileClient() {
                         type="email" 
                         placeholder="Email"
                         onChange={(e) => setEmail(e.target.value)} 
+                        defaultValue = {user_info.user_Email}
                     />
                 </div>
             </div>
@@ -101,6 +121,7 @@ function EditProfileClient() {
                         type="tel" 
                         placeholder="Cellphone"
                         onChange={(e) => setCellphone(e.target.value)}
+                        defaultValue = {user_info.user_Cell}
                     />
                 </div>
             </div>
@@ -115,6 +136,7 @@ function EditProfileClient() {
                     value="Male" 
                     name="genderChoice"
                     onChange={(e) => setGender(e.target.value)} 
+                    // value = {user_info.user_Gender}
                 />
                 <label for="Male">Male</label>
                 <input 
@@ -137,6 +159,7 @@ function EditProfileClient() {
                         <input 
                             type="date" 
                             onChange={(e) => setDOB(e.target.value)} 
+                            // defaultValue = {user_info.user_Dob}
                         />
                     </div>
             </div>
@@ -150,6 +173,7 @@ function EditProfileClient() {
                             type="text" 
                             placeholder="ID Number"
                             onChange={(e) => setIdNumber(e.target.value)} 
+                            defaultValue = {user_info.user_ID_Number}
                         />
                     </div>
             </div>
@@ -163,6 +187,7 @@ function EditProfileClient() {
                         type="text" 
                         placeholder="City"
                         onChange={(e) => setCity(e.target.value)} 
+                        defaultValue = {user_info.city}
                     />
                 </div>
             </div>
@@ -176,6 +201,7 @@ function EditProfileClient() {
                         type="text" 
                         placeholder="Street"
                         onChange={(e) => setStreet(e.target.value)}
+                        defaultValue = {user_info.street}
                     />
                 </div>
             </div>
@@ -189,6 +215,7 @@ function EditProfileClient() {
                         type="text" 
                         placeholder="Postal Code"
                         onChange={(e) => setPostalCode(e.target.value)}
+                        defaultValue = {user_info.postal_Code}
                     />
                 </div>
             </div>

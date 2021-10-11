@@ -10,22 +10,15 @@ function App(){
   const [updated, setUpdated] = useState(1);
   const table_headings =["Id","Name","Surname","Policy","Role"]
   const [table_info, setTableInfo] = useState({}) ;
-  const table_data = []
+  const [search_value, setSearch] = useState('');
 
   function HandleTableInfo(e){
     setTableInfo(e)
   }
 
-  function load_Data() {
-    var body = document.body
-    body.appendChild(document.createElement('p'))
-  }
-
   useEffect(() =>{
     var onSuccess = (e) =>{
       HandleTableInfo(e.data)
-      // table_data = e.data;
-      console.log(e.data)
     };
     API.APIGET(
       "Users/GetAdminLoadPageData",
@@ -37,22 +30,39 @@ function App(){
   }, [updated])
 
 
-  function searchClick(){}
+  function searchClick(){
+    var onSuccess = (e) =>{
+      HandleTableInfo(e.data)
+    };
+    API.APIGET(
+      "Users/SearchLoadPageData?search=" + search_value+ "",
+      onSuccess,
+      () => {},
+      () => {}
+    )
+  }
 
-  function clearCLick(){}
-
-  // load_Data();
+  function clearCLick(){
+    document.getElementById("userSearch").value = "";
+    var onSuccess = (e) =>{
+      HandleTableInfo(e.data)
+    };
+    API.APIGET(
+      "Users/GetAdminLoadPageData",
+      onSuccess,
+      () => {},
+      () => {}
+    )
+  }
 
   return (
-  <div >{/*STILL BUSY STYLING*/}
-      <div className="userDetailsAdminGrid">
-      <header className="userInfoHeader">User Information</header>
-
-      <main className="searchUserInfoGrid">
-        <label>Search</label>
-        <input className="searchUI" id="userSearch" type="text"></input>
-        <button className="btnSearchUserInfo" id="btnSearch" onClick={searchClick}>Search</button>
-        <button className="btnClearSearchUserInfo" id="btnClear" onClick={clearCLick}>Clear</button>
+    <div >
+      <header >User Information</header>
+      <main>
+        <h2>Search</h2>
+        <input id="userSearch" type="text" onChange={event => setSearch(event.target.value)}></input>
+        <button id="btnSearch" onClick={searchClick}>Search</button>
+        <button id="btnClear" onClick={clearCLick}>Clear</button>
       </main>
       <div className="userInfoTable">
         <table style={{width:"80%"}}>
@@ -82,8 +92,7 @@ function App(){
         </table>
       </div>
       </div>
-  </div>
-  );
+  )
 }
 
 export default App;

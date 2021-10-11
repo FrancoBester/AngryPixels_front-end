@@ -6,7 +6,7 @@ import { useHistory } from "react-router";
 function Client(){
 
     const history = useHistory();
-
+    console.log(localStorage.getItem("id"))
     return(
     <>
         <div className="grid-container-client-dashboard">
@@ -14,7 +14,7 @@ function Client(){
             <header className="clientDashHeader">Client Dashboard</header>
             
             <div className="secondHeader">
-                <h2>Please select an actiion below:</h2>
+                <h2>Please select an action below:</h2>
             </div>
 
             <main className="topGrid">

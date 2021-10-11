@@ -27,15 +27,6 @@ function Client(){
                 >
                     View Profile
                 </button>
-                
-                <button
-                className="btnEditProfileClient"
-                onClick={() => {
-                    history.push("/EditProfileClient");
-                }}
-                >
-                    Edit Profile
-                </button>
 
                 <button
                 className="btnViewPoliciesClient"

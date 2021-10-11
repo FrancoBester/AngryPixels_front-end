@@ -1,5 +1,6 @@
 .grid-viewInfo-wrapper{
     background-color: #1D1D1D;
+    text-align: center;
 }
 
 .ViewClientInfoGrid h1{
@@ -8,7 +9,40 @@
 
 .viewInfoGrid div{
     color: #fff;
-    padding-left: 150px;
     font-size: 20px;
     
 }
+
+.btnEditProfileClient{
+    background-color: #EEEEEE;
+    font-size: 20px;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 12px;
+    width: 20%;
+    
+  }
+
+  .btnEditProfileClient:hover{
+    background-color: #548CA8;
+    color: #EEEEEE;
+  }
+
+  .btnBackClientProfile{
+    background-color: #EEEEEE;
+    font-size: 20px;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 12px;
+    width: 20%;
+  }
+
+  .btnBackClientProfile:hover{
+    background-color: #548CA8;
+    color: #EEEEEE;
+  }
+
+  .grid-viewInfo-wrapper button{
+      display: inline-block;
+  }
+

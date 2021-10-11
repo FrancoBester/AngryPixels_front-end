@@ -1,6 +1,8 @@
 import './ViewClientProfile.css';
 import API from "../../API";
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router";
+
 
 
 function ViewClientProfile() {
@@ -8,6 +10,8 @@ function ViewClientProfile() {
     const [hasLoaded, setHasLoaded] = useState(false);
     const [profile, setProfile] = useState({});
     const [updated, setUpdated] = useState(1); 
+    const history = useHistory();
+
 
 
     function HandleProfile(e){
@@ -80,6 +84,24 @@ function ViewClientProfile() {
                     {profile.user.user_ID_Number}
                 </div>
               
+                <button
+                className="btnEditProfileClient"
+                onClick={() => {
+                    history.push("/EditProfileClient");
+                }}
+                >
+                    Edit Profile
+                </button>
+
+                <button
+                className="btnBackClientProfile"
+                onClick={() => {
+                    history.push("/Client");
+                }}
+                >
+                    Back
+                </button>
+
             </main>
             
         ) : (

@@ -22,7 +22,7 @@ function Client(){
                 <button
                     className="btnViewProfileClient"
                     onClick={() => {
-                        history.push(); //Add path here once a View Profile Page has been created
+                        history.push("/ViewClientProfile"); //Add path here once a View Profile Page has been created
                     }}   
                 >
                     View Profile

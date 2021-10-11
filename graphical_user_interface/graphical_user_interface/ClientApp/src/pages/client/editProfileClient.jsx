@@ -35,7 +35,7 @@ function EditProfileClient() {
     };
 
     API.APIPOST(
-        "Users/UpdateUserInformation/{userId}",
+        "Users/UpdateUserInformation/",
         userObj,
         () => {},
         () => {},

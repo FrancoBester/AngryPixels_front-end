@@ -167,7 +167,7 @@ function ProfilePage() {
                   var medicalFile = GetMedicalDoc();
                   window.open(medicalFile.fileUrl, "_blank");
                 }}
-              >
+              ><br />
                 View Medical Document
               </button>
               <br />
@@ -210,7 +210,7 @@ function ProfilePage() {
                 }}
               >
                 View Passport Document
-              </button>
+              </button><br />
               <button
                 onClick={() => {
                   var passport = GetPassportDoc();
@@ -251,7 +251,7 @@ function ProfilePage() {
                 }}
               >
                 View Passport Document
-              </button>
+              </button><br />
               <button
                 onClick={() => {
                   var birthCertificate = GetBirthCertificateDoc();

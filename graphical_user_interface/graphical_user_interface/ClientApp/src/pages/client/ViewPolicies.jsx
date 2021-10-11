@@ -2,6 +2,15 @@ import React, { useState, useEffect } from "react";
 import API from "../../API";
 import auth from "../../auth";
 import { Link, useHistory } from "react-router-dom";
+import {
+  Collapse,
+  Container,
+  Navbar,
+  NavbarBrand,
+  NavbarToggler,
+  NavItem,
+  NavLink,
+} from "reactstrap";
 
 function ViewPolicies() {
   const [policies, setPolicies] = useState({});
@@ -11,7 +20,6 @@ function ViewPolicies() {
   //Get Policies Here
   useEffect(() => {
     var onSuccess = (e) => {
-      debugger;
       setPolicies(e.data);
 
       setHasLoaded(true);
@@ -49,6 +57,17 @@ function ViewPolicies() {
                   <td>{policy.policy_Date}</td>
                   <td>{policy.policy_Des}</td>
                   <td>{policy.policy_Benefits}</td>
+                  <td>
+                    <NavItem>
+                      <NavLink
+                        tag={Link}
+                        className="text-dark"
+                        to={`/viewSinglePolicy?id=${policy.policy_Id}`}
+                      >
+                        View Policy
+                      </NavLink>
+                    </NavItem>
+                  </td>
                 </tr>
               );
             })}

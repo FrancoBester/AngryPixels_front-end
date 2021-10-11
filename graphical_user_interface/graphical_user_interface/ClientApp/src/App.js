@@ -23,6 +23,9 @@ import EditProfileClient from "./pages/client/EditProfileClient";
 import UserPolicy from "./components/pages/UserPolicy";
 import ProfilePage from "./pages/globalPages/ProfilePage";
 import ViewClientProfile from "./pages/client/ViewClientProfile";
+import ViewAdminInformation from "./pages/admin/ViewAdminInformation";
+import ViewQueries from "./pages/admin/ViewQueries";
+import CreateQuery from "./pages/client/CreateQuery";
 
 import ViewPolicies from "./pages/client/ViewPolicies";
 
@@ -53,7 +56,10 @@ export default function App() {
         <Route path="/EditProfileClient" component={EditProfileClient} />
         <Route path="/UserPolicy" component={UserPolicy} />
         <Route path="/Test" component={Test} />
-        <Route path="/ViewClientProfile" component={ViewClientProfile} />
+        <Route path="/ViewClientProfile" component={ViewClientProfile}/>
+        <Route path="/ViewAdminInformation" component={ViewAdminInformation}/>
+        <Route path="/ViewQueries" component={ViewQueries}/>
+        <Route path="/CreateQuery" component={CreateQuery}/>
       </Switch>
     </Layout>
   );

@@ -44,7 +44,7 @@ function App(){
   // load_Data();
 
   return (
-  <div >
+  <div >{/*STILL BUSY STYLING*/}
       <div className="userDetailsAdminGrid">
       <header className="userInfoHeader">User Information</header>
 

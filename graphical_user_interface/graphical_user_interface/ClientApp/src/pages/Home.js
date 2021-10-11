@@ -1,32 +1,22 @@
-import React, { Component } from "react";
-import API from "../API";
+import React from "react";
 import auth from "../auth";
+import { Link } from "react-router-dom";
 
-export class Home extends Component {
-  static displayName = Home.name;
+import { NavLink } from "reactstrap";
 
-  render() {
-    return (
-      <div>
-        <h1>Welcome to medi trust</h1>
-        {auth.userIsOfType("User") && (
-          <>
-            <h4>You are a user</h4>
-          </>
-        )}
-        <button
-          onClick={() =>
-            API.APIGET(
-              "ConnectionTest/Authed",
-              function () {},
-              function () {},
-              function () {}
-            )
-          }
-        >
-          Test Button
-        </button>
-      </div>
-    );
-  }
+function Home() {
+  return (
+    <div>
+      <h1>Welcome to medi trust</h1>
+      {auth.isAuthenticated() && (
+        <>
+          <NavLink tag={Link} className="text-dark" to="/viewPolicies">
+            View Policies
+          </NavLink>
+        </>
+      )}
+    </div>
+  );
 }
+
+export default Home;

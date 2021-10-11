@@ -1,7 +1,7 @@
 import React from "react";
 import { Route } from "react-router";
 import { Layout } from "./components/Layout";
-import { Home } from "./pages/Home";
+import Home from "./pages/Home";
 import { FetchData } from "./pages/FetchData";
 import { Counter } from "./pages/Counter";
 import { Switch } from "react-router";
@@ -24,6 +24,8 @@ import UserPolicy from "./components/pages/UserPolicy";
 import ProfilePage from "./pages/globalPages/ProfilePage";
 import ViewClientProfile from "./pages/client/ViewClientProfile";
 
+import ViewPolicies from "./pages/client/ViewPolicies";
+
 import "./custom.css";
 
 import Test from "./pages/Test";
@@ -44,13 +46,14 @@ export default function App() {
         <Route path="/Documentation" exact component={Documentation} />
         <ProtectedRoute path="/counter" component={Counter} />
         <ProtectedRoute path="/myProfile" component={ProfilePage} />
+        <ProtectedRoute path="/viewPolicies" component={ViewPolicies} />
         <Route path="/fetch-data" component={FetchData} />
         <Route path="/client/uploadFile" component={clientFileUploadDocument} />
         <Route path="/UserDetailsAdmin" component={UserDetailsAdmin} />
         <Route path="/EditProfileClient" component={EditProfileClient} />
         <Route path="/UserPolicy" component={UserPolicy} />
         <Route path="/Test" component={Test} />
-        <Route path="/ViewClientProfile" component={ViewClientProfile}/>
+        <Route path="/ViewClientProfile" component={ViewClientProfile} />
       </Switch>
     </Layout>
   );

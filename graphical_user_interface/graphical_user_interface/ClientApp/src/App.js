@@ -24,6 +24,8 @@ import UserPolicy from "./components/pages/UserPolicy";
 import ProfilePage from "./pages/globalPages/ProfilePage";
 import ViewClientProfile from "./pages/client/ViewClientProfile";
 import ViewAdminInformation from "./pages/admin/ViewAdminInformation";
+import ViewQueries from "./pages/admin/ViewQueries";
+import CreateQuery from "./pages/client/CreateQuery";
 
 import "./custom.css";
 
@@ -53,6 +55,8 @@ export default function App() {
         <Route path="/Test" component={Test} />
         <Route path="/ViewClientProfile" component={ViewClientProfile}/>
         <Route path="/ViewAdminInformation" component={ViewAdminInformation}/>
+        <Route path="/ViewQueries" component={ViewQueries}/>
+        <Route path="/CreateQuery" component={CreateQuery}/>
       </Switch>
     </Layout>
   );

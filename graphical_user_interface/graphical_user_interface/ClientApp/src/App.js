@@ -23,6 +23,7 @@ import EditProfileClient from "./pages/client/EditProfileClient";
 import UserPolicy from "./components/pages/UserPolicy";
 import ProfilePage from "./pages/globalPages/ProfilePage";
 import ViewClientProfile from "./pages/client/ViewClientProfile";
+import ViewAdminInformation from "./pages/admin/ViewAdminInformation";
 
 import "./custom.css";
 
@@ -51,6 +52,7 @@ export default function App() {
         <Route path="/UserPolicy" component={UserPolicy} />
         <Route path="/Test" component={Test} />
         <Route path="/ViewClientProfile" component={ViewClientProfile}/>
+        <Route path="/ViewAdminInformation" component={ViewAdminInformation}/>
       </Switch>
     </Layout>
   );

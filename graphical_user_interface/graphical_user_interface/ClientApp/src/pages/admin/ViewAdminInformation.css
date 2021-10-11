@@ -1,0 +1,30 @@
+.gridViewAdminInfo{
+    background-color: #1d1d1d;
+}
+
+.gridViewAdminInfoHeader h1{
+    color: #548CA8;
+}
+
+.viewClientInfo label{
+    color: #fff;
+}
+
+.viewClientInfo div{
+    text-align: center;
+}
+
+
+.btnBackAdminProfile{
+    background-color: #EEEEEE;
+    font-size: 20px;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 12px;
+    width: 20%;
+  }
+
+  .btnBackAdminProfile:hover{
+    background-color: #548CA8;
+    color: #EEEEEE;
+  }

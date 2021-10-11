@@ -1,111 +1,81 @@
 import { data, event } from "jquery";
-import React from "react";
-
+import React, {useEffect, useState} from "react";
+import { useHistory } from "react-router";
+import API from "../../API";
 import styled from "styled-components";
 
 function App(){
+  const history = useHistory();
+  const [updated, setUpdated] = useState(1);
+  const table_headings =["Id","Name","Surname","Policy","Role"]
+  const [table_info, setTableInfo] = useState({}) ;
+  const table_data = []
 
-  function test(){
-    console.log('print')
+  function HandleTableInfo(e){
+    setTableInfo(e)
   }
 
-  function load_Data(url) {
-    var body = document.body,
-          tbl = document.createElement('table')
-    tbl.style.width  = '1000px';
-    tbl.id = "user_info_table";
-    // tbl.style.border = '1px solid black';
-    tbl.style.left = '8rem';
-    tbl.style.position = "absolute";
-    const table_headings =["Id","Name","Surname","Policy","Role"]
-  
-    fetch(url).
-      then(response => response.json())
-      .then(data => {
-        let count = 1
-        for(var item in data){
-          var details = data[item]
-          // console.log(details)
-          if(count == 1){
-            var tr = tbl.insertRow();
-            for(var heading in table_headings){
-              var td = tr.insertCell();
-              td.appendChild(document.createTextNode(table_headings[heading]));
-              td.style.border = '1px solid black';
-              count = 2
-              // console.log('test')
-            }
-          }
-          // var id = details['userId']
-          // console.log(id)
-          var tr = tbl.insertRow();
-          // tr.id = id
-          // 
-          var td = tr.insertCell();
-          td.appendChild(document.createTextNode(details['userId'])) 
-          // 
-          var td = tr.insertCell();
-          td.appendChild(document.createTextNode(details['firstName'])) 
-          
-          var td = tr.insertCell();  
-          td.appendChild(document.createTextNode(details['lastName'])) 
-          var td = tr.insertCell();
-          td.appendChild(document.createTextNode(details['policyName'])) 
-          var td = tr.insertCell();
-          td.appendChild(document.createTextNode(details['roleName'])) 
-          var td = tr.insertCell();
-          // td.appendChild(document.createTextNode('Expand')) 
-
-          var link = document.createElement('a')
-          var link_text = document.createTextNode('Expand')
-          link.appendChild(link_text)
-          // link.href = "https://localhost:44376/api/Users/GetUserDetails/"+details['userId'];
-          link.href = ""
-          td.appendChild(link)
-          // var input = document.createElement('input')
-          // // input.type = 'text'
-          // input.value = details['userId']
-          // input.style.visibility = 'False'
-          // td.appendChild(input);
-          // td.onclick = function(){
-          //   // console.log(input.value)
-          // }
-         
-          // console.log(details)
-  
-          body.appendChild(tbl)
-        }
-      })
+  function load_Data() {
+    var body = document.body
+    body.appendChild(document.createElement('p'))
   }
 
-  function handleChange(e){
-    // load_Data('https://localhost:44376/admissions/getall');
-  }
+  useEffect(() =>{
+    var onSuccess = (e) =>{
+      HandleTableInfo(e.data)
+      // table_data = e.data;
+      console.log(e.data)
+    };
+    API.APIGET(
+      "Users/GetAdminLoadPageData",
+      onSuccess,
+      () => {},
+      () => {}
+    )
+    return () => {};
+  }, [updated])
 
-  function searchClick(){
-    document.body.removeChild(document.getElementById('user_info_table'))
-    var search_value = document.getElementById("userSearch").value;
-    load_Data('https://localhost:44376/api/Users/SearchLoadPageData?search='+search_value);
-  }
 
-  function clearCLick(){
-    document.body.removeChild(document.getElementById('user_info_table'))
-    document.getElementById('userSearch').value = '';
-    load_Data('https://localhost:44376/api/Users/GetAdminLoadPageData');
-  }
+  function searchClick(){}
 
-  load_Data('https://localhost:44376/api/Users/GetAdminLoadPageData');
+  function clearCLick(){}
+
+  // load_Data();
 
   return (
     <div >
       <header >User Information</header>
       <main>
-     
         <h2>Search</h2>
-        <input id="userSearch" type="text" onChange={handleChange}></input>
+        <input id="userSearch" type="text"></input>
         <button id="btnSearch" onClick={searchClick}>Search</button>
         <button id="btnClear" onClick={clearCLick}>Clear</button>
       </main>
+      <table style={{width:"1000px"}}>
+        <tbody>
+        <tr>
+          {table_headings.map((t) => {
+            return (
+              <td key={t} style={{border:'1px solid black'}}>{t}</td>
+            );
+            })}
+        </tr>
+        </tbody>
+        <tbody>
+        {Object.keys(table_info).map((i) => {
+          return (
+            <tr>
+              <td>{table_info[i].userId}</td>
+              <td>{table_info[i].firstName}</td>
+              <td>{table_info[i].lastName}</td>
+              <td>{table_info[i].policyName}</td>
+              <td>{table_info[i].roleName}</td>
+            </tr>
+          )
+        }
+        )}
+        </tbody>
+      </table>
     </div>
   );
 }

@@ -170,6 +170,7 @@ function ProfilePage() {
               >
                 View Medical Document
               </button>
+              <br />
               <button
                 onClick={() => {
                   var medicalFile = GetMedicalDoc();

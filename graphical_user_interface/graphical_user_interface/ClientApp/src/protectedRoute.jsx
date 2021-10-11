@@ -2,6 +2,7 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 import auth from './auth'
 import { Redirect } from 'react-router'
+import './App.css';
 
 export const ProtectedRoute = ({component:Component,...rest}) => {
     return (
@@ -12,7 +13,7 @@ export const ProtectedRoute = ({component:Component,...rest}) => {
                     return <Component {...props}/>
                 }
                 else{
-                    return (<h1>CONTENT CLASSIFIED</h1>)
+                    return (<h1 className="warningHeading">CONTENT CLASSIFIED <br />Please Signin or Register</h1>)
                 }
             }
         }/>

@@ -79,26 +79,6 @@ class Auth {
     );
   }
 
-/*
-  editProfileClient(details, onSuccess, onFail){
-    API.APIGetAnon(
-      "",
-      {
-        FirstName: details.FirstName,
-          LastName: details.LastName,
-          Email: details.Email,
-          Cellphone: details.Cellphone,
-          Gender: details.Gender,
-          DOB: details.DOB,
-          IdNumber: details.IdNumber,
-          City: details.City,
-          Street: details.Street,
-          PostalCode: details.PostalCode
-      }
-    );
-  }*/
-
-
 }
 
 export default new Auth();

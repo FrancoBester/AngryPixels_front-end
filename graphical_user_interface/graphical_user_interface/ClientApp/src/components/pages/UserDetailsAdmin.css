@@ -1,0 +1,102 @@
+.userDetailsAdminGrid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 150px 150px 300px;
+    grid-gap: 0em;
+  }
+
+.userInfoHeader{
+  color: #548CA8;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 80px;
+  font-family: 'Noto Sans Display', sans-serif;
+  text-align: center;
+}
+
+.userInfoHeader, .searchUserInfoGrid, .userInfoTable{
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .userDetailsAdminGrid > *{
+    background: #1D1D1D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.searchUserInfoGrid h2{
+    color: #fff;
+}
+
+.searchUserInfoGrid{
+  text-align: right;
+  color: #EEEEEE;
+  padding-right: 20px;
+}
+
+.btnSearchUserInfo{
+  background-color: #EEEEEE;
+  font-size: 20px;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 12px;
+}
+
+.btnSearchUserInfo:hover{
+  background-color: #548CA8;
+  color: #EEEEEE;
+}
+
+.btnClearSearchUserInfo{
+  background-color: #EEEEEE;
+  font-size: 20px;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 12px;
+}
+
+.btnClearSearchUserInfo:hover{
+  background-color: #548CA8;
+  color: #EEEEEE;
+}
+
+.searchUserInfoGrid label{
+    font-size: 20px;
+}
+
+input[type=text], select, textarea{
+    width: 80%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+  }
+
+/* TABLE STYLES */
+
+.userInfoTable table tr td {
+    font-size: 18px;
+    font-family: 'Roboto Mono', monospace;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,.1);
+}
+
+.userInfoTable th, td{
+    padding: 15px;
+	background-color: rgba(255,255,255,0.1);
+}
+
+.tblHeadingNames{
+    background-color: #548CA8;
+    color: #fff;
+    font-weight: bold;
+}
+
+.userInfoTable tbody{
+    text-align: left;
+    background-color: #EEEEEE;
+    
+}

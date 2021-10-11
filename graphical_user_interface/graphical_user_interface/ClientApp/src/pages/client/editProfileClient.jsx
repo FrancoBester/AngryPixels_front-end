@@ -52,13 +52,14 @@ function EditProfileClient() {
         PostalCode: PostalCode
     };
 
-    API.APIPOST(
-        "Users/UpdateUserInformation/",
-        userObj,
-        () => {},
-        () => {},
-        () => {}
-    );
+    //trying to get working
+    // API.APIPOST(
+    //     "Users/UpdateUserInformation/",
+    //     userObj,
+    //     () => {},
+    //     () => {},
+    //     () => {}
+    // );
     //history.push("/Client")
 
 
@@ -68,7 +69,7 @@ function EditProfileClient() {
             <div className="edit-title-container">
             <header>Edit Profile</header>
             <form 
-                onSubmit={updateInfo()}
+                // onSubmit={updateInfo()}
             >
 
             <div className="editProfRow">

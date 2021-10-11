@@ -10,7 +10,7 @@ function LoginPage() {
   const history = useHistory();
   function Login() {
     auth.login({ Email: Email, password: Password }, () => {
-      history.push("/Client");
+      history.push("/home");
     });
   }
   return (

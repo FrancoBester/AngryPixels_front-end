@@ -1,60 +1,36 @@
-.grid-container-admin{
+.dashboardHeading h1{
+    color: black;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.grid-container{
   display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: 150px 150px 100px 200px 200px 200px;
-  grid-gap: 0.1em;
+  height: 400px;
+  align-content: center;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  background-color: #334257;
+  padding: 20px;
 }
 
-.adminDashHeader{
-  color: #548CA8;
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 80px;
-  font-family: 'Noto Sans Display', sans-serif;
-}
+.grid-container > div {
+    background-color: rgb(238, 238, 238);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+    
+  }
 
-.adminDashHeader, .subHeader, .adminButtons, .searchAdmin, .clientInfo, .tabelClientInfo{
-  grid-column-start: 1;
-  grid-column-end: 3;
-}
+  button{
+    height: 80px;
+    font-size: 20px;
+    font-style: bold;
+    font-family: 'Oxygen', sans-serif;
+    border-radius: 8px;
+  }
 
-.grid-container-admin > *{
-  background: #1D1D1D;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.subHeader h2{
-  color: #DDDDDD;
-  font-size: 25px;
-}
-
-.adminButtons{
-  text-align: right;
-  color: #EEEEEE;
-  padding-right: 20px;
-}
-
-.btnViewQueries, .btnViewMedicalSchemas{
-  background-color: #EEEEEE;
-  font-size: 20px;
-  border-radius: 8px;
-  padding: 10px;
-  margin: 12px;
-}
-
-.btnViewQueries:hover, .btnViewMedicalSchemas:hover{
-  background-color: #548CA8;
-  color: #EEEEEE;
-}
-
-.clientInfo h2{
-  color: #548CA8;
-  font-size: 20px;
-  text-align: center;
-}
-
-.tabelClientInfo table, tr, th, td{
-  outline: #DDDDDD;
-  color: #fff;
-}
+  button:hover{
+    background-color: #476072;  
+    color: #fff;    
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }

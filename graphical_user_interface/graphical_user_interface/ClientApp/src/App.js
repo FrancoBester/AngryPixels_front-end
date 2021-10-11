@@ -29,7 +29,6 @@ import CreateQuery from "./pages/client/CreateQuery";
 
 import ViewPolicies from "./pages/client/ViewPolicies";
 import ViewSinglePolicy from "./pages/client/ViewSinglePolicy";
-import ViewMedicalSchemaRequests from './pages/admin/ViewMedicalSchemaRequests';
 
 import "./custom.css";
 
@@ -63,7 +62,6 @@ export default function App() {
         <Route path="/ViewAdminInformation" component={ViewAdminInformation} />
         <Route path="/ViewQueries" component={ViewQueries} />
         <Route path="/CreateQuery" component={CreateQuery} />
-        <Route path="/ViewMedicalSchemaRequests" component={ViewMedicalSchemaRequests}/>
       </Switch>
     </Layout>
   );

@@ -31,7 +31,7 @@ function Client(){
                 <button
                 className="btnViewPoliciesClient"
                 onClick={() => {
-                    history.push("/ViewPolicies");
+                    history.push();
                 }}
                 >
                     View Policies
@@ -40,7 +40,7 @@ function Client(){
                 <button
                 className="btnNewQueryClient"
                 onClick={() => {
-                    history.push("/CreateQuery");
+                    history.push();
                 }}
                 >
                     New Query

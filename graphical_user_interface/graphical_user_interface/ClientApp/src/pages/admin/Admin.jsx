@@ -29,7 +29,7 @@ function Admin(){
             <button
                     className="btnViewMedicalSchemas"
                     onClick={() => {
-                        history.push("/"); //Add path here once a View Profile Page has been created
+                        history.push("/ViewMedicalSchemaRequests"); //Add path here once a View Profile Page has been created
                     }}   
                 >
                     View Medical Schema Requests

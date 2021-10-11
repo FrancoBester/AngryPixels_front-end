@@ -18,7 +18,7 @@ import Admin from "./pages/admin/Admin";
 import Application from "./pages/globalPages/Application";
 import Documentation from "./components/pages/Documentation";
 import clientFileUploadDocument from "./pages/client/clientFileUploadDocument";
-import UserDetailsAdmin from "./components/pages/UserDetailsAdmin";
+import UserDetailsAdmin from "./pages/admin/UserDetailsAdmin";
 import EditProfileClient from "./pages/client/EditProfileClient";
 import UserPolicy from "./components/pages/UserPolicy";
 import ProfilePage from "./pages/globalPages/ProfilePage";

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import API from "../../API";
 import auth from "../../auth";
+import './ViewPolicies.css';
 import { Link, useHistory } from "react-router-dom";
 import {
   Collapse,
@@ -39,25 +40,35 @@ function ViewPolicies() {
   }, [update]);
   return (
     <>
+    <div className="gridViewPolicies">
+
+      <div className="viewPoliciesHeader">
+        <header>View Policies</header>
+      </div>
+
       {hasLoaded ? (
         <>
+        <main className="viewPolicies">
           <table>
-            <tr>
+            <tbody>
+            <tr className="tblViewPoliciesHeadings">
               <th>Policy Holder</th>
               <th>Policy Type</th>
-              <th>Description</th>
-              <th>Benefits</th>
+             {/*} <th>Description</th>
+              <th>Benefits</th>*/}
               <th>Admission</th>
               <th>Options</th>
             </tr>
+            </tbody>
+            <tbody>
             {policies.map((policy) => {
               return (
                 <tr key={policy.policyId}>
                   <td>{policy.policyHolder}</td>
                   <td>{policy.policyType}</td>
-                  <td>{policy.policyDescription}</td>
+                  {/*<td>{policy.policyDescription}</td>*/}
                   {/* Maby remove description and benifits */}
-                  <td>{policy.policyBenefits}</td>
+                  {/*<td>{policy.policyBenefits}</td>*/}
                   <td>{policy.admsType}</td>
                   <td>
                     <NavItem>
@@ -73,11 +84,14 @@ function ViewPolicies() {
                 </tr>
               );
             })}
+            </tbody>
           </table>
+          </main>
         </>
       ) : (
         <h3>Loading...</h3>
       )}
+      </div>
     </>
   );
 }

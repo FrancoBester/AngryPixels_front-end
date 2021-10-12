@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import API from "../../API";
-import auth from "../../auth";
 import { Link, useHistory } from "react-router-dom";
+import API from "../../API";
+
 import {
   Collapse,
   Container,
@@ -12,61 +12,54 @@ import {
   NavLink,
 } from "reactstrap";
 
-function ViewPolicies() {
-  const [policies, setPolicies] = useState({});
-  const [update, setUpdate] = useState(0);
+function ViewSchemaRequests() {
   const [hasLoaded, setHasLoaded] = useState(false);
+  const [schemaRequests, setSchemaRequests] = useState({});
 
-  //Get Policies Here
   useEffect(() => {
     var onSuccess = (e) => {
       debugger;
-      setPolicies(e.data);
+      setSchemaRequests(e.data);
 
       setHasLoaded(true);
     };
 
     API.APIGET(
-      "SchemaRequests/GetAllPolicies",
+      "SchemaRequests/GetAllSchemaRequests",
       onSuccess,
       () => {
         alert("Error");
       },
       () => {}
     );
-
     return () => {};
-  }, [update]);
+  }, []);
+
   return (
     <>
       {hasLoaded ? (
         <>
           <table>
             <tr>
-              <th>Policy Holder</th>
               <th>Policy Type</th>
-              <th>Description</th>
-              <th>Benefits</th>
-              <th>Admission</th>
+              <th>User Fullname</th>
+              <th>Request Status</th>
               <th>Options</th>
             </tr>
-            {policies.map((policy) => {
+            {schemaRequests.map((x) => {
               return (
-                <tr key={policy.policyId}>
-                  <td>{policy.policyHolder}</td>
-                  <td>{policy.policyType}</td>
-                  <td>{policy.policyDescription}</td>
-                  {/* Maby remove description and benifits */}
-                  <td>{policy.policyBenefits}</td>
-                  <td>{policy.admsType}</td>
+                <tr>
+                  <td>{x.policyType}</td>
+                  <td>{`${x.userName} ${x.userSurname}`}</td>
+                  <td>{x.requestStatus}</td>
                   <td>
                     <NavItem>
                       <NavLink
                         tag={Link}
                         className="text-dark"
-                        to={`/viewSinglePolicy?id=${policy.policyId}`}
+                        to={`/admin/viewSingleSchemaRequest?id=${x.requestId}`}
                       >
-                        View Policy
+                        View Schema Request
                       </NavLink>
                     </NavItem>
                   </td>
@@ -82,4 +75,4 @@ function ViewPolicies() {
   );
 }
 
-export default ViewPolicies;
+export default ViewSchemaRequests;

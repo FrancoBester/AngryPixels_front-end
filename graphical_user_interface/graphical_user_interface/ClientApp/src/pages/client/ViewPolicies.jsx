@@ -56,6 +56,7 @@ function ViewPolicies() {
                   <td>{policy.policyHolder}</td>
                   <td>{policy.policyType}</td>
                   <td>{policy.policyDescription}</td>
+                  {/* Maby remove description and benifits */}
                   <td>{policy.policyBenefits}</td>
                   <td>{policy.admsType}</td>
                   <td>

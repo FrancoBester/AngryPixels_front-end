@@ -20,13 +20,14 @@ function ViewPolicies() {
   //Get Policies Here
   useEffect(() => {
     var onSuccess = (e) => {
+      debugger;
       setPolicies(e.data);
 
       setHasLoaded(true);
     };
 
     API.APIGET(
-      "GetAllPolicies",
+      "SchemaRequests/GetAllPolicies",
       onSuccess,
       () => {
         alert("Error");
@@ -44,25 +45,25 @@ function ViewPolicies() {
             <tr>
               <th>Policy Holder</th>
               <th>Policy Type</th>
-              <th>Date</th>
               <th>Description</th>
               <th>Benefits</th>
+              <th>Admission</th>
               <th>Options</th>
             </tr>
             {policies.map((policy) => {
               return (
-                <tr>
-                  <td>{policy.policy_Holder}</td>
-                  <td>{policy.policy_Type}</td>
-                  <td>{policy.policy_Date}</td>
-                  <td>{policy.policy_Des}</td>
-                  <td>{policy.policy_Benefits}</td>
+                <tr key={policy.policyId}>
+                  <td>{policy.policyHolder}</td>
+                  <td>{policy.policyType}</td>
+                  <td>{policy.policyDescription}</td>
+                  <td>{policy.policyBenefits}</td>
+                  <td>{policy.admsType}</td>
                   <td>
                     <NavItem>
                       <NavLink
                         tag={Link}
                         className="text-dark"
-                        to={`/viewSinglePolicy?id=${policy.policy_Id}`}
+                        to={`/viewSinglePolicy?id=${policy.policyId}`}
                       >
                         View Policy
                       </NavLink>

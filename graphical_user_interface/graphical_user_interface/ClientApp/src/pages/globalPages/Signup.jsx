@@ -129,7 +129,7 @@ function Signup() {
 
             <div className="row">
               <div className="col-25">
-                <label htmlFor="id">Id number:</label>
+                <label htmlFor="id">ID number:</label>
               </div>
               <div className="col-75">
                 <input
@@ -151,16 +151,18 @@ function Signup() {
                   type="radio"
                   value="Male"
                   name="genderChoice"
+                  id="Male"
                 ></input>
-                <label htmlFor="Male">Male</label>
+                <label for="Male">Male</label>
                 <input
                   onChange={(e) => setGender(e.target.value)}
                   type="radio"
                   value="Female"
                   name="genderChoice"
+                  id="Femeale"
                 ></input>
-                <label htmlFor="Female">Female</label>
-                <br />
+                <label for="Female">Female</label>
+
               </div>
             </div>
 

@@ -10,16 +10,15 @@ import LandingPage from "./pages/unAuthenticated/LandingPage";
 import LoginPage from "./pages/unAuthenticated/LoginPage";
 import { BrowserRouter as Router } from "react-router-dom";
 
-import Signup from "./components/pages/Signup";
+import Signup from "./pages/globalPages/Signup";
 import About from "./pages/globalPages/About";
 import Contact from "./pages/globalPages/Contact";
 import Client from "./pages/client/Client";
 import Admin from "./pages/admin/Admin";
 import Application from "./pages/globalPages/Application";
-import Documentation from "./components/pages/Documentation";
 import clientFileUploadDocument from "./pages/client/clientFileUploadDocument";
 import UserDetailsAdmin from "./pages/admin/UserDetailsAdmin";
-import EditProfileClient from "./pages/client/EditProfileClient";
+import EditProfileClient from "./pages/client/editProfileClient";
 import UserPolicy from "./components/pages/UserPolicy";
 import ProfilePage from "./pages/globalPages/ProfilePage";
 import ViewClientProfile from "./pages/client/ViewClientProfile";
@@ -47,7 +46,6 @@ export default function App() {
         <Route path="/Client" exact component={Client} />
         <Route path="/Admin" exact component={Admin} />
         <Route path="/Application" exact component={Application} />
-        <Route path="/Documentation" exact component={Documentation} />
         <ProtectedRoute path="/counter" component={Counter} />
         <ProtectedRoute path="/myProfile" component={ProfilePage} />
         <ProtectedRoute path="/viewPolicies" component={ViewPolicies} />

@@ -31,7 +31,7 @@ function Client(){
                 <button
                 className="btnViewPoliciesClient"
                 onClick={() => {
-                    history.push();
+                    history.push("/ViewPolicies");
                 }}
                 >
                     View Policies

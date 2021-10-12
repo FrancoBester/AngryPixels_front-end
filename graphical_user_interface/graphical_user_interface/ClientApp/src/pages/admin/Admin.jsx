@@ -1,23 +1,63 @@
 import React from 'react';
 import './Admin.css';
-//import { useHistory } from "react-router";
+import { useHistory } from "react-router";
 
 function Admin(){
-    return(
-    <div>
-        <body>
-        <h1>Admin Dashboard</h1>
 
-            <div className="grid-container">
-                <button className="btnAdmin">Create New User</button>
-                <button className="btnAdmin">View Client Info</button>
-                <button className="btnAdmin">View Applications</button>
-                <button className="btnAdmin">View Certificates</button>
-                <button className="btnAdmin">Upload Documentation</button>
-                <button className="btnAdmin">Logout</button>
+    const history = useHistory();
+
+    return(
+    <>
+
+            <div className="grid-container-admin-dashboard">
+                
+            <header className="adminDashHeader">Admin Dashboard</header>
+
+        <div className="subHeader">
+            <h2>Please select an action below</h2>
+        </div>
+
+        <main className="mainGridAdminDash">
+
+            <button
+                className="btnViewQueries"
+                onClick={() =>{
+                    history.push("/ViewQueries");
+                }}
+            >
+                View Queries
+            </button>
+
+            <button
+                className="btnViewMedicalSchema"
+                onClick={() =>{
+                    history.push("");
+                }}
+            >
+                View Medical Schema
+            </button>
+        </main>
+
+        <div className="searchAdminDash">
+            <label>Search:</label>
+            <input type="text" />
+        </div>
+        <div className="tblAdminDashSearch">
+                <table>
+                    table
+                </table>
+        </div>
+        <div className="headerEmpClient">
+            <header>Employee and Client Information</header>
+        </div>
+        <div className="tblEmpClientInfo">
+            <table>
+                
+            </table>
+        </div>
+            
             </div>
-        </body>
-    </div>
+    </>
 
     );
 

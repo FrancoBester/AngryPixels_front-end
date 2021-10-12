@@ -1,36 +1,55 @@
-.dashboardHeading h1{
-    color: black;
-    font-family: 'Josefin Sans', sans-serif;
-}
-
-.grid-container{
+.grid-container-admin-dashboard{
   display: grid;
-  height: 400px;
-  align-content: center;
-  grid-template-columns: auto auto auto;
-  grid-gap: 10px;
-  background-color: #334257;
-  padding: 20px;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 150px 70px 120px 200px 200px 200px 200px;
+  grid-gap: 0.1em;
 }
 
-.grid-container > div {
-    background-color: rgb(238, 238, 238);
-    text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
-    
-  }
+.adminDashHeader{
+  color: #548CA8;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 80px;
+  font-family: 'Noto Sans Display', sans-serif;
+}
 
-  button{
-    height: 80px;
-    font-size: 20px;
-    font-style: bold;
-    font-family: 'Oxygen', sans-serif;
-    border-radius: 8px;
-  }
+.adminDashHeader, .subHeader, .mainGridAdminDash, .searchAdminDash, .tblAdminDashSearch, .headerEmpClient, .tblEmpClientInfo{
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
 
-  button:hover{
-    background-color: #476072;  
-    color: #fff;    
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-  }
+.grid-container-admin-dashboard > *{
+  background: #1D1D1D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subHeader h2{
+  color: #DDDDDD;
+  font-size: 25px;
+}
+
+.headerEmpClient{
+  color: #DDDDDD;
+  font-size: 25px;
+}
+
+.mainGridAdminDash{
+  text-align: right;
+  color: #EEEEEE;
+  padding-right: 20px;
+}
+
+.btnViewQueries, .btnViewMedicalSchema{
+  background-color: #EEEEEE;
+  font-size: 20px;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 12px;
+}
+
+.btnViewQueries:hover, .btnViewMedicalSchema:hover{
+  background-color: #548CA8;
+  color: #EEEEEE;
+}
+

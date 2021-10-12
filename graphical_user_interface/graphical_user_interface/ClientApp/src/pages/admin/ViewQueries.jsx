@@ -2,13 +2,11 @@ import React, {useEffect, useState} from "react";
 import './ViewQueries.css';
 import API from "../../API";
 import { useHistory } from 'react-router';
-import { event } from "jquery";
-
 
 function ViewQueries() {
 
     const history =useHistory();
-    const [updated, setUpdated] = useState();
+    const [updated, setUpdated] = useState(1);
     const tableHeadings = ["Query ID", "Client Name", "Query Level", "Query Code", "Query Title"]
     const [TableInfo, setTableInfo] = useState({});
     const [SearchValue, setSearchValue] = useState('');
@@ -35,7 +33,7 @@ function ViewQueries() {
             HandleTableInfo(e.data)
         };
         API.APIGET(
-            "Queries/SearchAllUserQueries?search" + SearchValue+ "",
+            "Queries/SearchAllUserQueries" + SearchValue+ "",
             onSuccess,
             () => {},
             () => {}
@@ -48,7 +46,7 @@ function ViewQueries() {
             HandleTableInfo(e.data)
         };
         API.APIGET(
-            "Queries/GetAllQueries",
+            "Queries/GetAllQueries?search",
             onSuccess,
             () => {},
             () => {}

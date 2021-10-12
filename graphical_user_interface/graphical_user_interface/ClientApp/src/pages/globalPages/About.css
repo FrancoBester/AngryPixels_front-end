@@ -1,8 +1,9 @@
 .gridAbout {
   display: grid;
   grid-template-columns: 75% 25%;
-  grid-template-rows: 150px 600px;
-  grid-gap: 0.1em;
+  grid-template-rows: 120px auto;
+  grid-gap: 0em;
+  margin-bottom: 20px;
   }
   
   .AboutUsHeader{
@@ -25,18 +26,20 @@
 
   .mainAbout{
       color: #FFF9FB;
-
   }
 
   img{
       width: 100%;
-      height: 100%;
+      height: 80%;
       object-fit: cover;
+      margin-right: 15px;
   }
 
   .mainAbout{
       font-family: 'Lato', sans-serif;
-      font-size: 18px;
+      font-size: 15px;
       text-align: center;
       letter-spacing: 0.2em;
+      padding: 20px;
+      
   }

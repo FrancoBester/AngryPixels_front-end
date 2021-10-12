@@ -13,11 +13,7 @@ function About() {
         Africa. MediTrust and its consultants are accredited by the Council for
         Medical Schemes and registered as an Authorised Financial Services
         Provider. We are committed to ensure the best quality advice, best
-        suited to our clients’ individual needs and preferences. MediTrust was
-        founded in 2011 by René Coetzee and has become a recognised and well
-        respected name in the healthcare industry. At MediTrust we believe trust
-        is the most important aspect in building a relationship with clients to
-        ensure they enjoy the best service and advice available.
+        suited to our clients’ individual needs and preferences. 
       </main>
 
       <aside>

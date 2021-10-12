@@ -38,19 +38,19 @@ function Contact() {
           </li>
           <li>
             <i className="fab fa-facebook-square" id="fbIcon"></i>
-            <label for="fbIcon" >Facebook</label>
+            <label for="fbIcon" ><a href="">Facebook</a></label>
           </li>
           <li>
             <i className="fab fa-linkedin" id="linkedinIcon"></i>
-            <label for="linkedinIcon">LinkedIn</label>
+            <label for="linkedinIcon"><a href="">LinkedIn</a></label>
           </li>
           <li>
             <i className="fab fa-twitter-square" id="twitterIcon"></i>
-            <label for="twitterIcon">Twitter</label>
+            <label for="twitterIcon"><a href="">Twitter</a></label>
           </li>          
           <li>
             <i className="fab fa-instagram-square" id="instaIcon"></i>
-            <label for="instaIcon">Instagram</label>
+            <label for="instaIcon"><a href="">Instagram</a></label>
           </li>
         </ul>
       </aside>

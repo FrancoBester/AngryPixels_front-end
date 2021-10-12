@@ -56,21 +56,30 @@ function App(){
   }
 
   return (
-    <div >
-      <header >User Information</header>
-      <main>
-        <h2>Search</h2>
-        <input id="userSearch" type="text" onChange={event => setSearch(event.target.value)}></input>
-        <button id="btnSearch" onClick={searchClick}>Search</button>
-        <button id="btnClear" onClick={clearCLick}>Clear</button>
-      </main>
+    <>
+    <div className="userDetailsAdminGrid">
+      <header className="userInfoHeader">User Information</header>
+      <main className="searchUserInfoGrid">
+        <div className="rowSearch">
+          <div className="colLeftSearch">
+          <label id="lblSearch">Search:</label>
+        </div>
+        <div className="colRightSearchBar">
+          <input id="userSearch" type="text" for="lblSearch" onChange={event => setSearch(event.target.value)}></input>
+          </div>
+        </div>
+        </main>
+        <div className="userDetailsButtons">
+          <button className="btnSearchUserDetails" id="btnSearch" onClick={searchClick}>Search</button>
+          <button className="btnClearUserDetails" id="btnClear" onClick={clearCLick}>Clear</button>
+        </div>
       <div className="userInfoTable">
-        <table style={{width:"80%"}}>
+        <table >
           <tbody>
           <tr className="tblHeadingNames">
             {table_headings.map((t) => {
               return (
-                <td key={t} style={{border:'1px solid black'}}>{t}</td>
+                <td key={t} >{t}</td>
               );
               })}
           </tr>
@@ -92,6 +101,7 @@ function App(){
         </table>
       </div>
       </div>
+    </>
   )
 }
 

@@ -9,69 +9,86 @@ import API from "../../API";
 }
 
 function EditProfileClient() {
-  const [updated, setUpdated] = useState(1);
-  const [FirstName, setFirstName] = useState("");
-  const [LastName, setLastName] = useState("");
-  const [Email, setEmail] = useState("");
-  const [Cellphone, setCellphone] = useState("");
-  const [Gender, setGender] = useState("");
-  const [DOB, setDOB] = useState(new Date());
-  const [IdNumber, setIdNumber] = useState("");
-  const [City, setCity] = useState("");
-  const [Street, setStreet] = useState("");
-  const [PostalCode, setPostalCode] = useState("");
-  const history = useHistory();
-  const [user_info, setUserInfo] = useState({});
+    const [updated, setUpdated] = useState(1);
+    const [FirstName, setFirstName] = useState("");
+    const [LastName, setLastName] = useState("");
+    const [Email, setEmail] = useState("");
+    const [Cellphone, setCellphone] = useState("");
+    const [Gender, setGender] = useState("");
+    const [DOB, setDOB] = useState(new Date());
+    const [IdNumber, setIdNumber] = useState("");
+    const [City, setCity] = useState("");
+    const [Street, setStreet] = useState("");
+    const [Postal_Code, setPostalCode] = useState("");
+    const history = useHistory();
+    const [user_info, setUserInfo] = useState({});
 
-  function HandleUserInfo(e) {
-    setUserInfo(e);
-    console.log(e);
-  }
+    function Update(){
+        const userObj = {
+            User_Name: FirstName,
+            User_Surname: LastName,
+            User_Email: Email,
+            User_Cell: Cellphone,
+            User_Geder: Gender,
+            User_Dob: DOB,
+            User_ID_Number: IdNumber,
+            Address : {
+                City,
+                Street,
+                Postal_Code,
+            }
+        };
+        console.log(userObj)
 
-  useEffect(() => {
-    var onSuccess = (e) => {
-      HandleUserInfo(e.data);
-    };
-    API.APIGET(
-      "Users/GetUserDetails/1", //+ localStorage.getItem("id"),
-      onSuccess,
-      () => {},
-      () => {}
-    );
-    return () => {};
-  }, [updated]);
+        API.APIPOST(
+            "Users/UpdateUserInformation/1",
+            userObj,
+            () => {},
+            () => {},
+            () => {}
+        );
 
-  const userObj = {
-    FirstName: FirstName,
-    LastName: LastName,
-    Email: Email,
-    Cellphone: Cellphone,
-    Gender: Gender,
-    DOB: DOB,
-    IdNumber: IdNumber,
-    City: City,
-    Street: Street,
-    PostalCode: PostalCode,
-  };
+    }
 
-  //trying to get working
-  // API.APIPOST(
-  //     "Users/UpdateUserInformation/",
-  //     userObj,
-  //     () => {},
-  //     () => {},
-  //     () => {}
-  // );
-  //history.push("/Client")
+    function HandleUserInfo(e){
+        setUserInfo(e)
+        setCity(e.city)
+        setDOB(e.User_Dob)
+        setEmail(e.user_Email)
+        setFirstName(e.user_Name)
+        setLastName(e.user_Surname)
+        setPostalCode(e.postal_Code)
+        setStreet(e.street)
+        setIdNumber(e.user_ID_Number)
+        setGender(e.user_Gender)
+        setCellphone(e.user_Cell)
+        // console.log(e)
+    }
 
-  return (
-    <>
-      <div className="EditClientProf">
-        <div className="edit-title-container">
-          <header>Edit Profile</header>
-          <form
-          // onSubmit={updateInfo()}
-          >
+   
+    useEffect(() => {
+        var onSuccess = (e) =>{
+            HandleUserInfo(e.data)
+        }
+        API.APIGET("Users/GetUserDetails/" + localStorage.getItem("id"),
+        onSuccess,
+        () => {},
+        () => {})
+        
+        return () => {};
+    }, [updated])
+
+    return (
+        <>
+        <div className="EditClientProf">
+            <div className="edit-title-container">
+            <header>Edit Profile</header>
+            <form 
+                onSubmit={() =>{
+                    Update();
+                }}
+            >
+
             <div className="editProfRow">
               <div className="editProfileColLeft">
                 <label>Name:</label>
@@ -221,18 +238,22 @@ function EditProfileClient() {
               </div>
             </div>
 
-            <input className="btnUpdateClient" type="submit" value="Update" />
-            <button
-              className="btnCancelUpdate"
-              onClick={() => {
-                history.push("/Client");
-              }}
-            >
-              Cancel
-            </button>
-          </form>
+                <input className="btnUpdateClient" type="submit" value="Update" onClick={() => {
+                    Update()
+                }
+                } />
+                <button
+                    className="btnCancelUpdate"
+                    onClick={() => {
+                        history.push("/Client")
+                    }}
+                >
+                    Cancel
+                </button>
+            
+            </form>
+            </div>
         </div>
-      </div>
     </>
   );
 }

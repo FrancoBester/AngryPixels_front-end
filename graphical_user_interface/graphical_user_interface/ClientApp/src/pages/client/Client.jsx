@@ -1,11 +1,34 @@
-import React from 'react';
+import React, {useEffect, useState} from "react";
 import './Client.css';
 import { useHistory } from "react-router";
+import API from "../../API";
+
 
 
 function Client(){
 
     const history = useHistory();
+    const [updated, setUpdated] = useState(1);
+    const tableHeadings =["Title","Assistant Name","Status"]
+    const [table_info, setTableInfo] = useState({}) ;
+
+    function HandleTableInfo(e){
+        setTableInfo(e)
+    }
+
+    useEffect(() => {
+        var onSuccess = (e) =>{
+            HandleTableInfo(e.data)
+        };
+        API.APIGET(
+            "Queries/GetSpecificUserQueries",
+            onSuccess,
+            () => {},
+            () => {}
+        )
+        return () => {};
+    }, [updated])
+
     console.log(localStorage.getItem("id"))
     return(
     <>
@@ -48,10 +71,32 @@ function Client(){
             </main> 
             
             <div className="userQueries">
-                <label>TODO: Show users own queries here</label>
+                <table>
+                    <tbody>
+                        <tr className="tblUserQueryHeadings">
+                            {tableHeadings.map((t) =>{
+                                return(
+                                    <td key={t} style={{border:'1px solid white'}}>{t}</td>
+                                );
+                            })}
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        {Object.keys(table_info).map((i) => {
+                            return(
+                                <tr>
+                                    <td>{table_info[i].query_Title}</td>
+                                    <td>{table_info[i].assistant_Name}</td>
+                                    <td>{table_info[i].query_Status}</td>
+                                </tr>
+                            )
+                        }
+                        )}
+                    </tbody>
+                </table>
+                <br />
+                <label>I DONT KNOW WHY THIS IS NOT WORKING</label>
             </div>   
-
-             
         </div>
     </>
     );

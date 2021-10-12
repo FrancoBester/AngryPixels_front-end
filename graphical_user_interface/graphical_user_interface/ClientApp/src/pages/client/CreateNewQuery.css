@@ -11,13 +11,15 @@
     font-family: 'Josefin Sans', sans-serif;
     font-size: 20px;
     text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .createQueryHeader{
   color: #548CA8;
   font-size: 60px;
   text-align: center;
-  font-family: 'Noto Sans Display', sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 input[type=text], select, textarea{
@@ -29,6 +31,12 @@ input[type=text], select, textarea{
     resize: vertical;
   }
 
+.rowQuey label{
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  color: #fff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 
 .queryColLeft{
     float: left;

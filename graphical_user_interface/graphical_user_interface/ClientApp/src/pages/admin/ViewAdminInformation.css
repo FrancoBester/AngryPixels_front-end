@@ -4,6 +4,8 @@
 
 .gridViewAdminInfoHeader h1{
     color: #548CA8;
+    text-align: center;
+    font-size: 60px;
 }
 
 .viewClientInfo label{

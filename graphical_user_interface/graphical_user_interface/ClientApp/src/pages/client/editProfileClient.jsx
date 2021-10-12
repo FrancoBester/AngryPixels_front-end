@@ -41,7 +41,7 @@ function EditProfileClient() {
         console.log(userObj)
 
         API.APIPOST(
-            "Users/UpdateUserInformation/1",
+            "Users/UpdateUserInformation/" + localStorage.getItem("id"),
             userObj,
             () => {},
             () => {},

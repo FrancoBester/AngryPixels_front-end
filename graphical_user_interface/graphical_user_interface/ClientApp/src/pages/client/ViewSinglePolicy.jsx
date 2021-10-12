@@ -12,6 +12,7 @@ function ViewSinglePolicy(props) {
 
   useEffect(() => {
     const id = new URLSearchParams(search).get("id");
+    debugger;
     setPolicyId(id);
     var onSuccess = (e) => {
       debugger;
@@ -34,7 +35,7 @@ function ViewSinglePolicy(props) {
 
   function RequestPolicy() {
     var onSuccess = (e) => {
-      alert("Request Sucessfull");
+      alert("Request Succesfull");
       history.goBack();
     };
 

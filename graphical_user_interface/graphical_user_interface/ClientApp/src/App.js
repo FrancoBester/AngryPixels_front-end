@@ -29,6 +29,8 @@ import CreateNewQuery from "./pages/client/CreateNewQuery";
 
 import ViewPolicies from "./pages/client/ViewPolicies";
 import ViewSinglePolicy from "./pages/client/ViewSinglePolicy";
+import ViewSchemaRequests from "./pages/admin/ViewSchemaRequests";
+import ViewSingleSchemaRequest from "./pages/admin/ViewSingleSchemaRequest";
 
 import "./custom.css";
 
@@ -52,6 +54,14 @@ export default function App() {
         <ProtectedRoute path="/myProfile" component={ProfilePage} />
         <ProtectedRoute path="/viewPolicies" component={ViewPolicies} />
         <ProtectedRoute path="/viewSinglePolicy" component={ViewSinglePolicy} />
+        <ProtectedRoute
+          path="/admin/viewSchemaRequests"
+          component={ViewSchemaRequests}
+        />
+        <ProtectedRoute
+          path="/admin/viewSingleSchemaRequest"
+          component={ViewSingleSchemaRequest}
+        />
         <Route path="/fetch-data" component={FetchData} />
         <Route path="/client/uploadFile" component={clientFileUploadDocument} />
         <Route path="/UserDetailsAdmin" component={UserDetailsAdmin} />
@@ -61,7 +71,7 @@ export default function App() {
         <Route path="/ViewClientProfile" component={ViewClientProfile} />
         <Route path="/ViewAdminInformation" component={ViewAdminInformation} />
         <Route path="/ViewQueries" component={ViewQueries} />
-        <Route path="/CreateNewQuery" component={CreateNewQuery}/>
+        <Route path="/CreateNewQuery" component={CreateNewQuery} />
       </Switch>
     </Layout>
   );

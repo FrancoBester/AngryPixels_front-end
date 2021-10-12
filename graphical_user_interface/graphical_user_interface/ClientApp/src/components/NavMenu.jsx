@@ -72,6 +72,15 @@ function NavMenu(props) {
                   </NavItem>
                   <NavItem>
                     <NavLink
+                      tag={Link}
+                      className="text-dark"
+                      to="/admin/viewSchemaRequests"
+                    >
+                      Admin
+                    </NavLink>
+                  </NavItem>
+                  <NavItem>
+                    <NavLink
                       onClick={() => {
                         auth.logout(() => {});
                       }}

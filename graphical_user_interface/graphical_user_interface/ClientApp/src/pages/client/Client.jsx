@@ -63,7 +63,7 @@ function Client(){
                 <button
                 className="btnNewQueryClient"
                 onClick={() => {
-                    history.push();
+                    history.push("/CreateNewQuery");
                 }}
                 >
                     New Query

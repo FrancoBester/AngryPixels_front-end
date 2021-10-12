@@ -1,0 +1,60 @@
+.gridViewSchema{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 150px 400px;
+    grid-gap: 0em;
+}
+
+.viewSchemaHeader{
+    color: #548CA8;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 80px;
+    font-family: 'Noto Sans Display', sans-serif;
+    text-align: center;
+}
+
+.viewSchemaHeader, .viewSchemasTable{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.gridViewSchema > *{
+    background: #1D1D1D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* table */
+
+.viewSchemasTable table tr td{
+    font-size: 15px;
+    font-family: 'Roboto Mono', monospace;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,.1);
+    width: 80%;
+}
+
+.viewSchemasTable{
+    text-align: right;
+    color: #EEEEEE;
+    padding-right: 20px;
+}
+
+.tblViewSchemas{
+    background-color: #548CA8;
+    color: #fff;
+    font-weight: bold;
+}
+
+.viewSchemasTable th, td{
+    padding: 13px;
+	background-color: rgba(255,255,255,0.1);
+}
+
+.viewSchemasTable tbody{
+    text-align: left;
+    background-color: #EEEEEE;
+    color: #1D1D1D;
+}

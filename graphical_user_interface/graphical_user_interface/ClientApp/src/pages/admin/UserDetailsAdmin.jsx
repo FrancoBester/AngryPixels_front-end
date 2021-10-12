@@ -8,7 +8,7 @@ import './UserDetailsAdmin.css';
 function App(){
   const history = useHistory();
   const [updated, setUpdated] = useState(1);
-  const table_headings =["Id","Name","Surname","Policy","Role"]
+  const table_headings =["Name","Surname","Policy","Role"]
   const [table_info, setTableInfo] = useState({}) ;
   const [search_value, setSearch] = useState('');
 
@@ -88,7 +88,6 @@ function App(){
           {Object.keys(table_info).map((i) => {
             return (
               <tr>
-                <td>{table_info[i].userId}</td>
                 <td>{table_info[i].firstName}</td>
                 <td>{table_info[i].lastName}</td>
                 <td>{table_info[i].policyName}</td>

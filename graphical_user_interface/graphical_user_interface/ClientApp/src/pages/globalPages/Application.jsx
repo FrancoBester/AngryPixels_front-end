@@ -28,16 +28,16 @@ function Application() {
   }
 
   return (
-    <div form-wrapper>
-      <div className="form-container">
-        <div className="title_container">
+    <div className="form-wrapper">
+      <div className="form-container-app">
+        <div className="title_container_app">
           <h1>New Application</h1>
           <form onSubmit={SubmitApplication}>
-            <div className="row">
-              <div className="col-25">
+            <div className="rowApp">
+              <div className="col-25-app">
                 <label>First Name:</label>
               </div>
-              <div className="col-75">
+              <div className="col-75-app">
                 <input
                   type="text"
                   placeholder="e.g. John"
@@ -47,11 +47,11 @@ function Application() {
               </div>
             </div>
 
-            <div className="row">
-              <div className="col-25">
+            <div className="rowApp">
+              <div className="col-25-app">
                 <label>Last Name:</label>
               </div>
-              <div className="col-75">
+              <div className="col-75-app">
                 <input
                   type="text"
                   placeholder="e.g. Snow"
@@ -61,11 +61,11 @@ function Application() {
               </div>
             </div>
 
-            <div className="row">
-              <div className="col-25">
+            <div className="rowApp">
+              <div className="col-25-app">
                 <label for="fname">Date of Birth:</label>
               </div>
-              <div className="col-75">
+              <div className="col-75-app">
                 <input
                   type="date"
                   placeholder=""
@@ -75,11 +75,11 @@ function Application() {
               </div>
             </div>
 
-            <div className="row">
-              <div className="col-25">
+            <div className="rowApp">
+              <div className="col-25-app">
                 <label>Age:</label>
               </div>
-              <div className="col-75">
+              <div className="col-75-app">
                 <input
                   type="text"
                   placeholder="e.g. 24"
@@ -89,11 +89,11 @@ function Application() {
               </div>
             </div>
 
-            <div className="row">
-              <div className="col-25">
+            <div className="rowApp">
+              <div className="col-25-app">
                 <label>Pysical Address:</label>
               </div>
-              <div className="col-75">
+              <div className="col-75-app">
                 <input
                   type="text"
                   placeholder="e.g. 123 Empire Road, Johannesburg 2076"
@@ -103,11 +103,11 @@ function Application() {
               </div>
             </div>
 
-            <div className="row">
-              <div className="col-25">
+            <div className="rowApp">
+              <div className="col-25-app">
                 <label>Language:</label>
               </div>
-              <div className="col-75">
+              <div className="col-75-app">
                 <input
                   type="text"
                   placeholder="e.g. English, Afrikaans, Sotho, etc."
@@ -117,11 +117,11 @@ function Application() {
               </div>
             </div>
 
-            <div className="row">
-              <div className="col-25">
+            <div className="rowApp">
+              <div className="col-25-app">
                 <label>Email:</label>
               </div>
-              <div className="col-75">
+              <div className="col-75-app">
                 <input
                   type="email"
                   placeholder="e.g. johnsnow@gmail.com"
@@ -131,11 +131,11 @@ function Application() {
               </div>
             </div>
 
-            <div className="row">
-              <div className="col-25">
+            <div className="rowApp">
+              <div className="col-25-app">
                 <label>Cellphone:</label>
               </div>
-              <div className="col-75">
+              <div className="col-75-app">
                 <input
                   type="tel"
                   placeholder="e.g. 083 123 4567"
@@ -145,11 +145,11 @@ function Application() {
               </div>
             </div>
 
-            <div className="row">
-              <div className="col-25">
+            <div className="rowApp">
+              <div className="col-25-app">
                 <label>Do you currently have medical aid?:</label>
               </div>
-              <div className="col-75">
+              <div className="col-75-app">
                 <input
                   type="radio"
                   name="radAnswer"
@@ -167,11 +167,11 @@ function Application() {
               </div>
             </div>
 
-            <div className="row">
-              <div className="col-25">
-                <label>Medical Aid Details:</label>
+            <div className="rowApp">
+              <div className="col-25-app">
+                <label>Medical Aid:</label>
               </div>
-              <div className="col-75">
+              <div className="col-75-app">
                 <input
                   type="text"
                   placeholder="e.g. Discovery Comprehensive Plan"
@@ -181,11 +181,11 @@ function Application() {
               </div>
             </div>
 
-            <div className="row">
-              <div className="col-25">
-                <label>Number of members on scheme:</label>
+            <div className="rowApp">
+              <div className="col-25-app">
+                <label>Number of Members:</label>
               </div>
-              <div className="col-75">
+              <div className="col-75-app">
                 <input
                   type="text"
                   placeholder="e.g. 4"
@@ -195,11 +195,11 @@ function Application() {
               </div>
             </div>
 
-            <div className="row">
-              <div className="col-25">
-                <label>Pre-existing medical conditions:</label>
+            <div className="rowApp">
+              <div className="col-25-app">
+                <label>Pre-existing Medical Conditions:</label>
               </div>
-              <div className="col-75">
+              <div className="col-75-app">
                 <input
                   type="text"
                   placeholder="e.g. Asthma, Heart Disease, Diabetes, etc."
@@ -209,11 +209,11 @@ function Application() {
               </div>
             </div>
 
-            <div className="row">
-              <div className="col-25">
+            <div className="rowApp">
+              <div className="col-25-app">
                 <label>Chronic Medication:</label>
               </div>
-              <div className="col-75">
+              <div className="col-75-app">
                 <input
                   type="text"
                   placeholder="e.g. Depramil, Vectoryl, Insulin, etc."
@@ -223,11 +223,11 @@ function Application() {
               </div>
             </div>
 
-            <div className="row">
-              <div className="col-25">
+            <div className="rowApp">
+              <div className="col-25-app">
                 <label>Special Needs:</label>
               </div>
-              <div className="col-75">
+              <div className="col-75-app">
                 <input
                   type="text"
                   placeholder="e.g. Dentistry, Chiropracter, etc."

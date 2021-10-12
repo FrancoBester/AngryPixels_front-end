@@ -100,6 +100,16 @@ function ViewQueries() {
                     </tbody>
                 </table>
             </div>
+            <div className="btnBackAdminDash">
+            <button
+              className="btnBackAdmin"
+              onClick={() => {
+                history.push("/Admin");
+              }}
+            >
+              Cancel
+            </button>
+            </div>
         </div>
         </>
     )

@@ -35,7 +35,15 @@ function ViewSingleSchemaRequest(props) {
     return () => {};
   }, []);
 
-  return <div></div>;
+  if (hasLoaded) {
+    return <div>Quack</div>;
+  } else {
+    return (
+      <div>
+        <h3>Loading...</h3>
+      </div>
+    );
+  }
 }
 
 export default ViewSingleSchemaRequest;

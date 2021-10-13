@@ -85,12 +85,7 @@ function Admin() {
         </div>
 
 
-        <div className="headerEmpClient">
-          <header>Employee and Client Information</header>
-        </div>
-        <div className="tblEmpClientInfo">
-          <table></table>
-        </div>
+        
         
       </div>
     </>

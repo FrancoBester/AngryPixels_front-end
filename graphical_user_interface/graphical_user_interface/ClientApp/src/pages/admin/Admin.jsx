@@ -61,7 +61,7 @@ function Admin() {
         <div className="tblAdminDashSearch">
           <table>
             <tbody>
-              <tr className="tblUserDetails">
+              <tr className="tblUserDetailsHeading">
                 {tableHeadings.map((t) =>{
                   return(
                     <td key={t}>{t}</td>

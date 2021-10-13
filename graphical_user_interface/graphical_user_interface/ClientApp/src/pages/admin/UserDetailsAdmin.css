@@ -1,7 +1,7 @@
 .userDetailsAdminGrid{
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 150px 100px 60px 300px;
+    grid-template-rows: 150px 100px 100px auto 100px;
     grid-gap: 0em;
   }
 
@@ -13,7 +13,7 @@
   text-align: center;
 }
 
-.userInfoHeader, .userDetailsButtons, .searchUserInfoGrid, .userInfoTable{
+.userInfoHeader, .userDetailsButtons, .searchUserInfoGrid, .userInfoTable, .backAdminDash{
     grid-column-start: 1;
     grid-column-end: 3;
   }
@@ -35,20 +35,6 @@
   padding-right: 20px;
 }
 
-
-
-.btnClearSearchUserInfo{
-  background-color: #EEEEEE;
-  font-size: 20px;
-  border-radius: 8px;
-  padding: 10px;
-  margin: 12px;
-}
-
-.btnClearSearchUserInfo:hover{
-  background-color: #548CA8;
-  color: #EEEEEE;
-}
 
 .searchUserInfoGrid label{
     font-size: 20px;
@@ -90,6 +76,11 @@ input[type=text], select, textarea{
     
 }
 
+.userInfoTable table{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
 /*Buttons*/
 
 .btnSearchUserDetails, .btnClearUserDetails{
@@ -114,9 +105,9 @@ input[type=text], select, textarea{
   margin-left: 10px;
 }
 .btnSearchUserDetails:hover, .btnClearUserDetails:hover {
-background: #548CA8;
-color: #fff;
-box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  background: #548CA8;
+  color: #fff;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 

@@ -99,6 +99,17 @@ function App(){
           </tbody>
         </table>
       </div>
+
+      <div className="backAdminDash">
+      <button
+              className="btnBackAdmin"
+              onClick={() => {
+                history.push("/Admin");
+              }}
+            >
+              Back
+            </button>
+      </div>
       </div>
     </>
   )

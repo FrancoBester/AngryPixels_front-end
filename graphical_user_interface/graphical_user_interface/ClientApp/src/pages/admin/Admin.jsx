@@ -55,8 +55,18 @@ function Admin() {
         >
           View Schema Requests
         </button>
-        </main>
 
+        <button
+          className="btnSearchClient"
+          onClick={() => {
+            history.push("/UserDetailsAdmin");
+          }}
+        >
+          Search User Details
+        </button>
+
+        </main>
+{/*}
           <div className="tblHeadingViewClient">
             <h2>View Client Details:</h2>
           </div>
@@ -88,7 +98,7 @@ function Admin() {
         </div>
 
 
-        
+            */}
         
       </div>
     </>

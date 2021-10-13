@@ -93,7 +93,7 @@ function ViewQueries() {
                                     <td>{TableInfo[i].user_Name}</td>
                                     <td>{TableInfo[i].query_Level}</td>
                                     <td>{TableInfo[i].query_Title}</td>
-                                    <td>Assign Self</td>
+                                    <td>Assign</td>
                                 </tr>
                             )
                         })}

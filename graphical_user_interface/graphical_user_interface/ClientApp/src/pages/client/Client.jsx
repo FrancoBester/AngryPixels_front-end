@@ -16,11 +16,12 @@ function Client(){
       }
     
       useEffect(() => {
+        var id = parseInt(localStorage.getItem("id"));
         var onSuccess = (e) =>{
           HandleTableInfo(e.data)
         };
         API.APIGET(
-          "Queries/GetSpecificUserQueries/",
+          "Queries/GetSpecificUserQueries/" + id ,
           onSuccess,
           () => {alert("Error")},
           () => {}
@@ -93,9 +94,9 @@ function Client(){
                         {Object.keys(TableInfo).map((i) => {
                             return(
                             <tr>
-                            <td>{(TableInfo[i].query_Title)}</td>
-                            <td>{(TableInfo[i].query_Status)}</td>
-                            <td>{(TableInfo[i].assistant_Name)}</td>
+                            <td>{(TableInfo[i].queryTitle)}</td>
+                            <td>{(TableInfo[i].queryStatus)}</td>
+                            <td>{(TableInfo[i].assistantName)}</td>
                             </tr>
                             )
                         })}

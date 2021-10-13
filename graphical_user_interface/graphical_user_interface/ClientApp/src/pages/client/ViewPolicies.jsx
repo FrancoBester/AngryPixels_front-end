@@ -17,6 +17,7 @@ function ViewPolicies() {
   const [policies, setPolicies] = useState({});
   const [update, setUpdate] = useState(0);
   const [hasLoaded, setHasLoaded] = useState(false);
+  const history = useHistory();
 
   //Get Policies Here
   useEffect(() => {
@@ -87,6 +88,15 @@ function ViewPolicies() {
             </tbody>
           </table>
           </main>
+          <div className="btnPoliciesBack">
+          <button 
+              className="btnBackClient"
+              onClick={() => {
+              history.push("/Client");
+              }}>
+                Back
+          </button>
+          </div>
         </>
       ) : (
         <h3>Loading...</h3>

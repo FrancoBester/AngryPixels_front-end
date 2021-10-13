@@ -1,7 +1,7 @@
 .grid-container-admin-dashboard{
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 150px 70px 120px 200px 200px 200px 200px;
+  grid-template-rows: 150px 70px 120px auto 200px 200px;
   grid-gap: 0.1em;
 }
 
@@ -12,7 +12,7 @@
   font-family: 'Noto Sans Display', sans-serif;
 }
 
-.adminDashHeader, .subHeader, .mainGridAdminDash, .searchAdminDash, .tblAdminDashSearch, .headerEmpClient, .tblEmpClientInfo{
+.adminDashHeader, .subHeader, .mainGridAdminDash,  .tblAdminDashSearch, .headerEmpClient, .tblEmpClientInfo{
   grid-column-start: 1;
   grid-column-end: 3;
 }
@@ -53,3 +53,6 @@
   color: #EEEEEE;
 }
 
+.tblAdminDashSearch tr td{
+  color: #DDDDDD;
+}

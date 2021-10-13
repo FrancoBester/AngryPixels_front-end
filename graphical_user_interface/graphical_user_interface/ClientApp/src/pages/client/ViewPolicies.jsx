@@ -45,8 +45,6 @@ function ViewPolicies() {
             <tr>
               <th>Policy Holder</th>
               <th>Policy Type</th>
-              <th>Description</th>
-              <th>Benefits</th>
               <th>Admission</th>
               <th>Options</th>
             </tr>
@@ -55,9 +53,6 @@ function ViewPolicies() {
                 <tr key={policy.policyId}>
                   <td>{policy.policyHolder}</td>
                   <td>{policy.policyType}</td>
-                  <td>{policy.policyDescription}</td>
-                  {/* Maby remove description and benifits */}
-                  <td>{policy.policyBenefits}</td>
                   <td>{policy.admsType}</td>
                   <td>
                     <NavItem>

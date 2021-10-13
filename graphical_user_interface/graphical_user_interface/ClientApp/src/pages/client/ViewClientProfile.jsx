@@ -28,7 +28,7 @@ function ViewClientProfile() {
             onSuccess,
             () => {},
             () => {
-                alert("Information Loaded");
+                {/*alert("Information Loaded");*/}
             }
         );
         return () => {};

@@ -149,21 +149,21 @@ function EditProfileClient() {
                 <label>Gender:</label>
               </div>
               <div className="editProfileColRight">
-                <input
+                
+                <label for="Male"><input
                   type="radio"
                   value="Male"
                   name="genderChoice"
                   onChange={(e) => setGender(e.target.value)}
                   // value = {user_info.user_Gender}
-                />
-                <label for="Male">Male</label>
-                <input
+                />Male</label>
+                
+                <label for="Female"><input
                   type="radio"
                   value="Female"
                   name="genderChoice"
                   onChange={(e) => setGender(e.target.value)}
-                />
-                <label for="Female">Female</label>
+                />Female</label>
               </div>
             </div>
 

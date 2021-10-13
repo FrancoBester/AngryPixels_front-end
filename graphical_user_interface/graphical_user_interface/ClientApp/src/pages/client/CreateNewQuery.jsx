@@ -13,20 +13,21 @@ function CreateNewQuery() {
     const [QueryDescription, setQueryDescription] = useState("");
 
     function PostNewQuery(){
+        alert('Log query ?')//function not triggering without this alert ?????
         const queryObj = {
-            QueryTitle: QueryTitle,
-            QueryLevel: QueryLevel,
-            QueryDescription: QueryDescription
+            Query_Title: QueryTitle,
+            Query_Level: QueryLevel,
+            Query_Detail: QueryDescription
         };
 
         API.APIPOST(
-            "Queries/CreateQuery",
+            "Queries/CreateQuery/"+localStorage.getItem("id"),
             queryObj,
-            () => {alert("Success")},
-            () => {alert("Error")},
+            () => {},
+            () => {},
             () => {}
         );
-        history.push("/Client");
+        // history.push("/Client");
     }
 
     return (
@@ -85,6 +86,9 @@ function CreateNewQuery() {
                     className="btnCreateQuery"
                     type="submit"
                     value="Post"
+                    onClick={() => {
+                        PostNewQuery()
+                    }}
                 />
 
                 <button

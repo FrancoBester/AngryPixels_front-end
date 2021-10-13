@@ -2,34 +2,35 @@ import React, {useEffect, useState} from "react";
 import './Client.css';
 import { useHistory } from "react-router";
 import API from "../../API";
-
-
+import Footer from '../../components/Footer';
 
 function Client(){
 
     const history = useHistory();
     const [updated, setUpdated] = useState(1);
-    const tableHeadings =["Title","Assistant Name","Status"]
-    const [table_info, setTableInfo] = useState({}) ;
+    const tableHeadings =["Title", "Status" ,"Assistant Name"]
+    const [TableInfo, setTableInfo] = useState({}) ;
 
     function HandleTableInfo(e){
         setTableInfo(e)
-    }
-
-    useEffect(() => {
+      }
+    
+      useEffect(() => {
+        var id = parseInt(localStorage.getItem("id"));
         var onSuccess = (e) =>{
-            HandleTableInfo(e.data)
+          HandleTableInfo(e.data)
         };
         API.APIGET(
-            "Queries/GetSpecificUserQueries",
-            onSuccess,
-            () => {},
-            () => {}
+          "Queries/GetSpecificUserQueries/" + id ,
+          onSuccess,
+          () => {alert("Error")},
+          () => {}
         )
         return () => {};
-    }, [updated])
+      }, [updated])
+    
 
-    console.log(localStorage.getItem("id"))
+    //console.log(localStorage.getItem("id"))
     return(
     <>
         <div className="grid-container-client-dashboard">
@@ -63,12 +64,24 @@ function Client(){
                 <button
                 className="btnNewQueryClient"
                 onClick={() => {
+                    history.push("/myProfile");
+                }}
+                >
+                    Upload Documents
+                </button>
+                <button
+                className="btnUploadDocuments"
+                onClick={() => {
                     history.push("/CreateNewQuery");
                 }}
                 >
                     New Query
                 </button>
             </main> 
+
+            <div className="tableHeading">
+                <h2>My Current Active Queries:</h2>
+            </div>
             
             <div className="userQueries">
                 <table>
@@ -76,28 +89,27 @@ function Client(){
                         <tr className="tblUserQueryHeadings">
                             {tableHeadings.map((t) =>{
                                 return(
-                                    <td key={t} style={{border:'1px solid white'}}>{t}</td>
+                                    <td key={t}>{t}</td>
                                 );
                             })}
                         </tr>
                     </tbody>
                     <tbody>
-                        {Object.keys(table_info).map((i) => {
+                        {Object.keys(TableInfo).map((i) => {
                             return(
-                                <tr>
-                                    <td>{table_info[i].query_Title}</td>
-                                    <td>{table_info[i].assistant_Name}</td>
-                                    <td>{table_info[i].query_Status}</td>
-                                </tr>
+                            <tr>
+                            <td>{(TableInfo[i].queryTitle)}</td>
+                            <td>{(TableInfo[i].queryStatus)}</td>
+                            <td>{(TableInfo[i].assistantName)}</td>
+                            </tr>
                             )
-                        }
-                        )}
+                        })}
                     </tbody>
                 </table>
-                <br />
-                <label>I DONT KNOW WHY THIS IS NOT WORKING</label>
+               
             </div>   
         </div>
+        <Footer/>
     </>
     );
 }

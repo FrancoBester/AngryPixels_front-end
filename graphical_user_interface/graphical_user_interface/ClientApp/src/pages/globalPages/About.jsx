@@ -1,10 +1,11 @@
 import React from "react";
 import "./About.css";
-import styled from "styled-components";
+import Footer from '../../components/Footer';
 
 function About() {
   // console.log("Äbout")
   return (
+    <>
     <div className="gridAbout">
       <header className="AboutUsHeader">About Us</header>
       <main className="mainAbout">
@@ -24,6 +25,8 @@ function About() {
       </aside>
       
     </div>
+    <Footer/>
+    </>
   );
 }
 

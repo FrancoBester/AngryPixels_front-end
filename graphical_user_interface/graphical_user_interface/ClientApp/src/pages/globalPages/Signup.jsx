@@ -5,6 +5,8 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./Signup.css";
 import API from "../../API";
+import Footer from '../../components/Footer';
+
 
 function Signup() {
   const [FirstName, setFirstName] = useState("");
@@ -146,22 +148,24 @@ function Signup() {
                 <label>Gender:</label>
               </div>
               <div className="col-75">
-                <input
+                
+                <label className="lblGender" for="Male"><input
                   onChange={(e) => setGender(e.target.value)}
                   type="radio"
                   value="Male"
                   name="genderChoice"
                   id="Male"
                 ></input>
-                <label for="Male">Male</label>
-                <input
+                Male</label>
+               
+                <label className="lblGender" for="Female"> <input
                   onChange={(e) => setGender(e.target.value)}
                   type="radio"
                   value="Female"
                   name="genderChoice"
                   id="Femeale"
                 ></input>
-                <label for="Female">Female</label>
+                Female</label>
 
               </div>
             </div>
@@ -247,6 +251,7 @@ function Signup() {
           </form>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

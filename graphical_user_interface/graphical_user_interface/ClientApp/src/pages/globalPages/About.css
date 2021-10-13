@@ -3,7 +3,6 @@
   grid-template-columns: 75% 25%;
   grid-template-rows: 120px auto;
   grid-gap: 0em;
-  margin-bottom: 20px;
   }
   
   .AboutUsHeader{
@@ -12,7 +11,7 @@
   }
   
   .gridAbout > * {
-  background: #252627;
+  background: #1D1D1D;
   display: flex;
   align-items: center;
   justify-content: center;

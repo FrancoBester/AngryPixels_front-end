@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import API from "../../API";
+import './ViewSchemaRequests.css';
+import Footer from '../../components/Footer';
+
 
 import {
   Collapse,
@@ -15,6 +18,8 @@ import {
 function ViewSchemaRequests() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [schemaRequests, setSchemaRequests] = useState({});
+  const history =useHistory();
+
 
   useEffect(() => {
     var onSuccess = (e) => {
@@ -37,15 +42,26 @@ function ViewSchemaRequests() {
 
   return (
     <>
+
+    <div className="gridViewSchema">
+
+    <div className="viewSchemaHeader">
+      <header>Schema Requests</header>
+    </div>
+
       {hasLoaded ? (
         <>
+        <main className="viewSchemasTable">
           <table>
-            <tr>
+            <tbody>
+            <tr className="tblViewSchemas">
               <th>Policy Type</th>
               <th>User Fullname</th>
               <th>Request Status</th>
               <th>Options</th>
             </tr>
+            </tbody>
+            <tbody>
             {schemaRequests.map((x) => {
               return (
                 <tr>
@@ -66,11 +82,26 @@ function ViewSchemaRequests() {
                 </tr>
               );
             })}
+            </tbody>
           </table>
+          </main>
+
+          <div className="backSchema">
+          <button
+              className="btnBackSchema"
+              onClick={() => {
+                history.push("/Admin");
+              }}
+            >
+              Back
+            </button>
+          </div>
         </>
       ) : (
         <h3>Loading...</h3>
       )}
+      </div>
+      <Footer/>
     </>
   );
 }

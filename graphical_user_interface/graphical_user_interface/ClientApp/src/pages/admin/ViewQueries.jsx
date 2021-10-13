@@ -2,12 +2,14 @@ import React, {useEffect, useState} from "react";
 import './ViewQueries.css';
 import API from "../../API";
 import { useHistory } from 'react-router';
+import Footer from '../../components/Footer';
+
 
 function ViewQueries() {
 
     const history =useHistory();
     const [updated, setUpdated] = useState(1);
-    const tableHeadings = ["Client Name", "Query Level", "Query Code", "Query Title"]
+    const tableHeadings = ["Client Name", "Query Level", "Query Title", "Assign"]
     const [TableInfo, setTableInfo] = useState({});
     const [SearchValue, setSearchValue] = useState('');
 
@@ -31,7 +33,7 @@ function ViewQueries() {
     function searchQuery(){
         var onSuccess = (e) =>{
             HandleTableInfo(e.data)
-            alert('search')
+            
         };
         API.APIGET(
             "Queries/SearchAllUserQueries?search=" + SearchValue+ "",
@@ -92,15 +94,26 @@ function ViewQueries() {
                                     
                                     <td>{TableInfo[i].user_Name}</td>
                                     <td>{TableInfo[i].query_Level}</td>
-                                    <td>{TableInfo[i].query_Code}</td>
                                     <td>{TableInfo[i].query_Title}</td>
+                                    <td>Assign</td>
                                 </tr>
                             )
                         })}
                     </tbody>
                 </table>
             </div>
+            <div className="btnBackAdminDash">
+            <button
+              className="btnBackAdmin"
+              onClick={() => {
+                history.push("/Admin");
+              }}
+            >
+              Back
+            </button>
+            </div>
         </div>
+        <Footer/>
         </>
     )
 }

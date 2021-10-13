@@ -1,0 +1,96 @@
+.gridViewSchema{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 150px 400px 100px;
+    grid-gap: 0em;
+    
+}
+
+.viewSchemaHeader{
+    color: #548CA8;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 80px;
+    font-family: 'Noto Sans Display', sans-serif;
+    text-align: center;
+}
+
+.viewSchemaHeader, .viewSchemasTable, .backSchema{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.gridViewSchema > *{
+    background: #1D1D1D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* table */
+
+.viewSchemasTable table tr td{
+    font-size: 15px;
+    font-family: 'Roboto Mono', monospace;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 2px  rgba(0,0,0,.1);
+    width: 80%;
+    
+}
+
+.viewSchemasTable{
+    text-align: right;
+    color: #EEEEEE;
+    padding-right: 20px;
+}
+
+.tblViewSchemas{
+    background-color: #548CA8;
+    color: #fff;
+    font-weight: bold;
+    
+}
+
+.viewSchemasTable th, td{
+    padding: 13px;
+	background-color: rgba(255,255,255,0.1);
+}
+
+.viewSchemasTable tbody{
+    text-align: left;
+    background-color: #EEEEEE;
+    color: #1D1D1D;
+}
+
+
+.viewSchemasTable table{
+    margin-left: 20px;
+}
+
+.btnBackSchema{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: #EEEEEE;
+    height: 65px;
+    line-height: 35px;
+    width: 20%;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    color: #334257;
+    font-size: 1.2em;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    transition: all 0.30s ease-in-out;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  
+  .btnBackSchema:hover{
+    background: #548CA8;
+    color: #fff;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }

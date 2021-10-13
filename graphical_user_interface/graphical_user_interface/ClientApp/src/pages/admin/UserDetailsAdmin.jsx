@@ -1,9 +1,9 @@
-import { data, event } from "jquery";
 import React, {useEffect, useState} from "react";
 import { useHistory } from "react-router";
 import API from "../../API";
-import styled from "styled-components";
 import './UserDetailsAdmin.css';
+import Footer from '../../components/Footer';
+
 
 function App(){
   const history = useHistory();
@@ -99,7 +99,19 @@ function App(){
           </tbody>
         </table>
       </div>
+
+      <div className="backAdminDash">
+      <button
+              className="btnBackAdmin"
+              onClick={() => {
+                history.push("/Admin");
+              }}
+            >
+              Back
+            </button>
       </div>
+      </div>
+      <Footer/>
     </>
   )
 }

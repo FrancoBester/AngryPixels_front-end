@@ -1,16 +1,19 @@
 .grid-viewInfo-wrapper{
     background-color: #1D1D1D;
-    text-align: center;
+    
 }
 
 .ViewClientInfoGrid h1{
     color: #548CA8;
+    text-align: center;
+    font-size: 60px;
 }
 
 .viewInfoGrid div{
     color: #fff;
     font-size: 20px;
-    
+    text-align: left;
+    text-align: center;
 }
 
 .btnEditProfileClient{
@@ -18,9 +21,11 @@
     font-size: 20px;
     border-radius: 8px;
     padding: 10px;
-    margin: 12px;
-    width: 20%;
-    
+    margin-left: 95px;
+    width: 25%;
+    margin-bottom: 50px;
+    height: 65px;
+    margin-top: 20px;
   }
 
   .btnEditProfileClient:hover{
@@ -33,8 +38,11 @@
     font-size: 20px;
     border-radius: 8px;
     padding: 10px;
-    margin: 12px;
-    width: 20%;
+    margin-left: 22px;
+    width: 25%;
+    margin-bottom: 50px;
+    height: 65px;
+    margin-top: 20px;
   }
 
   .btnBackClientProfile:hover{
@@ -46,3 +54,19 @@
       display: inline-block;
   }
 
+.btnDeleteClientProfile{
+  background-color: #EEEEEE;
+  font-size: 20px;
+  border-radius: 8px;
+  padding: 10px;
+  margin-left: 22px;
+  width: 25%;
+  margin-bottom: 50px;
+  height: 65px;
+  margin-top: 20px;
+}
+
+.btnDeleteClientProfile:hover{
+  background-color: #548CA8;
+  color: #EEEEEE;
+}

@@ -2,8 +2,7 @@ import './ViewClientProfile.css';
 import API from "../../API";
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
-
-
+import Footer from '../../components/Footer';
 
 function ViewClientProfile() {
 
@@ -11,8 +10,6 @@ function ViewClientProfile() {
     const [profile, setProfile] = useState({});
     const [updated, setUpdated] = useState(1); 
     const history = useHistory();
-
-
 
     function HandleProfile(e){
         setProfile(e);
@@ -31,14 +28,11 @@ function ViewClientProfile() {
             onSuccess,
             () => {},
             () => {
-                alert("Information Loaded");
+                {/*alert("Information Loaded");*/}
             }
         );
         return () => {};
-    }, [updated]);
-    
-
-    
+    }, [updated]);    
 
     return (
         <>
@@ -94,6 +88,15 @@ function ViewClientProfile() {
                 </button>
 
                 <button
+                className="btnDeleteClientProfile"
+                onClick={() => {
+                    history.push("/");
+                }}
+                >
+                    Delete Profile
+                </button>
+
+                <button
                 className="btnBackClientProfile"
                 onClick={() => {
                     history.push("/Client");
@@ -108,6 +111,7 @@ function ViewClientProfile() {
             <>Loading...</>
         )}
         </div>
+        <Footer/>
         </>
     );
 }

@@ -1,18 +1,17 @@
 .grid-container-admin-dashboard{
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 150px 70px 120px 200px 200px 200px 200px;
-  grid-gap: 0.1em;
+  grid-template-rows: 150px 50px 140px;
+  grid-gap: 0em;
 }
 
 .adminDashHeader{
   color: #548CA8;
-  font-family: 'Josefin Sans', sans-serif;
   font-size: 80px;
   font-family: 'Noto Sans Display', sans-serif;
 }
 
-.adminDashHeader, .subHeader, .mainGridAdminDash, .searchAdminDash, .tblAdminDashSearch, .headerEmpClient, .tblEmpClientInfo{
+.adminDashHeader, .subHeader, .mainGridAdminDash, .tblHeadingViewClient, .tblAdminDashSearch{
   grid-column-start: 1;
   grid-column-end: 3;
 }
@@ -40,16 +39,75 @@
   padding-right: 20px;
 }
 
-.btnViewQueries, .btnViewMedicalSchema{
-  background-color: #EEEEEE;
-  font-size: 20px;
+.btnViewQueries, .btnViewMedicalSchema, .btnSearchClient{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: #EEEEEE;
+  height: 75px;
+  line-height: 35px;
+  width: 30%;
+  border: none;
   border-radius: 8px;
-  padding: 10px;
-  margin: 12px;
+  outline: none;
+  cursor: pointer;
+  color: #334257;
+  font-size: 1.2em;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  transition: all 0.30s ease-in-out;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
-.btnViewQueries:hover, .btnViewMedicalSchema:hover{
-  background-color: #548CA8;
+.btnViewQueries:hover, .btnViewMedicalSchema:hover, .btnSearchClient:hover{
+  background: #548CA8;
+    color: #fff;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/*table*/
+
+.tblAdminDashSearch table tr td{
+  font-size: 18px;
+  font-family: 'Roboto Mono', monospace;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,.1);
+  width: 90%;
+}
+
+.tblAdminDashSearch{
+  text-align: right;
   color: #EEEEEE;
+  padding-right: 20px;
 }
 
+.tblUserDetailsHeading{
+  background-color: #548CA8;
+  color: #fff;
+  font-weight: bold;
+}
+
+.tblAdminDashSearch th, td{
+  padding: 13px;
+	background-color: rgba(255,255,255,0.1);
+}
+
+.tblAdminDashSearch tbody{
+  text-align: left;
+  background-color: #EEEEEE;
+  color: #1D1D1D;
+}
+
+.tblAdminDashSearch table{
+  margin-bottom: 50px;
+  margin-left: 20px;
+}
+
+.tblHeadingViewClient h2{
+  font-family: 'Noto Sans Display', sans-serif;
+  color: #EEEEEE;
+  font-size: 25px;
+}

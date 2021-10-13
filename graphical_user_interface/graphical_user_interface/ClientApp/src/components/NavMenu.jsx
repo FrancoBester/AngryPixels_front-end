@@ -66,15 +66,15 @@ function NavMenu(props) {
               {authenticated ? (
                 <>
                   <NavItem>
-                    <NavLink tag={Link} className="text-dark" to="/myProfile">
-                      My Profile
+                    <NavLink tag={Link} className="text-dark" to="/Client">
+                      Client
                     </NavLink>
                   </NavItem>
                   <NavItem>
                     <NavLink
                       tag={Link}
                       className="text-dark"
-                      to="/admin/viewSchemaRequests"
+                      to="/Admin"
                     >
                       Admin
                     </NavLink>

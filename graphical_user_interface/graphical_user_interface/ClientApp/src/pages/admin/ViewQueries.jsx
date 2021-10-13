@@ -31,7 +31,7 @@ function ViewQueries() {
     function searchQuery(){
         var onSuccess = (e) =>{
             HandleTableInfo(e.data)
-            alert('search')
+            
         };
         API.APIGET(
             "Queries/SearchAllUserQueries?search=" + SearchValue+ "",

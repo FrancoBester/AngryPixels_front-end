@@ -16,6 +16,8 @@ import {
 function ViewSchemaRequests() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [schemaRequests, setSchemaRequests] = useState({});
+  const history =useHistory();
+
 
   useEffect(() => {
     var onSuccess = (e) => {
@@ -81,6 +83,17 @@ function ViewSchemaRequests() {
             </tbody>
           </table>
           </main>
+
+          <div className="backSchema">
+          <button
+              className="btnBackSchema"
+              onClick={() => {
+                history.push("/Admin");
+              }}
+            >
+              Back
+            </button>
+          </div>
         </>
       ) : (
         <h3>Loading...</h3>

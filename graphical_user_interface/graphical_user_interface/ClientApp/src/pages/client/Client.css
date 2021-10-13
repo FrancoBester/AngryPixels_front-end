@@ -2,12 +2,11 @@
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 150px 70px 120px 400px;
-  grid-gap: 0.1em;
+  grid-gap: 0em;
 }
 
 .clientDashHeader{
   color: #548CA8;
-  font-family: 'Josefin Sans', sans-serif;
   font-size: 80px;
   font-family: 'Noto Sans Display', sans-serif;
 }
@@ -32,46 +31,6 @@
   text-align: right;
   color: #EEEEEE;
   padding-right: 20px;
-}
-
-
-.btnViewProfileClient{
-  background-color: #EEEEEE;
-  font-size: 20px;
-  border-radius: 8px;
-  padding: 10px;
-  margin: 12px;
-}
-
-.btnViewProfileClient:hover{
-  background-color: #548CA8;
-  color: #EEEEEE;
-}
-
-.btnEditProfileClient{
-  background-color: #EEEEEE;
-  font-size: 20px;
-  border-radius: 8px;
-  padding: 10px;
-  margin: 12px;
-}
-
-.btnEditProfileClient:hover{
-  background-color: #548CA8;
-  color: #EEEEEE;
-}
-
-.btnViewPoliciesClient{
-  background-color: #EEEEEE;
-  font-size: 20px;
-  border-radius: 8px;
-  padding: 10px;
-  margin: 12px;
-}
-
-.btnViewPoliciesClient:hover{
-  background-color: #548CA8;
-  color: #EEEEEE;
 }
 
 .btnNewQueryClient{
@@ -99,4 +58,32 @@
 
 .tblUserQueryHeadings tr td{
   color: #EEEEEE;
+}
+
+.btnViewProfileClient, .btnViewPoliciesClient, .btnUploadDocuments, .btnNewQueryClient{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: #EEEEEE;
+  height: 85px;
+  line-height: 35px;
+  width: 30%;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+  color: #334257;
+  font-size: 1.2em;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  transition: all 0.30s ease-in-out;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.btnViewProfileClient:hover, .btnViewPoliciesClient:hover, .btnUploadDocuments:hover, .btnNewQueryClient:hover{
+  background: #548CA8;
+    color: #fff;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }

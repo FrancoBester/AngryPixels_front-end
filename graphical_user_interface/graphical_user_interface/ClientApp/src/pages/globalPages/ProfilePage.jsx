@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
 import API from "../../API";
 import './ProfilePage.css';
+import { useHistory } from "react-router";
+
 
 function ProfilePage() {
   console.log("test");
   const [profile, setProfile] = useState({});
   const [hasLoaded, setHasLoaded] = useState(false);
   const [files, setFiles] = useState([]);
+  const history = useHistory();
+
 
   const [updated, setUpdated] = useState(1); //To help force rerenders
 
@@ -107,7 +111,7 @@ function ProfilePage() {
       onSuccess,
       () => {},
       () => {
-        alert("Onfinally");
+        
       }
     );
     return () => {};
@@ -120,12 +124,14 @@ function ProfilePage() {
     <div className="grid-wrapper">
       <div className="myProfileHeader">
         <h1>Welcome</h1>
+        <br />
+        <h2>Please upload the following documentation:</h2>
       </div>
       
       {hasLoaded ? (
         <>
         <div className="clientInfoGrid">
-          <div>
+          {/*<div>
             <b>Name: </b>
             {profile.user.user_Name}
           </div>
@@ -136,7 +142,7 @@ function ProfilePage() {
           <div>
             <b>Email: </b>
             {profile.user.user_Email}
-          </div>
+          </div>*/}
         </div>
         <div className="medicalDocGrid">
           {/* Medical Document */}
@@ -260,8 +266,19 @@ function ProfilePage() {
               >
                 Delete Document
               </button>
+              <br />
             </>
           )}
+          </div>
+
+          <div className="backDocs">
+          <button 
+              className="btnBackDocs"
+              onClick={() => {
+              history.push("/Client");
+              }}>
+                Back
+          </button>
           </div>
         </>
       ) : (

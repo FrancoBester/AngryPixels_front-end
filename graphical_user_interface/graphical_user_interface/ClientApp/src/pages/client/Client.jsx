@@ -64,6 +64,14 @@ function Client(){
                 <button
                 className="btnNewQueryClient"
                 onClick={() => {
+                    history.push("/myProfile");
+                }}
+                >
+                    Upload Documents
+                </button>
+                <button
+                className="btnUploadDocuments"
+                onClick={() => {
                     history.push("/CreateNewQuery");
                 }}
                 >

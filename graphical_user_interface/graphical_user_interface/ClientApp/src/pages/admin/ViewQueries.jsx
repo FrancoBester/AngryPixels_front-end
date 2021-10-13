@@ -2,6 +2,8 @@ import React, {useEffect, useState} from "react";
 import './ViewQueries.css';
 import API from "../../API";
 import { useHistory } from 'react-router';
+import Footer from '../../components/Footer';
+
 
 function ViewQueries() {
 
@@ -111,6 +113,7 @@ function ViewQueries() {
             </button>
             </div>
         </div>
+        <Footer/>
         </>
     )
 }

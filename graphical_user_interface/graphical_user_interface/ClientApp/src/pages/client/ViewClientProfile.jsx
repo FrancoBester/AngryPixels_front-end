@@ -2,8 +2,7 @@ import './ViewClientProfile.css';
 import API from "../../API";
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
-
-
+import Footer from '../../components/Footer';
 
 function ViewClientProfile() {
 
@@ -11,8 +10,6 @@ function ViewClientProfile() {
     const [profile, setProfile] = useState({});
     const [updated, setUpdated] = useState(1); 
     const history = useHistory();
-
-
 
     function HandleProfile(e){
         setProfile(e);
@@ -35,10 +32,7 @@ function ViewClientProfile() {
             }
         );
         return () => {};
-    }, [updated]);
-    
-
-    
+    }, [updated]);    
 
     return (
         <>
@@ -117,6 +111,7 @@ function ViewClientProfile() {
             <>Loading...</>
         )}
         </div>
+        <Footer/>
         </>
     );
 }

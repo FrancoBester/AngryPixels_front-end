@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import API from "../../API";
 import './ViewSchemaRequests.css';
+import Footer from '../../components/Footer';
+
 
 import {
   Collapse,
@@ -99,6 +101,7 @@ function ViewSchemaRequests() {
         <h3>Loading...</h3>
       )}
       </div>
+      <Footer/>
     </>
   );
 }

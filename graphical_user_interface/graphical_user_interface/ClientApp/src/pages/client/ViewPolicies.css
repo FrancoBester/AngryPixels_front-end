@@ -1,7 +1,7 @@
 .gridViewPolicies{
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 150px auto 80px;
+    grid-template-rows: 150px auto 100px;
     grid-gap: 0em;
 }
 
@@ -32,7 +32,7 @@
     font-family: 'Roboto Mono', monospace;
     border-collapse: collapse;
     overflow: hidden;
-    box-shadow: 0 0 20px rgba(0,0,0,.1);
+    box-shadow: 0 2px  rgba(0,0,0,.1);
     width: 90%;
 }
 
@@ -61,6 +61,7 @@
 
 .viewPolicies table{
     margin-bottom: 50px;
+    width: 80%;
 }
 
 .viewPolicies table{
@@ -71,7 +72,7 @@
 .btnBackClient{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background: #EEEEEE;
-    height: 55px;
+    height: 65px;
     line-height: 35px;
     width: 30%;
     border: none;

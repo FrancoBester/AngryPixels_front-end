@@ -54,7 +54,10 @@ input[type=file], select, textarea{
   }
 
   .medicalDocGrid button{
-      background-color: #EEEEEE;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      background: #EEEEEE;
+      height: 75px;
+      line-height: 35px;
       font-size: 20px;
       padding: 25px 14px;
       border-radius: 8px;
@@ -63,15 +66,28 @@ input[type=file], select, textarea{
       display: flex;
       align-items: center;
       justify-content: center;
+      -webkit-transition: all 0.30s ease-in-out;
+      -moz-transition: all 0.30s ease-in-out;
+      -ms-transition: all 0.30s ease-in-out;
+      transition: all 0.30s ease-in-out;
       }
 
   .medicalDocGrid button:hover{
     background-color: #548CA8;
     color: #fff;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 .btnBackDocs{
-    background-color: #EEEEEE;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: #EEEEEE;
+    height: 75px;
+    line-height: 35px;
+    color: #334257;
+    font-size: 1.2em;
+    border: none;
+    outline: none;
+    cursor: pointer;
     font-size: 20px;
     padding: 25px 14px;
     border-radius: 8px;
@@ -81,9 +97,14 @@ input[type=file], select, textarea{
     align-items: center;
     justify-content: center;
     margin-top: 150px;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    transition: all 0.30s ease-in-out;
 }
 
 .btnBackDocs:hover{
     background-color: #548CA8;
     color: #fff;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }

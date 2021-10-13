@@ -123,7 +123,7 @@ function ProfilePage() {
     <>
     <div className="grid-wrapper">
       <div className="myProfileHeader">
-        <h1>Welcome</h1>
+        <h1>Documentation</h1>
         <br />
         <h2>Please upload the following documentation:</h2>
       </div>

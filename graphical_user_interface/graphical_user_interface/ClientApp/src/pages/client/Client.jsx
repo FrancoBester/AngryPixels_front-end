@@ -78,6 +78,10 @@ function Client(){
                     New Query
                 </button>
             </main> 
+
+            <div className="tableHeading">
+                <h2>My Current Active Queries:</h2>
+            </div>
             
             <div className="userQueries">
                 <table>

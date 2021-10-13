@@ -34,7 +34,7 @@ function Admin() {
         <header className="adminDashHeader">Admin Dashboard</header>
 
         <div className="subHeader">
-          <h2>Please select an action below</h2>
+          <h2>Please select an action below:</h2>
         </div>
 
         <main className="mainGridAdminDash">
@@ -57,6 +57,9 @@ function Admin() {
         </button>
         </main>
 
+          <div className="tblHeadingViewClient">
+            <h2>View Client Details:</h2>
+          </div>
       
         <div className="tblAdminDashSearch">
           <table>

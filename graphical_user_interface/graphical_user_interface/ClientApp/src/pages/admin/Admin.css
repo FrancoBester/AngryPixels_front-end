@@ -1,18 +1,17 @@
 .grid-container-admin-dashboard{
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 150px 50px 140px auto 200px 200px;
+  grid-template-rows: 150px 50px 140px 80px auto ;
   grid-gap: 0em;
 }
 
 .adminDashHeader{
   color: #548CA8;
-  font-family: 'Josefin Sans', sans-serif;
   font-size: 80px;
   font-family: 'Noto Sans Display', sans-serif;
 }
 
-.adminDashHeader, .subHeader, .mainGridAdminDash,  .tblAdminDashSearch, .headerEmpClient, .tblEmpClientInfo{
+.adminDashHeader, .subHeader, .mainGridAdminDash, .tblHeadingViewClient, .tblAdminDashSearch{
   grid-column-start: 1;
   grid-column-end: 3;
 }
@@ -71,7 +70,7 @@
 /*table*/
 
 .tblAdminDashSearch table tr td{
-  font-size: 15px;
+  font-size: 18px;
   font-family: 'Roboto Mono', monospace;
   border-collapse: collapse;
   overflow: hidden;
@@ -105,4 +104,10 @@
 .tblAdminDashSearch table{
   margin-bottom: 50px;
   margin-left: 20px;
+}
+
+.tblHeadingViewClient h2{
+  font-family: 'Noto Sans Display', sans-serif;
+  color: #EEEEEE;
+  font-size: 25px;
 }

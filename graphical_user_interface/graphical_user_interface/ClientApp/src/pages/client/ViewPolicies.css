@@ -1,7 +1,7 @@
 .gridViewPolicies{
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 150px 400px;
+    grid-template-rows: 150px auto;
     grid-gap: 0em;
 }
 
@@ -60,3 +60,11 @@
     color: #1D1D1D;
  }
 
+.viewPolicies table{
+    margin-bottom: 50px;
+}
+
+.viewPolicies table{
+    margin-left: 20px;
+    margin-bottom: 30px;
+}

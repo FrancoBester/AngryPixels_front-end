@@ -25,13 +25,13 @@ function Admin() {
           </button>
 
           <button
-            className="btnViewMedicalSchema"
-            onClick={() => {
-              history.push("");
-            }}
-          >
-            View Medical Schema
-          </button>
+          className="btnViewMedicalSchema"
+          onClick={() => {
+            history.push("/admin/viewSchemaRequests");
+          }}
+        >
+          View Schema Requests
+        </button>
         </main>
 
         <div className="searchAdminDash">
@@ -47,14 +47,7 @@ function Admin() {
         <div className="tblEmpClientInfo">
           <table></table>
         </div>
-        <button
-          className="btnViewMedicalSchema"
-          onClick={() => {
-            history.push("/admin/viewSchemaRequests");
-          }}
-        >
-          View Schema Requests
-        </button>
+        
       </div>
     </>
   );

@@ -56,7 +56,7 @@ function ViewSinglePolicy(props) {
     <div className="gridSinglePolicy">
 
       <div className="singlePolicyHeader">
-        <header>Individual Policy Info</header>
+        <header>Policy Information</header>
       </div>
 
       {hasLoaded ? (
@@ -64,27 +64,27 @@ function ViewSinglePolicy(props) {
           <main className="viewSinglePolicy">
             <ul>
               <li>
-              <h5>Holder</h5>
+              <h5>Holder:</h5>
               <h6>{policy.policy_Holder}</h6>
               </li>
               <br />
               <li>
-              <h5>Policy Type</h5>
+              <h5>Policy Type:</h5>
               <h6>{policy.policy_Type}</h6>
               </li>
               <br />
               <li>
-              <h5>Admision type</h5>
+              <h5>Admision type:</h5>
               <h6>{policy.adms_Type}</h6>
               </li>
               <br />
               <li>
-              <h5>Description</h5>
+              <h5>Description:</h5>
               <h6>{policy.policy_Des}</h6>
               </li>
               <br />
               <li>
-              <h5>Benifits</h5>
+              <h5>Benefits:</h5>
               <h6>{policy.policy_Benefits}</h6>
               </li>
 
@@ -93,6 +93,11 @@ function ViewSinglePolicy(props) {
           
           <div className="buttonRequest">
             <button className="btnRequestPolicy" onClick={RequestPolicy}>Request Policy</button>
+            <button className="btnBackPolicies" 
+                    onClick={() => {
+                    history.push("/ViewPolicies");
+                }}>Back</button>
+
           </div>
           
         </>

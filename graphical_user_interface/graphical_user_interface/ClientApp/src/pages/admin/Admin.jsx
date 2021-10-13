@@ -3,6 +3,7 @@ import { useHistory } from "react-router";
 import React, {useEffect, useState} from "react";
 import API from "../../API";
 import { Tab } from "bootstrap";
+import Footer from '../../components/Footer';
 
 function Admin() {
   const history = useHistory();
@@ -101,6 +102,7 @@ function Admin() {
             */}
         
       </div>
+      <Footer/>
     </>
   );
 }

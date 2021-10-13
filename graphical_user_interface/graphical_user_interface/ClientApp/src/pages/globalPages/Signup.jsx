@@ -5,6 +5,8 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./Signup.css";
 import API from "../../API";
+import Footer from '../../components/Footer';
+
 
 function Signup() {
   const [FirstName, setFirstName] = useState("");
@@ -247,6 +249,7 @@ function Signup() {
           </form>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

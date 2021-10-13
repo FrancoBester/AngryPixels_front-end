@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useHistory } from "react-router";
 import auth from "../../auth";
 import './LoginPage.css';
+import Footer from '../../components/Footer';
+
 
 function LoginPage() {
   const [Email, setEmail] = useState("");
@@ -10,7 +12,7 @@ function LoginPage() {
   const history = useHistory();
   function Login() {
     auth.login({ Email: Email, password: Password }, () => {
-      history.push("/home");
+      history.push("/");
     });
   }
   return (
@@ -50,6 +52,7 @@ function LoginPage() {
         {/*</form>*/}
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

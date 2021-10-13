@@ -2,8 +2,7 @@ import React, {useEffect, useState} from "react";
 import './Client.css';
 import { useHistory } from "react-router";
 import API from "../../API";
-
-
+import Footer from '../../components/Footer';
 
 function Client(){
 
@@ -105,6 +104,7 @@ function Client(){
                
             </div>   
         </div>
+        <Footer/>
     </>
     );
 }

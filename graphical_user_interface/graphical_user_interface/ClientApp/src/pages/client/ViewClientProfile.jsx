@@ -94,6 +94,15 @@ function ViewClientProfile() {
                 </button>
 
                 <button
+                className="btnDeleteClientProfile"
+                onClick={() => {
+                    history.push("/");
+                }}
+                >
+                    Delete Profile
+                </button>
+
+                <button
                 className="btnBackClientProfile"
                 onClick={() => {
                     history.push("/Client");

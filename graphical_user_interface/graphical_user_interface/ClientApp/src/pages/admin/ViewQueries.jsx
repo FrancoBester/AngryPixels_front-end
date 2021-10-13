@@ -7,7 +7,7 @@ function ViewQueries() {
 
     const history =useHistory();
     const [updated, setUpdated] = useState(1);
-    const tableHeadings = ["Client Name", "Query Level", "Query Title"]
+    const tableHeadings = ["Client Name", "Query Level", "Query Title", "Assign"]
     const [TableInfo, setTableInfo] = useState({});
     const [SearchValue, setSearchValue] = useState('');
 
@@ -93,6 +93,7 @@ function ViewQueries() {
                                     <td>{TableInfo[i].user_Name}</td>
                                     <td>{TableInfo[i].query_Level}</td>
                                     <td>{TableInfo[i].query_Title}</td>
+                                    <td>Assign Self</td>
                                 </tr>
                             )
                         })}
@@ -106,7 +107,7 @@ function ViewQueries() {
                 history.push("/Admin");
               }}
             >
-              Cancel
+              Back
             </button>
             </div>
         </div>

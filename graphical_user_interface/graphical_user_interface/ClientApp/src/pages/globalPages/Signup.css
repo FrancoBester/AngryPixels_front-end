@@ -3,8 +3,8 @@
     font-size: 80px;
     padding-bottom: 15px;
     color: #548CA8;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+    font-family: 'Noto Sans Display', sans-serif;
+  }
 
 input[type=text], select, textarea{
     width: 100%;
@@ -51,6 +51,7 @@ input[type=text], select, textarea{
     resize: vertical;
     display: inline;
   }
+  
 .lblGender{
 display: block;
 }

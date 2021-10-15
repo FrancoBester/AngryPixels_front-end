@@ -87,6 +87,15 @@ function Admin() {
           View Schema Requests
         </button>
 
+        <button
+          className="btnCreateNewPolicy"
+          onClick={() => {
+            history.push("/admin/CreateNewPolicy");
+          }}
+        >
+          Create New Policy
+        </button>
+
         </main>
 
           <div className="tblHeadingViewClient">

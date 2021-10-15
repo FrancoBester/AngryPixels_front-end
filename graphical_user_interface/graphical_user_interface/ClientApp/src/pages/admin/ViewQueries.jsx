@@ -1,15 +1,24 @@
 import React, {useEffect, useState} from "react";
 import './ViewQueries.css';
 import API from "../../API";
-import { useHistory } from 'react-router';
+import { Link, useHistory } from 'react-router-dom';
 import Footer from '../../components/Footer';
+import {
+    Collapse,
+    Container,
+    Navbar,
+    NavbarBrand,
+    NavbarToggler,
+    NavItem,
+    NavLink,
+  } from "reactstrap";
 
 
 function ViewQueries() {
 
     const history =useHistory();
     const [updated, setUpdated] = useState(1);
-    const tableHeadings = ["Client Name", "Query Level", "Query Title", "Assign"]
+    const tableHeadings = ["Client Name", "Query Level", "Query Title", "Client Details", "Query Details"]
     const [TableInfo, setTableInfo] = useState({});
     const [SearchValue, setSearchValue] = useState('');
 
@@ -64,10 +73,10 @@ function ViewQueries() {
 
                 <div className="rowSearchQueries">
                     <div className="colQueryLeft">
-                        <label>Search</label>
+                        <label>Search:</label>
                     </div>
                     <div className="colQueryRight">
-                        <input id="querySearch" type="text" onChange={event => setSearchValue(event.target.value)}></input>
+                        <input className="searchBoxViewQueries" id="querySearch" type="text" onChange={event => setSearchValue(event.target.value)}></input>
                     </div>
                 </div>
             </main>   
@@ -95,7 +104,26 @@ function ViewQueries() {
                                     <td>{TableInfo[i].user_Name}</td>
                                     <td>{TableInfo[i].query_Level}</td>
                                     <td>{TableInfo[i].query_Title}</td>
-                                    <td>Assign</td>
+                                    <td><NavItem>
+                                        <NavLink
+                                            tag={Link}
+                                            className="text-dark"
+                                            to={``} /* NEED TO ADD PATH*/
+                                        >
+                                            View
+                                        </NavLink>
+                                        </NavItem>
+                                    </td>
+                                    <td><NavItem>
+                                        <NavLink
+                                            tag={Link}
+                                            className="text-dark"
+                                            to={``} /* NEED TO ADD PATH*/
+                                        >
+                                            View
+                                        </NavLink>
+                                        </NavItem>
+                                    </td>
                                 </tr>
                             )
                         })}

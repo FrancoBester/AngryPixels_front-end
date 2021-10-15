@@ -1,14 +1,18 @@
 import "./Admin.css";
-import { useHistory } from "react-router";
+import { Link, useHistory } from "react-router-dom";
 import React, {useEffect, useState} from "react";
 import API from "../../API";
 import { Tab } from "bootstrap";
 import Footer from '../../components/Footer';
+import {
+  NavItem,
+  NavLink,
+} from "reactstrap";
 
 function Admin() {
   const history = useHistory();
   const [updated, setUpdated] = useState(1);
-  const tableHeadings = ["Client Name", "Client Surname", "Role Type", "Policy Type"]
+  const tableHeadings = ["Client Full Name", "Role", "Policy Type", "Client Details", "Policy Details"]
   const [TableInfo, setTableInfo] = useState({});
   const [search_value, setSearch] = useState('');
 
@@ -118,10 +122,27 @@ function Admin() {
               {Object.keys(TableInfo).map((i) => {
                 return(
                 <tr>
-                  <td>{(TableInfo[i].firstName)}</td>
-                  <td>{(TableInfo[i].lastName)}</td>
+                  <td>{(TableInfo[i].firstName) + " " + (TableInfo[i].lastName)}</td>
                   <td>{(TableInfo[i].roleName)}</td>
                   <td>{(TableInfo[i].policyName)}</td>
+                  <td><NavItem>
+                      <NavLink
+                        tag={Link}
+                        className="text-dark"
+                        to={``}
+                      >
+                        View
+                      </NavLink>
+                    </NavItem></td>
+                    <td><NavItem>
+                      <NavLink
+                        tag={Link}
+                        className="text-dark"
+                        to={``}
+                      >
+                        View
+                      </NavLink>
+                    </NavItem></td> {/*NEED TO ADD URL HERE STILL*/}
                 </tr>
                 )
               })}

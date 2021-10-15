@@ -1,7 +1,7 @@
 .grid-container-admin-dashboard{
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 150px 50px 140px;
+  grid-template-rows: 150px 50px 140px 50px 120px 100px auto;
   grid-gap: 0em;
 }
 
@@ -11,7 +11,7 @@
   font-family: 'Noto Sans Display', sans-serif;
 }
 
-.adminDashHeader, .subHeader, .mainGridAdminDash, .tblHeadingViewClient, .tblAdminDashSearch{
+.adminDashHeader, .subHeader, .mainGridAdminDash, .tblHeadingViewClient, .rowSearch, .userDetailsButtons, .tblAdminDashSearch{
   grid-column-start: 1;
   grid-column-end: 3;
 }
@@ -110,4 +110,20 @@
   font-family: 'Noto Sans Display', sans-serif;
   color: #EEEEEE;
   font-size: 25px;
+}
+
+input[type=text], select, textarea{
+  width: 60%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.colRightSearchBar{
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  margin-left: 70px;
 }

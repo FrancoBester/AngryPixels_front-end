@@ -10,7 +10,7 @@ function Admin() {
   const [updated, setUpdated] = useState(1);
   const tableHeadings = ["Client Name", "Client Surname", "Role Type", "Policy Type"]
   const [TableInfo, setTableInfo] = useState({});
-  const [SearchValue, setSearchValue] = useState('');
+  const [search_value, setSearch] = useState('');
 
   function HandleTableInfo(e){
     setTableInfo(e)
@@ -28,6 +28,32 @@ function Admin() {
     )
     return () => {};
   }, [updated])
+
+  function searchClick(){
+    var onSuccess = (e) =>{
+      HandleTableInfo(e.data)
+    };
+    API.APIGET(
+      "Users/SearchLoadPageData?search=" + search_value+ "",
+      onSuccess,
+      () => {},
+      () => {}
+    )
+  }
+
+  function clearCLick(){
+    document.getElementById("userSearch").value = "";
+    var onSuccess = (e) =>{
+      HandleTableInfo(e.data)
+    };
+    API.APIGET(
+      "Users/GetAdminLoadPageData",
+      onSuccess,
+      () => {},
+      () => {}
+    )
+  }
+
 
   return (
     <>
@@ -57,21 +83,26 @@ function Admin() {
           View Schema Requests
         </button>
 
-        <button
-          className="btnSearchClient"
-          onClick={() => {
-            history.push("/UserDetailsAdmin");
-          }}
-        >
-          Search User Details
-        </button>
-
         </main>
-{/*}
+
           <div className="tblHeadingViewClient">
             <h2>View Client Details:</h2>
           </div>
+
+          <div className="rowSearch">
+          <div className="colLeftSearch">
+          <label id="lblSearch">Search:</label>
+        </div>
+        <div className="colRightSearchBar">
+          <input id="userSearch" type="text" for="lblSearch" onChange={event => setSearch(event.target.value)}></input>
+          </div>
+        </div>
       
+        <div className="userDetailsButtons">
+          <button className="btnSearchUserDetails" id="btnSearch" onClick={searchClick}>Search</button>
+          <button className="btnClearUserDetails" id="btnClear" onClick={clearCLick}>Clear</button>
+        </div>
+
         <div className="tblAdminDashSearch">
           <table>
             <tbody>
@@ -99,7 +130,7 @@ function Admin() {
         </div>
 
 
-            */}
+            
         
       </div>
       <Footer/>

@@ -1,7 +1,12 @@
 import React, {useEffect, useState} from "react";
 import './CreateNewPolicy.css';
+import { useHistory } from "react-router";
+
 
 function CreateNewPolicy(){
+
+    const history = useHistory();
+
 return(
     <>
 <div className="createNewPolicyGrid">
@@ -51,8 +56,19 @@ return(
     </main>
 
     <div className="btnsPolicy">
-        <button className="btnCreatePolicy">Create</button>
-        <button className="btnCancelPolicy">Cancel</button>
+        <button 
+        className="btnCreatePolicy"
+        
+        >Create</button>
+        <button 
+        className="btnCancelPolicy"
+        onClick={() => {
+            history.push("/Admin");
+        }}
+        >
+            Cancel
+        </button>
+
     </div>
 
 </div>

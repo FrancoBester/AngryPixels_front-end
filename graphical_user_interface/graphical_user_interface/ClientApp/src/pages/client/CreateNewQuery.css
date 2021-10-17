@@ -8,7 +8,7 @@
 
 .logQueryHeader h2{
     color: #fff;
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Noto Sans Display', sans-serif;
     font-size: 20px;
     text-align: center;
     margin-top: 20px;
@@ -17,9 +17,10 @@
 
 .createQueryHeader{
   color: #548CA8;
-  font-size: 60px;
+  font-size: 80px;
   text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Noto Sans Display', sans-serif;
+  margin-bottom: 30px;
 }
 
 input[type=text], select, textarea{
@@ -35,7 +36,8 @@ input[type=text], select, textarea{
   padding: 12px 12px 12px 0;
   display: inline-block;
   color: #fff;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Noto Sans Display', sans-serif;
+  font-size: 25px;
 }
 
 .queryColLeft{

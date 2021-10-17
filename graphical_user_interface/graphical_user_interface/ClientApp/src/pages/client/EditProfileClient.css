@@ -1,10 +1,10 @@
 .edit-title-container header{
     text-align: center;
-    font-size: 60px;
+    font-size: 80px;
     padding-bottom: 15px;
     color: #548CA8;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+    font-family: 'Noto Sans Display', sans-serif;
+  }
 
 input[type=text], select, textarea{
     width: 100%;

@@ -8,7 +8,7 @@ function Client(){
 
     const history = useHistory();
     const [updated, setUpdated] = useState(1);
-    const tableHeadings =["Title", "Status" ,"Assistant Name"]
+    const tableHeadings =["Title", "Status" ,"Assistant Name", "Query Details"]
     const [TableInfo, setTableInfo] = useState({}) ;
 
     function HandleTableInfo(e){
@@ -101,6 +101,7 @@ function Client(){
                             <td>{(TableInfo[i].queryTitle)}</td>
                             <td>{(TableInfo[i].queryStatus)}</td>
                             <td>{(TableInfo[i].assistantName)}</td>
+                            <td>View</td>
                             </tr>
                             )
                         })}

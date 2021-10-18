@@ -12,7 +12,7 @@ import {
 function Admin() {
   const history = useHistory();
   const [updated, setUpdated] = useState(1);
-  const tableHeadings = ["Client Full Name", "Role", "Policy Type", "Client Details", "Policy Details"]
+  const tableHeadings = ["Client Name", "Role", "Policy Type", "Client Details", "Policy Details"]
   const [TableInfo, setTableInfo] = useState({});
   const [search_value, setSearch] = useState('');
 
@@ -57,7 +57,6 @@ function Admin() {
       () => {}
     )
   }
-
 
   return (
     <>

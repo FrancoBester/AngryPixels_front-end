@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import API from "../../API";
 import './ProfilePage.css';
 import { useHistory } from "react-router";
-
+import Footer from '../../components/Footer';
 
 function ProfilePage() {
   console.log("test");
@@ -285,6 +285,8 @@ function ProfilePage() {
         <>Loading</>
       )}
       </div>
+      <Footer/>
+
     </>
   );
 }

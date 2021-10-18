@@ -9,7 +9,7 @@
 .myProfileHeader h1{
     color: #548CA8;
     text-align: center;
-    font-size: 60px;
+    font-size: 80px;
     font-family: 'Noto Sans Display', sans-serif;
 }
 
@@ -51,6 +51,7 @@ input[type=file], select, textarea{
     display: flex;
     margin-top: 10px;
     margin-bottom: 10px;
+    color: #EEEEEE;
   }
 
   .medicalDocGrid button{

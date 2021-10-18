@@ -7,8 +7,8 @@
 
 .ViewQueriesHeader{
   color: #548CA8;
-  font-size: 80px;
   font-family: 'Noto Sans Display', sans-serif;
+  font-size: 80px;
   text-align: center;
 }
 
@@ -33,9 +33,9 @@
 .btnSearchQueries, .btnClearQueriesSearch{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background: #EEEEEE;
-    height: 65px;
+    height: 75px;
     line-height: 35px;
-    width: 39%;
+    width: 30%;
     border: none;
     border-radius: 8px;
     outline: none;
@@ -43,7 +43,7 @@
     color: #334257;
     font-size: 1.2em;
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     -webkit-transition: all 0.30s ease-in-out;
     -moz-transition: all 0.30s ease-in-out;
     -ms-transition: all 0.30s ease-in-out;
@@ -62,33 +62,37 @@
     padding: 12px 12px 12px 0;
     display: inline-block;
     color: #fff;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Noto Sans Display', sans-serif;
     font-size: 20px;
   }
   
   .colQueryLeft{
     float: left;
-    width: 10%;
     margin-top: 6px;
-    
   }
   
   .colQueryLeft label{
     font-family: 'Noto Sans Display', sans-serif;
+    color: #fff;
     font-size: 25px;
   }
 
   .colQueryRight{
     float: left;
-    width: 70%;
-    margin-top: 6px;
+    
     margin-left: 60px;
   }
   
-  .rowSearchQueries:after {
+  /*.rowSearchQueries:after {
     content: "";
     display: table;
     clear: both;
+  }*/
+
+  .rowSearchQueries label{
+    text-align: left;
+    font-family: 'Noto Sans Display', sans-serif;
+    color: #fff;
   }
   
   @media screen and (max-width: 600px) {
@@ -96,6 +100,17 @@
       width: 100%;
       margin-top: 0;
     }
+  }
+
+  .rowSearchQueries input[type=text], select, textarea{
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+    width: 100%;
+    margin-left: -40px;
+    margin-top: 6px;
   }
 
   /* TABLE STYLES */
@@ -112,7 +127,9 @@
     border-collapse: collapse;
     overflow: hidden;
     box-shadow: 0 2px  rgba(0,0,0,.1);
+    list-style: none;
 }
+
 
 .userQueryTable th, td{
   padding: 13px;
@@ -133,9 +150,9 @@
 .btnBackAdmin{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background: #EEEEEE;
-  height: 65px;
+  height: 75px;
   line-height: 35px;
-  width: 39%;
+  width: 30%;
   border: none;
   border-radius: 8px;
   outline: none;
@@ -143,7 +160,7 @@
   color: #334257;
   font-size: 1.2em;
   margin-top: 10px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   -webkit-transition: all 0.30s ease-in-out;
   -moz-transition: all 0.30s ease-in-out;
   -ms-transition: all 0.30s ease-in-out;

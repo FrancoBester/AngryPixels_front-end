@@ -27,14 +27,14 @@
 .viewSinglePolicy h5{
     color: #548CA8;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 25px;
     margin-left: 50px;
     font-family: 'Noto Sans Display', sans-serif;
 }
 
 .viewSinglePolicy h6{
     color: #fff;
-    font-size: 18px;
+    font-size: 20px;
     margin-left: 50px;
     margin-right: 50px;
     font-family: 'Noto Sans Display', sans-serif;
@@ -43,7 +43,7 @@
 .btnRequestPolicy, .btnBackPolicies{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background: #EEEEEE;
-    height: 55px;
+    height: 75px;
     line-height: 35px;
     width: 30%;
     border: none;
@@ -71,6 +71,7 @@
 .viewSinglePolicy ul{
     text-align: left;
     margin: 20px;
+    font-family: 'Noto Sans Display', sans-serif;
 }
 
 .buttonRequest button{

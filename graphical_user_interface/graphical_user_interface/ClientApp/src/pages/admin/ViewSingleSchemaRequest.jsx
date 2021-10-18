@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, Link, useHistory } from "react-router-dom";
 import API from "../../API";
+import './ViewSingleSchemaRequest.css';
+
 
 function ViewSingleSchemaRequest(props) {
   const history = useHistory();
@@ -35,15 +37,48 @@ function ViewSingleSchemaRequest(props) {
     return () => {};
   }, []);
 
-  if (hasLoaded) {
-    return <div>Quack</div>;
-  } else {
-    return (
+ return(
+  <>
+  <div className="gridIndividualScheme">
+    <div className="viewIndSchema">
+      <header>Schema Request Details</header>
+    </div>
+
+    {hasLoaded ? (
+    <main className="viewSchemaRequest">
       <div>
-        <h3>Loading...</h3>
+        <h3>Client Name:</h3>
+        <label>Job Tender</label>
       </div>
-    );
-  }
+
+      <div>
+        <h3>Policy Holder:</h3>
+        <label>Bonitas</label>
+      </div>
+
+      <div>
+        <h3>Policy Type:</h3>
+        <label>Edge Plan</label>
+      </div>
+
+      <button className="btnAcceptSchema">Accept</button>
+
+      <button className="btnRejectSchema">Reject</button>
+
+      <button className="btnBackSchemaPage">Back</button>
+
+    </main>
+
+    ) : (
+      <>Loading...</>
+    )}
+
+  </div>
+  </>
+ );
 }
 
 export default ViewSingleSchemaRequest;
+/*User who requester info
+  Policy Info
+  Accept/Reject Button*/

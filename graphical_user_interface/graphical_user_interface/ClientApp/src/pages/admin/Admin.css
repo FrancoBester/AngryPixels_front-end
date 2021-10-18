@@ -33,12 +33,14 @@
 .headerEmpClient{
   color: #DDDDDD;
   font-size: 25px;
+  font-family: 'Noto Sans Display', sans-serif;
 }
 
 .mainGridAdminDash{
   text-align: right;
   color: #EEEEEE;
   padding-right: 20px;
+  font-family: 'Noto Sans Display', sans-serif;
 }
 
 .rowSearch .colLeftSearch label{

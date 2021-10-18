@@ -58,7 +58,7 @@ function ViewSchemaRequests() {
               <th>Policy Type</th>
               <th>User Fullname</th>
               <th>Request Status</th>
-              <th>Options</th>
+              <th>View Schema Request</th>
             </tr>
             </tbody>
             <tbody>
@@ -75,7 +75,7 @@ function ViewSchemaRequests() {
                         className="text-dark"
                         to={`/admin/viewSingleSchemaRequest?id=${x.requestId}`}
                       >
-                        View Schema Request
+                        View
                       </NavLink>
                     </NavItem>
                   </td>
@@ -107,3 +107,4 @@ function ViewSchemaRequests() {
 }
 
 export default ViewSchemaRequests;
+

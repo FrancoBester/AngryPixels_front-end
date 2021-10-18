@@ -77,6 +77,21 @@ function ViewClientProfile() {
                     <label>ID Number:</label>
                     {profile.user.user_ID_Number}
                 </div>
+
+                <div>
+                    <label>City:</label>
+                    <label>Johannesburg</label>
+                </div>
+
+                <div>
+                    <label>Street Name:</label>
+                    <label>Hazel Road</label>
+                </div>
+
+                <div>
+                    <label>Postal Code:</label>
+                    <label>2059</label>
+                </div>
               
                 <button
                 className="btnEditProfileClient"

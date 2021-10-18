@@ -1,7 +1,7 @@
 .ViewQueriesGrid{
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 150px 100px 100px auto 100px;
+    grid-template-rows: 150px 120px 100px auto 100px;
     grid-gap: 0em;
 }
 
@@ -69,6 +69,7 @@
   .colQueryLeft{
     float: left;
     margin-top: 6px;
+    margin-left: -160px;
   }
   
   .colQueryLeft label{
@@ -76,18 +77,6 @@
     color: #fff;
     font-size: 25px;
   }
-
-  .colQueryRight{
-    float: left;
-    
-    margin-left: 60px;
-  }
-  
-  /*.rowSearchQueries:after {
-    content: "";
-    display: table;
-    clear: both;
-  }*/
 
   .rowSearchQueries label{
     text-align: left;
@@ -108,9 +97,8 @@
     border-radius: 4px;
     box-sizing: border-box;
     resize: vertical;
-    width: 100%;
-    margin-left: -40px;
-    margin-top: 6px;
+    width: 200%;
+    
   }
 
   /* TABLE STYLES */
@@ -129,7 +117,6 @@
     box-shadow: 0 2px  rgba(0,0,0,.1);
     list-style: none;
 }
-
 
 .userQueryTable th, td{
   padding: 13px;

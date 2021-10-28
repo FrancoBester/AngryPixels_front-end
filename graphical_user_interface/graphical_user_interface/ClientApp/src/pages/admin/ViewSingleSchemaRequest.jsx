@@ -48,17 +48,17 @@ function ViewSingleSchemaRequest(props) {
     <main className="viewSchemaRequest">
       <div>
         <h3>Client Name:</h3>
-        <label>Job Tender</label>
+        
       </div>
 
       <div>
         <h3>Policy Holder:</h3>
-        <label>Bonitas</label>
+        
       </div>
 
       <div>
         <h3>Policy Type:</h3>
-        <label>Edge Plan</label>
+        
       </div>
 
       <button className="btnAcceptSchema">Accept</button>

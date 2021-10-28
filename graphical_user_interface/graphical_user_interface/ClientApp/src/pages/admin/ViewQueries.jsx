@@ -118,7 +118,7 @@ function ViewQueries() {
                                         <NavLink
                                             tag={Link}
                                             className="text-dark"
-                                            to={``} /* NEED TO ADD PATH*/
+                                            to={`/ViewSingleQuery`} /* NEED TO ADD PATH*/
                                         >
                                             View
                                         </NavLink>

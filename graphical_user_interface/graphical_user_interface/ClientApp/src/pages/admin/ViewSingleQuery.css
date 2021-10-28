@@ -1,0 +1,80 @@
+.gridSingleQuery{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 150px auto auto;
+    grid-gap: 0em;
+}
+
+.singleQueryHeader{
+    color: #548CA8;
+    font-size: 80px;
+    font-family: 'Noto Sans Display', sans-serif;
+    text-align: center;
+}
+
+.singleQueryHeader, .viewSingleQuery, .buttonBackQuery{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.gridSingleQuery > *{
+    background: #1D1D1D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.viewSingleQuery h5{
+    color: #548CA8;
+    font-weight: bold;
+    font-size: 25px;
+    margin-left: 50px;
+    font-family: 'Noto Sans Display', sans-serif;
+    text-align: left;
+}
+
+.viewSingleQuery h6{
+    color: #fff;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-family: 'Noto Sans Display', sans-serif;
+}
+
+.btnBackQuery{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: #EEEEEE;
+    height: 75px;
+    line-height: 35px;
+    width: 30%;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    color: #334257;
+    font-size: 1.2em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    transition: all 0.30s ease-in-out;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.btnBackQuery:hover{
+    background: #548CA8;
+    color: #fff;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.viewSinglePolicy ul{
+    text-align: left;
+    margin: 20px;
+    font-family: 'Noto Sans Display', sans-serif;
+}
+
+.buttonRequest button{
+    margin-bottom: 30px;
+}

@@ -3,7 +3,7 @@ import { useLocation, Link, useHistory } from "react-router-dom";
 import API from "../../API";
 import './ViewSinglePolicy.css';
 
-function ViewSinglePolicy(props) {
+function ViewSinglePolicy() {
   const history = useHistory();
   const search = useLocation().search;
 

@@ -32,6 +32,7 @@ import ViewSchemaRequests from "./pages/admin/ViewSchemaRequests";
 import ViewSingleSchemaRequest from "./pages/admin/ViewSingleSchemaRequest";
 import CreateNewPolicy from "./pages/admin/CreateNewPolicy";
 import QueryDetails from "./pages/admin/QueryDetails";
+import ViewSingleQuery from "./pages/admin/ViewSingleQuery";
 
 import "./custom.css";
 
@@ -74,6 +75,7 @@ export default function App() {
         <Route path="/CreateNewQuery" component={CreateNewQuery} />
         <Route path="/CreateNewPolicy" component={CreateNewPolicy}/>
         <Route path="/QueryDetails" component={QueryDetails}/>
+        <Route path="/ViewSingleQuery" component={ViewSingleQuery}/>
       </Switch>
     </Layout>
   );

@@ -1,0 +1,62 @@
+.gridViewClientDetails{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 150px auto;
+    grid-gap: 0em;
+}
+
+.clientDetailsHeader{
+  color: #548CA8;
+  font-family: 'Noto Sans Display', sans-serif;
+  font-size: 80px;
+  text-align: center;
+}
+
+.clientDetailsHeader, .viewClientDetailsMain, .buttonViewClient{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.gridViewClientDetails > *{
+    background: #1D1D1D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.viewClientDetailsMain{
+  text-align: left;
+  color: #EEEEEE;
+  padding-right: 20px;
+  font-size: 25px;
+}
+
+.btnBackClientQuery{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: #EEEEEE;
+    height: 75px;
+    line-height: 35px;
+    width: 30%;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    color: #334257;
+    font-size: 1.2em;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    transition: all 0.30s ease-in-out;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  
+  .btnBackClientQuery:hover{
+    background: #548CA8;
+    color: #fff;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+  

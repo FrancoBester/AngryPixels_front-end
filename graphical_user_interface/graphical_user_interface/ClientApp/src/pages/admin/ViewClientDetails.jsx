@@ -93,8 +93,10 @@ function ViewClientDetails() {
                         <h6>{clientDetails.postal_Code}</h6>
                     </li>
                 </ul>
+            </main>
 
-                <button
+            <div className="buttonViewClient">
+            <button
                 className="btnBackClientQuery"
                 onClick={() => {
                     history.push("/ViewQueries");
@@ -102,8 +104,7 @@ function ViewClientDetails() {
                 >
                     Back
                 </button>
-
-            </main>
+            </div>
             
             </>
             ) : (

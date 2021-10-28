@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation, Link, useHistory } from "react-router-dom";
 import API from "../../API";
 import './ViewSingleQuery.css';
+import Footer from '../../components/Footer';
 
 function ViewSingleQuery() {
 
@@ -10,30 +11,33 @@ function ViewSingleQuery() {
 
     const [query, setQuery] = useState({});
     const [hasLoaded, setHasLoaded] = useState(false);
+    const [updated, setUpdated] = useState(1); 
     const [queryId, setQueryId] = useState(0);
 
+    function HandleProfile(e){
+        query(e);
+    }
+
     useEffect(() =>{
-        const id = new URLSearchParams(search).get("id");
-        debugger;
-        setQueryId(id);
+        
+        var id = parseInt(localStorage.getItem("id"));
         var onSuccess = (e) => {
-            debugger;
-            setQuery(e.data);
+            HandleProfile(e.data);
 
             setHasLoaded(true);
         };
 
         API.APIGET(
-            "Queries/GetQueryDetails/" + queryId,
+            "Queries/GetQueryDetails/" + id,
             onSuccess,
+        () => {},
             () => {
-                alert("Error");
-            },
-            () => {}
+                alert("Information Loaded");
+            }
         );
 
         return () => {};
-    }, []);
+    }, [updated]);
 
    
 
@@ -92,6 +96,7 @@ function ViewSingleQuery() {
               )}
 
         </div>
+        <Footer/>
     </>
   );
 }

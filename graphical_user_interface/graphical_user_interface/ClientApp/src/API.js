@@ -46,7 +46,8 @@ class API {
     axios
       .get(url, {
         headers: {
-          Authorization: localStorage.getItem("token"),
+          //Authorization: localStorage.getItem("token"),
+          Authorization: window.sessionStorage.getItem("token"),
         },
       })
       .then(function (response) {
@@ -64,7 +65,8 @@ class API {
     axios
       .post(url, object, {
         headers: {
-          Authorization: localStorage.getItem("token"),
+          //Authorization: localStorage.getItem("token"),
+          Authorization: window.sessionStorage.getItem("token"),
         },
       })
       .then(function (response) {

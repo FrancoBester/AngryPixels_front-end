@@ -23,10 +23,15 @@ class Auth {
         this.authenticated = true;
         this.onAuthenticationChanged.detail.value = this.isAuthenticated();
         dispatchEvent(this.onAuthenticationChanged);
-        localStorage.setItem("token", response.data.token);
-        localStorage.setItem("roles", response.data.roles);
-        localStorage.setItem("id", response.data.id);
-        localStorage.setItem("email", response.data.email);
+
+        window.sessionStorage.setItem("token", response.data.token);
+        window.sessionStorage.setItem("roles", response.data.roles);
+        window.sessionStorage.setItem("id", response.data.id);
+        window.sessionStorage.setItem("email", response.data.email);
+        // localStorage.setItem("token", response.data.token);
+        // localStorage.setItem("roles", response.data.roles);
+        // localStorage.setItem("id", response.data.id);
+        // localStorage.setItem("email", response.data.email);
         callback();
       },
       (error) => {
@@ -37,7 +42,8 @@ class Auth {
   }
 
   logout(cb) {
-    localStorage.clear();
+    window.sessionStorage.clear();
+    //localStorage.clear();
     this.authenticated = false;
     this.onAuthenticationChanged.detail.value = this.isAuthenticated();
     dispatchEvent(this.onAuthenticationChanged);
@@ -49,7 +55,8 @@ class Auth {
   }
 
   userIsOfType(type) {
-    const roles = localStorage.getItem("roles").split(",");
+    //const roles = localStorage.getItem("roles").split(",");
+    const roles = window.sessionStorage.getItem("roles").split(",");
     if (roles.includes(type)) {
       return true;
     }
@@ -78,8 +85,6 @@ class Auth {
       () => {}
     );
   }
-
 }
 
 export default new Auth();
-

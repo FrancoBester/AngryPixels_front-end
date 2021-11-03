@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import API from "../../API";
-import './ProfilePage.css';
+import "./ProfilePage.css";
 import { useHistory } from "react-router";
-import Footer from '../../components/Footer';
+import Footer from "../../components/Footer";
 
 function ProfilePage() {
   console.log("test");
@@ -10,7 +10,6 @@ function ProfilePage() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [files, setFiles] = useState([]);
   const history = useHistory();
-
 
   const [updated, setUpdated] = useState(1); //To help force rerenders
 
@@ -33,7 +32,8 @@ function ProfilePage() {
       var formData = new FormData();
       formData.append("file", file);
       formData.append("filename", file.name);
-      formData.append("UserId", localStorage.getItem("id"));
+      //formData.append("UserId", localStorage.getItem("id"));
+      formData.append("UserId", window.sessionStorage.getItem("id"));
       formData.append("DocumentType", type);
       API.APIPostAnon(
         "Document/UploadDocForUser",
@@ -100,7 +100,8 @@ function ProfilePage() {
   }
 
   useEffect(() => {
-    var id = parseInt(localStorage.getItem("id"));
+    //var id = parseInt(localStorage.getItem("id"));
+    var id = parseInt(window.sessionStorage.getItem("id"));
     var onSuccess = (e) => {
       HandleProfile(e.data);
 
@@ -110,28 +111,27 @@ function ProfilePage() {
       `Users/GetProfileInformation/` + id,
       onSuccess,
       () => {},
-      () => {
-        
-      }
+      () => {}
     );
     return () => {};
   }, [updated]);
 
-   {/** ADDED SOME BASIC STYLING, I WILL ADD MORE SPICE LATER */}
+  {
+    /** ADDED SOME BASIC STYLING, I WILL ADD MORE SPICE LATER */
+  }
   return (
-   
     <>
-    <div className="grid-wrapper">
-      <div className="myProfileHeader">
-        <h1>Documentation</h1>
-        <br />
-        <h2>Please upload the following documentation:</h2>
-      </div>
-      
-      {hasLoaded ? (
-        <>
-        <div className="clientInfoGrid">
-          {/*<div>
+      <div className="grid-wrapper">
+        <div className="myProfileHeader">
+          <h1>Documentation</h1>
+          <br />
+          <h2>Please upload the following documentation:</h2>
+        </div>
+
+        {hasLoaded ? (
+          <>
+            <div className="clientInfoGrid">
+              {/*<div>
             <b>Name: </b>
             {profile.user.user_Name}
           </div>
@@ -143,150 +143,152 @@ function ProfilePage() {
             <b>Email: </b>
             {profile.user.user_Email}
           </div>*/}
-        </div>
-        <div className="medicalDocGrid">
-          {/* Medical Document */}
-          <h3>Medical Certificate:</h3>
-          {!HasMedicalDoc() ? (
-            <>
-              <div>
+            </div>
+            <div className="medicalDocGrid">
+              {/* Medical Document */}
+              <h3>Medical Certificate:</h3>
+              {!HasMedicalDoc() ? (
+                <>
+                  <div>
+                    <input
+                      onChange={UploadMedicalCertificateFileHandeler}
+                      type="file"
+                    ></input>
+                    <br />
+                    <button
+                      onClick={() => {
+                        UploadFile(medicalCertificate, 1);
+                      }}
+                    >
+                      Submit document
+                    </button>
+                    <br />
+                  </div>
+                </>
+              ) : (
+                <>
+                  <button
+                    onClick={() => {
+                      var medicalFile = GetMedicalDoc();
+                      window.open(medicalFile.fileUrl, "_blank");
+                    }}
+                  >
+                    <br />
+                    View Medical Document
+                  </button>
+                  <br />
+                  <button
+                    onClick={() => {
+                      var medicalFile = GetMedicalDoc();
+                      DeleteDocForUser(medicalFile.fileId);
+                    }}
+                  >
+                    Delete Document
+                  </button>
+                </>
+              )}
+              {/* Passport document */}
+              <h3>Copy of Passport:</h3>
+              {!HasPassportDoc() ? (
+                <>
+                  <div>
+                    <input
+                      onChange={UploadPassportDocumentFileHandeler}
+                      type="file"
+                    ></input>
+                    <br />
+                    <button
+                      onClick={() => {
+                        UploadFile(PassportDocument, 2);
+                      }}
+                    >
+                      Submit document
+                    </button>
+                    <br />
+                  </div>
+                </>
+              ) : (
+                <>
+                  <button
+                    onClick={() => {
+                      var passport = GetPassportDoc();
+                      window.open(passport.fileUrl, "_blank");
+                    }}
+                  >
+                    View Passport Document
+                  </button>
+                  <br />
+                  <button
+                    onClick={() => {
+                      var passport = GetPassportDoc();
+                      DeleteDocForUser(passport.fileId);
+                    }}
+                  >
+                    Delete Document
+                  </button>
+                </>
+              )}
 
-                <input
-                  onChange={UploadMedicalCertificateFileHandeler}
-                  type="file"
-                ></input>
-                <br />
-                <button
-                  onClick={() => {
-                    UploadFile(medicalCertificate, 1);
-                  }}
-                >
-                  Submit document
-                </button>
-                <br />
-              </div>
-            </>
-          ) : (
-            <>
-              <button
-                onClick={() => {
-                  var medicalFile = GetMedicalDoc();
-                  window.open(medicalFile.fileUrl, "_blank");
-                }}
-              ><br />
-                View Medical Document
-              </button>
-              <br />
-              <button
-                onClick={() => {
-                  var medicalFile = GetMedicalDoc();
-                  DeleteDocForUser(medicalFile.fileId);
-                }}
-              >
-                Delete Document
-              </button>
-            </>
-          )}
-          {/* Passport document */}
-          <h3>Copy of Passport:</h3>
-          {!HasPassportDoc() ? (
-            <>
-              <div>
-                <input
-                  onChange={UploadPassportDocumentFileHandeler}
-                  type="file"
-                ></input>
-                <br />
-                <button
-                  onClick={() => {
-                    UploadFile(PassportDocument, 2);
-                  }}
-                >
-                  Submit document
-                </button>
-                <br />
-              </div>
-            </>
-          ) : (
-            <>
-              <button
-                onClick={() => {
-                  var passport = GetPassportDoc();
-                  window.open(passport.fileUrl, "_blank");
-                }}
-              >
-                View Passport Document
-              </button><br />
-              <button
-                onClick={() => {
-                  var passport = GetPassportDoc();
-                  DeleteDocForUser(passport.fileId);
-                }}
-              >
-                Delete Document
-              </button>
-            </>
-          )}
+              {/* Birth Certificate */}
+              <h3>Birth Certificate:</h3>
+              {!HasBirthCertificateDoc() ? (
+                <>
+                  <div>
+                    <input
+                      onChange={UploadBirthCertificateFileHandeler}
+                      type="file"
+                    ></input>
+                    <br />
+                    <button
+                      onClick={() => {
+                        UploadFile(BirthCertificate, 3);
+                      }}
+                    >
+                      Submit document
+                    </button>
+                    <br />
+                  </div>
+                </>
+              ) : (
+                <>
+                  <button
+                    onClick={() => {
+                      var birthCertificate = GetBirthCertificateDoc();
+                      window.open(birthCertificate.fileUrl, "_blank");
+                    }}
+                  >
+                    View Passport Document
+                  </button>
+                  <br />
+                  <button
+                    onClick={() => {
+                      var birthCertificate = GetBirthCertificateDoc();
+                      DeleteDocForUser(birthCertificate.fileId);
+                    }}
+                  >
+                    Delete Document
+                  </button>
+                  <br />
+                </>
+              )}
+            </div>
 
-          {/* Birth Certificate */}
-          <h3>Birth Certificate:</h3>
-          {!HasBirthCertificateDoc() ? (
-            <>
-              <div>
-                <input
-                  onChange={UploadBirthCertificateFileHandeler}
-                  type="file"
-                ></input>
-                <br />
-                <button
-                  onClick={() => {
-                    UploadFile(BirthCertificate, 3);
-                  }}
-                >
-                  Submit document
-                </button>
-                <br />
-              </div>
-            </>
-          ) : (
-            <>
+            <div className="backDocs">
               <button
+                className="btnBackDocs"
                 onClick={() => {
-                  var birthCertificate = GetBirthCertificateDoc();
-                  window.open(birthCertificate.fileUrl, "_blank");
+                  history.push("/Client");
                 }}
               >
-                View Passport Document
-              </button><br />
-              <button
-                onClick={() => {
-                  var birthCertificate = GetBirthCertificateDoc();
-                  DeleteDocForUser(birthCertificate.fileId);
-                }}
-              >
-                Delete Document
-              </button>
-              <br />
-            </>
-          )}
-          </div>
-
-          <div className="backDocs">
-          <button 
-              className="btnBackDocs"
-              onClick={() => {
-              history.push("/Client");
-              }}>
                 Back
-          </button>
-          </div>
-        </>
-      ) : (
-        <>Loading</>
-      )}
+              </button>
+            </div>
+          </>
+        ) : (
+          <>Loading</>
+        )}
       </div>
-      <Footer/>
-
+      <Footer />
     </>
   );
 }

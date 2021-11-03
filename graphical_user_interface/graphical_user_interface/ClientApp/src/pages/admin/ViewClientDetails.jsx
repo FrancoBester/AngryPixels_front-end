@@ -48,49 +48,49 @@ function ViewClientDetails() {
         {hasLoaded ? (
           <>
             <main className="viewClientDetailsMain">
-              <ul>
-                <li>
-                  <h5>Client Name:</h5>
-                  <h6>{clientDetails.user_Name}</h6>
-                </li>
-                <li>
-                  <h5>Client Surname:</h5>
-                  <h6>{clientDetails.user_Surname}</h6>
-                </li>
-                <li>
-                  <h5>ID Number:</h5>
-                  <h6>{clientDetails.user_ID_Number}</h6>
-                </li>
-                <li>
-                  <h5>Email:</h5>
-                  <h6>{clientDetails.user_Email}</h6>
-                </li>
-                <li>
-                  <h5>Cellphone:</h5>
-                  <h6>{clientDetails.user_Cell}</h6>
-                </li>
-                <li>
-                  <h5>Date of Birth:</h5>
-                  <h6>{clientDetails.user_Dob}</h6>
-                </li>
-                <li>
-                  <h5>Gender:</h5>
-                  <h6>{clientDetails.user_Gender}</h6>
-                </li>
-                <li>
-                  <h5>Street:</h5>
-                  <h6>{clientDetails.street}</h6>
-                </li>
-                <li>
-                  <h5>City:</h5>
-                  <h6>{clientDetails.city}</h6>
-                </li>
-                <li>
-                  <h5>Postal Code:</h5>
-                  <h6>{clientDetails.postal_Code}</h6>
-                </li>
-              </ul>
-            </main>
+              
+                <div>
+                  <label>Client Name:</label>
+                  {clientDetails.user_Name}
+                </div>
+                <div>
+                  <label>Client Surname:</label>
+                  {clientDetails.user_Surname}
+                </div>
+                <div>
+                  <label>ID Number:</label>
+                  {clientDetails.user_ID_Number}
+                </div>
+                <div>
+                  <label>Email:</label>
+                  {clientDetails.user_Email}
+                </div>
+                <div>
+                  <label>Cellphone:</label>
+                  {clientDetails.user_Cell}
+                </div>
+                <div>
+                  <label>Date of Birth:</label>
+                  {clientDetails.user_Dob}
+                </div>
+                <div>
+                  <label>Gender:</label>
+                  {clientDetails.user_Gender}
+                </div>
+                <div>
+                  <label>Street:</label>
+                  {clientDetails.street}
+                </div>
+                <div>
+                  <label>City:</label>
+                  {clientDetails.city}
+                </div>
+                <div>
+                  <label>Postal Code:</label>
+                  {clientDetails.postal_Code}
+                </div>
+              
+            
 
             <div className="buttonViewClient">
               <button
@@ -102,6 +102,8 @@ function ViewClientDetails() {
                 Back
               </button>
             </div>
+
+            </main>
           </>
         ) : (
           <h3>Loading...</h3>

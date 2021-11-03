@@ -80,6 +80,8 @@ function ViewClientProfile() {
               {profile.user.user_ID_Number}
             </div>
 
+            {/** HARD CODED -> NEED TO FIX */}
+
             <div>
               <label>City:</label>
               <label>Johannesburg</label>

@@ -65,7 +65,14 @@ function ViewSingleSchemaRequest(props) {
 
       <button className="btnRejectSchema">Reject</button>
 
-      <button className="btnBackSchemaPage">Back</button>
+      <button
+              className="btnBackSchemaPage"
+              onClick={() => {
+                history.push("/Admin");
+              }}
+            >
+              Back
+            </button>
 
     </main>
 

@@ -1,22 +1,51 @@
 .gridViewPolicyDetails{
-    background-color: #1D1D1D;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 150px auto auto;
+    grid-gap: 0em;
 }
 
 .headerViewPolDet header{
     color: #548CA8;
-    text-align: center;
     font-size: 80px;
-    margin-bottom: 30px;
-    margin-top: 30px;
+    font-family: 'Noto Sans Display', sans-serif;
+    text-align: center;
+}
+
+.headerViewPolDet, .mainViewPolDetails, .buttonsViewPol{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.gridViewPolicyDetails> *{
+    background: #1D1D1D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.mainViewPolDetails h5{
+    color: #548CA8;
+    font-weight: bold;
+    font-size: 25px;
+    margin-left: 50px;
     font-family: 'Noto Sans Display', sans-serif;
 }
 
-.mainViewPolDetails{
-    color: #548CA8;
-    font-size: 30px;
+.mainViewPolDetails h6{
+    color: #fff;
+    font-size: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-family: 'Noto Sans Display', sans-serif;
+}
+
+.mainViewPolDetails ul{
     text-align: left;
-    margin-left: 39%;
-    font-family: 'Noto Sans Display', sans-serif;    
+    margin: 20px;
+    font-family: 'Noto Sans Display', sans-serif;
 }
 
 .btnBackAdminPage{

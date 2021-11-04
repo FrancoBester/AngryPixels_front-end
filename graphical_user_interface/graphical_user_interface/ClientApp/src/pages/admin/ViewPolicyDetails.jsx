@@ -6,41 +6,34 @@ import API from "../../API";
 
 function ViewPolicyDetails() {
     const history = useHistory();
-    const [profile, setProfile] = useState({});
+    const search = useLocation().search;
+   
+    const [policy, setPolicy] = useState({});
     const [hasLoaded, setHasLoaded] = useState(false);
-    const [updated, setUpdated] = useState(1);
-    const [policyHolder, setPolicyHolder] = useState({});
-    const [policyType, setPolicyType] = useState({});
-    const [policyDescription, setPolicyDescription] = useState({});
-    const [policyDate, setPolicyDate] = useState({});
-    const [polucyBenefits, setPolucyBenefits] = useState({});
-
-    function HandleProfile(e) {
-        setProfile(e);
-      }
-    
+    const [policyId, setPolicyId] = useState(0);
 
     useEffect(() => {
-        //var id = parseInt(localStorage.getItem("id"));
-        var id = parseInt(window.sessionStorage.getItem("id"));
-        var onSuccess = (e) => {
-          HandleProfile(e.data);
-    
-          setHasLoaded(true);
-        };
+    const id = new URLSearchParams(search).get("id");
+    debugger;
+    setPolicyId(id);
+    var onSuccess = (e) => {
+      debugger;
+      setPolicy(e.data);
 
-        API.APIGET(
-            "Users/GetPolicyDetails/" + id,
-            onSuccess,
-            () => {},
-            () => {
-              {
-                alert("Information Loaded");
-              }
-            }
-          );
-          return () => {};
-        }, [updated]);
+      setHasLoaded(true);
+    };
+
+    API.APIGET(
+        "Users/GetPolicyDetails/" + id,
+        onSuccess,
+        () => {
+          alert("Error");
+        },
+        () => {}
+      );
+  
+      return () => {};
+    }, []);
 
   return (
       <>
@@ -50,29 +43,38 @@ function ViewPolicyDetails() {
       </div>
 
       {hasLoaded ? (
+          <>
       <main className="mainViewPolDetails">
-        <div>
-            <label>Holder:</label>
-            
-        </div>
-        <div>
-            <label>Type:</label>
-            <label></label>
-        </div>
-        <div>
-            <label>Description:</label>
-            <label></label>
-        </div>
-        <div>
-            <label>Date:</label>
-            <label></label>
-        </div>
-        <div>
-            <label>Benefits:</label>
-            <label></label>
-        </div>  
+        <ul>
+              <li>
+              <h5>Holder:</h5>
+              <h6>{policy.policy_Holder}</h6>
+              </li>
+              <br />
+              <li>
+              <h5>Policy Type:</h5>
+              <h6>{policy.policy_Type}</h6>
+              </li>
+              <br />
+              <li>
+              <h5>Admision type:</h5>
+              <h6>{policy.adms_Type}</h6>
+              </li>
+              <br />
+              <li>
+              <h5>Description:</h5>
+              <h6>{policy.policy_Des}</h6>
+              </li>
+              <br />
+              <li>
+              <h5>Benefits:</h5>
+              <h6>{policy.policy_Benefits}</h6>
+              </li>
+          </ul>
+      </main>
 
-        <button
+      <div className="buttonsViewPol">
+           <button
               className="btnBackAdminPage"
               onClick={() => {
                 history.push("/Admin");
@@ -80,14 +82,17 @@ function ViewPolicyDetails() {
             >
               Back
             </button>
+      </div>
 
-      </main>
-      ) : (
-        <>Loading...</>
-      )}
-    </div>
-    <Footer/>
-    </>
+        </>
+        
+        ) : (
+            <>Loading...</>
+        )}
+        
+        </div>
+        <Footer/>
+        </>
   );
 }
 

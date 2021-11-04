@@ -26,7 +26,7 @@ function CreateNewQuery() {
       () => {},
       () => {}
     );
-    // history.push("/Client");
+     history.push("/Client");
   }
 
   return (

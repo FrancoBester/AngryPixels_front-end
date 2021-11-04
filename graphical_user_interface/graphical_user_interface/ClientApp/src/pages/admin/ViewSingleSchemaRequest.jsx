@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation, Link, useHistory } from "react-router-dom";
 import API from "../../API";
 import './ViewSingleSchemaRequest.css';
+import Footer from '../../components/Footer';
 
 
 function ViewSingleSchemaRequest(props) {
@@ -81,6 +82,7 @@ function ViewSingleSchemaRequest(props) {
     )}
 
   </div>
+  <Footer/>
   </>
  );
 }

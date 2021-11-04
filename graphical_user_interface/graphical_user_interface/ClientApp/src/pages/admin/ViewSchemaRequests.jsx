@@ -56,9 +56,11 @@ function ViewSchemaRequests() {
             <tbody>
             <tr className="tblViewSchemas">
               <th>Policy Type</th>
-              <th>User Fullname</th>
+              <th>Client Name</th>
               <th>Request Status</th>
-              <th>View Schema Request</th>
+              <th>Schema Request</th>
+              <th>Client Details</th>
+              <th>Policy Details</th>
             </tr>
             </tbody>
             <tbody>
@@ -74,6 +76,28 @@ function ViewSchemaRequests() {
                         tag={Link}
                         className="text-dark"
                         to={`/admin/viewSingleSchemaRequest?id=${x.requestId}`}
+                      >
+                        View
+                      </NavLink>
+                    </NavItem>
+                  </td>
+                  <td>
+                    <NavItem>
+                      <NavLink
+                        tag={Link}
+                        className="text-dark"
+                        to={``}
+                      >
+                        View
+                      </NavLink>
+                    </NavItem>
+                  </td>
+                  <td>
+                    <NavItem>
+                      <NavLink
+                        tag={Link}
+                        className="text-dark"
+                        to={``}
                       >
                         View
                       </NavLink>

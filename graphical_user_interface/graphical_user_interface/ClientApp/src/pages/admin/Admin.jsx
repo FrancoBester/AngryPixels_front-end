@@ -127,12 +127,12 @@ function Admin() {
               </tr>
             </tbody>
             <tbody>
-              {Object.keys(TableInfo).map((i) => {
+              {Object.keys(TableInfo).map((policy) => {
                 return(
                 <tr>
-                  <td>{(TableInfo[i].firstName) + " " + (TableInfo[i].lastName)}</td>
-                  <td>{(TableInfo[i].roleName)}</td>
-                  <td>{(TableInfo[i].policyName)}</td>
+                  <td>{(TableInfo[policy].firstName) + " " + (TableInfo[policy].lastName)}</td>
+                  <td>{(TableInfo[policy].roleName)}</td>
+                  <td>{(TableInfo[policy].policyName)}</td>
                   <td><NavItem>
                       <NavLink
                         tag={Link}
@@ -146,7 +146,7 @@ function Admin() {
                       <NavLink
                         tag={Link}
                         className="text-dark"
-                        to={`/ViewPolicyDetails`}
+                        to={`/ViewPolicyDetails?id=${policy.policyId}`}
                       >
                         View
                       </NavLink>

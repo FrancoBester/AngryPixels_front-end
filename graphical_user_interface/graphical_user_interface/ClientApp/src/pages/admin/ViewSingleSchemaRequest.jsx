@@ -73,7 +73,7 @@ function ViewSingleSchemaRequest(props) {
               }}
             >
               Back
-            </button>
+      </button>
 
     </main>
 

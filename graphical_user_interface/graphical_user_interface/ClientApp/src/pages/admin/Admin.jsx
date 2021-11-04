@@ -146,7 +146,7 @@ function Admin() {
                       <NavLink
                         tag={Link}
                         className="text-dark"
-                        to={``}
+                        to={`/ViewPolicyDetails`}
                       >
                         View
                       </NavLink>

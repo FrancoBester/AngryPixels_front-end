@@ -1,3 +1,5 @@
+import React from "react";
+
 const axios = require("axios");
 
 class API {
@@ -12,6 +14,12 @@ class API {
       axios.defaults.baseURL =
         "https://meditrustbackend.azurewebsites.net/api/";
     }
+
+    let onShowPopUp = new CustomEvent("ShowPopUp", {
+      popUpContent: "Hi",
+    });
+
+    this.showPopup = onShowPopUp;
   }
 
   APIGetAnon(url, onSuccess, onFail, onFinally) {
@@ -21,7 +29,10 @@ class API {
         onSuccess(response);
       })
       .catch(function (error) {
-        onFail(error);
+        this.showPopup.popUpContent = (
+          <h1 style={{ textAlign: "center" }}>Error: {error.message}</h1>
+        );
+        dispatchEvent(this.showPopup);
       })
       .then(function () {
         onFinally();
@@ -35,7 +46,11 @@ class API {
         onSuccess(response);
       })
       .catch(function (error) {
-        onFail(error);
+        debugger;
+        this.showPopup.popUpContent = (
+          <h1 style={{ textAlign: "center" }}>Error: {error.message}</h1>
+        );
+        dispatchEvent(this.showPopup);
       })
       .then(function () {
         onFinally();
@@ -54,7 +69,10 @@ class API {
         onSuccess(response);
       })
       .catch(function (error) {
-        onFail(error);
+        this.showPopup.popUpContent = (
+          <h1 style={{ textAlign: "center" }}>Error: {error.message}</h1>
+        );
+        dispatchEvent(this.showPopup);
       })
       .then(function () {
         onFinally();
@@ -73,7 +91,10 @@ class API {
         onSuccess(response);
       })
       .catch(function (error) {
-        onFail(error);
+        this.showPopup.popUpContent = (
+          <h1 style={{ textAlign: "center" }}>Error: {error.message}</h1>
+        );
+        dispatchEvent(this.showPopup);
       })
       .then(function () {
         onFinally();

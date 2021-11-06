@@ -1,3 +1,4 @@
+import React from "react";
 import API from "./API";
 
 class Auth {
@@ -23,6 +24,12 @@ class Auth {
       }
     );
     this.onAuthenticationChanged = onAuthenticationChangedEvent;
+
+    let onShowPopUp = new CustomEvent("ShowPopUp", {
+      popUpContent: "Hi",
+    });
+
+    this.showPopup = onShowPopUp;
   }
 
   login(details, callback) {
@@ -30,7 +37,6 @@ class Auth {
       "Authentication",
       { Email: details.Email, PasswordHash: details.password },
       (response) => {
-        debugger;
         this.authenticated = true;
         this.onAuthenticationChanged.detail.value = this.isAuthenticated();
         dispatchEvent(this.onAuthenticationChanged);
@@ -46,7 +52,10 @@ class Auth {
         callback();
       },
       (error) => {
-        alert(error);
+        this.showPopup.popUpContent = (
+          <h1 style={{ textAlign: "center" }}>Error: {error.message}</h1>
+        );
+        dispatchEvent(this.showPopup);
       },
       () => {}
     );

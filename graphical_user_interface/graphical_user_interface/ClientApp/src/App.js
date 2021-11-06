@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Route } from "react-router";
 import { Layout } from "./components/Layout";
 import Home from "./pages/Home";
@@ -40,9 +40,27 @@ import "./custom.css";
 
 import Test from "./pages/Test";
 
+import PopUp from "./components/Popup";
+import "./components/popup.css";
+
 export default function App() {
+  const [showPopup, setShowPopup] = useState(false);
+  const [popUpContent, setPopUpContent] = useState({});
+
+  useEffect(() => {
+    window.addEventListener("ShowPopUp", (e, p) => {
+      debugger;
+      setPopUpContent(e.popUpContent);
+      setShowPopup(true);
+    });
+    return () => {};
+  }, []);
+
   return (
     <Layout>
+      <PopUp trigger={showPopup} setTrigger={setShowPopup}>
+        {popUpContent}
+      </PopUp>
       <Switch>
         <Route exact path="/home" component={Home} />
         <Route exact path="/" component={LandingPage} />
@@ -75,11 +93,11 @@ export default function App() {
         <Route path="/ViewAdminInformation" component={ViewAdminInformation} />
         <Route path="/ViewQueries" component={ViewQueries} />
         <Route path="/CreateNewQuery" component={CreateNewQuery} />
-        <Route path="/CreateNewPolicy" component={CreateNewPolicy}/>
-        <Route path="/QueryDetails" component={QueryDetails}/>
-        <Route path="/ViewSingleQuery" component={ViewSingleQuery}/>
-        <Route path="/ViewClientDetails" component={ViewClientDetails}/>
-        <Route path="/ViewPolicyDetails" component={ViewPolicyDetails}/>
+        <Route path="/CreateNewPolicy" component={CreateNewPolicy} />
+        <Route path="/QueryDetails" component={QueryDetails} />
+        <Route path="/ViewSingleQuery" component={ViewSingleQuery} />
+        <Route path="/ViewClientDetails" component={ViewClientDetails} />
+        <Route path="/ViewPolicyDetails" component={ViewPolicyDetails} />
       </Switch>
     </Layout>
   );

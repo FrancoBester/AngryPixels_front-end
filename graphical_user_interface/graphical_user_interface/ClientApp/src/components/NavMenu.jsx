@@ -16,15 +16,17 @@ function NavMenu(props) {
   const [collapsed, setCollapsed] = useState(false);
   const [authenticated, setAuthenticated] = useState(false);
 
+  const [updated, setUpdated] = useState(0);
+
   //subscribe to events
   useEffect(() => {
+    setAuthenticated(auth.isAuthenticated());
     window.addEventListener("onAuthenticationChangedEvent", (e, p) => {
       setAuthenticated(e.detail.value);
     });
-
     // cleanup this component
     return () => {
-      window.removeEventListener("onAuthenticationChangedEvent", () => {});
+      //cleanup
     };
   }, []);
 
@@ -71,18 +73,16 @@ function NavMenu(props) {
                     </NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink
-                      tag={Link}
-                      className="text-dark"
-                      to="/Admin"
-                    >
+                    <NavLink tag={Link} className="text-dark" to="/Admin">
                       Admin
                     </NavLink>
                   </NavItem>
                   <NavItem>
                     <NavLink
                       onClick={() => {
-                        auth.logout(() => {});
+                        auth.logout(() => {
+                          setUpdated(!updated);
+                        });
                       }}
                       tag={Link}
                       className="text-dark"

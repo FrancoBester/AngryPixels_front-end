@@ -2,7 +2,18 @@ import API from "./API";
 
 class Auth {
   constructor() {
-    this.authenticated = false;
+    //If session has a token email roles and password: User is authenticated
+    if (
+      sessionStorage.getItem("token") &&
+      sessionStorage.getItem("email") &&
+      sessionStorage.getItem("id") &&
+      sessionStorage.getItem("roles")
+    ) {
+      this.authenticated = true;
+    } else {
+      this.authenticated = false;
+    }
+
     let onAuthenticationChangedEvent = new CustomEvent(
       "onAuthenticationChangedEvent",
       {

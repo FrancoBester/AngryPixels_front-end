@@ -24,7 +24,7 @@ class API {
         onSuccess(response);
       })
       .catch(function (error) {
-        POPUP.ShowPopUp(error.message);
+        POPUP.ShowPopUp(error.message + ` ` + error.response.data);
       })
       .then(function () {
         onFinally();
@@ -32,7 +32,6 @@ class API {
   }
 
   APIPostAnon(url, object, onSuccess, onFail, onFinally) {
-    debugger;
     console.log(this);
     axios
       .post(url, object)
@@ -40,7 +39,7 @@ class API {
         onSuccess(response);
       })
       .catch(function (error) {
-        POPUP.ShowPopUp(error.message);
+        POPUP.ShowPopUp(error.message + ` ` + error.response.data);
       })
       .then(function () {
         onFinally();
@@ -59,7 +58,7 @@ class API {
         onSuccess(response);
       })
       .catch(function (error) {
-        POPUP.ShowPopUp(error.message);
+        POPUP.ShowPopUp(error.message + ` ` + error.response.data);
       })
       .then(function () {
         onFinally();
@@ -78,7 +77,7 @@ class API {
         onSuccess(response);
       })
       .catch(function (error) {
-        POPUP.ShowPopUp(error.message);
+        POPUP.ShowPopUp(error.message + ` ` + error.response.data);
       })
       .then(function () {
         onFinally();

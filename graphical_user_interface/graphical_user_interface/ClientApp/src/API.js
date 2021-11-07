@@ -1,4 +1,5 @@
 import React from "react";
+import POPUP from "./components/popUp";
 
 const axios = require("axios");
 
@@ -14,12 +15,6 @@ class API {
       axios.defaults.baseURL =
         "https://meditrustbackend.azurewebsites.net/api/";
     }
-
-    let onShowPopUp = new CustomEvent("ShowPopUp", {
-      popUpContent: "Hi",
-    });
-
-    this.showPopup = onShowPopUp;
   }
 
   APIGetAnon(url, onSuccess, onFail, onFinally) {
@@ -29,10 +24,7 @@ class API {
         onSuccess(response);
       })
       .catch(function (error) {
-        this.showPopup.popUpContent = (
-          <h1 style={{ textAlign: "center" }}>Error: {error.message}</h1>
-        );
-        dispatchEvent(this.showPopup);
+        POPUP.ShowPopUp(error.message);
       })
       .then(function () {
         onFinally();
@@ -40,17 +32,15 @@ class API {
   }
 
   APIPostAnon(url, object, onSuccess, onFail, onFinally) {
+    debugger;
+    console.log(this);
     axios
       .post(url, object)
       .then(function (response) {
         onSuccess(response);
       })
       .catch(function (error) {
-        debugger;
-        this.showPopup.popUpContent = (
-          <h1 style={{ textAlign: "center" }}>Error: {error.message}</h1>
-        );
-        dispatchEvent(this.showPopup);
+        POPUP.ShowPopUp(error.message);
       })
       .then(function () {
         onFinally();
@@ -69,10 +59,7 @@ class API {
         onSuccess(response);
       })
       .catch(function (error) {
-        this.showPopup.popUpContent = (
-          <h1 style={{ textAlign: "center" }}>Error: {error.message}</h1>
-        );
-        dispatchEvent(this.showPopup);
+        POPUP.ShowPopUp(error.message);
       })
       .then(function () {
         onFinally();
@@ -91,10 +78,7 @@ class API {
         onSuccess(response);
       })
       .catch(function (error) {
-        this.showPopup.popUpContent = (
-          <h1 style={{ textAlign: "center" }}>Error: {error.message}</h1>
-        );
-        dispatchEvent(this.showPopup);
+        POPUP.ShowPopUp(error.message);
       })
       .then(function () {
         onFinally();

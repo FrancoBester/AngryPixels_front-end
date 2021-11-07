@@ -5,7 +5,6 @@ import { useHistory } from "react-router";
 import Footer from "../../components/Footer";
 
 function ProfilePage() {
-  console.log("test");
   const [profile, setProfile] = useState({});
   const [hasLoaded, setHasLoaded] = useState(false);
   const [files, setFiles] = useState([]);
@@ -16,6 +15,41 @@ function ProfilePage() {
   const [medicalCertificate, setMedicalCertificate] = useState();
   const [PassportDocument, setPassportDocument] = useState();
   const [BirthCertificate, setBirthCertificate] = useState();
+
+  function handleFileOpen(url) {
+    if (url.endsWith(".pdf")) {
+      fetch(url)
+        .then((r) => r.blob())
+        .then(showFile);
+    } else {
+      window.open(url, "_blank");
+    }
+  }
+
+  function showFile(blob) {
+    // It is necessary to create a new blob object with mime-type explicitly set
+    // otherwise only Chrome works like it should
+    var newBlob = new Blob([blob], { type: "application/pdf" });
+
+    // IE doesn't allow using a blob object directly as link href
+    // instead it is necessary to use msSaveOrOpenBlob
+    if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+      window.navigator.msSaveOrOpenBlob(newBlob);
+      return;
+    }
+
+    // For other browsers:
+    // Create a link pointing to the ObjectURL containing the blob.
+    const data = window.URL.createObjectURL(newBlob);
+    var link = document.createElement("a");
+    link.href = data;
+    link.target = "_blank";
+    link.click();
+    setTimeout(function () {
+      // For Firefox it is necessary to delay revoking the ObjectURL
+      window.URL.revokeObjectURL(data);
+    }, 100);
+  }
 
   function UploadMedicalCertificateFileHandeler(e) {
     setMedicalCertificate(e.target.files[0]);
@@ -170,7 +204,7 @@ function ProfilePage() {
                   <button
                     onClick={() => {
                       var medicalFile = GetMedicalDoc();
-                      window.open(medicalFile.fileUrl, "_blank");
+                      handleFileOpen(medicalFile.fileUrl);
                     }}
                   >
                     <br />
@@ -212,7 +246,7 @@ function ProfilePage() {
                   <button
                     onClick={() => {
                       var passport = GetPassportDoc();
-                      window.open(passport.fileUrl, "_blank");
+                      handleFileOpen(passport.fileUrl);
                     }}
                   >
                     View Passport Document
@@ -254,7 +288,7 @@ function ProfilePage() {
                   <button
                     onClick={() => {
                       var birthCertificate = GetBirthCertificateDoc();
-                      window.open(birthCertificate.fileUrl, "_blank");
+                      handleFileOpen(birthCertificate.fileUrl);
                     }}
                   >
                     View Passport Document

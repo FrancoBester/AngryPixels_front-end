@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, Link, useHistory } from "react-router-dom";
 import API from "../../API";
-import './ViewQuery.css';
 
 function ViewQuery(){
     const history = useHistory();

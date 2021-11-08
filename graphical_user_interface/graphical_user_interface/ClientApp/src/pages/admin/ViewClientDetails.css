@@ -20,16 +20,25 @@
 }
 
 .btnBackClientQuery{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #EEEEEE;
-    font-size: 20px;
-    border-radius: 8px;
-    padding: 10px;
-    margin-left: 95px;
-    width: 30%;
-    margin-bottom: 50px;
-    height: 65px;
-    margin-top: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: #EEEEEE;
+  height: 75px;
+  line-height: 35px;
+  width: 30%;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+  color: #334257;
+  font-size: 1.2em;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  transition: all 0.30s ease-in-out;
+  margin-right: 10px;
+  margin-left: 10px;
   }
   
   .btnBackClientQuery:hover{

@@ -1,8 +1,10 @@
 import React from "react";
 import "./Contact.css";
 import Footer from '../../components/Footer';
+import { useHistory } from "react-router";
 
 function Contact() {
+  const history = useHistory();
   return (
     <>
     <div className="gridContact">
@@ -25,7 +27,7 @@ function Contact() {
             <i class="fa fa-mobile" id="mobileIcon"></i>
           </li>
         <li> 
-        <label for="emailIcon">meditrust@gmail.com</label>
+        <label for="emailIcon" onClick={() => {history.push("/Email")}}>meditrust2021@outlook.com</label>
         <i className="fas fa-envelope fa-lg" id="emailIcon"></i>
         </li>
         </ul>

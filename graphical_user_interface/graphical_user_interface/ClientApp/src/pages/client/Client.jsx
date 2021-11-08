@@ -2,7 +2,17 @@ import React, { useEffect, useState } from "react";
 import "./Client.css";
 import { useHistory } from "react-router";
 import API from "../../API";
+import { Link } from 'react-router-dom';
 import Footer from "../../components/Footer";
+import {
+  Collapse,
+  Container,
+  Navbar,
+  NavbarBrand,
+  NavbarToggler,
+  NavItem,
+  NavLink,
+} from "reactstrap";
 
 function Client() {
   const history = useHistory();
@@ -98,7 +108,17 @@ function Client() {
                     <td>{TableInfo[i].queryTitle}</td>
                     <td>{TableInfo[i].queryStatus}</td>
                     <td>{TableInfo[i].assistantName}</td>
-                    <td>View</td>
+                    <td><NavItem>
+                        <NavLink
+                            tag={Link}
+                            className="text-dark"
+                            to={`/ViewQuery`} /* NEED TO ADD PATH*/
+                        >
+                            View
+                        </NavLink>
+                        </NavItem>
+                    </td>
+                    <td onClick = {() => {history.push("/ViewQuery")}}>View</td>
                   </tr>
                 );
               })}

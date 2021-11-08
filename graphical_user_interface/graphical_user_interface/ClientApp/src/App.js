@@ -9,6 +9,7 @@ import { ProtectedRoute } from "./protectedRoute";
 import LandingPage from "./pages/unAuthenticated/LandingPage";
 import LoginPage from "./pages/unAuthenticated/LoginPage";
 import { BrowserRouter as Router } from "react-router-dom";
+import Email from "./pages/globalPages/Email";
 
 import Signup from "./pages/globalPages/Signup";
 import About from "./pages/globalPages/About";
@@ -35,6 +36,7 @@ import QueryDetails from "./pages/admin/QueryDetails";
 import ViewSingleQuery from "./pages/admin/ViewSingleQuery";
 import ViewClientDetails from "./pages/admin/ViewClientDetails";
 import ViewPolicyDetails from "./pages/admin/ViewPolicyDetails";
+import ViewQuery from "./pages/client/ViewQuery";
 
 import "./custom.css";
 
@@ -71,6 +73,7 @@ export default function App() {
         <Route path="/Client" exact component={Client} />
         <Route path="/Admin" exact component={Admin} />
         <Route path="/Application" exact component={Application} />
+        <Route path="/Email" excat component={Email}/>
         <ProtectedRoute path="/counter" component={Counter} />
         <ProtectedRoute path="/myProfile" component={ProfilePage} />
         <ProtectedRoute path="/viewPolicies" component={ViewPolicies} />
@@ -98,6 +101,8 @@ export default function App() {
         <Route path="/ViewSingleQuery" component={ViewSingleQuery} />
         <Route path="/ViewClientDetails" component={ViewClientDetails} />
         <Route path="/ViewPolicyDetails" component={ViewPolicyDetails} />
+        <Route path="/ViewQuery" component={ViewQuery}/>
+
       </Switch>
     </Layout>
   );

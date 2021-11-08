@@ -14,16 +14,15 @@ function ViewSingleQuery() {
   const [queryId, setQueryId] = useState(0);
 
   function HandleProfile(e) {
-    query(e);
+    setQuery(e);
   }
 
   useEffect(() => {
     //var id = parseInt(localStorage.getItem("id"));
     var id = parseInt(window.sessionStorage.getItem("id"));
     var onSuccess = (e) => {
-      HandleProfile(e.data);
-
       setHasLoaded(true);
+      HandleProfile(e.data[0]);
     };
 
     API.APIGET(
@@ -31,7 +30,7 @@ function ViewSingleQuery() {
       onSuccess,
       () => {},
       () => {
-        alert("Information Loaded");
+        // alert(id);
       }
     );
 

@@ -108,17 +108,7 @@ function Client() {
                     <td>{TableInfo[i].queryTitle}</td>
                     <td>{TableInfo[i].queryStatus}</td>
                     <td>{TableInfo[i].assistantName}</td>
-                    <td><NavItem>
-                        <NavLink
-                            tag={Link}
-                            className="text-dark"
-                            to={`/ViewQuery`} /* NEED TO ADD PATH*/
-                        >
-                            View
-                        </NavLink>
-                        </NavItem>
-                    </td>
-                    <td onClick = {() => {history.push("/ViewQuery")}}>View</td>
+                    <td className="viewQueryBtnClick" onClick = {() => {history.push("/ViewQuery")}}>View</td>
                   </tr>
                 );
               })}

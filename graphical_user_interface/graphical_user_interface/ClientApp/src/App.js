@@ -42,7 +42,7 @@ import "./custom.css";
 
 import Test from "./pages/Test";
 
-import PopUp from "./components/Popup";
+import PopUp from "./components/Popup.jsx";
 import "./components/popup.css";
 
 export default function App() {

@@ -11,11 +11,20 @@
   font-family: 'Noto Sans Display', sans-serif;
 }
 
-.viewClientDetailsMain div{
-  color: #fff;
+.viewClientDetailsMain h5{
+  font-weight: bold;
   font-size: 25px;
+  margin-left: 50px;
+  font-family: 'Noto Sans Display', sans-serif;
   text-align: left;
-  margin-left: 320px;
+  color: #548CA8;
+}
+
+.viewClientDetailsMain h6{
+  color: #fff;
+  font-size: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
   font-family: 'Noto Sans Display', sans-serif;
 }
 
@@ -31,7 +40,7 @@
   cursor: pointer;
   color: #334257;
   font-size: 1.2em;
-  margin-top: 10px;
+  margin-top: 30px;
   margin-bottom: 40px;
   -webkit-transition: all 0.30s ease-in-out;
   -moz-transition: all 0.30s ease-in-out;

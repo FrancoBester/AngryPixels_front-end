@@ -41,6 +41,10 @@
     font-family: 'Noto Sans Display', sans-serif;
 }
 
+.viewSingleQuery ul{
+    list-style: none;
+}
+
 .btnBackQuery{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background: #EEEEEE;

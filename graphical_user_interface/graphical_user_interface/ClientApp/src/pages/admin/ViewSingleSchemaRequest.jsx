@@ -16,9 +16,7 @@ function ViewSingleSchemaRequest(props) {
   useEffect(() => {
     const id = new URLSearchParams(search).get("id");
     debugger;
-
     setschemaRequestId(id);
-
     var onSuccess = (e) => {
       debugger;
       setschemaRequest(e.data);
@@ -46,37 +44,43 @@ function ViewSingleSchemaRequest(props) {
     </div>
 
     {hasLoaded ? (
+      <>
     <main className="viewSchemaRequest">
       <div>
-        <h3>Client Name:</h3>
-        
+        <h5>Client Name:</h5>
+        <h6>{schemaRequest.userName}</h6>
       </div>
 
       <div>
-        <h3>Policy Holder:</h3>
-        
+        <h5>Client Surname:</h5>
+        <h6>{schemaRequest.userSurname}</h6>
       </div>
 
       <div>
-        <h3>Policy Type:</h3>
-        
+        <h5>Policy Type:</h5>
+        <h6>{schemaRequest.policyType}</h6>
       </div>
 
-      <button className="btnAcceptSchema">Accept</button>
+      <div>
+        <h5>Status:</h5>
+        <h6>{schemaRequest.requestStatus}</h6>
+      </div>
+    </main>
+
+    <button className="btnAcceptSchema">Accept</button>
 
       <button className="btnRejectSchema">Reject</button>
 
       <button
               className="btnBackSchemaPage"
               onClick={() => {
-                history.push("/Admin");
+                history.push("/admin/viewSchemaRequests");
               }}
             >
               Back
       </button>
 
-    </main>
-
+</>
     ) : (
       <>Loading...</>
     )}
@@ -88,6 +92,6 @@ function ViewSingleSchemaRequest(props) {
 }
 
 export default ViewSingleSchemaRequest;
-/*User who requester info
-  Policy Info
-  Accept/Reject Button*/
+/*
+        
+*/

@@ -11,18 +11,19 @@
     font-family: 'Noto Sans Display', sans-serif;
 }
 
-.viewSchemaRequest h3{
+.viewSchemaRequest h5{
     color: #548CA8;
-    font-size: 30px;
-    text-align: left;
-    margin-left: 39%;
-    font-family: 'Noto Sans Display', sans-serif;    
+    font-weight: bold;
+    font-size: 25px;
+    margin-left: 40%;
+    font-family: 'Noto Sans Display', sans-serif;
 }
-.viewSchemaRequest label{
+
+.viewSchemaRequest h6{
     color: #fff;
     font-size: 20px;
-    text-align: left;
-    margin-left: 39%;
+    margin-left: 40%;
+    margin-right: 50px;
     font-family: 'Noto Sans Display', sans-serif;
 }
 

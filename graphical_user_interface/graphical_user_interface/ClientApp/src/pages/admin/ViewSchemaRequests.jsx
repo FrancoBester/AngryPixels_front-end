@@ -86,7 +86,7 @@ function ViewSchemaRequests() {
                       <NavLink
                         tag={Link}
                         className="text-dark"
-                        to={``}
+                        to={`/ViewClientDetails`}
                       >
                         View
                       </NavLink>
@@ -97,7 +97,7 @@ function ViewSchemaRequests() {
                       <NavLink
                         tag={Link}
                         className="text-dark"
-                        to={``}
+                        to={`/ViewPolicyDetails`}
                       >
                         View
                       </NavLink>

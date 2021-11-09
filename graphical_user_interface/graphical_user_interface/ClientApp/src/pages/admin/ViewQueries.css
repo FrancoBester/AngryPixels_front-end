@@ -107,6 +107,8 @@
     width: 80%;
     margin-bottom: 50px;
     margin-top: 50px;
+    border-collapse:collapse;
+    border-spacing:0;
 }
 
 .userQueryTable table tr td {

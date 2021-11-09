@@ -1,16 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
+import { useHistory } from "react-router";
 import "./Signup.css"
+import API from "../../API";
 
 function Email(){
+    const history = useHistory();
+    const [Title, SetTitle] = useState("")
+    const [Details, SetDetails] = useState("")
+    function SendMail(){
+        alert("Sending email");
+        const EmailDetails ={
+            ToEmail:"francobester17@gmail.com",
+            Subject: Title,
+            Body: Details,
+        };
+        console.log(EmailDetails);
+        API.APIPOST(
+            "Send",
+            EmailDetails,
+            () => {},
+            () => {},
+            () => {}
+        );
+        history.push("/Contact");
+    }
+
     return(
         <div>
             <div className="form-container-signup">
                 <div className="title_container">
-                <h1>Contact Us</h1>
+                <h1>Email Us</h1>
                 <form
-                    // onSubmit={() => {
-                    // Register();
-                    // }}
+                    onSubmit={() => {
+                    SendMail();
+                    }}
                 >
                     <div className="row">
                     <div className="col-25">
@@ -21,45 +44,31 @@ function Email(){
                         type="text"
                         placeholder="Title"
                         required
-                        // onChange={(e) => setFirstName(e.target.value)}
+                        onChange={(e) => SetTitle(e.target.value)}
                         />
                     </div>
                     </div>
 
                     <div className="row">
                     <div className="col-25">
-                        <label>Last Name:</label>
+                        <label>Details</label>
                     </div>
                     <div className="col-75">
                         <input
                         type="text"
-                        placeholder="Surname"
+                        placeholder="Details"
                         required
-                        // onChange={(e) => setLastName(e.target.value)}
+                        onChange={(e) => SetDetails(e.target.value)}
                         />
                     </div>
                     </div>
 
-                    <div className="row">
-                    <div className="col-25">
-                        <label>Email:</label>
-                    </div>
-                    <div className="col-75">
-                        <input
-                        type="email"
-                        placeholder="Email"
-                        required
-                        // onChange={(e) => setEmail(e.target.value)}
-                        />
-                    </div>
-                    </div>
-
-                    <input className="btnSub" type="submit" value="Register" />
+                    <input className="btnSub" type="submit" value="Send mail" />
                     <button
                     className="btnCancel"
-                    // onClick={() => {
-                    //     history.push("/");
-                    // }}
+                    onClick={() => {
+                        history.push("/");
+                    }}
                     >
                     Cancel
                     </button>

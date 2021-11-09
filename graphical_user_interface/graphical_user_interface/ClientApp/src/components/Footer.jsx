@@ -53,11 +53,11 @@ function Footer() {
               aria-label="Facebook"
             >
               
-              <a href="https://www.google.com/url?q=https://www.facebook.com/meditrust.biz&sa=D&source=docs&ust=1636044097172000&usg=AOvVaw0jF_1iALl12eX_VWaOQBu9"
+              <a href="https://web.facebook.com/meditrust.biz?_rdc=1&_rdr"
               className="fab fa-facebook-f"
               ></a>
             </Link>
-            <Link
+            {/* <Link
               className="social-icon-link instagram"
               to="/"
               target="_blank"
@@ -66,8 +66,8 @@ function Footer() {
               <a href="https://www.instagram.com/"
               className="fab fa-instagram"
               ></a>
-            </Link>
-            <Link
+            </Link> */}
+            {/* <Link
               className="social-icon-link youtube"
               to="/"
               target="_blank"
@@ -76,18 +76,18 @@ function Footer() {
               <a href="https://www.youtube.com/"
               className="fab fa-youtube"
               ></a>
-            </Link>
+            </Link> */}
             <Link
               className="social-icon-link twitter"
               to="/"
               target="_blank"
               aria-label="Twitter"
             >
-              <a href="https://twitter.com/"
+              <a href="https://twitter.com/meditrust_biz?lang=en"
               className="fab fa-twitter"
               ></a>
             </Link>
-            <Link
+            {/* <Link
               className="social-icon-link twitter"
               to="/"
               target="_blank"
@@ -96,7 +96,7 @@ function Footer() {
               <a href="https://www.linkedin.com/"
               className="fab fa-linkedin"
               ></a>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>

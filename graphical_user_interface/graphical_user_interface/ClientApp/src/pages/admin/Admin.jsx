@@ -89,7 +89,7 @@ function Admin() {
         <button
           className="btnCreateNewPolicy"
           onClick={() => {
-            history.push("/admin/CreateNewPolicy");
+            history.push("/CreateNewPolicy");
           }}
         >
           Create New Policy

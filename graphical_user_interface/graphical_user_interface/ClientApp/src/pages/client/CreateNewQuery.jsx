@@ -49,11 +49,11 @@ function CreateNewQuery() {
                   placeholder="Title"
                   required
                   onChange={(e) => setQueryTitle(e.target.value)}
-                />
+                /> {/*CAREL HOW DO I MAKE THE DDL WORK?*/}
               </div>
             </div>
 
-            <div className="rowQuey">
+            {/*<div className="rowQuey">
               <div className="queryColLeft">
                 <label>Level:</label>
               </div>
@@ -64,6 +64,24 @@ function CreateNewQuery() {
                   required
                   onChange={(e) => setQueryLevel(e.target.value)}
                 />
+              </div>
+          </div>*/}
+
+            <div className="rowQuey">
+              <div className="queryColLeft">
+                <label>Level:</label>
+              </div>
+              <div className="queryColRight">
+                <select
+                  className="priorityLevel"
+                  id="priorityLevel"
+                  required
+                  onChange={(e) => setQueryLevel(e.target.value)}
+                >
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
               </div>
             </div>
 

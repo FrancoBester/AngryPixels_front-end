@@ -37,6 +37,18 @@
     list-style: none;
 }
 
+.viewPolicies .content{
+    width: 100%;
+}
+
+/*KERYN ADD THE WHTIE SPACE TO ALL TABLES*/
+.viewPolicies table{
+    border-collapse:collapse;
+    border-spacing:0;
+    width:100%;
+    white-space: nowrap;
+}
+
 .viewPolicies{
     text-align: right;
     color: #EEEEEE;

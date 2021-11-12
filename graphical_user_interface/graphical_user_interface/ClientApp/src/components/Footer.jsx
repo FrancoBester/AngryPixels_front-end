@@ -57,7 +57,7 @@ function Footer() {
               className="fab fa-facebook-f"
               ></a>
             </Link>
-            {/* <Link
+            <Link
               className="social-icon-link instagram"
               to="/"
               target="_blank"
@@ -66,7 +66,7 @@ function Footer() {
               <a href="https://www.instagram.com/"
               className="fab fa-instagram"
               ></a>
-            </Link> */}
+            </Link>
             {/* <Link
               className="social-icon-link youtube"
               to="/"

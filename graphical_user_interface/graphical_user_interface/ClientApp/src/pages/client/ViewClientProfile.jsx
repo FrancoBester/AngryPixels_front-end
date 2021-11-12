@@ -106,6 +106,9 @@ function ViewClientProfile() {
               Edit Profile
             </button>
 
+
+            {/** CAREL CAN YOU PLEASE GIVE SOME GUIDANCE ON DELETING THE PROFILE */}    
+
             <button
               className="btnDeleteClientProfile"
               onClick={() => {

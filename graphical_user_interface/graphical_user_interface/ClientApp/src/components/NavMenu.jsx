@@ -37,10 +37,11 @@ function NavMenu(props) {
   const history = useHistory();
 
   return (
-    <header>
+    <>
+    <header className="whole-navbar">
       <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3">
         <Container>
-          <NavbarBrand tag={Link} to="/">
+          <NavbarBrand className="navbar-left" tag={Link} to="/">
             MediTrust
           </NavbarBrand>
           <NavbarToggler onClick={() => toggleNavbar()} className="mr-2" />
@@ -51,29 +52,29 @@ function NavMenu(props) {
           >
             <ul className="navbar-nav flex-grow">
               <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/">
+                <NavLink tag={Link} className="nav-font-right" to="/">
                   Home
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/About">
+                <NavLink tag={Link} className="nav-font-right" to="/About">
                   About
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/Contact">
+                <NavLink tag={Link} className="nav-font-right" to="/Contact">
                   Contact
                 </NavLink>
               </NavItem>
               {authenticated ? (
                 <>
                   <NavItem>
-                    <NavLink tag={Link} className="text-dark" to="/Client">
+                    <NavLink tag={Link} className="nav-font-right" to="/Client">
                       Client
                     </NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink tag={Link} className="text-dark" to="/Admin">
+                    <NavLink tag={Link} className="nav-font-right" to="/Admin">
                       Admin
                     </NavLink>
                   </NavItem>
@@ -85,7 +86,7 @@ function NavMenu(props) {
                         });
                       }}
                       tag={Link}
-                      className="text-dark"
+                      className="nav-font-right"
                       to="/"
                     >
                       Logout
@@ -95,12 +96,12 @@ function NavMenu(props) {
               ) : (
                 <>
                   <NavItem>
-                    <NavLink tag={Link} className="text-dark" to="/login">
+                    <NavLink tag={Link} className="nav-font-right" to="/login">
                       Login
                     </NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink tag={Link} className="text-dark" to="/Signup">
+                    <NavLink tag={Link} className="nav-font-right" to="/Signup">
                       Register
                     </NavLink>
                   </NavItem>
@@ -111,6 +112,7 @@ function NavMenu(props) {
         </Container>
       </Navbar>
     </header>
+    </>
   );
 }
 

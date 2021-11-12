@@ -34,11 +34,7 @@ function CreateNewQuery() {
       <div className="newQueryGrid">
         <div className="titleContainerQueries">
           <header className="createQueryHeader">Create Query</header>
-          <form
-            onSubmit={() => {
-              PostNewQuery();
-            }}
-          >
+          <form>
             <div className="rowQuey">
               <div className="queryColLeft">
                 <label>Title:</label>
@@ -53,7 +49,7 @@ function CreateNewQuery() {
               </div>
             </div>
 
-            {/*<div className="rowQuey">
+            <div className="rowQuey">
               <div className="queryColLeft">
                 <label>Level:</label>
               </div>
@@ -65,8 +61,8 @@ function CreateNewQuery() {
                   onChange={(e) => setQueryLevel(e.target.value)}
                 />
               </div>
-          </div>*/}
-
+          </div>
+{/*
             <div className="rowQuey">
               <div className="queryColLeft">
                 <label>Level:</label>
@@ -84,7 +80,7 @@ function CreateNewQuery() {
                 </select>
               </div>
             </div>
-
+*/}
             <div className="rowQuey">
               <div className="queryColLeft">
                 <label>Description:</label>

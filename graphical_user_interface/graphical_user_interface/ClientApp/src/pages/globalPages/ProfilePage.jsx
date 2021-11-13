@@ -20,13 +20,13 @@ function ProfilePage() {
     if (url.endsWith(".pdf")) {
       fetch(url)
         .then((r) => r.blob())
-        .then(showFile);
+        .then(showFilePDF);
     } else {
       window.open(url, "_blank");
     }
   }
 
-  function showFile(blob) {
+  function showFilePDF(blob) {
     // It is necessary to create a new blob object with mime-type explicitly set
     // otherwise only Chrome works like it should
     var newBlob = new Blob([blob], { type: "application/pdf" });

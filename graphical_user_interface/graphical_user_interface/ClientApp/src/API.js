@@ -24,7 +24,7 @@ class API {
         onSuccess(response);
       })
       .catch(function (error) {
-        POPUP.ShowPopUp(error.message + ` ` + error.response.data);
+        POPUP.ShowPopUp(error.message);
       })
       .then(function () {
         onFinally();
@@ -39,7 +39,7 @@ class API {
         onSuccess(response);
       })
       .catch(function (error) {
-        POPUP.ShowPopUp(error.message + ` ` + error.response.data);
+        POPUP.ShowPopUp(error.message);
       })
       .then(function () {
         onFinally();
@@ -58,7 +58,7 @@ class API {
         onSuccess(response);
       })
       .catch(function (error) {
-        POPUP.ShowPopUp(error.message + ` ` + error.response.data);
+        POPUP.ShowPopUp(error.message);
       })
       .then(function () {
         onFinally();
@@ -77,7 +77,7 @@ class API {
         onSuccess(response);
       })
       .catch(function (error) {
-        POPUP.ShowPopUp(error.message + ` ` + error.response.data);
+        POPUP.ShowPopUp(error.message);
       })
       .then(function () {
         onFinally();

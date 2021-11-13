@@ -11,6 +11,7 @@ function ViewSingleSchemaRequest(props) {
   const [schemaRequest, setschemaRequest] = useState({});
   const [hasLoaded, setHasLoaded] = useState(false);
   const [schemaRequestId, setschemaRequestId] = useState(0);
+  const [updated, setUpdated] = useState(0);
 
   useEffect(() => {
     const id = new URLSearchParams(search).get("id");
@@ -33,7 +34,32 @@ function ViewSingleSchemaRequest(props) {
     );
 
     return () => {};
-  }, []);
+  }, [updated]);
+
+  function acceptRequest() {
+    var onSuccess = (e) => {
+      setUpdated(!updated);
+    };
+
+    API.APIGET(
+      `SchemaRequests/AproveRequest/${schemaRequest.schemaRequest.requestId}`,
+      onSuccess,
+      () => {},
+      () => {}
+    );
+  }
+  function declineRequest() {
+    var onSuccess = (e) => {
+      setUpdated(!updated);
+    };
+
+    API.APIGET(
+      `SchemaRequests/DeclineRequest/${schemaRequest.schemaRequest.requestId}`,
+      onSuccess,
+      () => {},
+      () => {}
+    );
+  }
 
   return (
     <>
@@ -98,9 +124,19 @@ function ViewSingleSchemaRequest(props) {
                 </div>
               </div>
               <div id="buttonsArea">
-                <button className="btnAcceptSchema">Accept</button>
+                <button
+                  onClick={(q) => acceptRequest()}
+                  className="btnAcceptSchema"
+                >
+                  Accept
+                </button>
 
-                <button className="btnRejectSchema">Reject</button>
+                <button
+                  onClick={(q) => declineRequest()}
+                  className="btnRejectSchema"
+                >
+                  Reject
+                </button>
               </div>
             </main>
 

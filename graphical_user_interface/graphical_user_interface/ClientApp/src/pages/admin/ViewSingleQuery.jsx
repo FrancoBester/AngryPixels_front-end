@@ -18,8 +18,7 @@ function ViewSingleQuery() {
   }
 
   useEffect(() => {
-    //var id = parseInt(localStorage.getItem("id"));
-    var id = parseInt(window.sessionStorage.getItem("id"));
+    var id = new URLSearchParams(search).get("id");
     var onSuccess = (e) => {
       setHasLoaded(true);
       HandleProfile(e.data[0]);

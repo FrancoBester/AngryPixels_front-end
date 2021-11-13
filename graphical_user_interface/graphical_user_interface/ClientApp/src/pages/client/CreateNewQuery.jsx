@@ -45,7 +45,8 @@ function CreateNewQuery() {
                   placeholder="Title"
                   required
                   onChange={(e) => setQueryTitle(e.target.value)}
-                /> {/*CAREL HOW DO I MAKE THE DDL WORK?*/}
+                />{" "}
+                {/*CAREL HOW DO I MAKE THE DDL WORK?*/}
               </div>
             </div>
 
@@ -54,15 +55,18 @@ function CreateNewQuery() {
                 <label>Level:</label>
               </div>
               <div className="queryColRight">
-                <input
-                  type="text"
-                  placeholder="1 = Low Priority, 2 = Medium Priority, 3 = High Priority"
-                  required
+                <select
                   onChange={(e) => setQueryLevel(e.target.value)}
-                />
+                  name="level"
+                  size="1"
+                >
+                  <option value="1">Low Priority</option>
+                  <option value="2">Medium Priority</option>
+                  <option value="3">High Priority</option>
+                </select>
               </div>
-          </div>
-{/*
+            </div>
+            {/*
             <div className="rowQuey">
               <div className="queryColLeft">
                 <label>Level:</label>

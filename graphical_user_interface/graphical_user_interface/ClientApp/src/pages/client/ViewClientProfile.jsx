@@ -14,6 +14,22 @@ function ViewClientProfile() {
     setProfile(e);
   }
 
+  function removeUser(){
+    var id = parseInt(window.sessionStorage.getItem("id"));
+    var onSuccess = () => {
+      alert("Account deleted");
+      history.push("/")
+    };
+
+
+    API.APIGET(
+      "Users/RemoveUserAccount/"+18,
+      onSuccess,
+      () => {},
+      () => {}
+    );
+  }
+
   useEffect(() => {
     //var id = parseInt(localStorage.getItem("id"));
     var id = parseInt(window.sessionStorage.getItem("id"));
@@ -112,7 +128,14 @@ function ViewClientProfile() {
             <button
               className="btnDeleteClientProfile"
               onClick={() => {
-                history.push("/");
+                const confirmBox = window.confirm(
+                  "Do you want to delete your account?"
+                )
+                if (confirmBox == true)
+                {
+                  removeUser();
+                }
+                // history.push("/");
               }}
             >
               Delete Profile

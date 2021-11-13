@@ -4,10 +4,6 @@ import { useHistory } from "react-router";
 import "./EditProfileClient.css";
 import API from "../../API";
 
-{
-  /** THIS IS THE CLIENT EDIT PROFILE PAGE */
-}
-
 function EditProfileClient() {
   const [updated, setUpdated] = useState(1);
   const [FirstName, setFirstName] = useState("");
@@ -29,7 +25,7 @@ function EditProfileClient() {
       User_Surname: LastName,
       User_Email: Email,
       User_Cell: Cellphone,
-      User_Geder: Gender,
+      User_Gender: Gender,
       User_Dob: DOB,
       User_ID_Number: IdNumber,
       Address: {
@@ -150,26 +146,26 @@ function EditProfileClient() {
                 <label>Gender:</label>
               </div>
               <div className="editProfileColRight">
-                <label for="Male">
-                  <input
-                    type="radio"
+                <select
+                  onChange={(e) => setGender(e.target.value)}
+                  name="genderChoice"
+                  size="1"
+                >
+                  <option
+                    selected={Gender == "Male" ? true : false}
                     value="Male"
-                    name="genderChoice"
-                    onChange={(e) => setGender(e.target.value)}
-                    // value = {user_info.user_Gender}
-                  />
-                  Male
-                </label>
-
-                <label for="Female">
-                  <input
-                    type="radio"
+                  >
+                    {" "}
+                    Male{" "}
+                  </option>
+                  <option
+                    selected={Gender == "Female" ? true : false}
                     value="Female"
-                    name="genderChoice"
-                    onChange={(e) => setGender(e.target.value)}
-                  />
-                  Female
-                </label>
+                  >
+                    {" "}
+                    Female{" "}
+                  </option>
+                </select>
               </div>
             </div>
 

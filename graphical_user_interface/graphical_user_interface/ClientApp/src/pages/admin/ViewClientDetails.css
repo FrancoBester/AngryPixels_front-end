@@ -12,13 +12,13 @@
 }
 
 .viewClientDetailsMain{
-
+  text-align: left;
+  margin-left: 100px;
 }
 
 .viewClientDetailsMain h5{
   font-weight: bold;
   font-size: 25px;
-  margin-left: 40%;
   font-family: 'Noto Sans Display', sans-serif;
   text-align: left;
   color: #548CA8;
@@ -27,8 +27,6 @@
 .viewClientDetailsMain h6{
   color: #fff;
   font-size: 20px;
-  margin-left: 40%;
-  margin-right: 50px;
   font-family: 'Noto Sans Display', sans-serif;
 }
 

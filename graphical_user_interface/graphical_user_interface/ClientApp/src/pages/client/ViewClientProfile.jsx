@@ -62,55 +62,55 @@ function ViewClientProfile() {
         {hasLoaded ? (
           <main className="viewInfoGrid">
             <div>
-              <label>Name:</label>
-              {profile.user.user_Name}
+              <h5>Name:</h5>
+              <h6>{profile.user.user_Name}</h6>
             </div>
 
             <div>
-              <label>Surname:</label>
-              {profile.user.user_Surname}
+              <h5>Surname:</h5>
+              <h6>{profile.user.user_Surname}</h6>
             </div>
 
             <div>
-              <label>Email:</label>
-              {profile.user.user_Email}
+              <h5>Email:</h5>
+              <h6>{profile.user.user_Email}</h6>
             </div>
 
             <div>
-              <label>Cellphone:</label>
-              {profile.user.user_Cell}
+              <h5>Cellphone:</h5>
+              <h6>{profile.user.user_Cell}</h6>
             </div>
 
             <div>
-              <label>Gender:</label>
-              {profile.user.user_Gender}
+              <h5>Gender:</h5>
+              <h6>{profile.user.user_Gender}</h6>
             </div>
 
             <div>
-              <label>Date of Birth:</label>
-              {profile.user.user_Dob}
+              <h5>Date of Birth:</h5>
+              <h6>{profile.user.user_Dob}</h6>
             </div>
 
             <div>
-              <label>ID Number:</label>
-              {profile.user.user_ID_Number}
+              <h5>ID Number:</h5>
+              <h6>{profile.user.user_ID_Number}</h6>
             </div>
 
             {/** HARD CODED -> NEED TO FIX */}
 
             <div>
-              <label>City:</label>
-              <label>Johannesburg</label>
+              <h5>City:</h5>
+              <h6>Johannesburg</h6>
             </div>
 
             <div>
-              <label>Street Name:</label>
-              <label>Hazel Road</label>
+              <h5>Street Name:</h5>
+              <h6>Hazel Road</h6>
             </div>
 
             <div>
-              <label>Postal Code:</label>
-              <label>2059</label>
+              <h5>Postal Code:</h5>
+              <h6>2059</h6>
             </div>
 
             <button

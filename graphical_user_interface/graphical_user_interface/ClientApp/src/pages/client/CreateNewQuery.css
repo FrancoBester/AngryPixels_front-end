@@ -53,6 +53,10 @@ input[type=text], select, textarea{
     margin-top: 6px;
   }
 
+  .queryColRight select{
+    color: #1D1D1D;
+    }
+
   .rowQuey:after {
     content: "";
     display: table;

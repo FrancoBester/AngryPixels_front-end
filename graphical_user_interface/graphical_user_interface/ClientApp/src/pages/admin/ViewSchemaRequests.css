@@ -92,10 +92,11 @@
     transition: all 0.30s ease-in-out;
     margin-right: 10px;
     margin-left: 10px;
-  }
-  
-  .btnBackSchema:hover{
-    background: #548CA8;
-    color: #fff;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-  }
+}
+
+.btnBackSchema:hover{
+background: #548CA8;
+color: #fff;
+box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+

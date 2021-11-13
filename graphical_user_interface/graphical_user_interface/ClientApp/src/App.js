@@ -71,9 +71,9 @@ export default function App() {
         <Route path="/About" exact component={About} />
         <Route path="/Contact" exact component={Contact} />
         <Route path="/Client" exact component={Client} />
-        <Route path="/Admin" exact component={Admin} />
+        <ProtectedRoute path="/Admin" exact component={Admin} />
         <Route path="/Application" exact component={Application} />
-        <Route path="/Email" excat component={Email}/>
+        <Route path="/Email" exact component={Email} />
         <ProtectedRoute path="/counter" component={Counter} />
         <ProtectedRoute path="/myProfile" component={ProfilePage} />
         <ProtectedRoute path="/viewPolicies" component={ViewPolicies} />
@@ -101,8 +101,7 @@ export default function App() {
         <Route path="/ViewSingleQuery" component={ViewSingleQuery} />
         <Route path="/ViewClientDetails" component={ViewClientDetails} />
         <Route path="/ViewPolicyDetails" component={ViewPolicyDetails} />
-        <Route path="/ViewQuery" component={ViewQuery}/>
-
+        <Route path="/ViewQuery" component={ViewQuery} />
       </Switch>
     </Layout>
   );

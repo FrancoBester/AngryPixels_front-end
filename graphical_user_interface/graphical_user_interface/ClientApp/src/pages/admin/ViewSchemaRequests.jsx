@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import API from "../../API";
-import './ViewSchemaRequests.css';
-import Footer from '../../components/Footer';
-
+import "./ViewSchemaRequests.css";
+import Footer from "../../components/Footer";
 
 import {
   Collapse,
@@ -18,8 +17,7 @@ import {
 function ViewSchemaRequests() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [schemaRequests, setSchemaRequests] = useState({});
-  const history =useHistory();
-
+  const history = useHistory();
 
   useEffect(() => {
     var onSuccess = (e) => {
@@ -42,93 +40,90 @@ function ViewSchemaRequests() {
 
   return (
     <>
+      <div className="gridViewSchema">
+        <div className="viewSchemaHeader">
+          <header>Schema Requests</header>
+        </div>
 
-    <div className="gridViewSchema">
+        {hasLoaded ? (
+          <>
+            <main className="viewSchemasTable">
+              <table>
+                <tbody>
+                  <tr className="tblViewSchemas">
+                    <th>Policy Type</th>
+                    <th>Client Name</th>
+                    <th>Request Status</th>
+                    <th>Schema Request</th>
+                    <th>Client Details</th>
+                    <th>Policy Details</th>
+                  </tr>
+                </tbody>
+                <tbody>
+                  {schemaRequests.map((x) => {
+                    return (
+                      <tr>
+                        <td>{x.policyType}</td>
+                        <td>{`${x.userName} ${x.userSurname}`}</td>
+                        <td>{x.requestStatus}</td>
+                        <td>
+                          <NavItem>
+                            <NavLink
+                              tag={Link}
+                              className="text-dark"
+                              to={`/admin/viewSingleSchemaRequest?id=${x.requestId}`}
+                            >
+                              View
+                            </NavLink>
+                          </NavItem>
+                        </td>
+                        <td>
+                          <NavItem>
+                            <NavLink
+                              tag={Link}
+                              className="text-dark"
+                              to={`/ViewClientDetails?id=${x.policyId}`}
+                            >
+                              View
+                            </NavLink>
+                          </NavItem>
+                        </td>
+                        <td>
+                          <NavItem>
+                            <NavLink
+                              tag={Link}
+                              className="text-dark"
+                              to={`/ViewPolicyDetails/?id=${x.policyId}`}
+                            >
+                              View
+                            </NavLink>
+                          </NavItem>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </main>
 
-    <div className="viewSchemaHeader">
-      <header>Schema Requests</header>
-    </div>
-
-      {hasLoaded ? (
-        <>
-        <main className="viewSchemasTable">
-          <table>
-            <tbody>
-            <tr className="tblViewSchemas">
-              <th>Policy Type</th>
-              <th>Client Name</th>
-              <th>Request Status</th>
-              <th>Schema Request</th>
-              <th>Client Details</th>
-              <th>Policy Details</th>
-            </tr>
-            </tbody>
-            <tbody>
-            {schemaRequests.map((x) => {
-              return (
-                <tr>
-                  <td>{x.policyType}</td>
-                  <td>{`${x.userName} ${x.userSurname}`}</td>
-                  <td>{x.requestStatus}</td>
-                  <td>
-                    <NavItem>
-                      <NavLink
-                        tag={Link}
-                        className="text-dark"
-                        to={`/admin/viewSingleSchemaRequest?id=${x.requestId}`}
-                      >
-                        View
-                      </NavLink>
-                    </NavItem>
-                  </td>
-                  <td>
-                    <NavItem>
-                      <NavLink
-                        tag={Link}
-                        className="text-dark"
-                        to={`/ViewClientDetails`}
-                      >
-                        View
-                      </NavLink>
-                    </NavItem>
-                  </td>
-                  <td>
-                    <NavItem>
-                      <NavLink
-                        tag={Link}
-                        className="text-dark"
-                        to={`/ViewPolicyDetails`}
-                      >
-                        View
-                      </NavLink>
-                    </NavItem>
-                  </td>
-                </tr>
-              );
-            })}
-            </tbody>
-          </table>
-          </main>
-
-          <div className="backSchema">
-          <button
-              className="btnBackSchema"
-              onClick={() => {
-                history.push("/Admin");
-              }}
-            >
-              Back
-            </button>
-          </div>
-        </>
-      ) : (
-        <h3>Loading...</h3>
-      )}
+            <div className="backSchema">
+              <button
+                className="btnBackSchema"
+                onClick={() => {
+                  history.push("/Admin");
+                }}
+              >
+                Back
+              </button>
+            </div>
+          </>
+        ) : (
+          <h3>Loading...</h3>
+        )}
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }
 
 export default ViewSchemaRequests;
-

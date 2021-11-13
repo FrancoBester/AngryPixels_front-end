@@ -47,53 +47,52 @@ function ViewClientDetails() {
         {hasLoaded ? (
           <>
             <main className="viewClientDetailsMain">
-              
-                <div>
-                  <h5>Client Name:</h5>
-                  <h6>{clientDetails.user_Name}</h6>
-                </div>
-                <div>
-                  <h5>Client Surname:</h5>
-                  <h6>{clientDetails.user_Surname}</h6>
-                </div>
-                <div>
-                  <h5>ID Number:</h5>
-                  <h6>{clientDetails.user_ID_Number}</h6>
-                </div>
-                <div>
-                  <h5>Email:</h5>
-                  <h6>{clientDetails.user_Email}</h6>
-                </div>
-                <div>
-                  <h5>Cellphone:</h5>
-                  <h6>{clientDetails.user_Cell}</h6>
-                </div>
-                <div>
-                  <h5>Date of Birth:</h5>
-                  <h6>{clientDetails.user_Dob}</h6>
-                </div>
-                <div>
-                  <h5>Gender:</h5>
-                  <h6>{clientDetails.user_Gender}</h6>
-                </div>
-                <div>
-                  <h5>Street:</h5>
-                  <h6>{clientDetails.street}</h6>
-                </div>
-                <div>
-                  <h5>City:</h5>
-                  <h6>{clientDetails.city}</h6>
-                </div>
-                <div>
-                  <h5>Postal Code:</h5>
-                  <h6>{clientDetails.postal_Code}</h6>
-                </div>
+              <div>
+                <h5>Client Name:</h5>
+                <h6>{clientDetails.user_Name}</h6>
+              </div>
+              <div>
+                <h5>Client Surname:</h5>
+                <h6>{clientDetails.user_Surname}</h6>
+              </div>
+              <div>
+                <h5>ID Number:</h5>
+                <h6>{clientDetails.user_ID_Number}</h6>
+              </div>
+              <div>
+                <h5>Email:</h5>
+                <h6>{clientDetails.user_Email}</h6>
+              </div>
+              <div>
+                <h5>Cellphone:</h5>
+                <h6>{clientDetails.user_Cell}</h6>
+              </div>
+              <div>
+                <h5>Date of Birth:</h5>
+                <h6>{clientDetails.user_Dob}</h6>
+              </div>
+              <div>
+                <h5>Gender:</h5>
+                <h6>{clientDetails.user_Gender}</h6>
+              </div>
+              <div>
+                <h5>Street:</h5>
+                <h6>{clientDetails.street}</h6>
+              </div>
+              <div>
+                <h5>City:</h5>
+                <h6>{clientDetails.city}</h6>
+              </div>
+              <div>
+                <h5>Postal Code:</h5>
+                <h6>{clientDetails.postal_Code}</h6>
+              </div>
             </main>
             <div className="buttonViewClient">
               <button
                 className="btnBackClientQuery"
                 onClick={() => {
-                  history.push("/ViewQueries");
+                  history.goBack();
                 }}
               >
                 Back

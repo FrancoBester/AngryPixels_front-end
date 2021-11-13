@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, Link, useHistory } from "react-router-dom";
 import API from "../../API";
-import './ViewSingleSchemaRequest.css';
-import Footer from '../../components/Footer';
-
+import "./ViewSingleSchemaRequest.css";
+import Footer from "../../components/Footer";
 
 function ViewSingleSchemaRequest(props) {
   const history = useHistory();
@@ -36,61 +35,93 @@ function ViewSingleSchemaRequest(props) {
     return () => {};
   }, []);
 
- return(
-  <>
-  <div className="gridIndividualScheme">
-    <div className="viewIndSchema">
-      <header>Schema Request Details</header>
-    </div>
+  return (
+    <>
+      <div className="gridIndividualScheme">
+        <div className="viewIndSchema">
+          <header>Schema Request Details</header>
+        </div>
 
-    {hasLoaded ? (
-      <>
-    <main className="viewSchemaRequest">
-      <div>
-        <h5>Client Name:</h5>
-        <h6>{schemaRequest.userName}</h6>
-      </div>
+        {hasLoaded ? (
+          <>
+            <main className="viewSchemaRequest">
+              <div id="policyArea">
+                <div>
+                  <h5>Policy Information:</h5>
+                  <h6>
+                    <b>Admission type:</b> {schemaRequest.policyInfo.adms_Type}
+                  </h6>
+                  <h6>
+                    <b>Holder:</b> {schemaRequest.policyInfo.policy_Holder}
+                  </h6>
+                  <h6>
+                    <b>Type:</b> {schemaRequest.policyInfo.policy_Type}
+                  </h6>
+                  <h6>
+                    <b>Date:</b> {schemaRequest.policyInfo.policy_Date}
+                  </h6>
+                  <h6>
+                    <b>Benefits:</b> {schemaRequest.policyInfo.policy_Benefits}
+                  </h6>
+                  <h6>
+                    <b>Description:</b> {schemaRequest.policyInfo.policy_Des}
+                  </h6>
+                </div>
+              </div>
+              <div id="userArea">
+                <div>
+                  <h5>Client Information:</h5>
+                  <h6>
+                    <b>Fullname:</b> {schemaRequest.clientInformation.fullname}
+                  </h6>
+                  <h6>
+                    <b>Gender:</b> {schemaRequest.clientInformation.gender}
+                  </h6>
+                  <h6>
+                    <b>IdNumber:</b> {schemaRequest.clientInformation.idNumber}
+                  </h6>
+                  <h6>
+                    <b>Cell:</b> {schemaRequest.clientInformation.cell}
+                  </h6>
+                  <h6>
+                    <b>DOB:</b> {schemaRequest.clientInformation.dob}
+                  </h6>
+                </div>
+              </div>
+              <div id="informationArea">
+                <div>
+                  <h5>Request Information:</h5>
+                  <h6>
+                    <b>Request status: </b>
+                    {schemaRequest.schemaRequest.requestStatus}
+                  </h6>
+                </div>
+              </div>
+              <div id="buttonsArea">
+                <button className="btnAcceptSchema">Accept</button>
 
-      <div>
-        <h5>Client Surname:</h5>
-        <h6>{schemaRequest.userSurname}</h6>
-      </div>
+                <button className="btnRejectSchema">Reject</button>
+              </div>
+            </main>
 
-      <div>
-        <h5>Policy Type:</h5>
-        <h6>{schemaRequest.policyType}</h6>
-      </div>
+            {/** CAREL CAN YOU PLEASE GIVE SOME GUIDANCE ON ACCEPTING & REJECTING THE SCHEMA REQUEST */}
 
-      <div>
-        <h5>Status:</h5>
-        <h6>{schemaRequest.requestStatus}</h6>
-      </div>
-    </main>
-
-      {/** CAREL CAN YOU PLEASE GIVE SOME GUIDANCE ON ACCEPTING & REJECTING THE SCHEMA REQUEST */}
-
-    <button className="btnAcceptSchema">Accept</button>
-
-      <button className="btnRejectSchema">Reject</button>
-
-      <button
+            <button
               className="btnBackSchemaPage"
               onClick={() => {
-                history.push("/admin/viewSchemaRequests");
+                history.goBack();
               }}
             >
               Back
-      </button>
-
-</>
-    ) : (
-      <>Loading...</>
-    )}
-
-  </div>
-  <Footer/>
-  </>
- );
+            </button>
+          </>
+        ) : (
+          <>Loading...</>
+        )}
+      </div>
+      <Footer />
+    </>
+  );
 }
 
 export default ViewSingleSchemaRequest;

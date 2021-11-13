@@ -15,15 +15,12 @@
     color: #548CA8;
     font-weight: bold;
     font-size: 25px;
-    margin-left: 40%;
     font-family: 'Noto Sans Display', sans-serif;
 }
 
 .viewSchemaRequest h6{
     color: #fff;
     font-size: 20px;
-    margin-left: 40%;
-    margin-right: 50px;
     font-family: 'Noto Sans Display', sans-serif;
 }
 
@@ -53,4 +50,39 @@
     background: #548CA8;
     color: #fff;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+main{
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    grid-template-areas: "Policy User Information"
+                            "Policy User Buttons";
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 60% 40%;
+    grid-gap: 5px;
+    min-height: 60vh;
+
+}
+#policyArea,#userArea,#informationArea,#buttonsArea{
+    background-color: #272727;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    overflow: auto;
+}
+#policyArea{
+    grid-area: Policy;
+}
+#userArea{
+    grid-area: User;
+}
+#informationArea{
+    grid-area: Information;
+}
+#buttonsArea{
+    grid-area: Buttons;
 }

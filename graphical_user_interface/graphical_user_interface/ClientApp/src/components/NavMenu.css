@@ -18,11 +18,14 @@ html {
 }
 
 .whole-navbar{
+  display: flex;
+  justify-content: center;
+
+}
+nav{
   background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
-  height: 65px;
   font-size: 20px;
   color: #fff;
-
 }
 
 .nav-font-right{

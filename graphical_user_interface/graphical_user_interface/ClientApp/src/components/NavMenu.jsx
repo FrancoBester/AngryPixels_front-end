@@ -39,7 +39,11 @@ function NavMenu(props) {
   return (
     <>
       <header className="whole-navbar">
-        <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3">
+        <Navbar
+          className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3"
+          dark
+          color="dark"
+        >
           <Container>
             <NavbarBrand className="navbar-left" tag={Link} to="/">
               MediTrust

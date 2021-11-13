@@ -18,9 +18,11 @@ function Admin() {
   ];
   const [TableInfo, setTableInfo] = useState({});
   const [search_value, setSearch] = useState("");
+  const [loaded, setLoaded] = useState(false);
 
   function HandleTableInfo(e) {
     setTableInfo(e);
+    setLoaded(true);
   }
 
   useEffect(() => {
@@ -144,43 +146,40 @@ function Admin() {
               </tr>
             </tbody>
             <tbody>
-              {Object.keys(TableInfo).map((policy) => {
-                debugger;
-                return (
-                  <tr>
-                    <td>
-                      {TableInfo[policy].firstName +
-                        " " +
-                        TableInfo[policy].lastName}
-                    </td>
-                    <td>{TableInfo[policy].roleName}</td>
-                    <td>{TableInfo[policy].policyName}</td>
-                    <td>
-                      <NavItem>
-                        <NavLink
-                          tag={Link}
-                          className="text-dark"
-                          to={`/ViewClientDetails?id=${TableInfo[policy].userId}`}
-                        >
-                          View
-                        </NavLink>
-                      </NavItem>
-                    </td>
-                    <td>
-                      <NavItem>
-                        <NavLink
-                          tag={Link}
-                          className="text-dark"
-                          to={`/ViewPolicyDetails?id=${TableInfo[policy].policyId}`}
-                        >
-                          View
-                        </NavLink>
-                      </NavItem>
-                    </td>{" "}
-                    {/*NEED TO ADD URL HERE STILL*/}
-                  </tr>
-                );
-              })}
+              {loaded &&
+                TableInfo.map((policy) => {
+                  debugger;
+                  return (
+                    <tr>
+                      <td>{policy.firstName + " " + policy.lastName}</td>
+                      <td>{policy.roleName}</td>
+                      <td>{policy.policyName}</td>
+                      <td>
+                        <NavItem>
+                          <NavLink
+                            tag={Link}
+                            className="text-dark"
+                            to={`/ViewClientDetails?id=${policy.userId}`}
+                          >
+                            View
+                          </NavLink>
+                        </NavItem>
+                      </td>
+                      <td>
+                        <NavItem>
+                          <NavLink
+                            tag={Link}
+                            className="text-dark"
+                            to={`/ViewPolicyDetails?id=${policy.policyId}`}
+                          >
+                            View
+                          </NavLink>
+                        </NavItem>
+                      </td>{" "}
+                      {/*NEED TO ADD URL HERE STILL*/}
+                    </tr>
+                  );
+                })}
             </tbody>
           </table>
         </div>

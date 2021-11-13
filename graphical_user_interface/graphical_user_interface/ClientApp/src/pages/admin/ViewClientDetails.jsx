@@ -19,7 +19,13 @@ function ViewClientDetails() {
 
   useEffect(() => {
     //var id = parseInt(localStorage.getItem("id"));
-    var id = parseInt(window.sessionStorage.getItem("id"));
+    const idFromParam = new URLSearchParams(search).get("id");
+    var id = 0;
+    if (idFromParam) {
+      id = idFromParam;
+    } else {
+      id = parseInt(window.sessionStorage.getItem("id"));
+    }
     var onSuccess = (e) => {
       HandleProfile(e.data);
       setHasLoaded(true);

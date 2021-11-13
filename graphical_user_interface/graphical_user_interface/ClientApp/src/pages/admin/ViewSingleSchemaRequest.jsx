@@ -140,8 +140,6 @@ function ViewSingleSchemaRequest(props) {
               </div>
             </main>
 
-            {/** CAREL CAN YOU PLEASE GIVE SOME GUIDANCE ON ACCEPTING & REJECTING THE SCHEMA REQUEST */}
-
             <button
               className="btnBackSchemaPage"
               onClick={() => {

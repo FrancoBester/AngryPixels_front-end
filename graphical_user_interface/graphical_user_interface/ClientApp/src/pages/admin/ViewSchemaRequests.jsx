@@ -21,7 +21,6 @@ function ViewSchemaRequests() {
 
   useEffect(() => {
     var onSuccess = (e) => {
-      debugger;
       setSchemaRequests(e.data);
 
       setHasLoaded(true);

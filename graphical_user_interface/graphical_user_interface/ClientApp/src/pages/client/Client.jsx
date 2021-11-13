@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Client.css";
 import { useHistory } from "react-router";
 import API from "../../API";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
 import {
   Collapse,
@@ -28,6 +28,7 @@ function Client() {
     //var id = parseInt(localStorage.getItem("id"));
     var id = parseInt(window.sessionStorage.getItem("id"));
     var onSuccess = (e) => {
+      debugger;
       HandleTableInfo(e.data);
     };
     API.APIGET(
@@ -108,17 +109,17 @@ function Client() {
                     <td>{TableInfo[i].queryTitle}</td>
                     <td>{TableInfo[i].queryStatus}</td>
                     <td>{TableInfo[i].assistantName}</td>
-                    <td><NavItem>
+                    <td>
+                      <NavItem>
                         <NavLink
-                            tag={Link}
-                            className="text-dark"
-                            to={`/ViewQuery`} /* NEED TO ADD PATH*/
+                          tag={Link}
+                          className="text-dark"
+                          to={`/ViewQuery?id=${TableInfo[i].queryId}`}
                         >
-                            View
+                          View
                         </NavLink>
-                        </NavItem>
+                      </NavItem>
                     </td>
-
                   </tr>
                 );
               })}

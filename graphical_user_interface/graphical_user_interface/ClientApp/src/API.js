@@ -17,14 +17,33 @@ class API {
     }
   }
 
+  HandleError(error) {
+    var exception = "";
+    if (error.response) {
+      if (error.response.status == 401) {
+        exception = error.response.data.message;
+      } else if (error.response.status == 405) {
+        exception = error.response.data.message;
+      } else if (error.response.status == 498) {
+        exception = error.response.data.message;
+      } else if (error.response.status == 500) {
+        exception = error.response.data.message;
+      }
+    } else {
+      exception = error.message;
+    }
+    POPUP.ShowPopUp(exception);
+  }
+
   APIGetAnon(url, onSuccess, onFail, onFinally) {
+    var e = this.HandleError;
     axios
       .get(url)
       .then(function (response) {
         onSuccess(response);
       })
       .catch(function (error) {
-        POPUP.ShowPopUp(error.message);
+        e(error);
       })
       .then(function () {
         onFinally();
@@ -32,14 +51,14 @@ class API {
   }
 
   APIPostAnon(url, object, onSuccess, onFail, onFinally) {
-    console.log(this);
+    var e = this.HandleError;
     axios
       .post(url, object)
       .then(function (response) {
         onSuccess(response);
       })
       .catch(function (error) {
-        POPUP.ShowPopUp(error.message);
+        e(error);
       })
       .then(function () {
         onFinally();
@@ -47,6 +66,7 @@ class API {
   }
 
   APIGET(url, onSuccess, onFail, onFinally) {
+    var e = this.HandleError;
     axios
       .get(url, {
         headers: {
@@ -58,7 +78,7 @@ class API {
         onSuccess(response);
       })
       .catch(function (error) {
-        POPUP.ShowPopUp(error.message);
+        e(error);
       })
       .then(function () {
         onFinally();
@@ -66,6 +86,7 @@ class API {
   }
 
   APIPOST(url, object, onSuccess, onFail, onFinally) {
+    var e = this.HandleError;
     axios
       .post(url, object, {
         headers: {
@@ -77,7 +98,7 @@ class API {
         onSuccess(response);
       })
       .catch(function (error) {
-        POPUP.ShowPopUp(error.message);
+        e(error);
       })
       .then(function () {
         onFinally();

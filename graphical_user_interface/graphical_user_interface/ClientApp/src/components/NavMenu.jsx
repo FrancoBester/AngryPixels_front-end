@@ -38,80 +38,100 @@ function NavMenu(props) {
 
   return (
     <>
-    <header className="whole-navbar">
-      <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3">
-        <Container>
-          <NavbarBrand className="navbar-left" tag={Link} to="/">
-            MediTrust
-          </NavbarBrand>
-          <NavbarToggler onClick={() => toggleNavbar()} className="mr-2" />
-          <Collapse
-            className="d-sm-inline-flex flex-sm-row-reverse"
-            isOpen={!collapsed}
-            navbar
-          >
-            <ul className="navbar-nav flex-grow">
-              <NavItem>
-                <NavLink tag={Link} className="nav-font-right" to="/">
-                  Home
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink tag={Link} className="nav-font-right" to="/About">
-                  About
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink tag={Link} className="nav-font-right" to="/Contact">
-                  Contact
-                </NavLink>
-              </NavItem>
-              {authenticated ? (
-                <>
-                  <NavItem>
-                    <NavLink tag={Link} className="nav-font-right" to="/Client">
-                      Client
-                    </NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink tag={Link} className="nav-font-right" to="/Admin">
-                      Admin
-                    </NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink
-                      onClick={() => {
-                        auth.logout(() => {
-                          setUpdated(!updated);
-                        });
-                      }}
-                      tag={Link}
-                      className="nav-font-right"
-                      to="/"
-                    >
-                      Logout
-                    </NavLink>
-                  </NavItem>
-                </>
-              ) : (
-                <>
-                  <NavItem>
-                    <NavLink tag={Link} className="nav-font-right" to="/login">
-                      Login
-                    </NavLink>
-                  </NavItem>
-                  <NavItem>
-                    <NavLink tag={Link} className="nav-font-right" to="/Signup">
-                      Register
-                    </NavLink>
-                  </NavItem>
-                </>
-              )}
-            </ul>
-          </Collapse>
-        </Container>
-      </Navbar>
-    </header>
+      <header className="whole-navbar">
+        <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3">
+          <Container>
+            <NavbarBrand className="navbar-left" tag={Link} to="/">
+              MediTrust
+            </NavbarBrand>
+            <NavbarToggler onClick={() => toggleNavbar()} className="mr-2" />
+            <Collapse
+              className="d-sm-inline-flex flex-sm-row-reverse"
+              isOpen={!collapsed}
+              navbar
+            >
+              <ul className="navbar-nav flex-grow">
+                <NavItem>
+                  <NavLink tag={Link} className="nav-font-right" to="/">
+                    Home
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink tag={Link} className="nav-font-right" to="/About">
+                    About
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink tag={Link} className="nav-font-right" to="/Contact">
+                    Contact
+                  </NavLink>
+                </NavItem>
+                {authenticated ? (
+                  <>
+                    <NavItem>
+                      <NavLink
+                        tag={Link}
+                        className="nav-font-right"
+                        to="/Client"
+                      >
+                        Client
+                      </NavLink>
+                    </NavItem>
+                    {auth.userIsOfType("Admin") && (
+                      <>
+                        <NavItem>
+                          <NavLink
+                            tag={Link}
+                            className="nav-font-right"
+                            to="/Admin"
+                          >
+                            Admin
+                          </NavLink>
+                        </NavItem>
+                      </>
+                    )}
+                    <NavItem>
+                      <NavLink
+                        onClick={() => {
+                          auth.logout(() => {
+                            setUpdated(!updated);
+                          });
+                        }}
+                        tag={Link}
+                        className="nav-font-right"
+                        to="/"
+                      >
+                        Logout
+                      </NavLink>
+                    </NavItem>
+                  </>
+                ) : (
+                  <>
+                    <NavItem>
+                      <NavLink
+                        tag={Link}
+                        className="nav-font-right"
+                        to="/login"
+                      >
+                        Login
+                      </NavLink>
+                    </NavItem>
+                    <NavItem>
+                      <NavLink
+                        tag={Link}
+                        className="nav-font-right"
+                        to="/Signup"
+                      >
+                        Register
+                      </NavLink>
+                    </NavItem>
+                  </>
+                )}
+              </ul>
+            </Collapse>
+          </Container>
+        </Navbar>
+      </header>
     </>
   );
 }

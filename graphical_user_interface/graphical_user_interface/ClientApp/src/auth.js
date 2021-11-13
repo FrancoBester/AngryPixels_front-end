@@ -39,12 +39,12 @@ class Auth {
       (response) => {
         this.authenticated = true;
         this.onAuthenticationChanged.detail.value = this.isAuthenticated();
-        dispatchEvent(this.onAuthenticationChanged);
 
         window.sessionStorage.setItem("token", response.data.token);
         window.sessionStorage.setItem("roles", response.data.roles);
         window.sessionStorage.setItem("id", response.data.id);
         window.sessionStorage.setItem("email", response.data.email);
+        dispatchEvent(this.onAuthenticationChanged);
         // localStorage.setItem("token", response.data.token);
         // localStorage.setItem("roles", response.data.roles);
         // localStorage.setItem("id", response.data.id);
@@ -76,6 +76,9 @@ class Auth {
 
   userIsOfType(type) {
     //const roles = localStorage.getItem("roles").split(",");
+    if (!window.sessionStorage.getItem("roles")) {
+      return false;
+    }
     const roles = window.sessionStorage.getItem("roles").split(",");
     if (roles.includes(type)) {
       return true;

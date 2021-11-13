@@ -22,6 +22,7 @@ function ViewQueries() {
     "Query Title",
     "Client Details",
     "Query Details",
+    "Assign Self",
   ];
   const [TableInfo, setTableInfo] = useState({});
   const [SearchValue, setSearchValue] = useState("");
@@ -140,6 +141,17 @@ function ViewQueries() {
                           to={`/ViewSingleQuery?id=${TableInfo[i].query_Id}`}
                         >
                           View
+                        </NavLink>
+                      </NavItem>
+                    </td>
+                    <td>
+                      <NavItem>
+                        <NavLink
+                          tag={Link}
+                          className="text-dark"
+                          to={``}
+                        >
+                          Assign
                         </NavLink>
                       </NavItem>
                     </td>

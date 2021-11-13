@@ -99,6 +99,14 @@ function Admin() {
           >
             Create New Policy
           </button>
+          <button
+            className="btnViewPolicy"
+            onClick={() => {
+              history.push("/ViewPolicies");
+            }}
+          >
+            View Policies
+          </button>
         </main>
 
         <div className="tblHeadingViewClient">

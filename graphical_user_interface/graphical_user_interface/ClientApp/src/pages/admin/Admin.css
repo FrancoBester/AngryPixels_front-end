@@ -49,12 +49,12 @@
   font-size: 20px;
 }
 
-.btnViewQueries, .btnViewMedicalSchema, .btnCreateNewPolicy{
+.btnViewQueries, .btnViewMedicalSchema, .btnCreateNewPolicy, .btnViewPolicy{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background: #EEEEEE;
   height: 75px;
   line-height: 35px;
-  width: 30%;
+  width: 22%;
   border: none;
   border-radius: 8px;
   outline: none;
@@ -71,7 +71,7 @@
   margin-left: 10px;
 }
 
-.btnViewQueries:hover, .btnViewMedicalSchema:hover, .btnCreateNewPolicy:hover{
+.btnViewQueries:hover, .btnViewMedicalSchema:hover, .btnCreateNewPolicy:hover, .btnViewPolicy:hover{
   background: #548CA8;
   color: #fff;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);

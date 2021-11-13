@@ -3,6 +3,7 @@ import API from "../../API";
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 import Footer from "../../components/Footer";
+import auth from "../../auth";
 
 function ViewClientProfile() {
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -18,12 +19,15 @@ function ViewClientProfile() {
     var id = parseInt(window.sessionStorage.getItem("id"));
     var onSuccess = () => {
       alert("Account deleted");
-      history.push("/")
+      auth.logout(() => {
+        // setUpdated(!updated);
+      });;
+      history.push("/About")
     };
 
 
     API.APIGET(
-      "Users/RemoveUserAccount/"+18,
+      "Users/RemoveUserAccount/"+id,
       onSuccess,
       () => {},
       () => {}

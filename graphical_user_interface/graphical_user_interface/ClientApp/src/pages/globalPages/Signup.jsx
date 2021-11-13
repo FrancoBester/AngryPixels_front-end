@@ -44,7 +44,9 @@ function Signup() {
     API.APIPostAnon(
       "Users/Register",
       userObj,
-      () => {},
+      () => {
+        alert("You have succesfully created your account.")//This being weird, does not work if a move history.push to here
+      },
       () => {},
       () => {}
     );

@@ -44,7 +44,7 @@ function ViewSingleSchemaRequest(props) {
 
         {hasLoaded ? (
           <>
-            <main className="viewSchemaRequest">
+            <main id="singleRequest" className="viewSchemaRequest">
               <div id="policyArea">
                 <div>
                   <h5>Policy Information:</h5>

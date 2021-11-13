@@ -1,0 +1,112 @@
+.gridViewPolicies{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 150px auto 100px;
+    grid-gap: 0em;
+}
+
+.viewPoliciesHeader{
+    color: #548CA8;
+    font-size: 80px;
+    font-family: 'Noto Sans Display', sans-serif;
+    text-align: center;
+}
+
+.viewPoliciesHeader, .viewPolicies, .btnPoliciesBack{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.gridViewPolicies > *{
+    background: #1D1D1D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* TABLE */ 
+
+.viewPolicies table tr td{
+    font-size: 15px;
+    font-family: 'Roboto Mono', monospace;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 2px  rgba(0,0,0,.1);
+    /* //width: 90%; */
+    list-style: none;
+}
+
+.viewPolicies .content{
+    width: 100%;
+}
+
+/*KERYN ADD THE WHTIE SPACE TO ALL TABLES*/
+.viewPolicies table{
+    border-collapse:collapse;
+    border-spacing:0;
+    width:100%;
+    white-space: nowrap;
+}
+
+.viewPolicies{
+    text-align: right;
+    color: #EEEEEE;
+    padding-right: 20px;
+}
+
+.tblViewPoliciesHeadings{
+    background-color: #548CA8;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+.viewPolicies th, td{
+    padding: 13px;
+	background-color: rgba(255,255,255,0.1);
+}
+
+ .viewPolicies tbody{
+    text-align: left;
+    background-color: #EEEEEE;
+    color: #1D1D1D;
+ }
+
+.viewPolicies table{
+    margin-bottom: 50px;
+    width: 80%;
+}
+
+.viewPolicies table{
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
+
+.btnBackClient{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: #EEEEEE;
+    height: 65px;
+    line-height: 35px;
+    width: 30%;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    cursor: pointer;
+    color: #334257;
+    font-size: 1.2em;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    transition: all 0.30s ease-in-out;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.btnBackClient:hover{
+    background: #548CA8;
+    color: #fff;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}

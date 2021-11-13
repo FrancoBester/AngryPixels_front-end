@@ -92,20 +92,21 @@ function Admin() {
           </button>
 
           <button
+            className="btnViewMedicalSchema"
+            onClick={() => {
+              history.push("/viewAllPolicies");
+            }}
+          >
+            View Policies
+          </button>
+
+          <button
             className="btnCreateNewPolicy"
             onClick={() => {
               history.push("/CreateNewPolicy");
             }}
           >
             Create New Policy
-          </button>
-          <button
-            className="btnViewPolicy"
-            onClick={() => {
-              history.push("/ViewPolicies");
-            }}
-          >
-            View Policies
           </button>
         </main>
 

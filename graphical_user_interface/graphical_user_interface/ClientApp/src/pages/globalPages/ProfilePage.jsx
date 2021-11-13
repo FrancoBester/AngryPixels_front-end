@@ -150,9 +150,6 @@ function ProfilePage() {
     return () => {};
   }, [updated]);
 
-  {
-    /** ADDED SOME BASIC STYLING, I WILL ADD MORE SPICE LATER */
-  }
   return (
     <>
       <div className="grid-wrapper">

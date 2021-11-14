@@ -24,7 +24,7 @@
     justify-content: center;
 }
 
-.gridSingleQuery h5{
+.viewSingleQuery h5{
     color: #548CA8;
     font-weight: bold;
     font-size: 25px;
@@ -33,7 +33,7 @@
     font-family: 'Noto Sans Display', sans-serif;
 }
 
-.gridSingleQuery h6{
+.viewSingleQuery h6{
     color: #fff;
     font-size: 20px;
     text-align: left;
@@ -41,12 +41,12 @@
     font-family: 'Noto Sans Display', sans-serif;
 }
 
-.viewSingleQuery li{
+.viewSingleQuery ul{
     list-style: none;
     text-align: left;
-    margin: 100px;
+    margin: 20px;
     font-family: 'Noto Sans Display', sans-serif;
-}
+  }
 
 .btnBackQuery{
     font-family: Verdana, Geneva, Tahoma, sans-serif;

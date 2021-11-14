@@ -78,7 +78,7 @@ function ViewSingleQuery() {
               <button
                 className="btnBackQuery"
                 onClick={() => {
-                  history.push("/ViewQueries");
+                  history.goBack();
                 }}
               >
                 Back

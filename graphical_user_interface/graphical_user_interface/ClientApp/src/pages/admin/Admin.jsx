@@ -15,6 +15,7 @@ function Admin() {
     "Policy Type",
     "Client Details",
     "Policy Details",
+    "Assign Self",
   ];
   const [TableInfo, setTableInfo] = useState({});
   const [search_value, setSearch] = useState("");
@@ -186,6 +187,17 @@ function Admin() {
                         </NavItem>
                       </td>{" "}
                       {/*NEED TO ADD URL HERE STILL*/}
+                      <td>
+                        <NavItem>
+                          <NavLink
+                            tag={Link}
+                            className="text-dark"
+                            to={``}
+                          >
+                            Assign
+                          </NavLink>
+                        </NavItem>
+                      </td>
                     </tr>
                   );
                 })}

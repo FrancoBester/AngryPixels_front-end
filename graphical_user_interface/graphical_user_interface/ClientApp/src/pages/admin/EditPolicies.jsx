@@ -14,10 +14,13 @@ function ViewSinglePolicy() {
   const [type, setType] = useState("")
   const [desc, setDesc] = useState("")
   const [benefit, setBenefits] = useState("")
+  const [Adms_Doctors, setAdmsDoctors] = useState("");
+  const [Adms_Hospitals, setAdmsHospitals] = useState("");
+  const [Adms_Type, setAdmsType] = useState("");
 
 
   function updatePolicy(){
-    console.log(policy)
+    // console.log(policy)
     alert("break")
     const policyObj = 
     {
@@ -25,8 +28,13 @@ function ViewSinglePolicy() {
       policy_Type : type,
       policy_Des : desc,
       policy_Benefits : benefit,
+      Admissions:{
+        Adms_Doctors,
+        Adms_Hospitals,
+        Adms_Type,
+      }
     }
-    console.log(policyObj)
+    // console.log(policyObj)
     var e = history.goBack;
     const id = new URLSearchParams(search).get("id");
     API.APIPOST(
@@ -44,11 +52,14 @@ function ViewSinglePolicy() {
   }
 
   function handlePolicyInfo(e){
-    console.log(e)
+    // console.log(e)
     setDesc(e.policy_Des);
     setType(e.policy_Type)
     setHolder(e.policy_Holder)
     setBenefits(e.policy_Benefits)
+    setAdmsDoctors(e.adms_Doctors)
+    setAdmsHospitals(e.adms_Hospitals)
+    setAdmsType(e.adms_Type)
   }
 
   useEffect(() => {
@@ -56,15 +67,16 @@ function ViewSinglePolicy() {
     debugger;
     setPolicyId(id);
     var onSuccess = (e) => {
+      const info = e.data[0]
       debugger;
-      setPolicy(e.data);
-      handlePolicyInfo(e.data)
+      setPolicy(info);
+      handlePolicyInfo(info)
       setHasLoaded(true);
       
     };
 
     API.APIGET(
-      "Users/GetPolicyDetails/" + id,
+      "policy/GetSpecificPolicyDetails/" + id,
       onSuccess,
       () => {
         alert("Error");
@@ -110,16 +122,6 @@ function ViewSinglePolicy() {
               </li>
               <br />
               <li>
-              <h5>Admision type:</h5>
-              <input
-                type="text"
-                placeholder="Admision type"
-                // onChange={(e) => setAdmision(e.target.value)}
-                defaultValue={policy.adms_Type}
-              />
-              </li>
-              <br />
-              <li>
               <h5>Description:</h5>
               <input
                 type="text"
@@ -139,6 +141,36 @@ function ViewSinglePolicy() {
               />
               </li>
 
+              <li>
+              <h5>Admission Doctor:</h5>
+              <input
+                type="text"
+                placeholder="Admission Doctor"
+                onChange={(e) => setAdmsDoctors(e.target.value)}
+                defaultValue={policy.adms_Doctors}
+              />
+              </li>
+
+              <li>
+              <h5>Admission Hospital:</h5>
+              <input
+                type="text"
+                placeholder="Afmission Hospital"
+                onChange={(e) => setAdmsHospitals(e.target.value)}
+                defaultValue={policy.adms_Hospitals}
+              />
+              </li>
+
+              <li>
+              <h5>Admission Type:</h5>
+              <input
+                type="text"
+                placeholder="Admission Type"
+                onChange={(e) => setAdmsType(e.target.value)}
+                defaultValue={policy.adms_Type}
+              />
+              </li>
+            
           </ul>
           </main>
           

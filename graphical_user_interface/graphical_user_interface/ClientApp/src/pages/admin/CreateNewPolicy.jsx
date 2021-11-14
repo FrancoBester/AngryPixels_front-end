@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import './CreateNewPolicy.css';
 import { useHistory } from "react-router";
+import API from "../../API";
 
 
 function CreateNewPolicy(){

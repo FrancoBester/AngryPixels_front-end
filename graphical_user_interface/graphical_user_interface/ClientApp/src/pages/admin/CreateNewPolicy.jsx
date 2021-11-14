@@ -7,6 +7,32 @@ import API from "../../API";
 function CreateNewPolicy(){
 
     const history = useHistory();
+    const [PolicyHolder, setPolicyHolder] = useState("");
+    const [PolicyType, setPolicyType] = useState("");
+    const [PolicyDescription, setPolicyDescription] = useState("");
+    const [PolicyDate, setPolicyDate] = useState("");
+    const [PolicyBenefits, setPolicyBenefits] = useState("");
+
+    function PostNewPolicy() {
+        alert("Create Policy?");
+        const policyObj = {
+          Policy_Holder: PolicyHolder,
+          Policy_Type: PolicyType,
+          Policy_Description: PolicyDescription,
+          Policy_Date: PolicyDate,
+          Policy_Benefits: PolicyBenefits,
+        };
+    
+        API.APIPOST(
+          "Queries/CreatePolicy",
+          policyObj,
+          () => {
+            history.goBack();
+          },
+          () => {},
+          () => {}
+        );
+      }
 
     return(
     <>
@@ -19,7 +45,12 @@ function CreateNewPolicy(){
                         <label>Policy Holder:</label>
                     </div>
                     <div className="policyInput">
-                        <input type="text" />
+                        <input 
+                            type="text"
+                            placeholder="Policy Holder"
+                            required
+                            onChange={(e) => setPolicyHolder(e.target.value)}
+                            />
                     </div>
                 </div>
                 <div className="rowPolicyDetails">
@@ -27,7 +58,12 @@ function CreateNewPolicy(){
                         <label>Policy Type:</label>
                     </div>
                     <div className="policyInput">
-                        <input type="text" />
+                        <input 
+                            type="text"
+                            placeholder="Policy Type"
+                            required
+                            onChange={(e) => setPolicyType(e.target.value)}
+                             />
                     </div>
                 </div>
                 <div className="rowPolicyDetails">
@@ -35,7 +71,12 @@ function CreateNewPolicy(){
                         <label>Description:</label>
                     </div>
                     <div className="policyInput">
-                        <input type="text" />
+                        <input 
+                            type="text"
+                            placeholder="Policy Description"
+                            required
+                            onChange={(e) => setPolicyDescription(e.target.value)}
+                            />
                     </div>
                 </div>
                 <div className="rowPolicyDetails">
@@ -43,7 +84,11 @@ function CreateNewPolicy(){
                         <label>Policy Date:</label>
                     </div>
                     <div className="policyInput">
-                        <input type="date" />
+                        <input 
+                            type="date"
+                            required
+                            onChange={(e) => setPolicyDate(e.target.value)}
+                            />
                     </div>
                 </div>
                 <div className="rowPolicyDetails">
@@ -51,20 +96,27 @@ function CreateNewPolicy(){
                         <label>Policy Benefits:</label>
                     </div>
                     <div className="policyInput">
-                        <input type="text" />
+                        <input 
+                            type="text"
+                            placeholder="Policy Benefits"
+                            required
+                            onChange={(e) => setPolicyBenefits(e.target.value)} />
                     </div>
                 </div>
             </main>
 
             <div className="btnsPolicy">
                 <button 
-                className="btnCreatePolicy"
-                
-                >Create</button>
+                    className="btnCreatePolicy"
+                    onClick={() => {
+                        PostNewPolicy();
+                    }}
+                >Create
+                </button>
                 <button 
                 className="btnCancelPolicy"
                 onClick={() => {
-                    history.push("/Admin");
+                    history.goBack();
                 }}
                 >
                     Cancel

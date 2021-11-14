@@ -88,7 +88,7 @@ function ViewPolicies() {
           <button 
               className="btnBackClient"
               onClick={() => {
-              history.push("/Client");
+              history.goBack();
               }}>
                 Back
           </button>

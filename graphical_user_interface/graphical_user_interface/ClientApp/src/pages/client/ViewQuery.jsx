@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation, Link, useHistory } from "react-router-dom";
 import API from "../../API";
 import "./ViewQuery.css";
+import Footer from "../../components/Footer";
 
 function ViewQuery() {
   const history = useHistory();
@@ -90,6 +91,7 @@ function ViewQuery() {
           <h3>Loading...</h3>
         )}
       </div>
+      <Footer />
     </>
   );
 }

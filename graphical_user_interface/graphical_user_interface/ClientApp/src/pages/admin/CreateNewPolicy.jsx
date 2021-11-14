@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import './CreateNewPolicy.css';
 import { useHistory } from "react-router";
 import API from "../../API";
-
+import Footer from "../../components/Footer";
 
 function CreateNewPolicy(){
 
@@ -125,6 +125,7 @@ function CreateNewPolicy(){
             </div>
 
         </div>
+        <Footer />
     </>
 )
 

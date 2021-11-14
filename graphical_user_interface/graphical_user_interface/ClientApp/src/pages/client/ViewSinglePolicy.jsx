@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation, Link, useHistory } from "react-router-dom";
 import API from "../../API";
 import './ViewSinglePolicy.css';
+import Footer from "../../components/Footer";
 
 function ViewSinglePolicy() {
   const history = useHistory();
@@ -106,6 +107,7 @@ function ViewSinglePolicy() {
         <h3>Loading...</h3>
       )}
       </div>
+      <Footer />
     </>
   );
 }

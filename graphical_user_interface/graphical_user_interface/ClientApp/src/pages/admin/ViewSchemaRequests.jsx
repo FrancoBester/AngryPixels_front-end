@@ -109,7 +109,7 @@ function ViewSchemaRequests() {
               <button
                 className="btnBackSchema"
                 onClick={() => {
-                  history.push("/Admin");
+                  history.goBack();
                 }}
               >
                 Back

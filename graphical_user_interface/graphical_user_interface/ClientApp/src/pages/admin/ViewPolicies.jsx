@@ -3,6 +3,7 @@ import API from "../../API";
 import auth from "../../auth";
 import './ViewPolicies.css';
 import { Link, useHistory } from "react-router-dom";
+import Footer from "../../components/Footer";
 import {
   Collapse,
   Container,
@@ -74,7 +75,7 @@ function ViewPolicies() {
                         className="text-dark"
                         to={`/EditPolicy?id=${policy.policyId}`}
                       >
-                        Edit Policy
+                        View Policy
                       </NavLink>
                     </NavItem>
                   </td>
@@ -88,7 +89,7 @@ function ViewPolicies() {
           <button 
               className="btnBackClient"
               onClick={() => {
-              history.push("/Client");
+              history.goBack();
               }}>
                 Back
           </button>
@@ -98,6 +99,7 @@ function ViewPolicies() {
         <h3>Loading...</h3>
       )}
       </div>
+      <Footer />
     </>
   );
 }

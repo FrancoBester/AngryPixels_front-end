@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import API from "../../API";
 import auth from "../../auth";
 import './ViewPolicies.css';
+import Footer from "../../components/Footer";
 import { Link, useHistory } from "react-router-dom";
 import {
   Collapse,
@@ -97,6 +98,7 @@ function ViewPolicies() {
         <h3>Loading...</h3>
       )}
       </div>
+      <Footer />
     </>
   );
 }

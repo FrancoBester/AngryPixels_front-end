@@ -30,7 +30,7 @@ function CreateNewPolicy(){
         };
     
         API.APIPOST(
-          "Queries/CreatePolicy/" + window.sessionStorage.getItem("id"),
+          "Queries/CreatePolicy",
           policyObj,
           () => {
             history.goBack();

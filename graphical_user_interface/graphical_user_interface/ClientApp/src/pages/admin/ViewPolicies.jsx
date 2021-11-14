@@ -99,6 +99,7 @@ function ViewPolicies() {
                   </td>
                   <td>
                     <button 
+                    className="btnDeletePolicy"
                       onClick={() =>{
                         const confirmBox = window.confirm(
                           "Do you want to delete this policy"

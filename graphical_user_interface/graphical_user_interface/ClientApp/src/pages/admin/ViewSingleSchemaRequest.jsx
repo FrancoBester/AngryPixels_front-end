@@ -71,59 +71,70 @@ function ViewSingleSchemaRequest(props) {
         {hasLoaded ? (
           <>
             <main id="singleRequest" className="viewSchemaRequest">
-              <div id="policyArea">
+              <div className="policyArea" id="policyArea">
                 <div>
                   <h5>Policy Information:</h5>
                   <h6>
-                    <b>Admission type:</b> {schemaRequest.policyInfo.adms_Type}
+                    Admission type: 
                   </h6>
+                  <p>{schemaRequest.policyInfo.adms_Type}</p>
                   <h6>
-                    <b>Holder:</b> {schemaRequest.policyInfo.policy_Holder}
+                    Holder: 
                   </h6>
+                  <p>{schemaRequest.policyInfo.policy_Holder}</p>
                   <h6>
-                    <b>Type:</b> {schemaRequest.policyInfo.policy_Type}
+                    Type: 
                   </h6>
+                  <p>{schemaRequest.policyInfo.policy_Type}</p>
                   <h6>
-                    <b>Date:</b> {schemaRequest.policyInfo.policy_Date}
+                    Date: 
                   </h6>
+                  <p>{schemaRequest.policyInfo.policy_Date}</p>
                   <h6>
-                    <b>Benefits:</b> {schemaRequest.policyInfo.policy_Benefits}
+                    Benefits: 
                   </h6>
+                  <p>{schemaRequest.policyInfo.policy_Benefits}</p>
                   <h6>
-                    <b>Description:</b> {schemaRequest.policyInfo.policy_Des}
+                    Description:
                   </h6>
+                  <p>{schemaRequest.policyInfo.policy_Des}</p>
                 </div>
               </div>
-              <div id="userArea">
+              <div className="userArea" id="userArea">
                 <div>
                   <h5>Client Information:</h5>
                   <h6>
-                    <b>Fullname:</b> {schemaRequest.clientInformation.fullname}
+                   Full Name: 
                   </h6>
+                  <p>{schemaRequest.clientInformation.fullname}</p>
                   <h6>
-                    <b>Gender:</b> {schemaRequest.clientInformation.gender}
+                    Gender: 
                   </h6>
+                  <p>{schemaRequest.clientInformation.gender}</p>
                   <h6>
-                    <b>IdNumber:</b> {schemaRequest.clientInformation.idNumber}
+                    IdNumber: 
                   </h6>
+                  <p>{schemaRequest.clientInformation.idNumber}</p>
                   <h6>
-                    <b>Cell:</b> {schemaRequest.clientInformation.cell}
+                   Cell: 
                   </h6>
+                  <p>{schemaRequest.clientInformation.cell}</p>
                   <h6>
-                    <b>DOB:</b> {schemaRequest.clientInformation.dob}
+                    DOB: 
                   </h6>
+                  <p>{schemaRequest.clientInformation.dob}</p>
                 </div>
               </div>
-              <div id="informationArea">
+              <div className="informationArea" id="informationArea">
                 <div>
                   <h5>Request Information:</h5>
                   <h6>
-                    <b>Request status: </b>
-                    {schemaRequest.schemaRequest.requestStatus}
+                    Request status: 
                   </h6>
+                  <p>{schemaRequest.schemaRequest.requestStatus}</p>
                 </div>
               </div>
-              <div id="buttonsArea">
+              <div className="buttonsArea" id="buttonsArea">
                 <button
                   onClick={(q) => acceptRequest()}
                   className="btnAcceptSchema"
@@ -137,10 +148,8 @@ function ViewSingleSchemaRequest(props) {
                 >
                   Reject
                 </button>
-              </div>
-            </main>
 
-            <button
+                <button
               className="btnBackSchemaPage"
               onClick={() => {
                 history.goBack();
@@ -148,6 +157,10 @@ function ViewSingleSchemaRequest(props) {
             >
               Back
             </button>
+              </div>
+            </main>
+
+           
           </>
         ) : (
           <>Loading...</>

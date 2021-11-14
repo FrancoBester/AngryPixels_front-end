@@ -12,16 +12,29 @@
 }
 
 .viewSchemaRequest h5{
-    color: #548CA8;
+    color: #476072;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 28px;
     font-family: 'Noto Sans Display', sans-serif;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 .viewSchemaRequest h6{
+    color: #548CA8;
+    font-size: 20px;
+    font-family: 'Noto Sans Display', sans-serif;
+    margin-left: 100px;
+    margin-right: 100px;
+    font-weight: bold;
+}
+
+.viewSchemaRequest p{
     color: #fff;
     font-size: 20px;
     font-family: 'Noto Sans Display', sans-serif;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 .btnAcceptSchema, .btnRejectSchema, .btnBackSchemaPage{
@@ -29,7 +42,7 @@
     background: #EEEEEE;
     height: 85px;
     line-height: 35px;
-    width: 28%;
+    width: 26%;
     border: none;
     border-radius: 8px;
     outline: none;
@@ -42,8 +55,9 @@
     -moz-transition: all 0.30s ease-in-out;
     -ms-transition: all 0.30s ease-in-out;
     transition: all 0.30s ease-in-out;
-    margin-right: 12px;
-    margin-left: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+    
 }
 
 .btnAcceptSchema:hover, .btnRejectSchema:hover, .btnBackSchemaPage:hover{
@@ -52,7 +66,12 @@
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
-#singleRequest{
+.btnAcceptSchema{
+    margin-left: 100px;
+}
+
+
+/*#singleRequest{
     display: grid;
     align-content: center;
     justify-content: center;
@@ -60,10 +79,10 @@
     left: 0;
     grid-template-areas: "Policy User Information"
                             "Policy User Buttons";
-    grid-template-columns: 30% 30% 30%;
+    grid-template-columns: 100% 30% 30% 50%;
     grid-template-rows: 60% 40%;
     grid-gap: 5px;
-    min-height: 60vh;
+    min-height: 80vh;
 
 }
 #policyArea,#userArea,#informationArea,#buttonsArea{
@@ -71,7 +90,7 @@
     display: flex;
     align-content: center;
     justify-content: center;
-    text-align: center;
+    text-align: left;
     overflow: auto;
 }
 #policyArea{
@@ -86,3 +105,4 @@
 #buttonsArea{
     grid-area: Buttons;
 }
+*/

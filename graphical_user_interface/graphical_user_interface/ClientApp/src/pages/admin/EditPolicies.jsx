@@ -69,7 +69,7 @@ function ViewSinglePolicy() {
               <input
                 type="text"
                 placeholder="Policy holder"
-                onChange={(e) => setHolder(e.target.value)}
+                // onChange={(e) => setHolder(e.target.value)}
                 defaultValue={policy.policy_Holder}
               />
               {/* <h6>{policy.policy_Holder}</h6> */}
@@ -80,7 +80,7 @@ function ViewSinglePolicy() {
               <input
                 type="text"
                 placeholder="Policy type"
-                onChange={(e) => setType(e.target.value)}
+                // onChange={(e) => setType(e.target.value)}
                 defaultValue={policy.policy_Type}
               />
               </li>
@@ -90,7 +90,7 @@ function ViewSinglePolicy() {
               <input
                 type="text"
                 placeholder="Admision type"
-                onChange={(e) => setAdmision(e.target.value)}
+                // onChange={(e) => setAdmision(e.target.value)}
                 defaultValue={policy.adms_Type}
               />
               </li>
@@ -100,7 +100,7 @@ function ViewSinglePolicy() {
               <input
                 type="text"
                 placeholder="Policy description"
-                onChange={(e) => setDesc(e.target.value)}
+                // onChange={(e) => setDesc(e.target.value)}
                 defaultValue={policy.policy_Des}
               />
               </li>
@@ -110,7 +110,7 @@ function ViewSinglePolicy() {
               <input
                 type="text"
                 placeholder="Policy benefits"
-                onChange={(e) => setBenefits(e.target.value)}
+                // onChange={(e) => setBenefits(e.target.value)}
                 defaultValue={policy.policy_Benefits}
               />
               </li>

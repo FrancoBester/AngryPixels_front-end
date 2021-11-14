@@ -117,7 +117,7 @@ function Admin() {
           <button
             className="btnViewMedicalSchema"
             onClick={() => {
-              history.push("/ViewPolicies");
+              history.push("/ViewAllPolicies");
             }}
           >
             View Policies

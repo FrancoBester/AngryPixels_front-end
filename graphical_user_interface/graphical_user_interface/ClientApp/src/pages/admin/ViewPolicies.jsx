@@ -93,7 +93,7 @@ function ViewPolicies() {
                         className="text-dark"
                         to={`/EditPolicy?id=${policy.policyId}`}
                       >
-                        View Policy
+                        Edit Policy
                       </NavLink>
                     </NavItem>
                   </td>

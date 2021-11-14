@@ -10,9 +10,23 @@ function ViewSinglePolicy() {
   const [policy, setPolicy] = useState({});
   const [hasLoaded, setHasLoaded] = useState(false);
   const [policyId, setPolicyId] = useState(0);
+  const [holder, setHolder] = useState("")
+  const [type, setType] = useState("")
+  const [desc, setDesc] = useState("")
+  const [benefit, setBenefits] = useState("")
+
 
   function updatePolicy(){
-    const policyObj = policy
+    console.log(policy)
+    alert("break")
+    const policyObj = 
+    {
+      policy_Holder : holder,
+      policy_Type : type,
+      policy_Des : desc,
+      policy_Benefits : benefit,
+    }
+    console.log(policyObj)
     var e = history.goBack;
     const id = new URLSearchParams(search).get("id");
     API.APIPOST(
@@ -29,6 +43,14 @@ function ViewSinglePolicy() {
     );
   }
 
+  function handlePolicyInfo(e){
+    console.log(e)
+    setDesc(e.policy_Des);
+    setType(e.policy_Type)
+    setHolder(e.policy_Holder)
+    setBenefits(e.policy_Benefits)
+  }
+
   useEffect(() => {
     const id = new URLSearchParams(search).get("id");
     debugger;
@@ -36,7 +58,9 @@ function ViewSinglePolicy() {
     var onSuccess = (e) => {
       debugger;
       setPolicy(e.data);
+      handlePolicyInfo(e.data)
       setHasLoaded(true);
+      
     };
 
     API.APIGET(
@@ -69,7 +93,7 @@ function ViewSinglePolicy() {
               <input
                 type="text"
                 placeholder="Policy holder"
-                // onChange={(e) => setHolder(e.target.value)}
+                onChange={(e) => setHolder(e.target.value)}
                 defaultValue={policy.policy_Holder}
               />
               {/* <h6>{policy.policy_Holder}</h6> */}
@@ -80,7 +104,7 @@ function ViewSinglePolicy() {
               <input
                 type="text"
                 placeholder="Policy type"
-                // onChange={(e) => setType(e.target.value)}
+                onChange={(e) => setType(e.target.value)}
                 defaultValue={policy.policy_Type}
               />
               </li>
@@ -100,7 +124,7 @@ function ViewSinglePolicy() {
               <input
                 type="text"
                 placeholder="Policy description"
-                // onChange={(e) => setDesc(e.target.value)}
+                onChange={(e) => setDesc(e.target.value)}
                 defaultValue={policy.policy_Des}
               />
               </li>
@@ -110,7 +134,7 @@ function ViewSinglePolicy() {
               <input
                 type="text"
                 placeholder="Policy benefits"
-                // onChange={(e) => setBenefits(e.target.value)}
+                onChange={(e) => setBenefits(e.target.value)}
                 defaultValue={policy.policy_Benefits}
               />
               </li>

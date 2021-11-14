@@ -21,6 +21,22 @@ function ViewPolicies() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const history = useHistory();
 
+  function removePolicy(e){
+    var id = e
+    var onSuccess = () => {
+      alert("Policy has been deleted");
+      window.location.reload();
+      // history.push("viewAllPolicies");
+    };
+
+    API.APIGET(
+      "Policy/RemovePolicy/"+id,
+      onSuccess,
+      () => {},
+      () => {}
+    );
+  }
+
   //Get Policies Here
   useEffect(() => {
     var onSuccess = (e) => {
@@ -41,6 +57,7 @@ function ViewPolicies() {
 
     return () => {};
   }, [update]);
+
   return (
     <>
     <div className="gridViewPolicies">
@@ -58,7 +75,8 @@ function ViewPolicies() {
               <th>Policy Holder</th>
               <th>Policy Type</th>
               <th>Admission</th>
-              <th>Options</th>
+              <th></th>
+              <th></th>
             </tr>
             </tbody>
             <tbody>
@@ -78,6 +96,21 @@ function ViewPolicies() {
                         View Policy
                       </NavLink>
                     </NavItem>
+                  </td>
+                  <td>
+                    <button 
+                      onClick={() =>{
+                        const confirmBox = window.confirm(
+                          "Do you want to delete this policy"
+                        )
+                        if(confirmBox == true)
+                        {
+                          removePolicy(policy.policyId);
+                        }
+                      }}
+                    >
+                    Delete
+                    </button>
                   </td>
                 </tr>
               );

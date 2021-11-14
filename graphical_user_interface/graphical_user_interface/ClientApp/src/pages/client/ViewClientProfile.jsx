@@ -139,7 +139,6 @@ function ViewClientProfile() {
                 {
                   removeUser();
                 }
-                // history.push("/");
               }}
             >
               Delete Profile

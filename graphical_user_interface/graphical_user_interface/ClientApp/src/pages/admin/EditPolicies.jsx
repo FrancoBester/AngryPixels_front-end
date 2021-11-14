@@ -11,6 +11,24 @@ function ViewSinglePolicy() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [policyId, setPolicyId] = useState(0);
 
+  function updatePolicy(){
+    const policyObj = policy
+    var e = history.goBack;
+    const id = new URLSearchParams(search).get("id");
+    API.APIPOST(
+      "Policy/UpdatePolicyInformation/" + id,
+      policyObj,
+      () => {
+        alert("Changes have been ")
+        debugger;
+        e();
+        history.push("viewAllPolicies");
+      },
+      () => {},
+      () => {}
+    );
+  }
+
   useEffect(() => {
     const id = new URLSearchParams(search).get("id");
     debugger;
@@ -18,7 +36,6 @@ function ViewSinglePolicy() {
     var onSuccess = (e) => {
       debugger;
       setPolicy(e.data);
-
       setHasLoaded(true);
     };
 
@@ -34,22 +51,6 @@ function ViewSinglePolicy() {
     return () => {};
   }, []);
 
-  function RequestPolicy() {
-    var onSuccess = (e) => {
-      alert("Request Succesfull");
-      history.goBack();
-    };
-
-    API.APIPOST(
-      "SchemaRequests/RequestToJoinSchema/" + policyId,
-      {},
-      onSuccess,
-      () => {
-        alert("Error");
-      },
-      () => {}
-    );
-  }
 
   return (
     <>
@@ -65,39 +66,68 @@ function ViewSinglePolicy() {
             <ul>
               <li>
               <h5>Holder:</h5>
-              <h6>{policy.policy_Holder}</h6>
+              <input
+                type="text"
+                placeholder="Policy holder"
+                onChange={(e) => setHolder(e.target.value)}
+                defaultValue={policy.policy_Holder}
+              />
+              {/* <h6>{policy.policy_Holder}</h6> */}
               </li>
               <br />
               <li>
               <h5>Policy Type:</h5>
-              <h6>{policy.policy_Type}</h6>
+              <input
+                type="text"
+                placeholder="Policy type"
+                onChange={(e) => setType(e.target.value)}
+                defaultValue={policy.policy_Type}
+              />
               </li>
               <br />
               <li>
               <h5>Admision type:</h5>
-              <h6>{policy.adms_Type}</h6>
+              <input
+                type="text"
+                placeholder="Admision type"
+                onChange={(e) => setAdmision(e.target.value)}
+                defaultValue={policy.adms_Type}
+              />
               </li>
               <br />
               <li>
               <h5>Description:</h5>
-              <h6>{policy.policy_Des}</h6>
+              <input
+                type="text"
+                placeholder="Policy description"
+                onChange={(e) => setDesc(e.target.value)}
+                defaultValue={policy.policy_Des}
+              />
               </li>
               <br />
               <li>
               <h5>Benefits:</h5>
-              <h6>{policy.policy_Benefits}</h6>
+              <input
+                type="text"
+                placeholder="Policy benefits"
+                onChange={(e) => setBenefits(e.target.value)}
+                defaultValue={policy.policy_Benefits}
+              />
               </li>
 
           </ul>
           </main>
           
           <div className="buttonRequest">
-            <button className="btnRequestPolicy" >Delete Policy</button>
-            {/* <button className="btnRequestPolicy" onClick={RequestPolicy}>Request Policy</button> */}
+            <button className="btnRequestPolicy" onClick={() => {
+              updatePolicy();
+            }}>Save Changes</button>
+
+
             <button className="btnBackPolicies" 
-                    onClick={() => {
-                    history.goBack();
-                }}>Back</button>
+                  onClick={() => {
+                  history.push("/ViewAllPolicies");
+              }}>Back</button>
 
           </div>
           

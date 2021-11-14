@@ -10,7 +10,7 @@ function Email(){
     function SendMail(){
         alert("Sending email");
         const EmailDetails ={
-            ToEmail:"francobester17@gmail.com",
+            ToEmail:"meditrustcomplaints@outlook.com",
             Subject: Title,
             Body: Details,
         };

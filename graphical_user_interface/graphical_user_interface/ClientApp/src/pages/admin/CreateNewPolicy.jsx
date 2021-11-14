@@ -12,6 +12,9 @@ function CreateNewPolicy(){
     const [PolicyDescription, setPolicyDescription] = useState("");
     const [PolicyDate, setPolicyDate] = useState("");
     const [PolicyBenefits, setPolicyBenefits] = useState("");
+    const [AdmsDoctors, setAdmsDoctors] = useState("");
+    const [AdmsHospitals, setAdmsHospitals] = useState("");
+    const [AdmsType, setAdmsType] = useState("");
 
     function PostNewPolicy() {
         alert("Create Policy?");
@@ -21,10 +24,13 @@ function CreateNewPolicy(){
           Policy_Des: PolicyDescription,
           Policy_Date: PolicyDate,
           Policy_Benefits: PolicyBenefits,
+          Adms_Doctors: AdmsDoctors,
+          Adms_Hospitals: AdmsHospitals,
+          Adms_Type: AdmsType,
         };
     
         API.APIPOST(
-          "Queries/CreatePolicy",
+          "Queries/CreatePolicy/" + window.sessionStorage.getItem("id"),
           policyObj,
           () => {
             history.goBack();
@@ -113,7 +119,7 @@ function CreateNewPolicy(){
                             type="text"
                             placeholder="Admissions Doctor"
                             required
-                             />
+                            onChange={(e) => setAdmsDoctors(e.target.value)} />
                     </div>
                 </div>
                 <div className="rowPolicyDetails">
@@ -125,7 +131,7 @@ function CreateNewPolicy(){
                             type="text"
                             placeholder="Admissions Hospital"
                             required
-                             />
+                            onChange={(e) => setAdmsHospitals(e.target.value)} />
                     </div>
                 </div>
                 <div className="rowPolicyDetails">
@@ -137,7 +143,7 @@ function CreateNewPolicy(){
                             type="text"
                             placeholder="Admissions Type"
                             required
-                             />
+                            onChange={(e) => setAdmsType(e.target.value)} />
                     </div>
                 </div>
             </main>

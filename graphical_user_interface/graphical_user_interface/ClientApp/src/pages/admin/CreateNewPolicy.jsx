@@ -18,7 +18,7 @@ function CreateNewPolicy(){
         const policyObj = {
           Policy_Holder: PolicyHolder,
           Policy_Type: PolicyType,
-          Policy_Description: PolicyDescription,
+          Policy_Des: PolicyDescription,
           Policy_Date: PolicyDate,
           Policy_Benefits: PolicyBenefits,
         };

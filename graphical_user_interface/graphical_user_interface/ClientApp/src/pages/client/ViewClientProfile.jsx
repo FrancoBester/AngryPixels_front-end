@@ -104,17 +104,17 @@ function ViewClientProfile() {
 
             <div>
               <h5>City:</h5>
-              <h6>Johannesburg</h6>
+              <h6>{profile.user.city}</h6>
             </div>
 
             <div>
               <h5>Street Name:</h5>
-              <h6>Hazel Road</h6>
+              <h6>{profile.user.street}</h6>
             </div>
 
             <div>
               <h5>Postal Code:</h5>
-              <h6>2059</h6>
+              <h6>{profile.user.postal_Code}</h6>
             </div>
 
             <button

@@ -17,6 +17,17 @@ input[type=text], select, textarea{
     border-radius: 4px;
     box-sizing: border-box;
     resize: vertical;
+    margin-bottom: 25px;
+  }
+
+  input[type=date], select, textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+    margin-bottom: 25px;
   }
 
   .rowPolicyDetails label{

@@ -21,6 +21,8 @@ function Admin() {
   const [search_value, setSearch] = useState("");
   const [loaded, setLoaded] = useState(false);
 
+  const [Assign, setAssign] = useState("");
+
   function HandleTableInfo(e) {
     setTableInfo(e);
     setLoaded(true);
@@ -59,6 +61,26 @@ function Admin() {
     API.APIGET(
       "Users/GetAdminLoadPageData",
       onSuccess,
+      () => {},
+      () => {}
+    );
+  }
+
+  //LET EMPLOYEE ASSIGN THEMSELVES TO A QUERY
+
+ {/*NEED HELP HERE CAREL*/}
+  function assignEmployee(){
+    alert("Assign self to query?");
+    const assignObj = {
+      Assistant_Id: Assign,
+    };
+
+    API.APIPOST(
+      "Queries/AssignEmployeeToQuery/",
+      assignObj,
+      () => {
+        history.goBack();
+      },
       () => {},
       () => {}
     );
@@ -186,7 +208,7 @@ function Admin() {
                           </NavLink>
                         </NavItem>
                       </td>{" "}
-                      {/*NEED TO ADD URL HERE STILL*/}
+                      {/*NEED HELP HERE CAREL*/}
                       <td>
                         <NavItem>
                           <NavLink

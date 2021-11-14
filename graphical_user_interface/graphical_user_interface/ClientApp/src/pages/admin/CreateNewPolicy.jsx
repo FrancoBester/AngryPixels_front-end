@@ -39,7 +39,7 @@ function CreateNewPolicy(){
         <div className="createNewPolicyGrid">
             <header className="newPolicyHeader">Create New Policy</header>
 
-            <main className="">
+            <main className="mainCreatePolicy">
                 <div className="rowPolicyDetails">
                     <div className="policyLabel">
                         <label>Policy Holder:</label>
@@ -101,6 +101,43 @@ function CreateNewPolicy(){
                             placeholder="Policy Benefits"
                             required
                             onChange={(e) => setPolicyBenefits(e.target.value)} />
+                    </div>
+                </div>
+                <h3>Admissions Information</h3>
+                <div className="rowPolicyDetails">
+                    <div className="policyLabel">
+                        <label>Admissions Doctor:</label>
+                    </div>
+                    <div className="policyInput">
+                        <input 
+                            type="text"
+                            placeholder="Admissions Doctor"
+                            required
+                             />
+                    </div>
+                </div>
+                <div className="rowPolicyDetails">
+                    <div className="policyLabel">
+                        <label>Admissions Hospital:</label>
+                    </div>
+                    <div className="policyInput">
+                        <input 
+                            type="text"
+                            placeholder="Admissions Hospital"
+                            required
+                             />
+                    </div>
+                </div>
+                <div className="rowPolicyDetails">
+                    <div className="policyLabel">
+                        <label>Admissions Type:</label>
+                    </div>
+                    <div className="policyInput">
+                        <input 
+                            type="text"
+                            placeholder="Admissions Type"
+                            required
+                             />
                     </div>
                 </div>
             </main>

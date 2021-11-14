@@ -12,9 +12,9 @@ function CreateNewPolicy(){
     const [PolicyDescription, setPolicyDescription] = useState("");
     const [PolicyDate, setPolicyDate] = useState("");
     const [PolicyBenefits, setPolicyBenefits] = useState("");
-    const [AdmsDoctors, setAdmsDoctors] = useState("");
-    const [AdmsHospitals, setAdmsHospitals] = useState("");
-    const [AdmsType, setAdmsType] = useState("");
+    const [Adms_Doctors, setAdmsDoctors] = useState("");
+    const [Adms_Hospitals, setAdmsHospitals] = useState("");
+    const [Adms_Type, setAdmsType] = useState("");
 
     function PostNewPolicy() {
         alert("Create Policy?");
@@ -24,9 +24,12 @@ function CreateNewPolicy(){
           Policy_Des: PolicyDescription,
           Policy_Date: PolicyDate,
           Policy_Benefits: PolicyBenefits,
-          Adms_Doctors: AdmsDoctors,
-          Adms_Hospitals: AdmsHospitals,
-          Adms_Type: AdmsType,
+          Admissions:{
+            Adms_Doctors,
+            Adms_Hospitals,
+            Adms_Type,
+          }
+          
         };
     
         API.APIPOST(

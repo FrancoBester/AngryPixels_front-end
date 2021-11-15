@@ -15,7 +15,6 @@ function Admin() {
     "Medical Aid Name",
     "Client Details",
     "Policy Details",
-    "Assign Self",
   ];
   const [TableInfo, setTableInfo] = useState({});
   const [search_value, setSearch] = useState("");
@@ -207,14 +206,6 @@ function Admin() {
                             to={`/ViewPolicyDetails?id=${policy.policyId}`}
                           >
                             View
-                          </NavLink>
-                        </NavItem>
-                      </td>{" "}
-                      {/*NEED HELP HERE CAREL*/}
-                      <td>
-                        <NavItem>
-                          <NavLink tag={Link} className="text-dark" to={``}>
-                            Assign
                           </NavLink>
                         </NavItem>
                       </td>

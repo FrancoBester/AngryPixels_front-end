@@ -12,7 +12,7 @@ function Admin() {
   const tableHeadings = [
     "Client Name",
     "Role",
-    "Policy Type",
+    "Medical Aid Name",
     "Client Details",
     "Policy Details",
     "Assign Self",
@@ -68,8 +68,10 @@ function Admin() {
 
   //LET EMPLOYEE ASSIGN THEMSELVES TO A QUERY
 
- {/*NEED HELP HERE CAREL*/}
-  function assignEmployee(){
+  {
+    /*NEED HELP HERE CAREL*/
+  }
+  function assignEmployee() {
     alert("Assign self to query?");
     const assignObj = {
       Assistant_Id: Assign,
@@ -211,11 +213,7 @@ function Admin() {
                       {/*NEED HELP HERE CAREL*/}
                       <td>
                         <NavItem>
-                          <NavLink
-                            tag={Link}
-                            className="text-dark"
-                            to={``}
-                          >
+                          <NavLink tag={Link} className="text-dark" to={``}>
                             Assign
                           </NavLink>
                         </NavItem>

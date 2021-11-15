@@ -69,7 +69,7 @@ function ProfilePage() {
       //formData.append("UserId", localStorage.getItem("id"));
       formData.append("UserId", window.sessionStorage.getItem("id"));
       formData.append("DocumentType", type);
-      API.APIPostAnon(
+      API.APIPOST(
         "Document/UploadDocForUser",
         formData,
         () => {

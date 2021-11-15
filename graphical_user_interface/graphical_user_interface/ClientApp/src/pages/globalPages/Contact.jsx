@@ -51,10 +51,10 @@ function Contact() {
             <i className="fab fa-twitter-square" id="twitterIcon"></i>
             <label for="twitterIcon"><a href="https://twitter.com/meditrust_biz?lang=en">Twitter</a></label>
           </li>          
-          {/* <li>
-            <i className="fab fa-instagram-square" id="instaIcon"></i>
+           <li>
+            <i className="fab fa-instagram" id="instaIcon"></i>
             <label for="instaIcon"><a href="https://www.instagram.com/">Instagram</a></label>
-          </li> */}
+          </li>
         </ul>
       </aside>
       

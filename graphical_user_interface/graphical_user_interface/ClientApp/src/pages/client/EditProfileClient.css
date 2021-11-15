@@ -13,6 +13,7 @@ input[type=text], select, textarea{
     border-radius: 4px;
     box-sizing: border-box;
     resize: vertical;
+    margin-bottom: 20px;
   }
 
   input[type=email], select, textarea{
@@ -22,6 +23,7 @@ input[type=text], select, textarea{
     border-radius: 4px;
     box-sizing: border-box;
     resize: vertical;
+    margin-bottom: 20px;
   }
 
   input[type=tel], select, textarea{
@@ -31,6 +33,7 @@ input[type=text], select, textarea{
     border-radius: 4px;
     box-sizing: border-box;
     resize: vertical;
+    margin-bottom: 20px;
   }
 
   input[type=radio], select, textarea{
@@ -40,6 +43,7 @@ input[type=text], select, textarea{
     border-radius: 4px;
     box-sizing: border-box;
     resize: vertical;
+    margin-bottom: 20px;
   }
 
   input[type=date], select, textarea{
@@ -49,6 +53,12 @@ input[type=text], select, textarea{
     border-radius: 4px;
     box-sizing: border-box;
     resize: vertical;
+    margin-bottom: 20px;
+  }
+
+  .editProfileColRight select{
+    color: #1D1D1D;
+    margin-bottom: 20px;
   }
 
   .editProfRow label{

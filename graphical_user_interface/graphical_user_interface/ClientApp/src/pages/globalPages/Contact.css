@@ -63,13 +63,13 @@ grid-column-end: 3;
       font-size: 18px;
     }
 
-    .fa-facebook-square, .fa-linkedin, .fa-twitter-square, .fa-instagram-square{
+    .fa-facebook-square, .fa-linkedin, .fa-twitter-square, .fa-instagram{
       padding: 20px;
       size: 1em;
       font-size: 25px;
     }
 
-    .fa-facebook-square, .fa-linkedin, .fa-twitter-square, .fa-instagram-square{
+    .fa-facebook-square, .fa-linkedin, .fa-twitter-square, .fa-instagram{
       padding: 10px;
       font-size: 25px;
     }

@@ -3,6 +3,7 @@ import "./CreateNewQuery.css";
 import { useHistory } from "react-router";
 import { useState } from "react";
 import API from "../../API";
+import Footer from "../../components/Footer";
 
 function CreateNewQuery() {
   const history = useHistory();
@@ -118,6 +119,7 @@ function CreateNewQuery() {
           </button>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

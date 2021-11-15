@@ -20,8 +20,15 @@ function Client() {
   const tableHeadings = ["Title", "Status", "Assistant Name", "Query Details"];
   const [TableInfo, setTableInfo] = useState({});
 
+  const policyTableHeadings = ["Policy Holder", "Policy Type", "Request Status", "Policy Details" ];
+  const [TablePolicyInfo, setTablePolicyInfo] = useState({});
+
   function HandleTableInfo(e) {
     setTableInfo(e);
+  }
+
+  function HandleTablePolicyInfo(e){
+    setTablePolicyInfo(e);
   }
 
   useEffect(() => {
@@ -41,6 +48,25 @@ function Client() {
     );
     return () => {};
   }, [updated]);
+
+useEffect(() => {
+
+  var id = parseInt(window.sessionStorage.getItem("id"));
+  var onSuccess = (e) => {
+    debugger;
+    HandleTablePolicyInfo(e.data);
+  };  
+
+  API.APIGET(
+    "Policy/GetSpecificUserSchemaRequests/" + id,
+    onSuccess,
+    () => {
+      alert("Error");
+    },
+    () => {}
+  );
+  return () => {};
+}, [updated]);
 
   //console.log(localStorage.getItem("id"))
   return (
@@ -126,6 +152,45 @@ function Client() {
             </tbody>
           </table>
         </div>
+
+        <div className="tablePoliciesHeading">
+          <h2>My Current Policy Requests:</h2>
+        </div>
+
+        <div className="userPolicies">
+          <table>
+            <tbody>
+              <tr className="tblUserPolicyHeadings">
+                {policyTableHeadings.map((t) => {
+                  return <td key={t}>{t}</td>;
+                })}
+              </tr>
+            </tbody>
+            <tbody>
+              {Object.keys(TablePolicyInfo).map((i) => {
+                return (
+                  <tr>
+                    <td>{TablePolicyInfo[i].policy_Holder}</td>
+                    <td>{TablePolicyInfo[i].policy_Type}</td>
+                    <td>{TablePolicyInfo[i].requestStatus}</td>
+                    <td>
+                      <NavItem>
+                        <NavLink
+                          tag={Link}
+                          className="text-dark"
+                          to={`/ViewSinglePolicy?id=${TablePolicyInfo[i].policy_Id}`}
+                        >
+                          View
+                        </NavLink>
+                      </NavItem>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+
       </div>
       <Footer />
     </>

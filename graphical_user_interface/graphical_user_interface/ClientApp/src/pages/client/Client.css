@@ -1,7 +1,7 @@
 .grid-container-client-dashboard{
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 150px 70px 120px 80px auto;
+  grid-template-rows: 150px 70px 120px 80px auto 80px auto;
   grid-gap: 0em;
 }
 
@@ -11,7 +11,7 @@
   font-family: 'Noto Sans Display', sans-serif;
 }
 
-.clientDashHeader, .secondHeader, .userQueries, .tableHeading, .topGrid{
+.clientDashHeader, .secondHeader, .userQueries, .tableHeading, .topGrid, .userPolicies, .tablePoliciesHeading{
   grid-column-start: 1;
   grid-column-end: 3;
 }
@@ -27,8 +27,14 @@
   color: #DDDDDD;
   font-size: 25px;
   font-family: 'Noto Sans Display', sans-serif;
-
 }
+
+.tablePoliciesHeading h2{
+  color: #DDDDDD;
+  font-size: 25px;
+  font-family: 'Noto Sans Display', sans-serif;
+}
+
 .topGrid{
   text-align: right;
   color: #EEEEEE;
@@ -131,6 +137,56 @@
   color: #DDDDDD;
   font-size: 25px;
   font-family: 'Noto Sans Display', sans-serif;
+}
+
+.viewQueryBtnClick:hover{
+  cursor: pointer;
+}
+
+/*POLICY TABLE*/
+
+/*table*/
+
+.userPolicies table tr td{
+  font-size: 18px;
+    font-family: 'Roboto Mono', monospace;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 2px  rgba(0,0,0,.1);
+    width: 90%;
+    list-style: none;
+}
+
+.userPolicies{
+  text-align: right;
+    color: #EEEEEE;
+    padding-right: 20px;
+}
+
+.userPolicies th, td{
+  padding: 13px;
+	background-color: rgba(255,255,255,0.1);
+}
+
+.userPolicies tbody{
+  text-align: left;
+  background-color: #EEEEEE;
+  color: #1D1D1D;
+}
+
+.userPolicies table{
+  margin-bottom: 60px;
+  margin-left: 20px;
+  border-collapse:collapse;
+  border-spacing:0;
+  width:100%;
+  white-space: nowrap;
+}
+
+.tblUserPolicyHeadings{
+  background-color: #548CA8;
+  color: #fff;
+  font-weight: bold;
 }
 
 .viewQueryBtnClick:hover{

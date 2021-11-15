@@ -42,6 +42,7 @@ function EditProfileClient() {
       "Users/UpdateUserInformation/" + window.sessionStorage.getItem("id"),
       userObj,
       () => {
+        alert("Profile Successfully Updated")
         debugger;
         e();
         history.goBack();

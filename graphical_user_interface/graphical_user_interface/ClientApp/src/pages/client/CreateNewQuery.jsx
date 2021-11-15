@@ -24,6 +24,7 @@ function CreateNewQuery() {
       "Queries/CreateQuery/" + window.sessionStorage.getItem("id"),
       queryObj,
       () => {
+        alert("Query Successfully Created")
         history.goBack();
       },
       () => {},

@@ -161,6 +161,7 @@ function ViewQueries() {
                     </td>
                     <td>
                       <button
+                      className="assignBtn"
                         onClick={() => {
                           AssignSelfToQuery(TableInfo[i].query_Id);
                         }}

@@ -37,6 +37,7 @@ function CreateNewPolicy(){
           "Queries/CreatePolicy",
           policyObj,
           () => {
+            alert("Policy Successfully Created")
             history.goBack();
           },
           () => {},

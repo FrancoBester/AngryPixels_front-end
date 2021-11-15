@@ -38,7 +38,7 @@ function NavMenu(props) {
 
   return (
     <>
-      <header className="whole-navbar">
+      <header>
         <Navbar
           className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3"
           dark

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation, Link, useHistory } from "react-router-dom";
 import API from "../../API";
 import './EditPolicies.css';
+import Footer from "../../components/Footer";
 
 function ViewSinglePolicy() {
   const history = useHistory();
@@ -90,7 +91,7 @@ function ViewSinglePolicy() {
 
   return (
     <>
-    <div className="gridSinglePolicy">
+    <div className="formSinglePolicy">
 
       <div className="singlePolicyHeader">
         <header>Policy Information</header>
@@ -99,83 +100,112 @@ function ViewSinglePolicy() {
       {hasLoaded ? (
         <>
           <main className="viewSinglePolicy">
-            <ul>
-              <li>
-              <h5>Holder:</h5>
-              <input
-                type="text"
-                placeholder="Policy holder"
-                onChange={(e) => setHolder(e.target.value)}
-                defaultValue={policy.policy_Holder}
-              />
-              {/* <h6>{policy.policy_Holder}</h6> */}
-              </li>
-              <br />
-              <li>
-              <h5>Policy Type:</h5>
-              <input
-                type="text"
-                placeholder="Policy type"
-                onChange={(e) => setType(e.target.value)}
-                defaultValue={policy.policy_Type}
-              />
-              </li>
-              <br />
-              <li>
-              <h5>Description:</h5>
-              <input
-                type="text"
-                placeholder="Policy description"
-                onChange={(e) => setDesc(e.target.value)}
-                defaultValue={policy.policy_Des}
-              />
-              </li>
-              <br />
-              <li>
-              <h5>Benefits:</h5>
-              <input
-                type="text"
-                placeholder="Policy benefits"
-                onChange={(e) => setBenefits(e.target.value)}
-                defaultValue={policy.policy_Benefits}
-              />
-              </li>
-
-              <li>
-              <h5>Admission Doctor:</h5>
-              <input
-                type="text"
-                placeholder="Admission Doctor"
-                onChange={(e) => setAdmsDoctors(e.target.value)}
-                defaultValue={policy.adms_Doctors}
-              />
-              </li>
-
-              <li>
-              <h5>Admission Hospital:</h5>
-              <input
-                type="text"
-                placeholder="Afmission Hospital"
-                onChange={(e) => setAdmsHospitals(e.target.value)}
-                defaultValue={policy.adms_Hospitals}
-              />
-              </li>
-
-              <li>
-              <h5>Admission Type:</h5>
-              <input
-                type="text"
-                placeholder="Admission Type"
-                onChange={(e) => setAdmsType(e.target.value)}
-                defaultValue={policy.adms_Type}
-              />
-              </li>
             
-          </ul>
+              <div className="rowEditPolicy">
+                <div className="leftPolicy">
+                  <h5>Holder:</h5>
+                </div>
+                <div className="rightPolicy">
+                  <input
+                    type="text"
+                    placeholder="Policy holder"
+                    onChange={(e) => setHolder(e.target.value)}
+                    defaultValue={policy.policy_Holder}
+                  />
+                </div>
+                {/* <h6>{policy.policy_Holder}</h6> */}
+              </div>
+              
+              <div className="rowEditPolicy">
+                <div className="leftPolicy">
+                  <h5>Policy Type:</h5>
+                </div>
+                <div className="rightPolicy">
+                  <input
+                    type="text"
+                    placeholder="Policy type"
+                    onChange={(e) => setType(e.target.value)}
+                    defaultValue={policy.policy_Type}
+                  />
+                </div>
+              </div>
+
+              
+              <div className="rowEditPolicy">
+                  <div className="leftPolicy">
+                    <h5>Description:</h5>
+                  </div>
+                  <div className="rightPolicy">
+                    <input
+                      type="text"
+                      placeholder="Policy description"
+                      onChange={(e) => setDesc(e.target.value)}
+                      defaultValue={policy.policy_Des}
+                    />
+                  </div>
+              </div>
+              
+
+              <div className="rowEditPolicy">
+                <div className="leftPolicy">
+                  <h5>Benefits:</h5>
+                </div>
+                <div className="rightPolicy">
+                  <input
+                    type="text"
+                    placeholder="Policy benefits"
+                    onChange={(e) => setBenefits(e.target.value)}
+                    defaultValue={policy.policy_Benefits}
+                  />
+                </div>
+              </div>
+
+              <div className="rowEditPolicy">
+                <div className="leftPolicy">
+                  <h5>Admission Doctor:</h5>
+                </div>
+                <div className="rightPolicy">
+                  <input
+                    type="text"
+                    placeholder="Admission Doctor"
+                    onChange={(e) => setAdmsDoctors(e.target.value)}
+                    defaultValue={policy.adms_Doctors}
+                  />
+                </div>
+              </div>
+             
+              <div className="rowEditPolicy">
+                <div className="leftPolicy">
+                  <h5>Admission Hospital:</h5>
+                </div>
+                <div className="rightPolicy">
+                  <input
+                    type="text"
+                    placeholder="Afmission Hospital"
+                    onChange={(e) => setAdmsHospitals(e.target.value)}
+                    defaultValue={policy.adms_Hospitals}
+                  />
+                </div>
+              </div>
+
+              <div className="rowEditPolicy">
+                <div className="leftPolicy">
+                  <h5>Admission Type:</h5>
+                </div>
+                <div className="rightPolicy">
+                  <input
+                    type="text"
+                    placeholder="Admission Type"
+                    onChange={(e) => setAdmsType(e.target.value)}
+                    defaultValue={policy.adms_Type}
+                  />
+                </div>
+              </div>
+              
           </main>
           
-          <div className="buttonRequest">
-            <button className="btnRequestPolicy" onClick={() => {
+          <div className="buttonsEditPolicy">
+            <button className="btnSavePolicy" onClick={() => {
               updatePolicy();
             }}>Save Changes</button>
 
@@ -193,6 +223,7 @@ function ViewSinglePolicy() {
         <h3>Loading...</h3>
       )}
       </div>
+      <Footer/>
     </>
   );
 }

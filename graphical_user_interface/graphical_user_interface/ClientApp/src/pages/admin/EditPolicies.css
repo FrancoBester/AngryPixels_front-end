@@ -1,46 +1,71 @@
-.gridSinglePolicy{
+/*.gridSinglePolicy{
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 150px auto auto;
     grid-gap: 0em;
+}*/
+
+.formSinglePolicy{
+    border-radius: 5px;
+    background-color: #1D1D1D;
+    padding: 100px;
+    border-top: 10px solid #548CA8;
+    border-right: 5px solid #548CA8;
 }
 
 .singlePolicyHeader{
-    color: #548CA8;
-    font-size: 80px;
-    font-family: 'Noto Sans Display', sans-serif;
     text-align: center;
-}
-
-.singlePolicyHeader, .viewSinglePolicy, .buttonRequest{
-    grid-column-start: 1;
-    grid-column-end: 3;
-}
-
-.gridSinglePolicy > *{
-    background: #1D1D1D;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.viewSinglePolicy h5{
+    font-size: 80px;
+    padding-bottom: 15px;
     color: #548CA8;
-    font-weight: bold;
-    font-size: 25px;
-    margin-left: 50px;
     font-family: 'Noto Sans Display', sans-serif;
 }
 
-.viewSinglePolicy h6{
+input[type=text], select, textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+  }
+
+.rowEditPolicy h5{
+    padding: 12px 12px 12px 0;
+    display: inline-block;
     color: #fff;
-    font-size: 20px;
-    margin-left: 50px;
-    margin-right: 50px;
     font-family: 'Noto Sans Display', sans-serif;
+    font-size: 20px;}
+
+
+
+.leftPolicy{
+    float: left;
+    width: 25%;
+    margin-top: 6px;
 }
 
-.btnRequestPolicy, .btnBackPolicies{
+.rightPolicy{
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+.rowEditPolicy:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 600px) {
+    .leftPolicy, .rightPolicy, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+
+.btnSavePolicy, .btnBackPolicies{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background: #EEEEEE;
     height: 75px;
@@ -62,18 +87,15 @@
     margin-left: 10px;
 }
 
-.btnRequestPolicy:hover, .btnBackPolicies:hover{
+.btnSavePolicy:hover, .btnBackPolicies:hover{
     background: #548CA8;
     color: #fff;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
-.viewSinglePolicy ul{
-    text-align: left;
-    margin: 20px;
-    font-family: 'Noto Sans Display', sans-serif;
-}
 
-.buttonRequest button{
+.buttonsEditPolicy{
     margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
 }

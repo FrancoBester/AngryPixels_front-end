@@ -13,6 +13,8 @@ import {
   NavLink,
 } from "reactstrap";
 
+import POPUP from "../../components/popUp.js";
+
 function ViewQueries() {
   const history = useHistory();
   const [updated, setUpdated] = useState(1);
@@ -33,7 +35,6 @@ function ViewQueries() {
 
   useEffect(() => {
     var onSuccess = (e) => {
-      debugger;
       HandleTableInfo(e.data);
     };
     API.APIGET(
@@ -64,6 +65,20 @@ function ViewQueries() {
     };
     API.APIGET(
       "Queries/GetAllQueries?search",
+      onSuccess,
+      () => {},
+      () => {}
+    );
+  }
+
+  function AssignSelfToQuery(id) {
+    var onSuccess = (e) => {
+      debugger;
+      POPUP.ShowPopUp("Sucsessfully assigned self to query.");
+    };
+    API.APIPostAnon(
+      `Queries/AssignEmployeeToQuery/${sessionStorage.getItem("id")}/${id}`,
+      {},
       onSuccess,
       () => {},
       () => {}
@@ -145,15 +160,13 @@ function ViewQueries() {
                       </NavItem>
                     </td>
                     <td>
-                      <NavItem>
-                        <NavLink
-                          tag={Link}
-                          className="text-dark"
-                          to={``}
-                        >
-                          Assign
-                        </NavLink>
-                      </NavItem>
+                      <button
+                        onClick={() => {
+                          AssignSelfToQuery(TableInfo[i].query_Id);
+                        }}
+                      >
+                        Assign
+                      </button>
                     </td>
                   </tr>
                 );

@@ -65,28 +65,6 @@ function Admin() {
     );
   }
 
-  //LET EMPLOYEE ASSIGN THEMSELVES TO A QUERY
-
-  {
-    /*NEED HELP HERE CAREL*/
-  }
-  function assignEmployee() {
-    alert("Assign self to query?");
-    const assignObj = {
-      Assistant_Id: Assign,
-    };
-
-    API.APIPOST(
-      "Queries/AssignEmployeeToQuery/",
-      assignObj,
-      () => {
-        history.goBack();
-      },
-      () => {},
-      () => {}
-    );
-  }
-
   return (
     <>
       <div className="grid-container-admin-dashboard">

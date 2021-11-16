@@ -53,7 +53,7 @@ function Signup() {
   }
   return (
     <div>
-      <form>
+      
       <div className="form-container-signup">
         <div className="title_container">
           <h1>Register</h1>
@@ -258,7 +258,7 @@ function Signup() {
           </button>
         </div>
       </div>
-      </form>
+      
       <Footer />
     </div>
   );

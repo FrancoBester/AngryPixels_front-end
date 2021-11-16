@@ -21,7 +21,7 @@ function LoginPage() {
         <div className="loginHeader">
           <h1>Login</h1>
         
-        <form>
+        
           <div className="loginRow">
             <div className="colLeft">
               <label>Username:</label>
@@ -50,7 +50,7 @@ function LoginPage() {
           </div> 
           
           <button className="btnLogin" onClick={() => Login()}>Login</button>
-        </form>
+        
         </div>
       </div>
       <Footer/>

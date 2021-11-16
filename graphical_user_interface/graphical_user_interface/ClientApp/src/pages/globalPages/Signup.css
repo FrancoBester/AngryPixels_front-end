@@ -143,7 +143,7 @@ display: block;
   -ms-transition: all 0.30s ease-in-out;
   transition: all 0.30s ease-in-out;
 }
- /*NEED TO CHECK WHY STYLING NOT APPLYING TO THIS BUTTON*/
+ 
 .btnCancel:hover{
   background: #548CA8;
   color: #fff;

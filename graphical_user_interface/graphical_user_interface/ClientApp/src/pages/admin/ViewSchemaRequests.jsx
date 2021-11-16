@@ -3,6 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import API from "../../API";
 import "./ViewSchemaRequests.css";
 import Footer from "../../components/Footer";
+import {Pagination, PaginationItem, PaginationLink} from "reactstrap"
 
 import {
   Collapse,
@@ -104,6 +105,25 @@ function ViewSchemaRequests() {
                 </tbody>
               </table>
             </main>
+            
+            <div className="viewSchemasTable">
+              <Pagination>
+                <PaginationItem onClick={console.log}>
+                    <PaginationLink previous href="#" />
+                </PaginationItem>
+
+                <PaginationItem value = {1}>
+                  <PaginationLink href="#">1</PaginationLink>
+                </PaginationItem>
+                <PaginationItem>
+                  <PaginationLink href="#">...</PaginationLink>
+                </PaginationItem>
+
+                <PaginationItem>
+                    <PaginationLink next href="#" />
+                </PaginationItem>
+              </Pagination> 
+            </div>
 
             <div className="backSchema">
               <button

@@ -4,6 +4,7 @@ import Footer from "../../components/Footer";
 import { useLocation, Link, useHistory } from "react-router-dom";
 import API from "../../API";
 
+
 function ViewPolicyDetails() {
   const history = useHistory();
   const search = useLocation().search;
@@ -72,6 +73,8 @@ function ViewPolicyDetails() {
                 </li>
               </ul>
             </main>
+
+            
 
             <div className="buttonsViewPol">
               <button

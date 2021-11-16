@@ -13,6 +13,7 @@ import {
   NavItem,
   NavLink,
 } from "reactstrap";
+import {Pagination, PaginationItem, PaginationLink} from "reactstrap"
 
 function ViewPolicies() {
 
@@ -119,6 +120,24 @@ function ViewPolicies() {
             </tbody>
           </table>
           </main>
+          <div className="viewPolicies">
+            <Pagination>
+              <PaginationItem onClick={console.log}>
+                  <PaginationLink previous href="#" />
+              </PaginationItem>
+
+              <PaginationItem value = {1}>
+                <PaginationLink href="#">1</PaginationLink>
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationLink href="#">...</PaginationLink>
+              </PaginationItem>
+
+              <PaginationItem>
+                  <PaginationLink next href="#" />
+              </PaginationItem>
+            </Pagination> 
+          </div>
           <div className="btnPoliciesBack">
           <button 
               className="btnBackClient"

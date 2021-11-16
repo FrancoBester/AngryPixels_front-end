@@ -97,7 +97,7 @@ useEffect(() => {
           <button
             className="btnViewPoliciesClient"
             onClick={() => {
-              history.push("/ViewPolicies");
+              history.push("/ViewPolicies?pageNumber=1");
             }}
           >
             View Policies
@@ -159,26 +159,6 @@ useEffect(() => {
           </table> 
         </div>
 
-        <div className="tableHeadingPgnt">
-          <Pagination>
-            <PaginationItem onClick={console.log}>
-                <PaginationLink previous href="" />
-            </PaginationItem>
-
-            <PaginationItem>
-              <PaginationLink href="">1</PaginationLink>
-            </PaginationItem>
-
-            <PaginationItem>
-              <PaginationLink href="">...</PaginationLink>
-            </PaginationItem>
-
-            <PaginationItem>
-                <PaginationLink next href=""/>
-            </PaginationItem>
-          </Pagination> 
-        </div>
-
         <div className="tablePoliciesHeading">
           <h2>My Current Policy Requests:</h2>
         </div>
@@ -217,24 +197,6 @@ useEffect(() => {
           </table>
         </div>
         
-        <div className="tableHeadingPgnt2">
-          <Pagination>
-            <PaginationItem onClick={console.log}>
-                <PaginationLink previous href="#" />
-            </PaginationItem>
-
-            <PaginationItem value = {1}>
-              <PaginationLink href="#">1</PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#">...</PaginationLink>
-            </PaginationItem>
-
-            <PaginationItem>
-                <PaginationLink next href="#" />
-            </PaginationItem>
-          </Pagination> 
-        </div>
       </div>
       <Footer />
     </>

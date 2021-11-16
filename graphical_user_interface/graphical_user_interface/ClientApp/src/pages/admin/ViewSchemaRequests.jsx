@@ -24,7 +24,7 @@ function ViewSchemaRequests() {
   const [number, setNumber] = useState("")
 
   useEffect(() => {
-    const id = new URLSearchParams(page_number).get("pagenumber");
+    const id = new URLSearchParams(page_number).get("pageNumber");
     setNumber(id)
 
     var onSuccess = (e) => {
@@ -51,42 +51,7 @@ function ViewSchemaRequests() {
           <div>
             <header>Schema Requests</header>
           </div>
-          <div className="viewSchemasTable">
-              <Pagination>
-                <PaginationItem>
-                  <PaginationLink previous href="" onClick={
-                    () => {
-                      var new_page = parseInt(number,10) - 1
-                      if(new_page < 1){
-                        new_page = 1
-                      }
-                      setNumber(new_page)
-                      history.push("/Admin?pagenumber="+new_page+"")
-                      window.location.reload()}
-                    }>
-                  </PaginationLink>
-                </PaginationItem>
-
-                <PaginationItem >
-                  <PaginationLink href="">{number}</PaginationLink>
-                </PaginationItem>
-
-                <PaginationItem>
-                  <PaginationLink href="">...</PaginationLink>
-                </PaginationItem>
-
-                <PaginationItem>
-                  <PaginationLink next href=""onClick={
-                    () => {
-                      var new_page = parseInt(number,10) + 1
-                      setNumber(new_page)
-                      history.push("/Admin?pagenumber="+new_page+"")
-                      window.location.reload()}
-                    }>
-                  </PaginationLink>
-                </PaginationItem>
-              </Pagination> 
-            </div>
+          
         </div>
 
         {hasLoaded ? (
@@ -150,11 +115,48 @@ function ViewSchemaRequests() {
               </table>
             </main>
 
+            <div className="viewSchemasTable">
+              <Pagination>
+                <PaginationItem>
+                  <PaginationLink previous href="" onClick={
+                    () => {
+                      var new_page = parseInt(number,10) - 1
+                      if(new_page < 1){
+                        new_page = 1
+                      }
+                      setNumber(new_page)
+                      history.push("/admin/viewSchemaRequests?pageNumber="+new_page+"")
+                      window.location.reload()}
+                    }>
+                  </PaginationLink>
+                </PaginationItem>
+
+                <PaginationItem >
+                  <PaginationLink href="">{number}</PaginationLink>
+                </PaginationItem>
+
+                <PaginationItem>
+                  <PaginationLink href="">...</PaginationLink>
+                </PaginationItem>
+
+                <PaginationItem>
+                  <PaginationLink next href=""onClick={
+                    () => {
+                      var new_page = parseInt(number,10) + 1
+                      setNumber(new_page)
+                      history.push("/admin/viewSchemaRequests?pageNumber="+new_page+"")
+                      window.location.reload()}
+                    }>
+                  </PaginationLink>
+                </PaginationItem>
+              </Pagination> 
+            </div>
+
             <div className="backSchema">
               <button
                 className="btnBackSchema"
                 onClick={() => {
-                  history.goBack();
+                  history.push("/Admin?pagenumber=1");
                 }}
               >
                 Back

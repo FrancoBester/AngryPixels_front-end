@@ -3,7 +3,7 @@ import API from "../../API";
 import auth from "../../auth";
 import './ViewPolicies.css';
 import Footer from "../../components/Footer";
-import { Link, useHistory } from "react-router-dom";
+import { useLocation ,Link, useHistory } from "react-router-dom";
 import {
   Collapse,
   Container,
@@ -13,6 +13,7 @@ import {
   NavItem,
   NavLink,
 } from "reactstrap";
+import {Pagination, PaginationItem, PaginationLink} from "reactstrap"
 
 function ViewPolicies() {
   const [policies, setPolicies] = useState({});
@@ -20,8 +21,14 @@ function ViewPolicies() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const history = useHistory();
 
+  const page_number = useLocation().search;
+  const [number, setNumber] = useState("")
+
   //Get Policies Here
   useEffect(() => {
+    const id = new URLSearchParams(page_number).get("pageNumber");
+    setNumber(id)
+
     var onSuccess = (e) => {
       debugger;
       setPolicies(e.data);
@@ -30,7 +37,7 @@ function ViewPolicies() {
     };
 
     API.APIGET(
-      "SchemaRequests/GetAllPolicies",
+      "SchemaRequests/GetAllPoliciesPaginate?pageNumber="+id+"",
       onSuccess,
       () => {
         alert("Error");
@@ -84,11 +91,51 @@ function ViewPolicies() {
             </tbody>
           </table>
           </main>
+
+          <div className="viewPolicies">
+            <Pagination>
+              <PaginationItem >
+              <PaginationLink previous href="" onClick={
+                  () => {
+                    var new_page = parseInt(number,10) - 1
+                    if(new_page < 1){
+                      new_page = 1
+                    }
+                    setNumber(new_page)
+                    history.push("/ViewAPolicies?pageNumber="+new_page+"")
+                    window.location.reload()}
+                  }>
+                </PaginationLink>
+              </PaginationItem>
+
+              <PaginationItem>
+                <PaginationLink href="">{number}</PaginationLink>
+              </PaginationItem>
+
+              <PaginationItem>
+                <PaginationLink href="">...</PaginationLink>
+              </PaginationItem>
+
+              <PaginationItem>
+              <PaginationLink next href=""onClick={
+                  () => {
+                    // alert("test")
+                    var new_page = parseInt(number,10) + 1
+                    // alert(new_page)
+                    setNumber(new_page)
+                    history.push("/ViewPolicies?pageNumber="+new_page+"")
+                    window.location.reload()}
+                  }>
+                </PaginationLink>
+              </PaginationItem>
+            </Pagination> 
+          </div>
+
           <div className="btnPoliciesBack">
           <button 
               className="btnBackClient"
               onClick={() => {
-              history.goBack();
+              history.push("Client");
               }}>
                 Back
           </button>

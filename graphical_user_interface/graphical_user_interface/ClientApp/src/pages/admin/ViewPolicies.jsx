@@ -54,7 +54,7 @@ function ViewPolicies() {
     };
 
     API.APIGET(
-      "SchemaRequests/GetAllSchemaRequests?pageNumber="+id+"",
+      "SchemaRequests/GetAllPoliciesPaginate?pageNumber="+id+"",
       onSuccess,
       () => {
         alert("Error");

@@ -49,6 +49,7 @@ function Admin() {
   function searchClick() {
     var onSuccess = (e) => {
       HandleTableInfo(e.data);
+      setNumber(1) //might need to be removed
     };
     API.APIGET(
       "Users/SearchLoadPageData?search=" + search_value + "",
@@ -153,48 +154,7 @@ function Admin() {
           </button>
         </div>
         
-        <div className="tblAdminDashSearch">
-          <Pagination>
-            <PaginationItem>
-              <PaginationLink previous href="" onClick={
-                () => {
-                  var new_page = parseInt(number,10) - 1
-                  if(new_page < 1){
-                    new_page = 1
-                  }
-                  setNumber(new_page)
-                  history.push("/Admin?pagenumber="+new_page+"")
-                  window.location.reload()}
-                }>
-              </PaginationLink>
-            </PaginationItem>
-
-            <PaginationItem>
-              <PaginationLink href="">
-              {number}
-              </PaginationLink>
-            </PaginationItem>
-
-            <PaginationItem>
-              <PaginationLink href="">
-              ...
-              </PaginationLink>
-            </PaginationItem>
-
-            <PaginationItem >
-              <PaginationLink next href=""onClick={
-                () => {
-                  // alert("test")
-                  var new_page = parseInt(number,10) + 1
-                  // alert(new_page)
-                  setNumber(new_page)
-                  history.push("/Admin?pagenumber="+new_page+"")
-                  window.location.reload()}
-                }>
-              </PaginationLink>
-            </PaginationItem>
-          </Pagination> 
-        </div>
+        
 
         <div className="tblAdminDashSearch">
           <table>
@@ -243,6 +203,50 @@ function Admin() {
           </table>
           
         </div>
+
+        <div className="tblAdminDashSearch">
+          <Pagination>
+            <PaginationItem>
+              <PaginationLink previous href="" onClick={
+                () => {
+                  var new_page = parseInt(number,10) - 1
+                  if(new_page < 1){
+                    new_page = 1
+                  }
+                  setNumber(new_page)
+                  history.push("/Admin?pagenumber="+new_page+"")
+                  window.location.reload()}
+                }>
+              </PaginationLink>
+            </PaginationItem>
+
+            <PaginationItem>
+              <PaginationLink href="">
+              {number}
+              </PaginationLink>
+            </PaginationItem>
+
+            <PaginationItem>
+              <PaginationLink href="">
+              ...
+              </PaginationLink>
+            </PaginationItem>
+
+            <PaginationItem >
+              <PaginationLink next href=""onClick={
+                () => {
+                  // alert("test")
+                  var new_page = parseInt(number,10) + 1
+                  // alert(new_page)
+                  setNumber(new_page)
+                  history.push("/Admin?pagenumber="+new_page+"")
+                  window.location.reload()}
+                }>
+              </PaginationLink>
+            </PaginationItem>
+          </Pagination> 
+        </div>
+
         </div> 
       <Footer />
     </>

@@ -124,12 +124,8 @@ function ViewQueries() {
             onClick={clearSearch}
           >
             Clear
-          </button>
-
-          
+          </button>      
         </div>
-
-        
 
         <div className="userQueryTable">
           <table>

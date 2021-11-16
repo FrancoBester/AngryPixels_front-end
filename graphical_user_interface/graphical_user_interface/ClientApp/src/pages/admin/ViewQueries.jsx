@@ -126,44 +126,7 @@ function ViewQueries() {
             Clear
           </button>
 
-          <div className="viewQueriesMain">
-            <Pagination>
-                <PaginationItem onClick={console.log}>
-                  <PaginationLink previous href="" onClick={
-                    () => {
-                      var new_page = parseInt(number,10) - 1
-                      if(new_page < 1){
-                        new_page = 1
-                      }
-                      setNumber(new_page)
-                      history.push("/Admin?pagenumber="+new_page+"")
-                      window.location.reload()}
-                    }>
-                  </PaginationLink>
-                </PaginationItem>
-
-                <PaginationItem>
-                  <PaginationLink href="">{number}</PaginationLink>
-                </PaginationItem>
-
-                <PaginationItem>
-                  <PaginationLink href="">...</PaginationLink>
-                </PaginationItem>
-
-                <PaginationItem>
-                  <PaginationLink next href=""onClick={
-                    () => {
-                      // alert("test")
-                      var new_page = parseInt(number,10) + 1
-                      // alert(new_page)
-                      setNumber(new_page)
-                      history.push("/Admin?pagenumber="+new_page+"")
-                      window.location.reload()}
-                    }>
-                  </PaginationLink>
-                </PaginationItem>
-              </Pagination> 
-            </div>
+          
         </div>
 
         
@@ -222,6 +185,45 @@ function ViewQueries() {
             </tbody>
           </table>
         </div>
+
+        <div className="viewQueriesMainPgnt">
+            <Pagination>
+                <PaginationItem onClick={console.log}>
+                  <PaginationLink previous href="" onClick={
+                    () => {
+                      var new_page = parseInt(number,10) - 1
+                      if(new_page < 1){
+                        new_page = 1
+                      }
+                      setNumber(new_page)
+                      history.push("/Admin?pagenumber="+new_page+"")
+                      window.location.reload()}
+                    }>
+                  </PaginationLink>
+                </PaginationItem>
+
+                <PaginationItem>
+                  <PaginationLink href="">{number}</PaginationLink>
+                </PaginationItem>
+
+                <PaginationItem>
+                  <PaginationLink href="">...</PaginationLink>
+                </PaginationItem>
+
+                <PaginationItem>
+                  <PaginationLink next href=""onClick={
+                    () => {
+                      // alert("test")
+                      var new_page = parseInt(number,10) + 1
+                      // alert(new_page)
+                      setNumber(new_page)
+                      history.push("/Admin?pagenumber="+new_page+"")
+                      window.location.reload()}
+                    }>
+                  </PaginationLink>
+                </PaginationItem>
+              </Pagination> 
+            </div>
 
         <div className="btnBackAdminDash">
           <button

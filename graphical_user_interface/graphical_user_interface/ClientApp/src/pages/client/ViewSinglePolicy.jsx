@@ -96,7 +96,7 @@ function ViewSinglePolicy() {
             <button className="btnRequestPolicy" onClick={RequestPolicy}>Request Policy</button>
             <button className="btnBackPolicies" 
                     onClick={() => {
-                    history.push("/ViewPolicies");
+                    history.goBack();
                 }}>Back</button>
 
           </div>

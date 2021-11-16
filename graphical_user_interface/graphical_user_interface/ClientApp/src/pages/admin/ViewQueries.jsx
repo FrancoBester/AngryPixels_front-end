@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./ViewQueries.css";
 import API from "../../API";
-import { Link, useHistory } from "react-router-dom";
+import {useLocation ,Link, useHistory } from "react-router-dom";
 import Footer from "../../components/Footer";
 import {
   Collapse,
@@ -30,16 +30,21 @@ function ViewQueries() {
   const [TableInfo, setTableInfo] = useState({});
   const [SearchValue, setSearchValue] = useState("");
 
+  const page_number = useLocation().search;
+  const [number, setNumber] = useState("")
+
   function HandleTableInfo(e) {
     setTableInfo(e);
   }
 
   useEffect(() => {
+    const id = new URLSearchParams(page_number).get("pageNumber");
+    setNumber(id)
     var onSuccess = (e) => {
       HandleTableInfo(e.data);
     };
     API.APIGET(
-      "Queries/GetAllQueries",
+      "Queries/GetAllQueries?pageNumber="+ id +"",
       onSuccess,
       () => {},
       () => {}
@@ -120,7 +125,48 @@ function ViewQueries() {
           >
             Clear
           </button>
+
+          <div className="viewQueriesMain">
+            <Pagination>
+                <PaginationItem onClick={console.log}>
+                  <PaginationLink previous href="" onClick={
+                    () => {
+                      var new_page = parseInt(number,10) - 1
+                      if(new_page < 1){
+                        new_page = 1
+                      }
+                      setNumber(new_page)
+                      history.push("/Admin?pagenumber="+new_page+"")
+                      window.location.reload()}
+                    }>
+                  </PaginationLink>
+                </PaginationItem>
+
+                <PaginationItem>
+                  <PaginationLink href="">{number}</PaginationLink>
+                </PaginationItem>
+
+                <PaginationItem>
+                  <PaginationLink href="">...</PaginationLink>
+                </PaginationItem>
+
+                <PaginationItem>
+                  <PaginationLink next href=""onClick={
+                    () => {
+                      // alert("test")
+                      var new_page = parseInt(number,10) + 1
+                      // alert(new_page)
+                      setNumber(new_page)
+                      history.push("/Admin?pagenumber="+new_page+"")
+                      window.location.reload()}
+                    }>
+                  </PaginationLink>
+                </PaginationItem>
+              </Pagination> 
+            </div>
         </div>
+
+        
 
         <div className="userQueryTable">
           <table>
@@ -175,25 +221,6 @@ function ViewQueries() {
               })}
             </tbody>
           </table>
-        </div>
-
-        <div className="viewQueriesMain">
-        <Pagination>
-            <PaginationItem onClick={console.log}>
-                <PaginationLink previous href="#" />
-            </PaginationItem>
-
-            <PaginationItem value = {1}>
-              <PaginationLink href="#">1</PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#">...</PaginationLink>
-            </PaginationItem>
-
-            <PaginationItem>
-                <PaginationLink next href="#" />
-            </PaginationItem>
-          </Pagination> 
         </div>
 
         <div className="btnBackAdminDash">

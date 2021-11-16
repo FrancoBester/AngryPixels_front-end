@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Client.css";
 import { useHistory } from "react-router";
 import API from "../../API";
-import { Link } from "react-router-dom";
+import { useLocation,Link } from "react-router-dom";
 import Footer from "../../components/Footer";
 import {
   Collapse,
@@ -25,6 +25,9 @@ function Client() {
   const policyTableHeadings = ["Policy Holder", "Policy Type", "Request Status", "Policy Details" ];
   const [TablePolicyInfo, setTablePolicyInfo] = useState({});
 
+  const page_number = useLocation().search;
+  const [number, setNumber] = useState("")
+
   function HandleTableInfo(e) {
     setTableInfo(e);
   }
@@ -36,6 +39,7 @@ function Client() {
   useEffect(() => {
     //var id = parseInt(localStorage.getItem("id"));
     var id = parseInt(window.sessionStorage.getItem("id"));
+
     var onSuccess = (e) => {
       debugger;
       HandleTableInfo(e.data);
@@ -121,6 +125,26 @@ useEffect(() => {
           <h2>My Current Active Queries:</h2>
         </div>
 
+        <div className="tableHeading">
+          <Pagination>
+            <PaginationItem onClick={console.log}>
+                <PaginationLink previous href="" />
+            </PaginationItem>
+
+            <PaginationItem>
+              <PaginationLink href="">1</PaginationLink>
+            </PaginationItem>
+
+            <PaginationItem>
+              <PaginationLink href="">...</PaginationLink>
+            </PaginationItem>
+
+            <PaginationItem>
+                <PaginationLink next href=""/>
+            </PaginationItem>
+          </Pagination> 
+        </div>
+
         <div className="userQueries">
           <table>
             <tbody>
@@ -153,24 +177,6 @@ useEffect(() => {
               })}
             </tbody>
           </table> 
-        </div>
-        <div className="tableHeading">
-          <Pagination>
-            <PaginationItem onClick={console.log}>
-                <PaginationLink previous href="#" />
-            </PaginationItem>
-
-            <PaginationItem value = {1}>
-              <PaginationLink href="#">1</PaginationLink>
-            </PaginationItem>
-            <PaginationItem>
-              <PaginationLink href="#">...</PaginationLink>
-            </PaginationItem>
-
-            <PaginationItem>
-                <PaginationLink next href="#" />
-            </PaginationItem>
-          </Pagination> 
         </div>
 
         <div className="tablePoliciesHeading">

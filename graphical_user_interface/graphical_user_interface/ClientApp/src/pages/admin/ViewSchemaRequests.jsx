@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useLocation,Link, useHistory } from "react-router-dom";
 import API from "../../API";
 import "./ViewSchemaRequests.css";
 import Footer from "../../components/Footer";
@@ -19,6 +19,9 @@ function ViewSchemaRequests() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [schemaRequests, setSchemaRequests] = useState({});
   const history = useHistory();
+
+  const page_number = useLocation().search;
+  const [number, setNumber] = useState("")
 
   useEffect(() => {
     var onSuccess = (e) => {
@@ -42,7 +45,27 @@ function ViewSchemaRequests() {
     <>
       <div className="gridViewSchema">
         <div className="viewSchemaHeader">
-          <header>Schema Requests</header>
+          <div>
+            <header>Schema Requests</header>
+          </div>
+          <div className="viewSchemasTable">
+              <Pagination>
+                <PaginationItem>
+                    <PaginationLink previous href="#" />
+                </PaginationItem>
+
+                <PaginationItem value = {1}>
+                  <PaginationLink href="#">1</PaginationLink>
+                </PaginationItem>
+                <PaginationItem>
+                  <PaginationLink href="#">...</PaginationLink>
+                </PaginationItem>
+
+                <PaginationItem>
+                    <PaginationLink next href="#" />
+                </PaginationItem>
+              </Pagination> 
+            </div>
         </div>
 
         {hasLoaded ? (
@@ -105,25 +128,6 @@ function ViewSchemaRequests() {
                 </tbody>
               </table>
             </main>
-            
-            <div className="viewSchemasTable">
-              <Pagination>
-                <PaginationItem onClick={console.log}>
-                    <PaginationLink previous href="#" />
-                </PaginationItem>
-
-                <PaginationItem value = {1}>
-                  <PaginationLink href="#">1</PaginationLink>
-                </PaginationItem>
-                <PaginationItem>
-                  <PaginationLink href="#">...</PaginationLink>
-                </PaginationItem>
-
-                <PaginationItem>
-                    <PaginationLink next href="#" />
-                </PaginationItem>
-              </Pagination> 
-            </div>
 
             <div className="backSchema">
               <button

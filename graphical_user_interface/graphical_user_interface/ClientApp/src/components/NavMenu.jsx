@@ -87,7 +87,7 @@ function NavMenu(props) {
                           <NavLink
                             tag={Link}
                             className="nav-font-right"
-                            to="/Admin"
+                            to="/Admin?pagenumber=1"
                           >
                             Admin
                           </NavLink>

@@ -83,5 +83,6 @@ grid-column-end: 3;
 
 .emailLbl:hover{
   cursor: pointer;
+  color: #548CA8;
 }
 

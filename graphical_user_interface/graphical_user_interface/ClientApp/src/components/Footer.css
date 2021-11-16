@@ -43,7 +43,7 @@
 .social-icons a:hover{
   text-decoration: none;
   color: #548CA8;
-  transform: scale(1.5);
+  transform: scale(2);
 }
   
   .social-logo {
@@ -58,15 +58,16 @@
     margin-bottom: 16px;
   }
   
-.social-logo:hover{
-  text-decoration: none;
-  color: #548CA8;
-  transform: scale(1.5);
-}
+  .social-logo:hover{
+    text-decoration: none;
+    color: #548CA8;
+  }
+  
 
   .website-rights {
     color: #fff;
     margin-bottom: 16px;
+    font-size: 20px;
   }
   
   @media screen and (max-width: 820px) {

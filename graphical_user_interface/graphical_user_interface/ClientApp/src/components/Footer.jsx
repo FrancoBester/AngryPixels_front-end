@@ -36,7 +36,7 @@ function Footer() {
             <span>
               <a
                 href="https://web.facebook.com/meditrust.biz?_rdc=1&_rdr"
-                className="fab fa-facebook-f"
+                className="fab fa-facebook-square"
                 target="_blank"
               ></a>
             </span>
@@ -50,7 +50,7 @@ function Footer() {
             <span>
               <a
                 href="https://twitter.com/meditrust_biz?lang=en"
-                className="fab fa-twitter"
+                className="fab fa-twitter-square"
                 target="_blank"
               ></a>
             </span>

@@ -69,7 +69,6 @@ input[type=text], select, textarea{
   }
 
   .EditClientProf{
-    border-radius: 5px;
     background-color: #1D1D1D;
     padding: 100px;
     border-top: 10px solid #548CA8;

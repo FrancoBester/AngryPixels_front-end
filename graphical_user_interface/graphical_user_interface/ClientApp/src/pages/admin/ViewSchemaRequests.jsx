@@ -48,24 +48,7 @@ function ViewSchemaRequests() {
           <div>
             <header>Schema Requests</header>
           </div>
-          <div className="viewSchemasTable">
-              <Pagination>
-                <PaginationItem>
-                    <PaginationLink previous href="#" />
-                </PaginationItem>
-
-                <PaginationItem value = {1}>
-                  <PaginationLink href="#">1</PaginationLink>
-                </PaginationItem>
-                <PaginationItem>
-                  <PaginationLink href="#">...</PaginationLink>
-                </PaginationItem>
-
-                <PaginationItem>
-                    <PaginationLink next href="#" />
-                </PaginationItem>
-              </Pagination> 
-            </div>
+          
         </div>
 
         {hasLoaded ? (
@@ -128,6 +111,25 @@ function ViewSchemaRequests() {
                 </tbody>
               </table>
             </main>
+
+            <div className="viewSchemasTablePgnt">
+              <Pagination>
+                <PaginationItem>
+                    <PaginationLink previous href="#" />
+                </PaginationItem>
+
+                <PaginationItem value = {1}>
+                  <PaginationLink href="#">1</PaginationLink>
+                </PaginationItem>
+                <PaginationItem>
+                  <PaginationLink href="#">...</PaginationLink>
+                </PaginationItem>
+
+                <PaginationItem>
+                    <PaginationLink next href="#" />
+                </PaginationItem>
+              </Pagination> 
+            </div>
 
             <div className="backSchema">
               <button

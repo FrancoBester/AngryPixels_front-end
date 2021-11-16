@@ -1,7 +1,7 @@
 .gridViewSchema{
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 150px auto 120px;
+    grid-template-rows: 150px auto 80px 120px;
     grid-gap: 0em;
     
 }
@@ -14,7 +14,7 @@
     text-align: center;
 }
 
-.viewSchemaHeader, .viewSchemasTable, .backSchema{
+.viewSchemaHeader, .viewSchemasTable, .backSchema, .viewSchemasTablePgnt{
     grid-column-start: 1;
     grid-column-end: 3;
 }

@@ -6,6 +6,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import "./Signup.css";
 import API from "../../API";
 import Footer from "../../components/Footer";
+import POPUP from "../../components/popUp.js";
 
 function Signup() {
   const [FirstName, setFirstName] = useState("");
@@ -44,15 +45,16 @@ function Signup() {
       "Users/Register",
       userObj,
       () => {
-        alert("You have succesfully created your account.");
+        POPUP.ShowPopUp("You have succesfully created your account.");
         history.push("/login");
       },
       () => {},
       () => {}
     );
   }
+
   return (
-    <div>
+    <div >
       
       <div className="form-container-signup">
         <div className="title_container">
@@ -60,10 +62,11 @@ function Signup() {
 
           <div className="row">
             <div className="col-25">
-              <label htmlFor="fname">First Name:</label>
+              <label>First Name:</label>
             </div>
             <div className="col-75">
               <input
+                className="requiredField"
                 type="text"
                 placeholder="First Name"
                 required
@@ -78,6 +81,7 @@ function Signup() {
             </div>
             <div className="col-75">
               <input
+                className="requiredField"
                 type="text"
                 placeholder="Surname"
                 required
@@ -92,6 +96,7 @@ function Signup() {
             </div>
             <div className="col-75">
               <input
+                className="requiredField"
                 type="email"
                 placeholder="Email"
                 required
@@ -106,6 +111,7 @@ function Signup() {
             </div>
             <div className="col-75">
               <input
+                className="requiredField"
                 type="tel"
                 placeholder="071111111"
                 pattern="^(\+27|0)[6-8][0-9]{8}$"
@@ -133,6 +139,7 @@ function Signup() {
             </div>
             <div className="col-75">
               <input
+                className="requiredField"
                 type="text"
                 placeholder="0000000000000"
                 required
@@ -177,6 +184,7 @@ function Signup() {
             </div>
             <div className="col-75">
               <input
+                className="requiredField"
                 type="text"
                 placeholder="City"
                 required
@@ -191,6 +199,7 @@ function Signup() {
             </div>
             <div className="col-75">
               <input
+                className="requiredField"
                 type="text"
                 placeholder="Street"
                 required
@@ -205,6 +214,7 @@ function Signup() {
             </div>
             <div className="col-75">
               <input
+                className="requiredField"
                 type="number"
                 placeholder="Number"
                 required
@@ -219,6 +229,7 @@ function Signup() {
             </div>
             <div className="col-75">
               <input
+                className="requiredField"
                 type="password"
                 placeholder="Password"
                 required
@@ -233,6 +244,7 @@ function Signup() {
             </div>
             <div className="col-75">
               <input
+                className="requiredField"
                 type="password"
                 placeholder="Re-enter Password"
                 required

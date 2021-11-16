@@ -125,26 +125,6 @@ useEffect(() => {
           <h2>My Current Active Queries:</h2>
         </div>
 
-        <div className="tableHeading">
-          <Pagination>
-            <PaginationItem onClick={console.log}>
-                <PaginationLink previous href="" />
-            </PaginationItem>
-
-            <PaginationItem>
-              <PaginationLink href="">1</PaginationLink>
-            </PaginationItem>
-
-            <PaginationItem>
-              <PaginationLink href="">...</PaginationLink>
-            </PaginationItem>
-
-            <PaginationItem>
-                <PaginationLink next href=""/>
-            </PaginationItem>
-          </Pagination> 
-        </div>
-
         <div className="userQueries">
           <table>
             <tbody>
@@ -177,6 +157,26 @@ useEffect(() => {
               })}
             </tbody>
           </table> 
+        </div>
+
+        <div className="tableHeadingPgnt">
+          <Pagination>
+            <PaginationItem onClick={console.log}>
+                <PaginationLink previous href="" />
+            </PaginationItem>
+
+            <PaginationItem>
+              <PaginationLink href="">1</PaginationLink>
+            </PaginationItem>
+
+            <PaginationItem>
+              <PaginationLink href="">...</PaginationLink>
+            </PaginationItem>
+
+            <PaginationItem>
+                <PaginationLink next href=""/>
+            </PaginationItem>
+          </Pagination> 
         </div>
 
         <div className="tablePoliciesHeading">
@@ -217,7 +217,7 @@ useEffect(() => {
           </table>
         </div>
         
-        <div className="tableHeading">
+        <div className="tableHeadingPgnt2">
           <Pagination>
             <PaginationItem onClick={console.log}>
                 <PaginationLink previous href="#" />

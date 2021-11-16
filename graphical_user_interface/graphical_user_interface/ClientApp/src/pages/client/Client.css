@@ -1,7 +1,7 @@
 .grid-container-client-dashboard{
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 150px 70px 120px 80px auto 80px auto;
+  grid-template-rows: 150px 70px 120px 80px auto 80px 80px auto 80px;
   grid-gap: 0em;
 }
 
@@ -11,7 +11,7 @@
   font-family: 'Noto Sans Display', sans-serif;
 }
 
-.clientDashHeader, .secondHeader, .userQueries, .tableHeading, .topGrid, .userPolicies, .tablePoliciesHeading{
+.clientDashHeader, .secondHeader, .userQueries, .tableHeading, .tableHeadingPgnt2, .tableHeadingPgnt, .topGrid, .userPolicies, .tablePoliciesHeading{
   grid-column-start: 1;
   grid-column-end: 3;
 }
@@ -192,3 +192,4 @@
 .viewQueryBtnClick:hover{
   cursor: pointer;
 }
+

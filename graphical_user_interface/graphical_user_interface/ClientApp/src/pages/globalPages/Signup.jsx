@@ -23,7 +23,79 @@ function Signup() {
   const history = useHistory();
   const [CountryId, setCountryId] = useState("");
 
+  function GeneratePopUp(message) {
+    return (
+      <div id="error-popup">
+        <h1>
+          <strong>{message}</strong> is required.
+        </h1>
+      </div>
+    );
+  }
+
+  function Validation() {
+    if (!FirstName) {
+      POPUP.ShowPopUp(GeneratePopUp("FirstName"));
+      return false;
+    }
+    if (!LastName) {
+      POPUP.ShowPopUp(GeneratePopUp("LastName"));
+      return false;
+    }
+    if (!Email) {
+      POPUP.ShowPopUp(GeneratePopUp("Email"));
+      return false;
+    }
+    if (!Password) {
+      POPUP.ShowPopUp(GeneratePopUp("Password"));
+      return false;
+    }
+    if (!DateOfBirth) {
+      POPUP.ShowPopUp(GeneratePopUp("DateOfBirth"));
+      return false;
+    }
+    if (!PhoneNumber) {
+      POPUP.ShowPopUp(GeneratePopUp("PhoneNumber"));
+      return false;
+    }
+    if (!Gender) {
+      POPUP.ShowPopUp(GeneratePopUp("Gender"));
+      return false;
+    }
+    if (!ConfirmPassword) {
+      POPUP.ShowPopUp(GeneratePopUp("ConfirmPassword"));
+      return false;
+    }
+    if (!City) {
+      POPUP.ShowPopUp(GeneratePopUp("QuCityack"));
+      return false;
+    }
+    if (!Street) {
+      POPUP.ShowPopUp(GeneratePopUp("Street"));
+      return false;
+    }
+    if (!HouseNumber) {
+      POPUP.ShowPopUp(GeneratePopUp("HouseNumber"));
+      return false;
+    }
+
+    if (!validateEmail(Email)) {
+      POPUP.ShowPopUp(GeneratePopUp("Valid Email"));
+      return false;
+    }
+  }
+
+  function validateEmail(email) {
+    alert("validate");
+    const re =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+
   function Register() {
+    if (!Validation()) {
+      return;
+    }
     //Add validation here
     const userObj = {
       FirstName: FirstName,
@@ -270,7 +342,7 @@ function Signup() {
           </button>
         </div>
       </div>
-      
+
       <Footer />
     </div>
   );

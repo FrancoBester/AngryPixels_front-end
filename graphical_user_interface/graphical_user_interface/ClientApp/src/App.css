@@ -56,3 +56,11 @@
     color: Red;
     font-size: 60px;
   }
+
+#error-popup{
+  display: flex;
+  border: 5px solid;
+  align-items: center;
+  justify-content: center;
+  color: red;
+}

@@ -21,7 +21,7 @@ function LoginPage() {
         <div className="loginHeader">
           <h1>Login</h1>
         
-        {/*<form>*/}
+        <form>
           <div className="loginRow">
             <div className="colLeft">
               <label>Username:</label>
@@ -31,6 +31,7 @@ function LoginPage() {
                 type="email"
                 placeholder="email" 
                 onChange={(e) => setEmail(e.target.value)} 
+                required
               />
             </div>
           </div>
@@ -49,7 +50,7 @@ function LoginPage() {
           </div> 
           
           <button className="btnLogin" onClick={() => Login()}>Login</button>
-        {/*</form>*/}
+        </form>
         </div>
       </div>
       <Footer/>

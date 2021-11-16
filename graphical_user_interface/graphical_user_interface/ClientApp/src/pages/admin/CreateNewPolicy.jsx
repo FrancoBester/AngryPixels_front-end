@@ -3,6 +3,7 @@ import './CreateNewPolicy.css';
 import { useHistory } from "react-router";
 import API from "../../API";
 import Footer from "../../components/Footer";
+import POPUP from "../../components/popUp.js";
 
 function CreateNewPolicy(){
 
@@ -37,7 +38,7 @@ function CreateNewPolicy(){
           "Queries/CreatePolicy",
           policyObj,
           () => {
-            alert("Policy Successfully Created")
+            POPUP.ShowPopUp("Policy Sucsessfully Created");
             history.goBack();
           },
           () => {},

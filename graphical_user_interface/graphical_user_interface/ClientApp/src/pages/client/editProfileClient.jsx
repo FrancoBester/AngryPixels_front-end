@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useHistory } from "react-router";
 import "./EditProfileClient.css";
 import API from "../../API";
+import POPUP from "../../components/popUp.js";
 
 function EditProfileClient() {
   const [updated, setUpdated] = useState(1);
@@ -42,7 +43,7 @@ function EditProfileClient() {
       "Users/UpdateUserInformation/" + window.sessionStorage.getItem("id"),
       userObj,
       () => {
-        alert("Profile Successfully Updated")
+        POPUP.ShowPopUp("Profile Successfully Updated");
         debugger;
         e();
         history.goBack();

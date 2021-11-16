@@ -4,6 +4,7 @@ import { useHistory } from "react-router";
 import { useState } from "react";
 import API from "../../API";
 import Footer from "../../components/Footer";
+import POPUP from "../../components/popUp.js";
 
 function CreateNewQuery() {
   const history = useHistory();
@@ -24,7 +25,7 @@ function CreateNewQuery() {
       "Queries/CreateQuery/" + window.sessionStorage.getItem("id"),
       queryObj,
       () => {
-        alert("Query Successfully Created")
+        POPUP.ShowPopUp("Query Successfully Created");
         history.goBack();
       },
       () => {},

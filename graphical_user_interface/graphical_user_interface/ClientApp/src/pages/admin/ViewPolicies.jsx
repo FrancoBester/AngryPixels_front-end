@@ -43,8 +43,9 @@ function ViewPolicies() {
 
   //Get Policies Here
   useEffect(() => {
-    const id = new URLSearchParams(page_number).get("pagenumber");
+    const id = new URLSearchParams(page_number).get("pageNumber");
     setNumber(id)
+    // alert(number)
     var onSuccess = (e) => {
       debugger;
       setPolicies(e.data);
@@ -53,7 +54,7 @@ function ViewPolicies() {
     };
 
     API.APIGET(
-      "SchemaRequests/GetAllPolicies?pageNumber="+id+"",
+      "SchemaRequests/GetAllSchemaRequests?pageNumber="+id+"",
       onSuccess,
       () => {
         alert("Error");
@@ -73,6 +74,7 @@ function ViewPolicies() {
         <div>
           <header>View Policies</header>
         </div>
+        
         
          
       </div>
@@ -132,49 +134,49 @@ function ViewPolicies() {
           </main>
 
           <div className="viewPoliciesHeaderPgnt">
-          <Pagination>
-            <PaginationItem >
-            <PaginationLink previous href="" onClick={
-                () => {
-                  var new_page = parseInt(number,10) - 1
-                  if(new_page < 1){
-                    new_page = 1
-                  }
-                  setNumber(new_page)
-                  history.push("/Admin?pagenumber="+new_page+"")
-                  window.location.reload()}
-                }>
-              </PaginationLink>
-            </PaginationItem>
+            <Pagination>
+              <PaginationItem >
+              <PaginationLink previous href="" onClick={
+                  () => {
+                    var new_page = parseInt(number,10) - 1
+                    if(new_page < 1){
+                      new_page = 1
+                    }
+                    setNumber(new_page)
+                    history.push("/ViewAllPolicies?pageNumber="+new_page+"")
+                    window.location.reload()}
+                  }>
+                </PaginationLink>
+              </PaginationItem>
 
-            <PaginationItem>
-              <PaginationLink href="">{number}</PaginationLink>
-            </PaginationItem>
+              <PaginationItem>
+                <PaginationLink href="">{number}</PaginationLink>
+              </PaginationItem>
 
-            <PaginationItem>
-              <PaginationLink href="">...</PaginationLink>
-            </PaginationItem>
+              <PaginationItem>
+                <PaginationLink href="">...</PaginationLink>
+              </PaginationItem>
 
-            <PaginationItem>
-            <PaginationLink next href=""onClick={
-                () => {
-                  // alert("test")
-                  var new_page = parseInt(number,10) + 1
-                  // alert(new_page)
-                  setNumber(new_page)
-                  history.push("/Admin?pagenumber="+new_page+"")
-                  window.location.reload()}
-                }>
-              </PaginationLink>
-            </PaginationItem>
-          </Pagination> 
-        </div>
+              <PaginationItem>
+              <PaginationLink next href=""onClick={
+                  () => {
+                    // alert("test")
+                    var new_page = parseInt(number,10) + 1
+                    // alert(new_page)
+                    setNumber(new_page)
+                    history.push("/ViewAllPolicies?pageNumber="+new_page+"")
+                    window.location.reload()}
+                  }>
+                </PaginationLink>
+              </PaginationItem>
+            </Pagination> 
+          </div>
           
           <div className="btnPoliciesBack">
           <button 
               className="btnBackClient"
               onClick={() => {
-              history.goBack();
+                history.push("Admin?pagenumber=1")
               }}>
                 Back
           </button>

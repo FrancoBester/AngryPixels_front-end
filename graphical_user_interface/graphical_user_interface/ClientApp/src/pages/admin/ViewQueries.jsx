@@ -196,7 +196,7 @@ function ViewQueries() {
                         new_page = 1
                       }
                       setNumber(new_page)
-                      history.push("/Admin?pagenumber="+new_page+"")
+                      history.push("/ViewQueries?pageNumber="+new_page+"")
                       window.location.reload()}
                     }>
                   </PaginationLink>
@@ -217,19 +217,19 @@ function ViewQueries() {
                       var new_page = parseInt(number,10) + 1
                       // alert(new_page)
                       setNumber(new_page)
-                      history.push("/Admin?pagenumber="+new_page+"")
+                      history.push("/ViewQueries?pageNumber="+new_page+"")
                       window.location.reload()}
                     }>
                   </PaginationLink>
                 </PaginationItem>
               </Pagination> 
-            </div>
+          </div>
 
         <div className="btnBackAdminDash">
           <button
             className="btnBackAdmin"
             onClick={() => {
-              history.push("/Admin");
+              history.push("Admin?pagenumber=1");
             }}
           >
             Back

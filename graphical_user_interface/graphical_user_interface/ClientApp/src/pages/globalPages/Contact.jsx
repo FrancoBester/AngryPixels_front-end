@@ -27,7 +27,7 @@ function Contact() {
             <i class="fa fa-mobile" id="mobileIcon"></i>
           </li> */}
         <li> 
-        <label for="emailIcon" onClick={() => {history.push("/Email")}}>meditrust2021@outlook.com</label>
+        <label className="emailLbl" for="emailIcon" onClick={() => {history.push("/Email")}}>meditrust2021@outlook.com</label>
         <i className="fas fa-envelope fa-lg" id="emailIcon"></i>
         </li>
         </ul>

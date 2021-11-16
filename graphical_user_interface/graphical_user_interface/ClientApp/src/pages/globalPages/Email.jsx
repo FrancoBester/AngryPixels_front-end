@@ -68,7 +68,7 @@ function Email(){
                     <button
                     className="btnCancel"
                     onClick={() => {
-                        history.push("/");
+                        history.goBack();
                     }}
                     >
                     Cancel

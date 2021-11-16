@@ -81,3 +81,7 @@ grid-column-end: 3;
       color: #548CA8; 
   }
 
+.emailLbl:hover{
+  cursor: pointer;
+}
+

@@ -1,7 +1,7 @@
 .gridViewPolicies{
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 150px auto 100px;
+    grid-template-rows: 150px auto 80px 100px;
     grid-gap: 0em;
 }
 
@@ -12,7 +12,7 @@
     text-align: center;
 }
 
-.viewPoliciesHeader, .viewPolicies, .btnPoliciesBack{
+.viewPoliciesHeader, .viewPolicies, .btnPoliciesBack, .viewPoliciesHeaderPgnt{
     grid-column-start: 1;
     grid-column-end: 3;
 }

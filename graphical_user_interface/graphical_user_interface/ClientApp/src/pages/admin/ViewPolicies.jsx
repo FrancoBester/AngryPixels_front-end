@@ -73,44 +73,7 @@ function ViewPolicies() {
         <div>
           <header>View Policies</header>
         </div>
-        <div className="viewPoliciesHeader">
-          <Pagination>
-            <PaginationItem >
-            <PaginationLink previous href="" onClick={
-                () => {
-                  var new_page = parseInt(number,10) - 1
-                  if(new_page < 1){
-                    new_page = 1
-                  }
-                  setNumber(new_page)
-                  history.push("/Admin?pagenumber="+new_page+"")
-                  window.location.reload()}
-                }>
-              </PaginationLink>
-            </PaginationItem>
-
-            <PaginationItem>
-              <PaginationLink href="">{number}</PaginationLink>
-            </PaginationItem>
-
-            <PaginationItem>
-              <PaginationLink href="">...</PaginationLink>
-            </PaginationItem>
-
-            <PaginationItem>
-            <PaginationLink next href=""onClick={
-                () => {
-                  // alert("test")
-                  var new_page = parseInt(number,10) + 1
-                  // alert(new_page)
-                  setNumber(new_page)
-                  history.push("/Admin?pagenumber="+new_page+"")
-                  window.location.reload()}
-                }>
-              </PaginationLink>
-            </PaginationItem>
-          </Pagination> 
-        </div>
+        
          
       </div>
 
@@ -167,6 +130,45 @@ function ViewPolicies() {
             </tbody>
           </table>
           </main>
+
+          <div className="viewPoliciesHeaderPgnt">
+          <Pagination>
+            <PaginationItem >
+            <PaginationLink previous href="" onClick={
+                () => {
+                  var new_page = parseInt(number,10) - 1
+                  if(new_page < 1){
+                    new_page = 1
+                  }
+                  setNumber(new_page)
+                  history.push("/Admin?pagenumber="+new_page+"")
+                  window.location.reload()}
+                }>
+              </PaginationLink>
+            </PaginationItem>
+
+            <PaginationItem>
+              <PaginationLink href="">{number}</PaginationLink>
+            </PaginationItem>
+
+            <PaginationItem>
+              <PaginationLink href="">...</PaginationLink>
+            </PaginationItem>
+
+            <PaginationItem>
+            <PaginationLink next href=""onClick={
+                () => {
+                  // alert("test")
+                  var new_page = parseInt(number,10) + 1
+                  // alert(new_page)
+                  setNumber(new_page)
+                  history.push("/Admin?pagenumber="+new_page+"")
+                  window.location.reload()}
+                }>
+              </PaginationLink>
+            </PaginationItem>
+          </Pagination> 
+        </div>
           
           <div className="btnPoliciesBack">
           <button 

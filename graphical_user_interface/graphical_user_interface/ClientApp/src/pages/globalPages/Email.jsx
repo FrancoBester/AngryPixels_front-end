@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router";
 import "./Signup.css"
 import API from "../../API";
+import Footer from "../../components/Footer";
 
 function Email(){
     const history = useHistory();
@@ -75,6 +76,7 @@ function Email(){
                 </form>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }

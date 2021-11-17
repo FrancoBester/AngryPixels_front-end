@@ -102,7 +102,7 @@ function ViewPolicies() {
                       new_page = 1
                     }
                     setNumber(new_page)
-                    history.push("/ViewAPolicies?pageNumber="+new_page+"")
+                    history.push("/ViewPolicies?pageNumber="+new_page+"")
                     window.location.reload()}
                   }>
                 </PaginationLink>

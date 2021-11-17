@@ -22,7 +22,6 @@ function ViewSinglePolicy() {
 
   function updatePolicy(){
     // console.log(policy)
-    alert("break")
     const policyObj = 
     {
       policy_Holder : holder,
@@ -45,7 +44,7 @@ function ViewSinglePolicy() {
         alert("Changes have been ")
         debugger;
         e();
-        history.push("viewAllPolicies");
+        history.push("viewAllPolicies?pageNumber=1");
       },
       () => {},
       () => {}

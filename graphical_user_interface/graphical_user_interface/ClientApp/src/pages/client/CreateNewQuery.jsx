@@ -9,7 +9,7 @@ import POPUP from "../../components/popUp.js";
 function CreateNewQuery() {
   const history = useHistory();
   const [QueryTitle, setQueryTitle] = useState("");
-  const [QueryLevel, setQueryLevel] = useState("");
+  const [QueryLevel, setQueryLevel] = useState(1);
   const [QueryDescription, setQueryDescription] = useState("");
 
   function PostNewQuery() {
@@ -121,7 +121,7 @@ function CreateNewQuery() {
           </button>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }

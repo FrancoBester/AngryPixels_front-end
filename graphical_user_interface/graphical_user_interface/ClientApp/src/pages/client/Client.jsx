@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Client.css";
 import { useHistory } from "react-router";
 import API from "../../API";
-import { useLocation,Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import Footer from "../../components/Footer";
 import {
   Collapse,
@@ -13,8 +13,7 @@ import {
   NavItem,
   NavLink,
 } from "reactstrap";
-import {Pagination, PaginationItem, PaginationLink} from "reactstrap"
-
+import { Pagination, PaginationItem, PaginationLink } from "reactstrap";
 
 function Client() {
   const history = useHistory();
@@ -22,17 +21,22 @@ function Client() {
   const tableHeadings = ["Title", "Status", "Assistant Name", "Query Details"];
   const [TableInfo, setTableInfo] = useState({});
 
-  const policyTableHeadings = ["Policy Holder", "Policy Type", "Request Status", "Policy Details" ];
+  const policyTableHeadings = [
+    "Policy Holder",
+    "Policy Type",
+    "Request Status",
+    "Policy Details",
+  ];
   const [TablePolicyInfo, setTablePolicyInfo] = useState({});
 
   const page_number = useLocation().search;
-  const [number, setNumber] = useState("")
+  const [number, setNumber] = useState("");
 
   function HandleTableInfo(e) {
     setTableInfo(e);
   }
 
-  function HandleTablePolicyInfo(e){
+  function HandleTablePolicyInfo(e) {
     setTablePolicyInfo(e);
   }
 
@@ -41,7 +45,6 @@ function Client() {
     var id = parseInt(window.sessionStorage.getItem("id"));
 
     var onSuccess = (e) => {
-      debugger;
       HandleTableInfo(e.data);
     };
     API.APIGET(
@@ -55,24 +58,22 @@ function Client() {
     return () => {};
   }, [updated]);
 
-useEffect(() => {
+  useEffect(() => {
+    var id = parseInt(window.sessionStorage.getItem("id"));
+    var onSuccess = (e) => {
+      HandleTablePolicyInfo(e.data);
+    };
 
-  var id = parseInt(window.sessionStorage.getItem("id"));
-  var onSuccess = (e) => {
-    debugger;
-    HandleTablePolicyInfo(e.data);
-  };  
-
-  API.APIGET(
-    "Policy/GetSpecificUserSchemaRequests/" + id,
-    onSuccess,
-    () => {
-      alert("Error");
-    },
-    () => {}
-  );
-  return () => {};
-}, [updated]);
+    API.APIGET(
+      "Policy/GetSpecificUserSchemaRequests/" + id,
+      onSuccess,
+      () => {
+        alert("Error");
+      },
+      () => {}
+    );
+    return () => {};
+  }, [updated]);
 
   //console.log(localStorage.getItem("id"))
   return (
@@ -156,7 +157,7 @@ useEffect(() => {
                 );
               })}
             </tbody>
-          </table> 
+          </table>
         </div>
 
         <div className="tablePoliciesHeading">
@@ -196,7 +197,6 @@ useEffect(() => {
             </tbody>
           </table>
         </div>
-        
       </div>
       <Footer />
     </>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./ViewQueries.css";
 import API from "../../API";
-import {useLocation ,Link, useHistory } from "react-router-dom";
+import { useLocation, Link, useHistory } from "react-router-dom";
 import Footer from "../../components/Footer";
 import {
   Collapse,
@@ -12,7 +12,7 @@ import {
   NavItem,
   NavLink,
 } from "reactstrap";
-import {Pagination, PaginationItem, PaginationLink} from "reactstrap"
+import { Pagination, PaginationItem, PaginationLink } from "reactstrap";
 
 import POPUP from "../../components/popUp.js";
 
@@ -31,7 +31,7 @@ function ViewQueries() {
   const [SearchValue, setSearchValue] = useState("");
 
   const page_number = useLocation().search;
-  const [number, setNumber] = useState("")
+  const [number, setNumber] = useState("");
 
   function HandleTableInfo(e) {
     setTableInfo(e);
@@ -39,12 +39,12 @@ function ViewQueries() {
 
   useEffect(() => {
     const id = new URLSearchParams(page_number).get("pageNumber");
-    setNumber(id)
+    setNumber(id);
     var onSuccess = (e) => {
       HandleTableInfo(e.data);
     };
     API.APIGET(
-      "Queries/GetAllQueries?pageNumber="+ id +"",
+      "Queries/GetAllQueries?pageNumber=" + id + "",
       onSuccess,
       () => {},
       () => {}
@@ -79,7 +79,6 @@ function ViewQueries() {
 
   function AssignSelfToQuery(id) {
     var onSuccess = (e) => {
-      debugger;
       POPUP.ShowPopUp("Sucsessfully assigned self to query.");
     };
     API.APIPostAnon(
@@ -124,7 +123,7 @@ function ViewQueries() {
             onClick={clearSearch}
           >
             Clear
-          </button>      
+          </button>
         </div>
 
         <div className="userQueryTable">
@@ -167,7 +166,7 @@ function ViewQueries() {
                     </td>
                     <td>
                       <button
-                      className="assignBtn"
+                        className="assignBtn"
                         onClick={() => {
                           AssignSelfToQuery(TableInfo[i].query_Id);
                         }}
@@ -183,43 +182,47 @@ function ViewQueries() {
         </div>
 
         <div className="viewQueriesMainPgnt">
-            <Pagination>
-                <PaginationItem onClick={console.log}>
-                  <PaginationLink previous href="" onClick={
-                    () => {
-                      var new_page = parseInt(number,10) - 1
-                      if(new_page < 1){
-                        new_page = 1
-                      }
-                      setNumber(new_page)
-                      history.push("/ViewQueries?pageNumber="+new_page+"")
-                      window.location.reload()}
-                    }>
-                  </PaginationLink>
-                </PaginationItem>
+          <Pagination>
+            <PaginationItem onClick={console.log}>
+              <PaginationLink
+                previous
+                href=""
+                onClick={() => {
+                  var new_page = parseInt(number, 10) - 1;
+                  if (new_page < 1) {
+                    new_page = 1;
+                  }
+                  setNumber(new_page);
+                  history.push("/ViewQueries?pageNumber=" + new_page + "");
+                  window.location.reload();
+                }}
+              ></PaginationLink>
+            </PaginationItem>
 
-                <PaginationItem>
-                  <PaginationLink href="">{number}</PaginationLink>
-                </PaginationItem>
+            <PaginationItem>
+              <PaginationLink href="">{number}</PaginationLink>
+            </PaginationItem>
 
-                <PaginationItem>
-                  <PaginationLink href="">...</PaginationLink>
-                </PaginationItem>
+            <PaginationItem>
+              <PaginationLink href="">...</PaginationLink>
+            </PaginationItem>
 
-                <PaginationItem>
-                  <PaginationLink next href=""onClick={
-                    () => {
-                      // alert("test")
-                      var new_page = parseInt(number,10) + 1
-                      // alert(new_page)
-                      setNumber(new_page)
-                      history.push("/ViewQueries?pageNumber="+new_page+"")
-                      window.location.reload()}
-                    }>
-                  </PaginationLink>
-                </PaginationItem>
-              </Pagination> 
-          </div>
+            <PaginationItem>
+              <PaginationLink
+                next
+                href=""
+                onClick={() => {
+                  // alert("test")
+                  var new_page = parseInt(number, 10) + 1;
+                  // alert(new_page)
+                  setNumber(new_page);
+                  history.push("/ViewQueries?pageNumber=" + new_page + "");
+                  window.location.reload();
+                }}
+              ></PaginationLink>
+            </PaginationItem>
+          </Pagination>
+        </div>
 
         <div className="btnBackAdminDash">
           <button

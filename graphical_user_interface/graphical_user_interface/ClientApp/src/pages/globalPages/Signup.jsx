@@ -83,10 +83,11 @@ function Signup() {
       POPUP.ShowPopUp(GeneratePopUp("Valid Email"));
       return false;
     }
+
+    return true;
   }
 
   function validateEmail(email) {
-    alert("validate");
     const re =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
@@ -126,8 +127,7 @@ function Signup() {
   }
 
   return (
-    <div >
-      
+    <div>
       <div className="form-container-signup">
         <div className="title_container">
           <h1>Register</h1>

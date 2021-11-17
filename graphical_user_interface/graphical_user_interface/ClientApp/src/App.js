@@ -53,7 +53,6 @@ export default function App() {
 
   useEffect(() => {
     window.addEventListener("ShowPopUp", (e, p) => {
-      debugger;
       setPopUpContent(e.popUpContent);
       setShowPopup(true);
     });
@@ -104,8 +103,8 @@ export default function App() {
         <Route path="/ViewClientDetails" component={ViewClientDetails} />
         <Route path="/ViewPolicyDetails" component={ViewPolicyDetails} />
         <Route path="/ViewQuery" component={ViewQuery} />
-        <Route path="/ViewAllPolicies" component={ViewAllPolicies}/>
-        <Route path="/EditPolicy" component={EditPolicy}/>
+        <Route path="/ViewAllPolicies" component={ViewAllPolicies} />
+        <Route path="/EditPolicy" component={EditPolicy} />
       </Switch>
     </Layout>
   );

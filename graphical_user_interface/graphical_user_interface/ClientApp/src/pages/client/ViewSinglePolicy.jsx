@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, Link, useHistory } from "react-router-dom";
 import API from "../../API";
-import './ViewSinglePolicy.css';
+import "./ViewSinglePolicy.css";
 import Footer from "../../components/Footer";
 
 function ViewSinglePolicy() {
@@ -14,10 +14,8 @@ function ViewSinglePolicy() {
 
   useEffect(() => {
     const id = new URLSearchParams(search).get("id");
-    debugger;
     setPolicyId(id);
     var onSuccess = (e) => {
-      debugger;
       setPolicy(e.data);
 
       setHasLoaded(true);
@@ -54,58 +52,59 @@ function ViewSinglePolicy() {
 
   return (
     <>
-    <div className="gridSinglePolicy">
+      <div className="gridSinglePolicy">
+        <div className="singlePolicyHeader">
+          <header>Policy Information</header>
+        </div>
 
-      <div className="singlePolicyHeader">
-        <header>Policy Information</header>
-      </div>
+        {hasLoaded ? (
+          <>
+            <main className="viewSinglePolicy">
+              <ul>
+                <li>
+                  <h5>Holder:</h5>
+                  <h6>{policy.policy_Holder}</h6>
+                </li>
+                <br />
+                <li>
+                  <h5>Policy Type:</h5>
+                  <h6>{policy.policy_Type}</h6>
+                </li>
+                <br />
+                <li>
+                  <h5>Admision type:</h5>
+                  <h6>{policy.adms_Type}</h6>
+                </li>
+                <br />
+                <li>
+                  <h5>Description:</h5>
+                  <h6>{policy.policy_Des}</h6>
+                </li>
+                <br />
+                <li>
+                  <h5>Benefits:</h5>
+                  <h6>{policy.policy_Benefits}</h6>
+                </li>
+              </ul>
+            </main>
 
-      {hasLoaded ? (
-        <>
-          <main className="viewSinglePolicy">
-            <ul>
-              <li>
-              <h5>Holder:</h5>
-              <h6>{policy.policy_Holder}</h6>
-              </li>
-              <br />
-              <li>
-              <h5>Policy Type:</h5>
-              <h6>{policy.policy_Type}</h6>
-              </li>
-              <br />
-              <li>
-              <h5>Admision type:</h5>
-              <h6>{policy.adms_Type}</h6>
-              </li>
-              <br />
-              <li>
-              <h5>Description:</h5>
-              <h6>{policy.policy_Des}</h6>
-              </li>
-              <br />
-              <li>
-              <h5>Benefits:</h5>
-              <h6>{policy.policy_Benefits}</h6>
-              </li>
-
-          </ul>
-          </main>
-          
-          <div className="buttonRequest">
-            <button className="btnRequestPolicy" onClick={RequestPolicy}>Request Policy</button>
-            <button className="btnBackPolicies" 
-                    onClick={() => {
-                    history.goBack();
-                }}>Back</button>
-
-          </div>
-          
-        </>
-        
-      ) : (
-        <h3>Loading...</h3>
-      )}
+            <div className="buttonRequest">
+              <button className="btnRequestPolicy" onClick={RequestPolicy}>
+                Request Policy
+              </button>
+              <button
+                className="btnBackPolicies"
+                onClick={() => {
+                  history.goBack();
+                }}
+              >
+                Back
+              </button>
+            </div>
+          </>
+        ) : (
+          <h3>Loading...</h3>
+        )}
       </div>
       <Footer />
     </>

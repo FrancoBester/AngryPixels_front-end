@@ -15,10 +15,8 @@ function ViewSingleSchemaRequest(props) {
 
   useEffect(() => {
     const id = new URLSearchParams(search).get("id");
-    debugger;
     setschemaRequestId(id);
     var onSuccess = (e) => {
-      debugger;
       setschemaRequest(e.data);
 
       setHasLoaded(true);
@@ -74,63 +72,39 @@ function ViewSingleSchemaRequest(props) {
               <div className="policyArea" id="policyArea">
                 <div>
                   <h5>Policy Information:</h5>
-                  <h6>
-                    Admission type: 
-                  </h6>
+                  <h6>Admission type:</h6>
                   <p>{schemaRequest.policyInfo.adms_Type}</p>
-                  <h6>
-                    Holder: 
-                  </h6>
+                  <h6>Holder:</h6>
                   <p>{schemaRequest.policyInfo.policy_Holder}</p>
-                  <h6>
-                    Type: 
-                  </h6>
+                  <h6>Type:</h6>
                   <p>{schemaRequest.policyInfo.policy_Type}</p>
-                  <h6>
-                    Date: 
-                  </h6>
+                  <h6>Date:</h6>
                   <p>{schemaRequest.policyInfo.policy_Date}</p>
-                  <h6>
-                    Benefits: 
-                  </h6>
+                  <h6>Benefits:</h6>
                   <p>{schemaRequest.policyInfo.policy_Benefits}</p>
-                  <h6>
-                    Description:
-                  </h6>
+                  <h6>Description:</h6>
                   <p>{schemaRequest.policyInfo.policy_Des}</p>
                 </div>
               </div>
               <div className="userArea" id="userArea">
                 <div>
                   <h5>Client Information:</h5>
-                  <h6>
-                   Full Name: 
-                  </h6>
+                  <h6>Full Name:</h6>
                   <p>{schemaRequest.clientInformation.fullname}</p>
-                  <h6>
-                    Gender: 
-                  </h6>
+                  <h6>Gender:</h6>
                   <p>{schemaRequest.clientInformation.gender}</p>
-                  <h6>
-                    IdNumber: 
-                  </h6>
+                  <h6>IdNumber:</h6>
                   <p>{schemaRequest.clientInformation.idNumber}</p>
-                  <h6>
-                   Cell: 
-                  </h6>
+                  <h6>Cell:</h6>
                   <p>{schemaRequest.clientInformation.cell}</p>
-                  <h6>
-                    DOB: 
-                  </h6>
+                  <h6>DOB:</h6>
                   <p>{schemaRequest.clientInformation.dob}</p>
                 </div>
               </div>
               <div className="informationArea" id="informationArea">
                 <div>
                   <h5>Request Information:</h5>
-                  <h6>
-                    Request status: 
-                  </h6>
+                  <h6>Request status:</h6>
                   <p>{schemaRequest.schemaRequest.requestStatus}</p>
                 </div>
               </div>
@@ -150,17 +124,15 @@ function ViewSingleSchemaRequest(props) {
                 </button>
 
                 <button
-              className="btnBackSchemaPage"
-              onClick={() => {
-                history.goBack();
-              }}
-            >
-              Back
-            </button>
+                  className="btnBackSchemaPage"
+                  onClick={() => {
+                    history.goBack();
+                  }}
+                >
+                  Back
+                </button>
               </div>
             </main>
-
-           
           </>
         ) : (
           <>Loading...</>

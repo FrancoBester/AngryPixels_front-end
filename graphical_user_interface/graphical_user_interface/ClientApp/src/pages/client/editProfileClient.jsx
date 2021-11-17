@@ -45,7 +45,6 @@ function EditProfileClient() {
       userObj,
       () => {
         POPUP.ShowPopUp("Profile Successfully Updated");
-        debugger;
         e();
         history.goBack();
       },
@@ -273,7 +272,7 @@ function EditProfileClient() {
             </button>
           </div>
         </div>
-        <Footer/>
+        <Footer />
       </>
     );
   }

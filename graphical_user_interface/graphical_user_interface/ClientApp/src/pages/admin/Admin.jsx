@@ -1,11 +1,11 @@
 import "./Admin.css";
-import { useLocation ,Link, useHistory } from "react-router-dom";
+import { useLocation, Link, useHistory } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import API from "../../API";
 import { Tab } from "bootstrap";
 import Footer from "../../components/Footer";
 import { NavItem, NavLink } from "reactstrap";
-import {Pagination, PaginationItem, PaginationLink} from "reactstrap"
+import { Pagination, PaginationItem, PaginationLink } from "reactstrap";
 
 function Admin() {
   const history = useHistory();
@@ -24,7 +24,7 @@ function Admin() {
   const [Assign, setAssign] = useState("");
 
   const page_number = useLocation().search;
-  const [number, setNumber] = useState("")
+  const [number, setNumber] = useState("");
 
   function HandleTableInfo(e) {
     setTableInfo(e);
@@ -33,12 +33,12 @@ function Admin() {
 
   useEffect(() => {
     const id = new URLSearchParams(page_number).get("pagenumber");
-    setNumber(id)
+    setNumber(id);
     var onSuccess = (e) => {
       HandleTableInfo(e.data);
     };
     API.APIGET(
-      "Users/GetAdminLoadPageData?pageNumber="+id+"",
+      "Users/GetAdminLoadPageData?pageNumber=" + id + "",
       onSuccess,
       () => {},
       () => {}
@@ -49,7 +49,7 @@ function Admin() {
   function searchClick() {
     var onSuccess = (e) => {
       HandleTableInfo(e.data);
-      setNumber(1) //might need to be removed
+      setNumber(1); //might need to be removed
     };
     API.APIGET(
       "Users/SearchLoadPageData?search=" + search_value + "",
@@ -153,8 +153,6 @@ function Admin() {
             Clear
           </button>
         </div>
-        
-        
 
         <div className="tblAdminDashSearch">
           <table>
@@ -168,7 +166,7 @@ function Admin() {
             <tbody>
               {loaded &&
                 TableInfo.map((policy) => {
-                  // debugger;
+                  //  ;
                   return (
                     <tr>
                       <td>{policy.firstName + " " + policy.lastName}</td>
@@ -201,53 +199,51 @@ function Admin() {
                 })}
             </tbody>
           </table>
-          
         </div>
 
         <div className="tblAdminDashSearch">
           <Pagination>
             <PaginationItem>
-              <PaginationLink previous href="" onClick={
-                () => {
-                  var new_page = parseInt(number,10) - 1
-                  if(new_page < 1){
-                    new_page = 1
+              <PaginationLink
+                previous
+                href=""
+                onClick={() => {
+                  var new_page = parseInt(number, 10) - 1;
+                  if (new_page < 1) {
+                    new_page = 1;
                   }
-                  setNumber(new_page)
-                  history.push("/Admin?pagenumber="+new_page+"")
-                  window.location.reload()}
-                }>
-              </PaginationLink>
+                  setNumber(new_page);
+                  history.push("/Admin?pagenumber=" + new_page + "");
+                  window.location.reload();
+                }}
+              ></PaginationLink>
             </PaginationItem>
 
             <PaginationItem>
-              <PaginationLink href="">
-              {number}
-              </PaginationLink>
+              <PaginationLink href="">{number}</PaginationLink>
             </PaginationItem>
 
             <PaginationItem>
-              <PaginationLink href="">
-              ...
-              </PaginationLink>
+              <PaginationLink href="">...</PaginationLink>
             </PaginationItem>
 
-            <PaginationItem >
-              <PaginationLink next href=""onClick={
-                () => {
+            <PaginationItem>
+              <PaginationLink
+                next
+                href=""
+                onClick={() => {
                   // alert("test")
-                  var new_page = parseInt(number,10) + 1
+                  var new_page = parseInt(number, 10) + 1;
                   // alert(new_page)
-                  setNumber(new_page)
-                  history.push("/Admin?pagenumber="+new_page+"")
-                  window.location.reload()}
-                }>
-              </PaginationLink>
+                  setNumber(new_page);
+                  history.push("/Admin?pagenumber=" + new_page + "");
+                  window.location.reload();
+                }}
+              ></PaginationLink>
             </PaginationItem>
-          </Pagination> 
+          </Pagination>
         </div>
-
-        </div> 
+      </div>
       <Footer />
     </>
   );

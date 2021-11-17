@@ -65,7 +65,7 @@ function ViewSinglePolicy() {
     var onSuccess = (e) => {
       const info = e.data[0];
 
-      y(info);
+      setPolicy(info);
       handlePolicyInfo(info);
       setHasLoaded(true);
     };

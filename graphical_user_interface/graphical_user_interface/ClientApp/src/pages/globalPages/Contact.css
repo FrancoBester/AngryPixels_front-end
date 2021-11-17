@@ -81,8 +81,14 @@ grid-column-end: 3;
       color: #548CA8; 
   }
 
-.emailLbl:hover{
+.emailLbl:hover, .lblLocation:hover a{
   cursor: pointer;
   color: #548CA8;
+  text-decoration: none;
 }
 
+.lblLocation a{
+  text-decoration: none;
+  color: #EEEEEE;
+  font-size: 18px;
+}

@@ -15,7 +15,7 @@ function Contact() {
           <h4 className="leftConatctH4">Please dont hesitate to contact us for more information:</h4>
           </li>
           <li>            
-            <label for="locationIcon"><a href="https://www.google.com/maps?client=firefox-b-d&q=meditrust+south+africa&um=1&ie=UTF-8&sa=X&ved=2ahUKEwiR2faq6530AhWDmFwKHSAACa0Q_AUoAXoECAEQAw" target="_blank" rel="noopener noreferrer">Vanderbijlpark, South Africa</a></label>
+            <label className="lblLocation" for="locationIcon"><a href="https://www.google.com/maps?client=firefox-b-d&q=meditrust+south+africa&um=1&ie=UTF-8&sa=X&ved=2ahUKEwiR2faq6530AhWDmFwKHSAACa0Q_AUoAXoECAEQAw" target="_blank" rel="noopener noreferrer">Vanderbijlpark, South Africa</a></label>
             <i className="fas fa-map-marker-alt fa-lg" id="locationIcon"></i>
           </li>
         <li>       

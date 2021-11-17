@@ -212,7 +212,7 @@ function ViewSinglePolicy() {
 
             <button className="btnBackPolicies" 
                   onClick={() => {
-                  history.push("/ViewAllPolicies");
+                  history.goBack();
               }}>Back</button>
 
           </div>

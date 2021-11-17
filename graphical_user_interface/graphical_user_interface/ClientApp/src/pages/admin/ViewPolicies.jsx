@@ -177,6 +177,7 @@ function ViewPolicies() {
               className="btnBackClient"
               onClick={() => {
                 history.push("Admin?pagenumber=1")
+                //history.goBack();
               }}>
                 Back
           </button>

@@ -13,7 +13,6 @@ function CreateNewQuery() {
   const [QueryDescription, setQueryDescription] = useState("");
 
   function PostNewQuery() {
-    alert("Log query ?"); //function not triggering without this alert ?????
     const queryObj = {
       Query_Title: QueryTitle,
       Query_Level: QueryLevel,

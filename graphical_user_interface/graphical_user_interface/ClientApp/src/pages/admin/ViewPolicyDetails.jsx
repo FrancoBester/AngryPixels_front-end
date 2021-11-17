@@ -24,9 +24,7 @@ function ViewPolicyDetails() {
     API.APIGET(
       "Users/GetPolicyDetails/" + id,
       onSuccess,
-      () => {
-        alert("Error");
-      },
+      () => {},
       () => {}
     );
 

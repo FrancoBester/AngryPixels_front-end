@@ -22,7 +22,7 @@ function FileUpload() {
         () => {}
       );
     } else {
-      alert("No file selected");
+      //alert("No file selected");
     }
   }
 

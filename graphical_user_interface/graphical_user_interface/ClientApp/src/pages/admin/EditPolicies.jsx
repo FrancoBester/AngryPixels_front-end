@@ -3,6 +3,7 @@ import { useLocation, Link, useHistory } from "react-router-dom";
 import API from "../../API";
 import "./EditPolicies.css";
 import Footer from "../../components/Footer";
+import POPUP from "../../components/popUp.js";
 
 function ViewSinglePolicy() {
   const history = useHistory();
@@ -39,7 +40,7 @@ function ViewSinglePolicy() {
       "Policy/UpdatePolicyInformation/" + id,
       policyObj,
       () => {
-        alert("Changes have been ");
+        POPUP.ShowPopUp("Changes have been saved");
         e();
         history.push("viewAllPolicies?pageNumber=1");
       },
@@ -73,9 +74,7 @@ function ViewSinglePolicy() {
     API.APIGET(
       "policy/GetSpecificPolicyDetails/" + id,
       onSuccess,
-      () => {
-        alert("Error");
-      },
+      () => {},
       () => {}
     );
 

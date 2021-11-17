@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 import Footer from "../../components/Footer";
 import auth from "../../auth";
+import POPUP from "../../components/popUp.js";
 
 function ViewClientProfile() {
   const [hasLoaded, setHasLoaded] = useState(false);
@@ -15,19 +16,18 @@ function ViewClientProfile() {
     setProfile(e);
   }
 
-  function removeUser(){
+  function removeUser() {
     var id = parseInt(window.sessionStorage.getItem("id"));
     var onSuccess = () => {
-      alert("Account deleted");
+      POPUP.ShowPopUp("Account deleted");
       auth.logout(() => {
         // setUpdated(!updated);
-      });;
-      history.push("/About")
+      });
+      history.push("/About");
     };
 
-
     API.APIGET(
-      "Users/RemoveUserAccount/"+id,
+      "Users/RemoveUserAccount/" + id,
       onSuccess,
       () => {},
       () => {}
@@ -126,17 +126,15 @@ function ViewClientProfile() {
               Edit Profile
             </button>
 
-
-            {/** CAREL CAN YOU PLEASE GIVE SOME GUIDANCE ON DELETING THE PROFILE */}    
+            {/** CAREL CAN YOU PLEASE GIVE SOME GUIDANCE ON DELETING THE PROFILE */}
 
             <button
               className="btnDeleteClientProfile"
               onClick={() => {
                 const confirmBox = window.confirm(
                   "Do you want to delete your account?"
-                )
-                if (confirmBox == true)
-                {
+                );
+                if (confirmBox == true) {
                   removeUser();
                 }
               }}

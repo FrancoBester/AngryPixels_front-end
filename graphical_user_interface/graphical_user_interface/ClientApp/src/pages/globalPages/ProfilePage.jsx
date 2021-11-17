@@ -3,6 +3,7 @@ import API from "../../API";
 import "./ProfilePage.css";
 import { useHistory } from "react-router";
 import Footer from "../../components/Footer";
+import POPUP from "../../components/popUp.js";
 
 function ProfilePage() {
   const [profile, setProfile] = useState({});
@@ -73,11 +74,9 @@ function ProfilePage() {
         "Document/UploadDocForUser",
         formData,
         () => {
-          alert("FileUploaded");
+          POPUP.ShowPopUp("File Uploaded");
         },
-        () => {
-          alert("FileUploadedError");
-        },
+        () => {},
         () => {
           setUpdated(!updated);
         }
@@ -95,7 +94,9 @@ function ProfilePage() {
   function DeleteDocForUser(docId) {
     API.APIGET(
       "Document/DeleteDocForUser/" + docId,
-      () => {},
+      () => {
+        POPUP.ShowPopUp("Document deleted.");
+      },
       () => {},
       () => {
         setUpdated(!updated);

@@ -27,7 +27,7 @@ function ViewAdminInformation() {
       onSuccess,
       () => {},
       () => {
-        alert("Client Information Loaded");
+        //alert("Client Information Loaded");
       }
     );
     return () => {};

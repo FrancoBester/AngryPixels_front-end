@@ -3,6 +3,7 @@ import { useLocation, Link, useHistory } from "react-router-dom";
 import API from "../../API";
 import "./ViewSinglePolicy.css";
 import Footer from "../../components/Footer";
+import POPUP from "../../components/popUp.js";
 
 function ViewSinglePolicy() {
   const history = useHistory();
@@ -35,7 +36,7 @@ function ViewSinglePolicy() {
 
   function RequestPolicy() {
     var onSuccess = (e) => {
-      alert("Request Succesfull");
+      POPUP.ShowPopUp("Request Succesfull");
       history.goBack();
     };
 

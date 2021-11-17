@@ -33,27 +33,30 @@ function Footer() {
           </div>
           <small className="website-rights">AngryPixels © 2021</small>
           <div className="social-icons">
-            <span>
-              <a
-                href="https://web.facebook.com/meditrust.biz?_rdc=1&_rdr"
-                className="fab fa-facebook-square"
-                target="_blank"
-              ></a>
-            </span>
-            <span>
-              <a
-                href="https://www.instagram.com/"
-                className="fab fa-instagram"
-                target="_blank"
-              ></a>
-            </span>
-            <span>
-              <a
-                href="https://twitter.com/meditrust_biz?lang=en"
-                className="fab fa-twitter-square"
-                target="_blank"
-              ></a>
-            </span>
+            <a
+              href="https://web.facebook.com/meditrust.biz?_rdc=1&_rdr"
+              className="fab fa-facebook-square"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span></span>
+            </a>
+            <a
+              href="https://www.instagram.com/"
+              className="fab fa-instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span></span>
+            </a>
+            <a
+              href="https://twitter.com/meditrust_biz?lang=en"
+              className="fab fa-twitter-square"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span></span>
+            </a>
           </div>
         </div>
       </section>

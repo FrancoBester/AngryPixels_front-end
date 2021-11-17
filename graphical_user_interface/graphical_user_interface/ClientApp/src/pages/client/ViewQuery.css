@@ -16,6 +16,9 @@
     grid-column-start: 1;
     grid-column-end: 3;
 }
+.viewSingleQuery ul{
+    width: 80%;
+}
 
 .gridSingleQuery > *{
     background: #1D1D1D;
